@@ -28,7 +28,7 @@
             </h1>
             <div class="bg-blue-100 rounded-3xl p-6 max-w-3xl mx-auto flex items-center shadow-lg font-['Inter']">
                 <input type="text" placeholder="Cari perawatan" 
-                    class="w-[80%] rounded-[10px] px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400 bg-white">
+                    class="w-[80%] rounded-[10px] px-3 py-2 focus:outline-none focus:ring-1 focus:ring-blue-200 bg-white">
                 <button class="bg-[#234bd2] text-white w-[20%] rounded-[10px] px-3 py-2 hover:bg-[#234bd2] ml-6">Cari</button>
             </div>            
           </div>

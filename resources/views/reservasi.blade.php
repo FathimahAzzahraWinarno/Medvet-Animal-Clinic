@@ -33,9 +33,6 @@
                             <option>Jantan</option>
                             <option>Betina</option>
                         </select>
-                        <div class="absolute inset-y-0 right-2 flex items-center pointer-events-none">
-                            <img id="genderDropdownIcon" src="{{ asset('images/dropdown.svg') }}" alt="dropdown">
-                        </div>
                     </div>
                 </div>
         
@@ -94,9 +91,6 @@
                             <option>USG</option>
                             <option>Pengobatan</option>
                         </select>
-                        <div class="absolute inset-y-0 right-2 flex items-center pointer-events-none">
-                            <img id="treatmentDropdownIcon" src="{{ asset('images/dropdown.svg') }}" alt="dropdown">
-                        </div>
                     </div>
                 </div>
         
@@ -115,9 +109,6 @@
                             <option>10:00 - 12:00</option>
                             <option>13:00 - 15:00</option>
                         </select>
-                        <div class="absolute inset-y-0 right-2 flex items-center pointer-events-none">
-                            <img id="timeDropdownIcon" src="{{ asset('images/dropdown.svg') }}" alt="dropdown">
-                        </div>
                     </div>
                 </div>
         
@@ -130,9 +121,6 @@
                             <option>Drh. Andi</option>
                             <option>Drh. Rina</option>
                         </select>
-                        <div class="absolute inset-y-0 right-2 flex items-center pointer-events-none">
-                            <img id="doctorDropdownIcon" src="{{ asset('images/dropdown.svg') }}" alt="dropdown">
-                        </div>
                     </div>
                 </div>
         

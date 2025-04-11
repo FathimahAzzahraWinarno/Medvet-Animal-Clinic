@@ -202,45 +202,54 @@
         </div>
       </div>
 
-      <div class="flex flex-col items-center justify-center min-h-screen p-6">
+
+      <div class="flex flex-col items-center justify-center min-h-screen p-2 mt-30">
         <h1 class="text-4xl font-bold text-gray-900 mb-4 text-center font-['Inter']">
           Pengalaman Pelanggan
         </h1>
-        <p class="text-gray-700 mb-30 text-center font-['Inter']">
+        <p class="text-gray-700 mb-15 text-center font-['Inter']">
           Pengalaman pelanggan yang telah mempercayakan hewan kesayangannya
-          <span class="block mb-20">kepada medvet animal clinic.</span>
+          <span class="block">kepada medvet animal clinic.</span>
         </p>
-      <div class="relative w-full max-w-4xl flex justify-center mt-10 mb-30">
-          <div id="cardContainer" class="relative flex items-center">
-              <!-- Kartu pertama -->
-              <div class="card scale-90 -translate-x-24" onclick="moveToCenter(this)">
-                  <p class="text-sm">⭐️⭐️⭐️⭐️⭐️</p>
-                  <p>Masih jadi klinik andalan buat berobat anabul karna pelayanannya bagus.
-                    Area kliniknya bersih & terawat. Dokternya ramah & komunikatif.
-                  </p>
-                  <img src="{{ asset('images/review1.svg') }}" alt="Review Image" class="h-100 w-100">
-              </div>
-  
-              <!-- Kartu utama (tengah) -->
-              <div class="card active" onclick="moveToCenter(this)">
-                  <p class="text-sm">⭐️⭐️⭐️⭐️⭐️</p>
-                  <p>Tempatnya nyaman buat anabul dan majikan, dokter dan perawatanya ramah dan sabar banget sama
-                    anabul yang rewel, top deh pokoknya sangat rekomendasi apalagi adanya promo untuk steril,
-                    bakalan menjadi klinik andalan untuk anabul saya. Bintang 100 untuk kliniknya seribu jempol.
-                  </p>
-                  <img src="{{ asset('images/review2.svg') }}" alt="Review Image" class="h-100 w-100">
-              </div>
-  
-              <!-- Kartu ketiga -->
-              <div class="card scale-90 translate-x-24" onclick="moveToCenter(this)">
-                  <p class="text-sm">⭐️⭐️⭐️⭐️⭐️</p>
-                  <p>Klinik hewan yang bagus, bersih, ramah, dokter dan perawatnya ramah dan baik, kucing saya steril dan
-                    rawat inap disini Alhamdullilah sehat, tempatnya steril dan selalu mengabari kucing kita, topp deh kliniknya
-                    InsyAllah sudah menjadi langgangan kalau kucing mau vaksin, steril ataupun berobat.
-                  </p>
-                  <img src="{{ asset('images/review3.svg') }}" alt="Review Image" class="h-100 w-100">
-              </div>
+      <div id="gallery" class="relative w-full" data-carousel="slide">
+        <!-- Carousel wrapper -->
+        <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
+             <!-- Item 1 -->
+            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                <img src="{{ asset('images/review1.svg') }}" class="absolute block max-w-full h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="">
+            </div>
+            <!-- Item 2 -->
+            <div class="hidden duration-700 ease-in-out" data-carousel-item="active">
+                <img src="{{ asset('images/review2.svg') }}" class="absolute block max-w-full h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="">
+            </div>
+            <!-- Item 3 -->
+            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                <img src="{{ asset('images/review3.svg') }}" class="absolute block max-w-full h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="">
+            </div>
+            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+              <img src="{{ asset('images/review4.png') }}" class="absolute block max-w-full h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="">
           </div>
-      </div>
+          <div class="hidden duration-700 ease-in-out" data-carousel-item>
+            <img src="{{ asset('images/review5.png') }}" class="absolute block max-w-full h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="">
+        </div>
+        </div>
+        <!-- Slider controls -->
+        <button type="button" class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
+            <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
+                </svg>
+                <span class="sr-only">Previous</span>
+            </span>
+        </button>
+        <button type="button" class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
+            <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+                </svg>
+                <span class="sr-only">Next</span>
+            </span>
+        </button>
+    </div>
       </div>      
 </x-layout>

@@ -112,13 +112,13 @@
               <thead>
                 <tr class="bg-blue-800 text-white">
                   <th class="px-4 py-3">Tanggal</th>
-                  <th class="px-4 py-3">Penjelasan</th>
+                  <th class="px-4 py-3">Detail Rekam Medis</th>
                   <th class="px-4 py-3">Dokter</th>
                   <th class="px-4 py-3">Diagnosa</th>
                   <th class="px-4 py-3">Tes</th>
                   <th class="px-4 py-3">Hasil Tes</th>
                   <th class="px-4 py-3">Tindakan</th>
-                  <th class="px-4 py-3">Komentar</th>
+                  <th class="px-4 py-3">Pesan</th>
                 </tr>
               </thead>
               <tbody class="bg-gray-50 text-gray-700">

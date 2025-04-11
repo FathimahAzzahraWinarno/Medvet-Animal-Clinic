@@ -67,28 +67,3 @@ document.addEventListener("DOMContentLoaded", function () {
     setupDropdown("doctorSelect", "doctorDropdownIcon");
 });
 
-// document.addEventListener("DOMContentLoaded", function () {
-//     const formTitle = document.getElementById("form-title");
-//     const nameField = document.getElementById("name-field");
-//     const toggleText = document.getElementById("toggle-text");
-//     const toggleLink = document.getElementById("toggle-link");
-//     const submitButton = document.getElementById("submit-button");
-
-//     toggleLink.addEventListener("click", function (e) {
-//         e.preventDefault();
-//         if (formTitle.textContent === "Masuk") {
-//             formTitle.textContent = "Daftar";
-//             nameField.classList.remove("hidden");
-//             toggleText.textContent = "Sudah punya akun?";
-//             toggleLink.textContent = "Masuk";
-//             submitButton.textContent = "Daftar"; 
-//         } else {
-//             formTitle.textContent = "Masuk";
-//             nameField.classList.add("hidden");
-//             toggleText.textContent = "Belum punya akun?";
-//             toggleLink.textContent = "Daftar";
-//             submitButton.textContent = "Masuk"; 
-//         }
-//     });
-// });
-
