@@ -1,0 +1,62 @@
+.hover-expand {
+    max-height: 800px;
+    transition: max-height 0.5s ease-in-out;
+    overflow: hidden;
+}
+.group:hover .hover-expand {
+    max-height: 800px; /* Adjust this value to fit your content */
+}
+.text-expand {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    transition: white-space 0.5s ease-in-out;
+}
+.group:hover .text-expand {
+    white-space: normal;
+}
+
+#cardContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    gap: 20px;
+}
+
+/* Kartu testimoni */
+.card {
+    position: absolute;
+    width: 500px;
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.5s ease, z-index 0.5s ease;
+}
+
+/* Kartu default yang tidak aktif */
+.card:not(.active) {
+    transform: scale(0.9);
+    z-index: 0;
+}
+
+/* Kartu yang aktif */
+.card.active {
+    transform: scale(1.05);
+    z-index: 10;
+}
+
+/* Gambar di dalam kartu */
+.card img {
+    display: block;
+    margin: 10px auto;
+    border-radius: 8px;
+    object-fit: cover;
+    max-width: 100%;
+    height: auto;
+}
