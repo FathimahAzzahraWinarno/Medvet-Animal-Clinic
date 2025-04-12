@@ -67,3 +67,13 @@ document.addEventListener("DOMContentLoaded", function () {
     setupDropdown("doctorSelect", "doctorDropdownIcon");
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+    const dropdownItems = document.querySelectorAll('#dropdown a');
+    const dropdown = document.getElementById('dropdown');
+  
+    dropdownItems.forEach(item => {
+      item.addEventListener('click', () => {
+        dropdown.classList.add('hidden');
+      });
+    });
+  });

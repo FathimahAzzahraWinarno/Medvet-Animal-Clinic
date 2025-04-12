@@ -2,7 +2,7 @@
 <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
 <title>profile</title>
 
-<div class="flex min-h-screen bg-gray-100 font-['Inter']">
+<div class="flex min-h-screen font-['Inter']">
     <!-- Sidebar -->
     <aside class="w-64 bg-white border-r border-gray-300 p-6 flex flex-col justify-between">
       <div>
@@ -62,7 +62,7 @@
     <h3 class="font-semibold text-lg mt-6 mb-1">Info Pribadi</h3>
     <p class="text-sm text-gray-500 mb-6">Perbarui fotomu dan detail pribadimu</p>
   
-    <div class="bg-white p-6 rounded-xl shadow">
+    <div class="bg-white mb-5 p-6 rounded-xl border border-blue-200 shadow-[0px_0px_10px_rgba(59,130,246,0.3)]">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div>
           <label class="block text-sm font-medium text-gray-700 mb-1">First name</label>
@@ -84,6 +84,12 @@
           <div class="relative">
             <span class="absolute left-3 top-2.5 text-gray-500">📱</span>
             <input type="text" value="0812-9456-9877" class="w-full border border-gray-300 rounded-lg pl-10 pr-4 py-2 text-gray-800 bg-gray-100 cursor-not-allowed" readonly />
+          </div>
+        </div>
+        <div class="md:col-span-2">
+          <label class="block text-sm font-medium text-gray-700 mb-1">Alamat</label>
+          <div class="relative">
+            <input type="text" value="Jl.Nuri Blok A43 No,2" class="w-full border border-gray-300 rounded-lg pl-10 pr-4 py-2 text-gray-800 bg-gray-100 cursor-not-allowed" readonly />
           </div>
         </div>
       </div>

@@ -49,3 +49,7 @@ Route::get('rekam-medis', function () {
 Route::get('profile', function () {
     return view('profile');
 });
+
+Route::get('riwayat-reservasi', function () {
+    return view('riwayatReservasi');
+});
