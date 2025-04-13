@@ -57,3 +57,11 @@ Route::get('riwayat-reservasi', function () {
 Route::get('jadwal-reservasi', function () {
     return view('jadwalReservasi');
 });
+
+Route::get('dashboard', function () {
+    return view('admin.dashboard');
+});
+
+Route::get('reservasi-dokter', function () {
+    return view('admin.reservasiDokter');
+});
