@@ -43,8 +43,6 @@
     </div>
     <!-- Gambar gradasi -->
     <div class="h-1 bg-gradient-to-r from-red-500 via-blue-700 to-blue-900 h-2 mb-3 rounded-b"></div>
-
-    
   
   <!-- Dropdown menu -->
   <div id="dropdown" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow-sm w-44 dark:bg-gray-700">
