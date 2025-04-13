@@ -36,30 +36,6 @@
   <div class="flex-1" style="background-image: url('/images/bg.svg')">
     <h1 class="text-4xl font-semibold text-center mt-20 text-gray-900 mb-6 font-['Inter']">Riwayat Reservasi</h1>
 <div class="relative m-30 rounded-lg border border-blue-50 shadow-[0px_0px_10px_rgba(59,130,246,0.3)]">
-    <div class="bg-blue-700 rounded-t-lg shadow-md">
-      <div class="p-6">
-        <h1 class="text-white text-2xl font-bold">Informasi Hewan Peliharaan</h1>
-      </div>
-    </div>
-    <!-- Gambar gradasi -->
-    <div class="h-1 bg-gradient-to-r from-red-500 via-blue-700 to-blue-900 h-2 mb-3 rounded-b"></div>
-  
-  <!-- Dropdown menu -->
-  <div id="dropdown" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow-sm w-44 dark:bg-gray-700">
-    <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefaultButton">
-    <li>
-        <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Miu</a>
-    </li>
-    <li>
-        <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Billy</a>
-    </li>
-    <li>
-        <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Hewan Baru</a>
-    </li>
-    </ul>
-</div>
-
-
   <!-- Tabel -->
   <div class="overflow-x-auto">
     <table class="min-w-full border border-gray-200 text-center shadow-md rounded-b-lg overflow-hidden">
@@ -80,8 +56,8 @@
           <td class="px-4 py-4 border-t">Olivia Tryne</td>
           <td class="px-4 py-4 border-t">13.00-13.30</td>
           <td class="px-4 py-4 border-t">Vaksinasi</td>
-          <td class="px-4 py-4 border-t"></td>
-          <td class="px-4 py-4 border-t"></td>
+          <td class="px-4 py-4 border-t">-</td>
+          <td class="px-4 py-4 border-t">-</td>
         </tr>
       </tbody>
     </table>
