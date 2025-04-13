@@ -65,3 +65,15 @@ Route::get('dashboard', function () {
 Route::get('reservasi-dokter', function () {
     return view('admin.reservasiDokter');
 });
+
+Route::get('reservasi-riwayat', function () {
+    return view('admin.reservasiRiwayat');
+});
+
+Route::get('feedback-pelanggan', function () {
+    return view('admin.feedback');
+});
+
+Route::get('pelanggan', function () {
+    return view('admin.pelanggan');
+});

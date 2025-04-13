@@ -1,9 +1,9 @@
 <div class="flex min-h-screen font-['Inter']">
-<aside class="w-64 bg-white border-r border-gray-300 p-6 flex flex-col justify-between">
+<aside class="w-64 bg-white border-r border-gray-300 p-5 flex flex-col justify-between">
     <div>
       <a href="dashboard">
       <img src="{{ asset('images/logo.svg') }}" alt="Logo Medvetco" class="h-10 mb-12" /></a>
-      <div class="flex items-center gap-4 mb-12">
+      <div class="flex items-center gap-3 mb-12">
         <img src="{{ asset('images/karyawan.jpeg') }}" class="w-13 h-13 rounded-full" />
         <div>
           <p class="font-semibold">Olivia Rhye</p>
@@ -18,7 +18,7 @@
         <a href="reservasi-dokter" class="flex items-center text-gray-700 hover:text-blue-600">
           📖 <span class="ml-3">Reservasi Hari Ini</span>
         </a>
-        <a href="#" class="flex items-center text-gray-700 hover:text-blue-600">
+        <a href="reservasi-riwayat" class="flex items-center text-gray-700 hover:text-blue-600">
           📚 <span class="ml-3">Riwayat Reservasi</span>
         </a>
         <a href="#" class="flex items-center text-gray-700 hover:text-blue-600">
@@ -30,10 +30,10 @@
           <a href="#" class="flex items-center text-gray-700 hover:text-blue-600">
             📚 <span class="ml-3">Kelola FAQ</span>
           </a>
-          <a href="#" class="flex items-center text-gray-700 hover:text-blue-600">
+          <a href="pelanggan" class="flex items-center text-gray-700 hover:text-blue-600">
             📚 <span class="ml-3">Pelanggan</span>
           </a>
-          <a href="#" class="flex items-center text-gray-700 hover:text-blue-600">
+          <a href="feedback-pelanggan" class="flex items-center text-gray-700 hover:text-blue-600">
             📚 <span class="ml-3">Feedback</span>
           </a>
       </nav>

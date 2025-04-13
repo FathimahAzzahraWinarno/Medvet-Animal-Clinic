@@ -7,8 +7,8 @@
                 <h1 class="text-4xl font-bold text-gray-800">Welcome back, Olivia</h1>
                 <p class="text-sm font-semibold mt-2 text-gray-500">Even miracles take a little time</p>
             </div>
-            <button class="bg-blue-700 text-white flex font-semibold px-4 py-2 rounded-lg hover:bg-blue-800 text-sm">
-                <img src="{{ asset('images/plus.svg') }}" alt="Arrow" class="w-4 h-4 mr-1 flex">
+            <button class="bg-blue-700 text-white flex items-center font-semibold px-4 py-2 rounded-lg hover:bg-blue-800 text-sm">
+                <img src="{{ asset('images/plus.svg') }}" alt="Plus Icon" class="w-4 h-4 mr-1">
                 Perawatan & Layanan
             </button>
         </div>
@@ -32,14 +32,29 @@
         <!-- Filter & Table -->
         <div class="flex justify-between items-center mb-4">
             <div class="flex items-center space-x-2">
-                <button type="button" class="text-gray-900 hover:text-white border border-gray-800 hover:bg-gray-900 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-l px-4 py-2 text-center me-2 mb-1 dark:border-gray-400 dark:text-gray-800 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-800">semua</button>
-                <button type="button" class="text-gray-900 hover:text-white border border-gray-800 hover:bg-gray-900 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-l px-4 py-2 text-center me-2 mb-1 dark:border-gray-400 dark:text-gray-800 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-800">Filter</button>
+                <button type="button" 
+                        class="text-gray-800 
+                        hover:text-white border border-gray-800 
+                        hover:bg-gray-500 focus:ring-1 
+                        focus:outline-none focus:ring-gray-300 
+                        font-medium rounded-lg text-l px-4 py-2 
+                        text-center me-2 mb-1 dark:border-gray-400 
+                        dark:text-gray-800 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-800">semua</button>
+                <button type="button" 
+                        class="text-gray-800 
+                        hover:text-white border border-gray-800 
+                        hover:bg-gray-500 focus:ring-1 focus:outline-none 
+                        focus:ring-gray-300 font-medium rounded-lg 
+                        text-l px-4 py-2 text-center me-2 mb-1 
+                        dark:border-gray-400 dark:text-gray-800 
+                        dark:hover:text-white dark:hover:bg-gray-600 
+                        dark:focus:ring-gray-800">Filter</button>
             </div>
         </div>
 
         <div class="overflow-x-auto shadow-lg rounded-xl">
             <table class="w-full text-sm text-left text-gray-600">
-                <thead class="text-xs text-gray-500 uppercase">
+                <thead class="text-xs text-gray-500 uppercase border-b border-gray-200">
                     <tr>
                         <th class="px-4 py-3">No</th>
                         <th class="px-4 py-3">Pasien</th>
