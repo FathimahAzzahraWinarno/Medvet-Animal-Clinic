@@ -53,3 +53,7 @@ Route::get('profile', function () {
 Route::get('riwayat-reservasi', function () {
     return view('riwayatReservasi');
 });
+
+Route::get('jadwal-reservasi', function () {
+    return view('jadwalReservasi');
+});
