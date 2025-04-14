@@ -1,4 +1,4 @@
-<x-layout-admin title="Kelola Pelanggan">
+<x-layout-admin title="Kelola Perawatan">
     <div class="flex-1 h-screen overflow-y-auto" style="background-image: url('/images/bgAdmin.svg'); background-size: cover; background-repeat: no-repeat; background-position: center;">
         <x-popup-perawatan></x-popup-perawatan>
     </div>
