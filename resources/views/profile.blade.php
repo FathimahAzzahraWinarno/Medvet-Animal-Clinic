@@ -9,22 +9,27 @@
         <a href="/">
         <img src="{{ asset('images/logo.svg') }}" alt="Logo Medvetco" class="h-10 mb-12" /></a>
         <div class="flex items-center gap-3 mb-12">
+          <a href="profile">
           <img src="{{ asset('images/karyawan.jpeg') }}" class="w-10 h-10 rounded-full" />
           <div>
             <p class="font-semibold">Olivia Rhye</p>
             <p class="text-sm text-gray-500">olivia@untitledui.com</p>
+          </a>
           </div>
         </div>
   
-        <nav class="space-y-4">
-          <a href="#" class="flex items-center text-gray-700 hover:text-blue-600">
-            📅 <span class="ml-3">Reservasi Hari Ini</span>
+        <nav class="space-y-6">
+          <a href="jadwal-reservasi" class="flex items-center text-gray-700 hover:text-blue-600">
+            <img src="{{ asset('images/reservasi.svg') }}" class="w-6 h-6 rounded-full" />
+             <span class="ml-3">Reservasi Hari Ini</span>
           </a>
-          <a href="#" class="flex items-center text-gray-700 hover:text-blue-600">
-            📖 <span class="ml-3">Riwayat Reservasi</span>
+          <a href="riwayat-reservasi" class="flex items-center text-gray-700 hover:text-blue-600">
+            <img src="{{ asset('images/riwayat.svg') }}" class="w-6 h-6 rounded-full" />
+             <span class="ml-3">Riwayat Reservasi</span>
           </a>
-          <a href="#" class="flex items-center text-gray-700 hover:text-blue-600">
-            📚 <span class="ml-3">Rekam Medis</span>
+          <a href="rekam-medis" class="flex items-center text-gray-700 hover:text-blue-600">
+            <img src="{{ asset('images/writing.svg') }}" class="w-6 h-6 rounded-full" />
+             <span class="ml-3">Rekam Medis</span>
           </a>
         </nav>
       </div>
@@ -66,30 +71,30 @@
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div>
           <label class="block text-sm font-medium text-gray-700 mb-1">First name</label>
-          <input type="text" value="Oliva" class="w-full border border-gray-300 rounded-lg px-4 py-2 text-gray-800 bg-gray-100 cursor-not-allowed" readonly />
+          <input type="text" value="Oliva" class="w-full border border-gray-300 rounded-lg px-4 py-2 text-gray-800 bg-gray-100" />
         </div>
         <div>
           <label class="block text-sm font-medium text-gray-700 mb-1">Last name</label>
-          <input type="text" value="Rhye" class="w-full border border-gray-300 rounded-lg px-4 py-2 text-gray-800 bg-gray-100 cursor-not-allowed" readonly />
+          <input type="text" value="Rhye" class="w-full border border-gray-300 rounded-lg px-4 py-2 text-gray-800 bg-gray-100" />
         </div>
         <div class="md:col-span-2">
           <label class="block text-sm font-medium text-gray-700 mb-1">Email</label>
           <div class="relative">
             <span class="absolute left-3 top-2.5 text-gray-500">📧</span>
-            <input type="email" value="olivia@untitledui.com" class="w-full border border-gray-300 rounded-lg pl-10 pr-4 py-2 text-gray-800 bg-gray-100 cursor-not-allowed" readonly />
+            <input type="email" value="olivia@untitledui.com" class="w-full border border-gray-300 rounded-lg pl-10 pr-4 py-2 text-gray-800 bg-gray-100"/>
           </div>
         </div>
         <div class="md:col-span-2">
           <label class="block text-sm font-medium text-gray-700 mb-1">Telp</label>
           <div class="relative">
             <span class="absolute left-3 top-2.5 text-gray-500">📱</span>
-            <input type="text" value="0812-9456-9877" class="w-full border border-gray-300 rounded-lg pl-10 pr-4 py-2 text-gray-800 bg-gray-100 cursor-not-allowed" readonly />
+            <input type="text" value="0812-9456-9877" class="w-full border border-gray-300 rounded-lg pl-10 pr-4 py-2 text-gray-800 bg-gray-100" />
           </div>
         </div>
         <div class="md:col-span-2">
           <label class="block text-sm font-medium text-gray-700 mb-1">Alamat</label>
           <div class="relative">
-            <input type="text" value="Jl.Nuri Blok A43 No,2" class="w-full border border-gray-300 rounded-lg pl-10 pr-4 py-2 text-gray-800 bg-gray-100 cursor-not-allowed" readonly />
+            <input type="text" value="Jl.Nuri Blok A43 No.2" class="w-full border border-gray-300 rounded-lg pl-10 pr-4 py-2 text-gray-800 bg-gray-100" />
           </div>
         </div>
       </div>

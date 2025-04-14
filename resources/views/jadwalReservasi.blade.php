@@ -8,22 +8,27 @@
       <a href="/">
       <img src="{{ asset('images/logo.svg') }}" alt="Logo Medvetco" class="h-10 mb-12" /></a>
       <div class="flex items-center gap-3 mb-12">
+        <a href="profile">
         <img src="{{ asset('images/karyawan.jpeg') }}" class="w-10 h-10 rounded-full" />
         <div>
           <p class="font-semibold">Olivia Rhye</p>
           <p class="text-sm text-gray-500">olivia@untitledui.com</p>
+        </a>
         </div>
       </div>
 
-      <nav class="space-y-4">
-        <a href="#" class="flex items-center text-gray-700 hover:text-blue-600">
-          📅 <span class="ml-3">Reservasi Hari Ini</span>
+      <nav class="space-y-6">
+        <a href="jadwal-reservasi" class="flex items-center text-gray-700 hover:text-blue-600">
+          <img src="{{ asset('images/reservasi.svg') }}" class="w-6 h-6 rounded-full" />
+           <span class="ml-3">Reservasi Hari Ini</span>
         </a>
-        <a href="#" class="flex items-center text-gray-700 hover:text-blue-600">
-          📖 <span class="ml-3">Riwayat Reservasi</span>
+        <a href="riwayat-reservasi" class="flex items-center text-gray-700 hover:text-blue-600">
+          <img src="{{ asset('images/riwayat.svg') }}" class="w-6 h-6 rounded-full" />
+           <span class="ml-3">Riwayat Reservasi</span>
         </a>
-        <a href="#" class="flex items-center text-gray-700 hover:text-blue-600">
-          📚 <span class="ml-3">Rekam Medis</span>
+        <a href="rekam-medis" class="flex items-center text-gray-700 hover:text-blue-600">
+          <img src="{{ asset('images/writing.svg') }}" class="w-6 h-6 rounded-full" />
+           <span class="ml-3">Rekam Medis</span>
         </a>
       </nav>
     </div>
@@ -33,7 +38,7 @@
     </button>
   </aside>
 
-  <div class="flex-1" style="background-image: url('/images/bg.svg')">
+  <div class="flex-1" style="background-image: url('/images/bgAdmin.svg'); background-size: cover; background-repeat: no-repeat; background-position: center;">
     <h1 class="text-4xl font-semibold text-center mt-20 text-gray-900 mb-6 font-['Inter']">Reservasi Hari Ini</h1>
 <div class="relative m-30 rounded-lg border border-blue-50 shadow-[0px_0px_10px_rgba(59,130,246,0.3)]">
   <!-- Tabel -->

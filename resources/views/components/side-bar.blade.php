@@ -11,30 +11,38 @@
         </div>
       </div>
 
-      <nav class="space-y-5 font-semibold">
+      <nav class="space-y-6 font-semibold">
         <a href="dashboard" class="flex items-center text-gray-700 hover:text-blue-600">
-          📅 <span class="ml-3">Dashboard</span>
+          <img src="{{ asset('images/dashboard.svg') }}" class="w-6 h-6 rounded-full" />
+           <span class="ml-3">Dashboard</span>
         </a>
         <a href="reservasi-dokter" class="flex items-center text-gray-700 hover:text-blue-600">
-          📖 <span class="ml-3">Reservasi Hari Ini</span>
+          <img src="{{ asset('images/reservasi.svg') }}" class="w-6 h-6 rounded-full" />
+           <span class="ml-3">Reservasi Hari Ini</span>
         </a>
         <a href="reservasi-riwayat" class="flex items-center text-gray-700 hover:text-blue-600">
-          📚 <span class="ml-3">Riwayat Reservasi</span>
+          <img src="{{ asset('images/riwayat.svg') }}" class="w-6 h-6 rounded-full" />
+           <span class="ml-3">Riwayat Reservasi</span>
         </a>
         <a href="#" class="flex items-center text-gray-700 hover:text-blue-600">
-            📚 <span class="ml-3">Kelola Perawatan</span>
+          <img src="{{ asset('images/perawatan.svg') }}" class="w-6 h-6 rounded-full" />
+           <span class="ml-3">Kelola Perawatan</span>
           </a>
           <a href="#" class="flex items-center text-gray-700 hover:text-blue-600">
-            📚 <span class="ml-3">Kelola Promo</span>
+            <img src="{{ asset('images/promo.svg') }}" class="w-6 h-6 rounded-full" />
+             <span class="ml-3">Kelola Promo</span>
           </a>
           <a href="#" class="flex items-center text-gray-700 hover:text-blue-600">
-            📚 <span class="ml-3">Kelola FAQ</span>
+            <img src="{{ asset('images/faq.svg') }}" class="w-6 h-6 rounded-full" />
+             <span class="ml-3">Kelola FAQ</span>
           </a>
           <a href="pelanggan" class="flex items-center text-gray-700 hover:text-blue-600">
-            📚 <span class="ml-3">Pelanggan</span>
+            <img src="{{ asset('images/pelanggan.svg') }}" class="w-6 h-6 rounded-full" />
+             <span class="ml-3">Pelanggan</span>
           </a>
           <a href="feedback-pelanggan" class="flex items-center text-gray-700 hover:text-blue-600">
-            📚 <span class="ml-3">Feedback</span>
+            <img src="{{ asset('images/feedback.svg') }}" class="w-6 h-6 rounded-full" />
+             <span class="ml-3">Feedback</span>
           </a>
       </nav>
     </div>
