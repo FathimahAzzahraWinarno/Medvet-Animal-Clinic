@@ -15,12 +15,12 @@
         <form>
             <div class="mb-4">
                 <label class="block text-gray-300 text-sm mb-2">Email<span class="text-red-500">*</span></label>
-                <input type="email" class="w-full p-3 rounded-md bg-gray-500 text-white focus:outline-none focus:ring focus:ring-blue-200" placeholder="Masukkan email kamu">
+                <input placeholder="Masukan email" type="email" class="w-full p-3 rounded-md bg-gray-500 text-white focus:outline-none focus:ring focus:ring-blue-200" placeholder="Masukkan email kamu">
             </div>
 
             <div class="mb-4">
                 <label class="block text-gray-300 text-sm mb-2">Password<span class="text-red-500">*</span></label>
-                <input type="password" class="w-full p-3 rounded-md bg-gray-500 text-white focus:outline-none focus:ring focus:ring-blue-200" placeholder="Buat kata sandi">
+                <input placeholder="Masukan Password" type="password" class="w-full p-3 rounded-md bg-gray-500 text-white focus:outline-none focus:ring focus:ring-blue-200" placeholder="Buat kata sandi">
                 <p class="text-xs text-gray-700 mt-1">Minimal 8 karakter</p>
             </div>
 

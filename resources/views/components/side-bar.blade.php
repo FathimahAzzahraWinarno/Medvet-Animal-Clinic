@@ -24,7 +24,7 @@
           <img src="{{ asset('images/riwayat.svg') }}" class="w-6 h-6 rounded-full" />
            <span class="ml-3">Riwayat Reservasi</span>
         </a>
-        <a href="#" class="flex items-center text-gray-700 hover:text-blue-600">
+        <a href="kelola-perawatan" class="flex items-center text-gray-700 hover:text-blue-600">
           <img src="{{ asset('images/perawatan.svg') }}" class="w-6 h-6 rounded-full" />
            <span class="ml-3">Kelola Perawatan</span>
           </a>

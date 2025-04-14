@@ -37,7 +37,8 @@
                 <thead class="text-xs text-gray-500 uppercase bg-gray-50 border-b border-gray-200">
                     <tr>
                         <th class="px-4 py-3">No</th>
-                        <th class="px-4 py-3">Pasien</th>
+                        <th class="px-4 py-3">Nama Pemilik</th>
+                        <th class="px-4 py-3">Nama Hewan</th>
                         <th class="px-4 py-3">Spesies</th>
                         <th class="px-4 py-3">Tanggal</th>
                         <th class="px-4 py-3">Jam</th>
@@ -51,6 +52,9 @@
                         <td class="px-4 py-3">
                             <div>Liras Ayun</div>
                             <div class="text-xs text-gray-400">LK01</div>
+                        </td>
+                        <td class="px-4 py-3">
+                            <span class="bg-orange-100 text-orange-700 text-xs px-2 py-1 rounded-full">Miu</span>
                         </td>
                         <td class="px-4 py-3">
                             <span class="bg-orange-100 text-orange-700 text-xs px-2 py-1 rounded-full">Kucing</span>

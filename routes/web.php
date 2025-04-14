@@ -77,3 +77,11 @@ Route::get('feedback-pelanggan', function () {
 Route::get('pelanggan', function () {
     return view('admin.pelanggan');
 });
+
+Route::get('popup', function () {
+    return view('admin.popupPerawatan');
+});
+
+Route::get('kelola-perawatan', function () {
+    return view('admin.kelolaPerawatan');
+});

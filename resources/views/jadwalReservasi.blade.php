@@ -47,7 +47,8 @@
       <thead>
         <tr class="bg-blue-800 text-white">
           <th class="px-4 py-3">No</th>
-          <th class="px-4 py-3">Nama</th>
+          <th class="px-4 py-3">Nama Pemilik</th>
+          <th class="px-4 py-3">Nama Hewan</th>
           <th class="px-4 py-3">Tanggal </th>
           <th class="px-4 py-3">Waktu</th>
           <th class="px-4 py-3">Perawatan</th>
@@ -60,6 +61,7 @@
         <tr>
           <td class="px-4 py-4 border-t">1</td>
           <td class="px-4 py-4 border-t">Olivia Tryne</td>
+          <td class="px-4 py-4 border-t">Miu</td>
           <td class="px-4 py-4 border-t">14/04/2025</td>
           <td class="px-4 py-4 border-t">13.00-13.30</td>
           <td class="px-4 py-4 border-t">Vaknisasi</td>

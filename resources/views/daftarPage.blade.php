@@ -11,17 +11,17 @@
         <form>
             <div id="name-field" class="mb-4">
                 <label class="block text-gray-300 text-sm mb-2">Nama<span class="text-red-500">*</span></label>
-                <input type="text" class="w-full p-3 rounded-md bg-gray-500 text-white focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Masukkan nama kamu">
+                <input placeholder="Masukan Nama" type="text" class="w-full p-3 rounded-md bg-gray-500 text-white focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Masukkan nama kamu">
             </div>
 
             <div class="mb-4">
                 <label class="block text-gray-300 text-sm mb-2">Email<span class="text-red-500">*</span></label>
-                <input type="email" class="w-full p-3 rounded-md bg-gray-500 text-white focus:outline-none focus:ring focus:ring-blue-200" placeholder="Masukkan email kamu">
+                <input placeholder="Masukan email" type="email" class="w-full p-3 rounded-md bg-gray-500 text-white focus:outline-none focus:ring focus:ring-blue-200" placeholder="Masukkan email kamu">
             </div>
 
             <div class="mb-4">
                 <label class="block text-gray-300 text-sm mb-2">Password<span class="text-red-500">*</span></label>
-                <input type="password" class="w-full p-3 rounded-md bg-gray-500 text-white focus:outline-none focus:ring focus:ring-blue-200" placeholder="Buat kata sandi">
+                <input placeholder="Masukan Password" type="password" class="w-full p-3 rounded-md bg-gray-500 text-white focus:outline-none focus:ring focus:ring-blue-200" placeholder="Buat kata sandi">
                 <p class="text-xs text-gray-700 mt-1">Minimal 8 karakter</p>
             </div>
 

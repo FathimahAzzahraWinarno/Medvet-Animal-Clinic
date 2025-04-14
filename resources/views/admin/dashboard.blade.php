@@ -1,6 +1,6 @@
 <x-layout-admin title="dashboard">
     <!-- Bagian Konten Dashboard (Bagian Kanan) -->
-    <div class="flex-1 h-screen overflow-y-auto" style="background-image: url('/images/bgAdmin.svg'); background-size: cover;">
+    <div class="flex-1 h-screen overflow-y-auto">
     <div class="bg-white p-10 shadow-md h-full">
         <div class="flex justify-between items-start mb-12">
             <div>
@@ -131,7 +131,7 @@
         </div>
 
         <div class="text-center mt-10">
-            <a href="perawatan" class="text-[#234bd2] font-semibold flex items-center justify-center gap-1">
+            <a href="reservasi-dokter" class="text-[#234bd2] font-semibold flex items-center justify-center gap-1">
                 Lihat lebih banyak
                 <img src="{{ asset('images/arrow-up-right-blue.svg') }}" alt="Arrow" class="w-6 h-6">
             </a>
