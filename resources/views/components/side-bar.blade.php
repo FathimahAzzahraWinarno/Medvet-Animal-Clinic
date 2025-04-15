@@ -32,7 +32,7 @@
             <img src="{{ asset('images/promo.svg') }}" class="w-6 h-6 rounded-full" />
              <span class="ml-3">Kelola Promo</span>
           </a>
-          <a href="#" class="flex items-center text-gray-700 hover:text-blue-600">
+          <a href="kelola-FAQ" class="flex items-center text-gray-700 hover:text-blue-600">
             <img src="{{ asset('images/faq.svg') }}" class="w-6 h-6 rounded-full" />
              <span class="ml-3">Kelola FAQ</span>
           </a>
@@ -47,8 +47,9 @@
       </nav>
     </div>
 
-    <button class="flex items-center justify-center gap-2 text-red-600 border border-red-600 px-4 py-2 rounded-lg hover:bg-red-50">
-      ⎋ Keluar
+    <button class="flex items-center justify-center font-semibold gap-2 text-red-600 border border-red-600 px-4 py-2 rounded-lg hover:bg-red-50">
+       Keluar
+       <img src="{{asset('images/keluar.svg')}}" class="w-5 h-5">
     </button>
   </aside>
 </div>
