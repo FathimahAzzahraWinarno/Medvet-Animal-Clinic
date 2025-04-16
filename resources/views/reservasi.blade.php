@@ -12,14 +12,14 @@
                 </div>
         </section>
 
-        <div class="max-w-4xl mx-auto bg-white p-6 rounded-lg border border-blue-200 shadow-[0px_0px_10px_rgba(59,130,246,0.3)] font-['Inter'] mb-20">
+        <div class="max-w-4xl mx-auto bg-white p-6 rounded-lg border border-blue-200 shadow-[0px_0px_10px_rgba(59,130,246,0.3)] font-['Inter'] mb-20 relative">
             <!-- Data Peliharaan -->
             <h2 class="text-xl font-semibold text-gray-900 mb-4">Data Peliharaan</h2>
             
             <!-- Dropdown Trigger -->
             <div class="flex justify-between items-center mb-5">
                 <!-- Tombol Dropdown Pilih Hewan -->
-                <button id="dropdownDefaultButton" data-dropdown-toggle="dropdown" 
+                <button id="dropdownDefaultButton" 
                     class="text-gray-700 font-semibold focus:ring-1 focus:outline-none focus:ring-blue-300 
                     font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center 
                     dark:bg-gray-200 dark:hover:bg-gray-300 dark:focus:ring-blue-800" 
@@ -31,45 +31,42 @@
                             stroke-width="2" d="m1 1 4 4 4-4" />
                     </svg>
                 </button>
-            
+        
                 <!-- Tombol Tambah Hewan di kanan -->
-                <button class="bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg 
+                <button onclick="tambahFormHewan()" class="bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg 
                     text-sm px-4 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700">
                     Tambah Hewan
                 </button>
             </div>
-            
-  
-  <!-- Dropdown Menu -->
-            <div id="dropdown" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow-sm w-44 dark:bg-gray-700">
+        
+            <!-- Dropdown Menu -->
+            <div id="dropdown" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow-sm w-44 dark:bg-gray-700 absolute mt-1">
                 <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefaultButton">
-                <li>
-                    <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Miu</a>
-                </li>
-                <li>
-                    <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Billy</a>
-                </li>
-                <li>
-                    <a href="#hewanBaru" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Hewan Baru</a>
-                </li>
+                    <li>
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Miu</a>
+                    </li>
+                    <li>
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Billy</a>
+                    </li>
+                    <li>
+                        <a href="#hewanBaru" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Hewan Baru</a>
+                    </li>
                 </ul>
             </div>
-  
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4 mb-6">
                 <!-- Nama Peliharaan -->
                 <div class="md:col-span-2">
                     <label class="block text-gray-700">Nama Peliharaan</label>
-                    <input type="text" placeholder="Masukkan nama peliharaan"  id="hewanBaru"
+                    <input type="text" placeholder="Masukkan nama peliharaan" id="hewanBaru"
                         class="w-full mt-1 px-4 py-2 border border-gray-400 rounded-lg focus:outline-blue-200">
                 </div>
         
                 <!-- Jenis Kelamin -->
                 <div>
                     <label class="block text-gray-700">Jenis Kelamin</label>
-                    <div class="relative">
-                        <input type="text" placeholder="Masukkan Jenis Kelamin"
+                    <input type="text" placeholder="Masukkan Jenis Kelamin"
                         class="w-full mt-1 px-4 py-2 border border-gray-400 rounded-lg focus:outline-blue-200">
-                    </div>
                 </div>
         
                 <!-- Spesies -->
@@ -103,15 +100,15 @@
                         class="w-full mt-1 px-4 py-2 border border-gray-400 rounded-lg focus:outline-blue-200">
                 </div>
         
-                <div class="block text-gray-700">
+                <div>
                     <label class="block text-gray-700">Email</label>
                     <input type="email" placeholder="Masukkan email"
                         class="w-full mt-1 px-4 py-2 border border-gray-400 rounded-lg focus:outline-blue-200">
                 </div>
-
-                <div class="block text-gray-700">
+        
+                <div>
                     <label class="block text-gray-700">Alamat</label>
-                    <input type="email" placeholder="Masukkan Alamat"
+                    <input type="text" placeholder="Masukkan Alamat"
                         class="w-full mt-1 px-4 py-2 border border-gray-400 rounded-lg focus:outline-blue-200">
                 </div>
             </div>
@@ -122,18 +119,16 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
                     <label class="block text-gray-700">Perawatan</label>
-                    <div class="relative">
-                        <select id="treatmentSelect" class="w-full mt-1 px-4 py-2 border border-gray-400 rounded-lg focus:outline-blue-200 appearance-none">
-                            <option>Pilih perawatan</option>
-                            <option>Vaksinasi</option>
-                            <option>Operasi minor & mayor</option>
-                            <option>Cek Darah</option>
-                            <option>Cek Mikroskopis</option>
-                            <option>Rawat Inap</option>
-                            <option>USG</option>
-                            <option>Pengobatan</option>
-                        </select>
-                    </div>
+                    <select id="treatmentSelect" class="w-full mt-1 px-4 py-2 border border-gray-400 rounded-lg focus:outline-blue-200 appearance-none">
+                        <option>Pilih perawatan</option>
+                        <option>Vaksinasi</option>
+                        <option>Operasi minor & mayor</option>
+                        <option>Cek Darah</option>
+                        <option>Cek Mikroskopis</option>
+                        <option>Rawat Inap</option>
+                        <option>USG</option>
+                        <option>Pengobatan</option>
+                    </select>
                 </div>
         
                 <div>
@@ -144,26 +139,22 @@
         
                 <div>
                     <label class="block text-gray-700">Waktu</label>
-                    <div class="relative">
-                        <select id="timeSelect" class="w-full mt-1 px-4 py-2 border border-gray-400 rounded-lg focus:outline-blue-200 appearance-none">
-                            <option>Pilih waktu</option>
-                            <option>08:00 - 10:00</option>
-                            <option>10:00 - 12:00</option>
-                            <option>13:00 - 15:00</option>
-                        </select>
-                    </div>
+                    <select id="timeSelect" class="w-full mt-1 px-4 py-2 border border-gray-400 rounded-lg focus:outline-blue-200 appearance-none">
+                        <option>Pilih waktu</option>
+                        <option>08:00 - 10:00</option>
+                        <option>10:00 - 12:00</option>
+                        <option>13:00 - 15:00</option>
+                    </select>
                 </div>
         
                 <div>
                     <label class="block text-gray-700">Dokter</label>
-                    <div class="relative">
-                        <select id="doctorSelect" class="w-full mt-1 px-4 py-2 border border-gray-400 rounded-lg focus:outline-blue-200 appearance-none">
-                            <option>Pilih dokter</option>
-                            <option>Drh. Siti</option>
-                            <option>Drh. Andi</option>
-                            <option>Drh. Rina</option>
-                        </select>
-                    </div>
+                    <select id="doctorSelect" class="w-full mt-1 px-4 py-2 border border-gray-400 rounded-lg focus:outline-blue-200 appearance-none">
+                        <option>Pilih dokter</option>
+                        <option>Drh. Siti</option>
+                        <option>Drh. Andi</option>
+                        <option>Drh. Rina</option>
+                    </select>
                 </div>
         
                 <div class="md:col-span-2">
@@ -178,5 +169,6 @@
                 <button class="px-6 py-2 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg">Kirim</button>
                 <button class="px-6 py-2 bg-blue-100 hover:bg-blue-200 text-blue-800 font-medium rounded-lg">Batal</button>
             </div>
-        </div>  
+        </div>
+        
 </x-layout>

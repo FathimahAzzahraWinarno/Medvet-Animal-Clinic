@@ -86,3 +86,7 @@ Route::get('kelola-perawatan', function () {
 Route::get('kelola-FAQ', function () {
     return view('admin.kelolaFAQ');
 });
+
+Route::get('kelola-promo', function () {
+    return view('admin.kelolaPromo');
+});
