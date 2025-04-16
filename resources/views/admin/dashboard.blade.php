@@ -7,10 +7,10 @@
                 <h1 class="text-4xl font-bold text-gray-800">Welcome back, Olivia</h1>
                 <p class="text-sm font-semibold mt-2 text-gray-500">Even miracles take a little time</p>
             </div>
-            <button class="bg-blue-700 text-white flex items-center font-semibold px-4 py-2 rounded-lg hover:bg-blue-800 text-sm">
+            <a href="kelola-perawatan" class="flex text-sm items-center font-semibold bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-800 text-sm cursor-pointer">
                 <img src="{{ asset('images/plus.svg') }}" alt="Plus Icon" class="w-4 h-4 mr-1">
-                Perawatan & Layanan
-            </button>
+                Perawatan
+            </a>
         </div>
 
         <!-- Info Cards -->
