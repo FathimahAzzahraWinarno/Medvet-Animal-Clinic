@@ -5,10 +5,7 @@
             <h2 class="text-2xl font-bold text-gray-800 mb-4">Pertanyaan Umum</h2>
             <p class="text-gray-600 mb-12">Apapun yang kamu ingin tahu tentang Medvet Animal Clinic, dan tidak menemukan jawaban?</p>
             <div class="border-t border-gray-200">
-                <div class=" flex mt-4 justify-end gap-3">
-                    <img src="{{ asset('images/edit.svg') }}" alt="edit" class="w-5 h-5 cursor-pointer">
-                    <img src="{{ asset('images/delete.svg') }}" alt="delete" class="w-5 h-5 cursor-pointer">
-                </div>
+                    <x-popup-edit-faq></x-popup-edit-faq>
                 <details class="py-4 mb-3">
                     <summary class="cursor-pointer text-gray-800 font-semibold flex items-center justify-between">
                         <span>Apa saja yang tersedia di klinik ini?</span>
@@ -25,32 +22,45 @@
                         kesehatan dan kesejahteraan hewan kesayangan Anda.
                     </div>
                 </details>
-                <details class="py-4 border-t border-gray-200 mb-3">
-                    <summary class="cursor-pointer text-gray-800 font-semibold flex items-center justify-between">
-                        <span>Apakah bisa melakukan rawat inap untuk hewan yang sakit?</span>
-                        <img src="{{ asset('images/plus-circle.svg') }}" alt="Plus" class="w-5 h-5" />
-                    </summary>
-                    <div class="mt-2 text-gray-600 text-justify">
-                        Klinik menyediakan fasilitas rawat inap bagi hewan yang membutuhkan perawatan lebih
-                        lanjut. Hewan yang sedang sakit atau dalam masa pemulihan setelah operasi dapat dirawat
-                        dengan pengawasan dokter hewan profesional, sehingga mendapatkan perawatan yang optimal
-                        sesuai dengan kebutuhannya.                    
+            </div>  
+
+                
+            <div class="border-t border-gray-200">
+                <x-popup-edit-faq></x-popup-edit-faq>
+            <details class="py-4 mb-3">
+                <summary class="cursor-pointer text-gray-800 font-semibold flex items-center justify-between">
+                    <span>Apakah bisa melakukan rawat inap untuk hewan yang sakit?</span>
+                    <img src="{{ asset('images/plus-circle.svg') }}" alt="Plus" class="w-5 h-5" />
+                </summary>
+                <div class="mt-2 text-gray-600 text-justify">
+                    Klinik menyediakan fasilitas rawat inap bagi hewan yang membutuhkan perawatan lebih
+                    lanjut. Hewan yang sedang sakit atau dalam masa pemulihan setelah operasi dapat dirawat
+                    dengan pengawasan dokter hewan profesional, sehingga mendapatkan perawatan yang optimal
+                    sesuai dengan kebutuhannya.                    
                     </div>
                 </details>
-                <details class="py-4 border-t border-gray-200 mb-3">
+            </div>  
+
+                <div class="border-t border-gray-200">
+                    <x-popup-edit-faq></x-popup-edit-faq>
+                <details class="py-4 mb-3">
                     <summary class="cursor-pointer text-gray-800 font-semibold flex items-center justify-between">
-                        <span>Apakah harus membuat janji terlebih dahulu sebelum datang?</span>
-                        <img src="{{ asset('images/plus-circle.svg') }}" alt="Plus" class="w-5 h-5" />
-                    </summary>
-                    <div class="mt-2 text-gray-600 text-justify">
-                        Sebaiknya membuat janji terlebih dahulu sebelum datang ke klinik agar mendapatkan
-                        pelayanan yang lebih cepat dan terjadwal. Namun, klinik juga menerima pasien yang
-                        datang langsung tanpa janji temu, tetapi kemungkinan harus menunggu lebih lama karena
-                        antrean bisa cukup panjang, terutama pada jam sibuk atau saat banyak pasien yang sudah
-                        memiliki reservasi sebelumnya.                    
-                    </div>
+                                <span>Apakah harus membuat janji terlebih dahulu sebelum datang?</span>
+                                <img src="{{ asset('images/plus-circle.svg') }}" alt="Plus" class="w-5 h-5" />
+                            </summary>
+                            <div class="mt-2 text-gray-600 text-justify">
+                                Sebaiknya membuat janji terlebih dahulu sebelum datang ke klinik agar mendapatkan
+                                pelayanan yang lebih cepat dan terjadwal. Namun, klinik juga menerima pasien yang
+                                datang langsung tanpa janji temu, tetapi kemungkinan harus menunggu lebih lama karena
+                                antrean bisa cukup panjang, terutama pada jam sibuk atau saat banyak pasien yang sudah
+                                memiliki reservasi sebelumnya.                    
+                            </div>
                 </details>
-                <details class="py-4 border-t border-gray-200 mb-3">
+            </div>  
+
+            <div class="border-t border-gray-200">
+                <x-popup-edit-faq></x-popup-edit-faq>
+                <details class="py-4 mb-3">
                     <summary class="cursor-pointer text-gray-800 font-semibold flex items-center justify-between">
                         <span>Bagaimana cara membuat janji temu?</span>
                         <img src="{{ asset('images/plus-circle.svg') }}" alt="Plus" class="w-5 h-5" />
@@ -61,7 +71,11 @@
                         antrean panjang saat datang ke klinik.                   
                      </div>
                 </details>
-                <details class="py-4 border-t border-gray-200 mb-3">
+            </div>    
+
+            <div class="border-t border-gray-200">
+                <x-popup-edit-faq></x-popup-edit-faq>
+                <details class="py-4 mb-3">
                     <summary class="cursor-pointer text-gray-800 font-semibold flex items-center justify-between">
                         <span>Kapan waktu yang tepat untuk memvaksin hewan peliharaan saya?</span>
                         <img src="{{ asset('images/plus-circle.svg') }}" alt="Plus" class="w-5 h-5" />
@@ -74,7 +88,11 @@
                         yang tepat, Anda dapat berkonsultasi langsung dengan dokter hewan di klinik.                   
                     </div>
                 </details>
-                <details class="py-4 border-t border-gray-200 mb-3">
+            </div>
+
+            <div class="border-t border-gray-200">
+                <x-popup-edit-faq></x-popup-edit-faq>
+                <details class="py-4 mb-3">
                     <summary class="cursor-pointer text-gray-800 font-semibold flex items-center justify-between">
                         <span>Apakah klinik menyimpan rekam medis hewan peliharaan pelanggan?</span>
                         <img src="{{ asset('images/plus-circle.svg') }}" alt="Plus" class="w-5 h-5" />
@@ -86,7 +104,11 @@
                         kunjungan.                   
                      </div>
                 </details>
-                <details class="py-4 border-t border-gray-200 mb-3">
+            </div>
+
+            <div class="border-t border-gray-200">
+                <x-popup-edit-faq></x-popup-edit-faq>
+                <details class="py-4 mb-3">
                     <summary class="cursor-pointer text-gray-800 font-semibold flex items-center justify-between">
                         <span>Bagaimana saya mendapatkan rekam medis hewan saya?</span>
                         <img src="{{ asset('images/plus-circle.svg') }}" alt="Plus" class="w-5 h-5" />
@@ -97,6 +119,7 @@
                         secara digital dan dapat diakses kapan saja untuk memudahkan pemantauan kesehatan hewan Anda. 
                     </div>
                 </details>
+            </div>
             </div>
         </div>
 
