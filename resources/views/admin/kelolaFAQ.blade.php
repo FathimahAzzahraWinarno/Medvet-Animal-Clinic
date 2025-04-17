@@ -5,6 +5,10 @@
             <h2 class="text-2xl font-bold text-gray-800 mb-4">Pertanyaan Umum</h2>
             <p class="text-gray-600 mb-12">Apapun yang kamu ingin tahu tentang Medvet Animal Clinic, dan tidak menemukan jawaban?</p>
             <div class="border-t border-gray-200">
+                <div class=" flex mt-4 justify-end gap-3">
+                    <img src="{{ asset('images/edit.svg') }}" alt="edit" class="w-5 h-5 cursor-pointer">
+                    <img src="{{ asset('images/delete.svg') }}" alt="delete" class="w-5 h-5 cursor-pointer">
+                </div>
                 <details class="py-4 mb-3">
                     <summary class="cursor-pointer text-gray-800 font-semibold flex items-center justify-between">
                         <span>Apa saja yang tersedia di klinik ini?</span>
