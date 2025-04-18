@@ -1,4 +1,4 @@
-<x-layout-admin title="dashboard">
+<x-layout-dokter title="dashboard">
     <!-- Bagian Konten Dashboard (Bagian Kanan) -->
     <div class="flex-1 h-screen overflow-y-auto">
     <div class="bg-white p-10 shadow-md h-full">
@@ -7,49 +7,13 @@
                 <h1 class="text-4xl font-bold text-gray-800">Welcome back, Olivia</h1>
                 <p class="text-sm font-semibold mt-2 text-gray-500">Even miracles take a little time</p>
             </div>
-            <a href="kelola-perawatan" class="flex text-sm items-center font-semibold bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-800 text-sm cursor-pointer">
-                <img src="{{ asset('images/plus.svg') }}" alt="Plus Icon" class="w-4 h-4 mr-1">
-                Perawatan
-            </a>
         </div>
-
-        <!-- Info Cards -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-10 mb-15">
-            <div class="bg-gray-50 p-4 rounded-lg shadow">
-                <p class="text-l font-bold text-gray-500">Total Pelanggan</p>
-                <p class="text-3xl font-bold text-gray-800 mt-5 mb-5">289</p>
-            </div>
-            <div class="bg-gray-50 p-4 rounded-lg shadow">
-                <p class="text-l font-bold text-gray-500">Reservasi Hari ini</p>
-                <p class="text-3xl font-bold text-gray-800 mt-5 mb-5">15</p>
-            </div>
-            <div class="bg-gray-50 p-4 rounded-lg shadow">
-                <p class="text-l font-bold text-gray-500">Data Dokter</p>
-                <p class="text-3xl font-bold text-gray-800 mt-5 mb-5">4</p>
-            </div>
-        </div>
-
+        <h1 class="text-4xl font-semibold text-center mt-20 text-gray-900 mb-6 font-['Inter']">Reservasi Terbaru</h1>
         <!-- Filter & Table -->
         <div class="flex justify-between items-center mb-4">
-            <div class="flex items-center space-x-2">
-                <button type="button" 
-                        class="text-gray-800 
-                        hover:text-white border border-gray-800 
-                        hover:bg-gray-500 focus:ring-1 
-                        focus:outline-none focus:ring-gray-300 
-                        font-medium rounded-lg text-l px-4 py-2 
-                        text-center me-2 mb-1 dark:border-gray-400 
-                        dark:text-gray-800 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-800">semua</button>
-                <button type="button" 
-                        class="text-gray-800 
-                        hover:text-white border border-gray-800 
-                        hover:bg-gray-500 focus:ring-1 focus:outline-none 
-                        focus:ring-gray-300 font-medium rounded-lg 
-                        text-l px-4 py-2 text-center me-2 mb-1 
-                        dark:border-gray-400 dark:text-gray-800 
-                        dark:hover:text-white dark:hover:bg-gray-600 
-                        dark:focus:ring-gray-800">Filter</button>
-            </div>
+                <a href="jadwal-reservasi-dokter" class="flex text-sm items-center font-semibold bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-800 text-sm cursor-pointer">
+                    Jadwal Reservasi
+                </a>
         </div>
 
         <div class="overflow-x-auto shadow-lg rounded-xl">
@@ -149,4 +113,4 @@
     </div>
 </div>
 
-</x-layout-admin>
+</x-layout-dokter>

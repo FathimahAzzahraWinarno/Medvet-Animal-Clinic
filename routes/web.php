@@ -90,3 +90,15 @@ Route::get('kelola-FAQ', function () {
 Route::get('kelola-promo', function () {
     return view('admin.kelolaPromo');
 });
+
+Route::get('dashboard-dokter', function () {
+    return view('dokter.dashboardDokter');
+});
+
+Route::get('jadwal-reservasi-dokter', function () {
+    return view('dokter.jadwalReservasiDokter');
+});
+
+Route::get('input-rekam-medis', function () {
+    return view('dokter.inputRekamMedis');
+});
