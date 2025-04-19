@@ -1,7 +1,7 @@
 <div class="flex min-h-screen font-['Inter']">
     <aside class="w-64 bg-white border-r border-gray-300 p-5 flex flex-col justify-between">
         <div>
-          <a href="dashboard">
+          <a href="dashboard-dokter">
           <img src="{{ asset('images/logo.svg') }}" alt="Logo Medvetco" class="h-10 mb-12" /></a>
           <div class="flex items-center gap-3 mb-12">
             <img src="{{ asset('images/karyawan.jpeg') }}" class="w-13 h-13 rounded-full" />
