@@ -9,21 +9,21 @@
         <p class="text-sm text-gray-300 text-left mb-6">Selamat datang di Medvet Animal Clinic.</p>
         
         <form>
-            <div id="name-field" class="mb-4">
-                <label class="block text-gray-300 text-sm mb-2">Nama<span class="text-red-500">*</span></label>
-                <input placeholder="Masukan Nama" type="text" class="w-full p-3 rounded-md bg-gray-500 text-white focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Masukkan nama kamu">
+            <div class="relative mb-5">
+                <input type="text" id="Email" class="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " />
+                <label for="Email" class="absolute text-sm text-gray-500 dark:text-gray-700 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] px-2 peer-focus:px-2 peer-focus:text-blue-800 peer-focus:dark:text-blue-900 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1">Masukan Email<span class="text-red-500">*</span></label>
             </div>
 
-            <div class="mb-4">
-                <label class="block text-gray-300 text-sm mb-2">Email<span class="text-red-500">*</span></label>
-                <input placeholder="Masukan email" type="email" class="w-full p-3 rounded-md bg-gray-500 text-white focus:outline-none focus:ring focus:ring-blue-200" placeholder="Masukkan email kamu">
+            <div class="relative mb-5">
+                <input type="text" id="nama" class="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " />
+                <label for="nama" class="absolute text-sm text-gray-500 dark:text-gray-700 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] px-2 peer-focus:px-2 peer-focus:text-blue-800 peer-focus:dark:text-blue-900 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1">Masukan Nama<span class="text-red-500">*</span></label>
             </div>
 
-            <div class="mb-4">
-                <label class="block text-gray-300 text-sm mb-2">Password<span class="text-red-500">*</span></label>
-                <input placeholder="Masukan Password" type="password" class="w-full p-3 rounded-md bg-gray-500 text-white focus:outline-none focus:ring focus:ring-blue-200" placeholder="Buat kata sandi">
-                <p class="text-xs text-gray-700 mt-1">Minimal 8 karakter</p>
+            <div class="relative">
+                <input type="text" id="password" class="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " />
+                <label for="password" class="absolute text-sm text-gray-500 dark:text-gray-700 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] px-2 peer-focus:px-2 peer-focus:text-blue-800 peer-focus:dark:text-blue-900 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1">Masukan Password<span class="text-red-500">*</span></label>
             </div>
+            <p class="text-xs text-gray-700 mt-1 mb-2">Minimal 8 karakter</p>
 
             <button id="submit-button" class="w-full bg-blue-700 hover:bg-blue-800 text-white font-semibold py-3 rounded-md transition">Masuk</button>
         </form>
