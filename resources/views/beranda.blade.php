@@ -18,19 +18,8 @@
               <span class="block font-['Inter']">Medvet!</span>
             </h1>
             <div class="flex justify-center space-x-10 mb-20">
-              <img src="{{ asset('images/doggy.svg') }}" alt="doggy" class="w-52 h-52">
-              <img src="{{ asset('images/kitten.svg') }}" alt="kitten" class="w-52 h-52">
-          </div>
-        
-            <!-- Search Box -->
-            <h1 class="text-2xl font-semibold text-gray-900 mb-4 font-['Inter']">
-              Kesehatan Hewan Kesayangan dimulai dari sini
-            </h1>
-            <div class="bg-blue-100 rounded-3xl p-6 max-w-3xl mx-auto flex items-center shadow-lg font-['Inter']">
-                <input type="text" placeholder="Cari perawatan" 
-                    class="w-[80%] rounded-[10px] px-3 py-2 focus:outline-none focus:ring-1 focus:ring-blue-200 bg-white">
-                <button class="bg-[#234bd2] text-white w-[20%] rounded-[10px] px-3 py-2 hover:bg-[#234bd2] ml-6">Cari</button>
-            </div>            
+              <img src="{{ asset('images/doggy.svg') }}" alt="doggy" class="w-60 h-60">
+              <img src="{{ asset('images/kitten.svg') }}" alt="kitten" class="w-60 h-60">
           </div>
         </section>
 
