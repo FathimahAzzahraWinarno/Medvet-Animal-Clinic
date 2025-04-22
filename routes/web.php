@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\PerawatanController;
+use App\Http\Controllers\PromoController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -17,9 +18,7 @@ Route::get('FAQ', function () {
 
 Route::get('/perawatan', [PerawatanController::class, 'index']);
 
-Route::get('promo', function () {
-    return view('promo');
-});
+Route::get('/promo', [PromoController::class, 'index']);
 
 Route::get('produk', function () {
     return view('produk');

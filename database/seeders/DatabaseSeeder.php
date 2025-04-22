@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Perawatan;
+use App\Models\Promo;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -93,6 +94,20 @@ class DatabaseSeeder extends Seeder
             'diskon' => 10,
             'is_diskon' => false,
             'gambar' => 'images/usg.svg'
+        ]);
+
+        Promo::create([
+            'id' => 'PR1',
+            'nama' => 'Promo Pelanggan Baru',
+            'harga' => 100000,
+            'diskon' => 10
+        ]);
+
+        Promo::create([
+            'id' => 'PR2',
+            'nama' => '10 kali datang, 1 kali dimanjakan',
+            'harga' => 100000,
+            'diskon' => 10
         ]);
     }
 }
