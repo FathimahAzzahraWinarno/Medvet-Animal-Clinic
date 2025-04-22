@@ -22,6 +22,8 @@ return new class extends Migration
             $table->string('tindakan');
             $table->string('pesan');
             $table->timestamps();
+
+            $table->foreign('id_pengelola')->references('id')->on('pengelolas')->onDelete('cascade');
         });
     }
 

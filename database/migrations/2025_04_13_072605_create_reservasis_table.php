@@ -20,6 +20,11 @@ return new class extends Migration
             $table->string('waktu');
             $table->date('tanggal');
             $table->timestamps();
+
+            $table->foreign('id_hewan')->references('id')->on('hewans')->onDelete('cascade');
+            $table->foreign('id_user')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('id_perawatan')->references('id')->on('perawatans')->onDelete('cascade');
+            $table->foreign('id_dokter')->references('id')->on('dokters')->onDelete('cascade');
         });
     }
 
