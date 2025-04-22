@@ -20,62 +20,14 @@
     
         <div class="grid grid-cols-1 md:grid-cols-3 gap-x-16 gap-y-24">
             <!-- Card 1 -->
+            @foreach ($perawatans as $perawatan)
             <div class="bg-white p-6 shadow-md flex flex-col items-center text-center rounded-[16px] border border-blue-200 shadow-[0px_0px_10px_rgba(59,130,246,0.3)]">
-                <img src="{{ asset('images/vaksinasi.svg') }}" alt="Vaksinasi" class="w-28 h-28 mb-4">
+                <img src="{{ asset($perawatan->gambar) }}" alt="{{ $perawatan->nama }}" class="w-28 h-28 mb-4">
                 <button class="bg-[#234bd2] text-white px-4 py-2 rounded-lg text-sm flex items-center gap-1">
-                    VAKSINASI
+                    {{ strtoupper($perawatan->nama) }}
                 </button>
             </div>
-    
-            <!-- Card 2 -->
-            <div class="bg-white p-6 shadow-md flex flex-col items-center text-center rounded-[16px] border border-blue-200 shadow-[0px_0px_10px_rgba(59,130,246,0.3)]">
-                <img src="{{ asset('images/operasi.svg') }}" alt="Operasi" class="w-28 h-28 mb-4">
-                <button class="bg-[#234bd2] text-white px-4 py-2 rounded-lg text-sm flex items-center gap-1">
-                    OPERASI MINOR & MAYOR
-                </button>
-            </div>
-    
-            <!-- Card 3 -->
-            <div class="bg-white p-6 shadow-md flex flex-col items-center text-center rounded-[16px] border border-blue-200 shadow-[0px_0px_10px_rgba(59,130,246,0.3)]">
-                <img src="{{ asset('images/pengobatan.svg') }}" alt="Pengobatan" class="w-28 h-28 mb-4">
-                <button class="bg-[#234bd2] text-white px-4 py-2 rounded-lg text-sm flex items-center gap-1">
-                    PENGOBATAN
-                </button>
-            </div>
-    
-            <!-- Card 4 -->
-            <div class="bg-white p-6 shadow-md flex flex-col items-center text-center rounded-[16px] border border-blue-200 shadow-[0px_0px_10px_rgba(59,130,246,0.3)]">
-                <img src="{{ asset('images/cekDarah.svg') }}" alt="cekDarah" class="w-28 h-28 mb-4">
-                <button class="bg-[#234bd2] text-white px-4 py-2 rounded-lg text-sm flex items-center gap-1">
-                    CEK DARAH
-                </button>
-            </div>
-    
-            <!-- Card 5 -->
-            <div class="bg-white p-6 shadow-md flex flex-col items-center text-center rounded-[16px] border border-blue-200 shadow-[0px_0px_10px_rgba(59,130,246,0.3)]">
-                <img src="{{ asset('images/mikroskop.svg') }}" alt="mikroskop" class="w-28 h-28 mb-4">
-                <button class="bg-[#234bd2] text-white px-4 py-2 rounded-lg text-sm flex items-center gap-1">
-                    CEK MIKROSKOPIS
-                </button>
-            </div>
-    
-            <!-- Card 6 -->
-            <div class="bg-white p-6 shadow-md flex flex-col items-center text-center rounded-[16px] border border-blue-200 shadow-[0px_0px_10px_rgba(59,130,246,0.3)]">
-                <img src="{{ asset('images/rawatInap.svg') }}" alt="Rawat Inap" class="w-28 h-28 mb-4">
-                <button class="bg-[#234bd2] text-white px-4 py-2 rounded-lg text-sm flex items-center gap-1">
-                    RAWAT INAP
-                </button>
-            </div>
-    
-            <!-- Card 7 -->
-            <div class="bg-white p-6 shadow-md flex flex-col items-center text-center rounded-[16px] border border-blue-200 shadow-[0px_0px_10px_rgba(59,130,246,0.3)]">
-                <img src="{{ asset('images/usg.svg') }}" alt="usg" class="w-28 h-28 mb-4">
-                <button class="bg-[#234bd2] text-white px-4 py-2 rounded-lg text-sm flex items-center gap-1">
-                    USG
-                </button>
-            </div>
+        @endforeach
         </div>
     </div>
-    
-    
 </x-layout>
