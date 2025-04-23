@@ -7,50 +7,30 @@
             <div class="md:col-span-2">
                 <div class="flex flex-wrap justify-center gap-15 p-4">
                     <!-- Card 1 -->
-                    <div class="w-full md:w-[45%] bg-white border border-gray-200 rounded-xl shadow-sm p-6">
-                      <div class="flex justify-between relative">
-                        <div>
-                          <h5 class="text-xl font-semibold text-gray-800">Promo Grooming</h5>
-                        </div>
-                        <x-popup-card-promo></x-popup-card-promo>
+                    @foreach ($promos as $promo)
+                      <div class="w-full md:w-[45%] bg-white border border-gray-200 rounded-xl shadow-sm p-6">
+                          <div class="flex justify-between relative">
+                              <div>
+                                  <h5 class="text-xl font-semibold text-gray-800">{{ $promo->nama }}</h5>
+                              </div>
+                              <x-popup-card-promo :promo="$promo" />
+                          </div>
+                          <ul class="mt-4 space-y-2 text-gray-700">
+                              <li class="flex items-center gap-2 font-semibold">
+                                  <img src="{{ asset('images/promo.svg') }}" alt="promo" class="w-5 h-5">
+                                  {{ $promo->diskon }}% OFF
+                              </li>
+                              <li class="flex items-center font-semibold gap-2">
+                                  <img src="{{ asset('images/price.svg') }}" alt="price" class="w-5 h-5">
+                                  Start From Rp{{ number_format($promo->harga, 0, ',', '.') }}
+                              </li>
+                          </ul>
+                          <div class="mt-4">
+                              <span class="block text-center text-sm font-semibold bg-blue-100 text-blue-700 py-1.5 rounded-full">Aktif</span>
+                          </div>
                       </div>
-                      <ul class="mt-4 space-y-2 text-gray-700">
-                        <li class="flex items-center gap-2 font-semibold">
-                            <img src="{{ asset('images/promo.svg') }}" alt="promo" class="w-5 h-5">
-                          30% OFF
-                        </li>
-                        <li class="flex items-center font-semibold gap-2">
-                            <img src="{{ asset('images/price.svg') }}" alt="price" class="w-5 h-5">
-                          Start From 100K
-                        </li>
-                      </ul>
-                      <div class="mt-4">
-                        <span class="block text-center text-sm font-semibold bg-blue-100 text-blue-700 py-1.5 rounded-full">Aktif</span>
-                      </div>
-                    </div>
-                  
-                    <!-- Card 2 -->
-                    <div class="w-full md:w-[45%] bg-white border border-gray-200 rounded-xl shadow-sm p-6">
-                      <div class="flex justify-between relative">
-                        <div>
-                          <h5 class="text-xl font-semibold text-gray-800">Promo Grooming</h5>
-                        </div>
-                        <x-popup-card-promo></x-popup-card-promo>
-                      </div>
-                      <ul class="mt-4 space-y-2 text-gray-700">
-                        <li class="flex items-center gap-2 font-semibold">
-                            <img src="{{ asset('images/promo.svg') }}" alt="promo" class="w-5 h-5">
-                          30% OFF
-                        </li>
-                        <li class="flex items-center font-semibold gap-2">
-                            <img src="{{ asset('images/price.svg') }}" alt="price" class="w-5 h-5">
-                          Start From 100K
-                        </li>
-                      </ul>
-                      <div class="mt-4">
-                        <span class="block text-center text-sm font-semibold bg-blue-100 text-blue-700 py-1.5 rounded-full">Aktif</span>
-                      </div>
-                    </div>
+                    @endforeach
+
                   </div>
             </div>
         </div>

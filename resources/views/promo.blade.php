@@ -35,25 +35,6 @@
                     </ul>
                 </div>
             @endforeach
-              
-                {{-- <!-- Card 2 -->
-                <div class="w-full md:w-[45%] bg-white border border-gray-200 rounded-xl shadow-sm p-6">
-                  <div class="flex justify-between relative">
-                    <div>
-                      <h5 class="text-xl font-semibold text-gray-800">Promo Grooming</h5>
-                    </div>
-                  </div>
-                  <ul class="mt-4 space-y-2 text-gray-700">
-                    <li class="flex items-center gap-2 font-semibold">
-                        <img src="{{ asset('images/promo.svg') }}" alt="promo" class="w-5 h-5">
-                      30% OFF
-                    </li>
-                    <li class="flex items-center font-semibold gap-2">
-                        <img src="{{ asset('images/price.svg') }}" alt="price" class="w-5 h-5">
-                      Start From 100K
-                    </li>
-                  </ul>
-                </div> --}}
               </div>
         </div>
     </div>

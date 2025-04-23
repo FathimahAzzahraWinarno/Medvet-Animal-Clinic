@@ -43,31 +43,17 @@
               Cari perawatan terbaik untuk hewanmu!
             </h1>
       
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <!-- Card 1 -->
-          <div class="bg-white p-6 shadow-md flex flex-col items-center text-center rounded-[16px] border border-blue-200 shadow-[0px_0px_10px_rgba(59,130,246,0.3)]">
-            <img src="{{ asset('images/vaksinasi.svg') }}" alt="Vaksinasi" class="w-28 h-28 mb-4">
-            <button class="bg-[#234bd2] text-white px-4 py-2 rounded-lg text-sm flex items-center gap-1">
-              VAKSINASI
-            </button>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+              @foreach ($perawatans as $perawatan)
+                  <div class="bg-white p-6 shadow-md flex flex-col items-center text-center rounded-[16px] border border-blue-200 shadow-[0px_0px_10px_rgba(59,130,246,0.3)]">
+                      <img src="{{ asset($perawatan->gambar) }}" alt="{{ $perawatan->nama }}" class="w-28 h-28 mb-4">
+                      <button class="bg-[#234bd2] text-white px-4 py-2 rounded-lg text-sm flex items-center gap-1">
+                          {{ strtoupper($perawatan->nama) }}
+                      </button>
+                  </div>
+              @endforeach
           </div>
-      
-          <!-- Card 2 -->
-          <div class="bg-white p-6 shadow-md flex flex-col items-center text-center rounded-[16px] border border-blue-200 shadow-[0px_0px_10px_rgba(59,130,246,0.3)]">
-            <img src="{{ asset('images/operasi.svg') }}" alt="Operasi" class="w-28 h-28 mb-4">
-            <button class="bg-[#234bd2] text-white px-4 py-2 rounded-lg text-sm flex items-center gap-1">
-              OPERASI MINOR & MAYOR
-            </button>
-          </div>
-      
-          <!-- Card 3 -->
-          <div class="bg-white p-6 shadow-md flex flex-col items-center text-center rounded-[16px] border border-blue-200 shadow-[0px_0px_10px_rgba(59,130,246,0.3)]">
-            <img src="{{ asset('images/pengobatan.svg') }}" alt="Pengobatan" class="w-28 h-28 mb-4">
-            <button class="bg-[#234bd2] text-white px-4 py-2 rounded-lg text-sm flex items-center gap-1">
-              PENGOBATAN
-            </button>
-          </div>
-        </div>
+          
       
         <div class="text-center mt-6 mb-20">
           <a href="perawatan" class="text-[#234bd2] font-semibold flex items-center justify-center gap-1">

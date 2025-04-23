@@ -86,7 +86,7 @@ class DatabaseSeeder extends Seeder
 
         Perawatan::create([
             'id' => 'P7',
-            'nama' => 'usg',
+            'nama' => 'USG',
             'deskripsi' => 'Pemeriksaan medis menggunakan gelombang suara untuk menghasilkan gambar
                             organ dalam tubuh, membantu mendeteksi kondisi seperti kehamilan, gangguan
                             organ, atau tumor.',

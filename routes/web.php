@@ -1,12 +1,13 @@
 <?php
 
+use App\Http\Controllers\BerandaController;
+use App\Http\Controllers\KelolaPerawatanController;
+use App\Http\Controllers\KelolaPromoController;
 use App\Http\Controllers\PerawatanController;
 use App\Http\Controllers\PromoController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('beranda');
-});
+Route::get('/', [BerandaController::class, 'index']);
 
 Route::get('tentang_kami', function () {
     return view('tentang_kami');
@@ -77,17 +78,13 @@ Route::get('pelanggan', function () {
 });
 
 
-Route::get('kelola-perawatan', function () {
-    return view('admin.kelolaPerawatan');
-});
+Route::get('kelola-perawatan', [KelolaPerawatanController::class, 'kelolaPerawatan']);
 
 Route::get('kelola-FAQ', function () {
     return view('admin.kelolaFAQ');
 });
 
-Route::get('kelola-promo', function () {
-    return view('admin.kelolaPromo');
-});
+Route::get('kelola-promo', [KelolaPromoController::class, 'kelolaPromo']);
 
 Route::get('dashboard-dokter', function () {
     return view('dokter.dashboardDokter');
