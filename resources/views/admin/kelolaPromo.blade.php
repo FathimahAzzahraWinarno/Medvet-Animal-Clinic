@@ -25,9 +25,6 @@
                                   Start From Rp{{ number_format($promo->harga, 0, ',', '.') }}
                               </li>
                           </ul>
-                          <div class="mt-4">
-                              <span class="block text-center text-sm font-semibold bg-blue-100 text-blue-700 py-1.5 rounded-full">Aktif</span>
-                          </div>
                       </div>
                     @endforeach
 

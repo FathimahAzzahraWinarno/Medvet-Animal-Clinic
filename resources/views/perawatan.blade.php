@@ -38,7 +38,7 @@
                     </div>
                     <div class="px-4 py-2">
                         <p>{{ $perawatan->deskripsi }}</p>
-                        <p class="mt-2 font-semibold text-gray-800">Rp{{ number_format($perawatan->harga, 0, ',', '.') }}</p>
+                        <p class="mt-2 font-semibold text-gray-800">Start From Rp{{ number_format($perawatan->harga, 0, ',', '.') }}</p>
                     </div>
                 </div>
                  </div>
