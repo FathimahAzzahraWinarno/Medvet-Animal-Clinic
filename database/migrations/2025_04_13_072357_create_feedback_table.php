@@ -13,9 +13,12 @@ return new class extends Migration
     {
         Schema::create('feedback', function (Blueprint $table) {
             $table->string('id')->primary();
+            $table->string('id_user');
             $table->string('title');
             $table->string('detail');
             $table->timestamps();
+
+            $table->foreign('id_user')->references('id')->on('users')->onDelete('cascade');
         });
     }
 
