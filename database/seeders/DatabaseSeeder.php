@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Faq;
 use App\Models\Perawatan;
 use App\Models\Promo;
 use App\Models\User;
@@ -100,6 +101,48 @@ class DatabaseSeeder extends Seeder
             'nama' => '10 kali datang, 1 kali dimanjakan',
             'harga' => 100000,
             'diskon' => 10
+        ]);
+
+        Faq::create([
+            'id' => 'F1',
+            'title' => 'Apa saja yang tersedia di klinik?',
+            'detail' => 'Klinik ini menyediakan berbagai layanan kesehatan untuk hewan peliharaan, termasuk operasi minor dan mayor, pengobatan, serta fasilitas rawat inap bagi hewan yang membutuhkan perawatan lebih lanjut. Selain itu, tersedia layanan pemeriksaan medis seperti cek darah, cek mikroskopis, dan USG untuk mendiagnosis kondisi kesehatan hewan secara detail mendetail. Klinik ini juga menawarkan layanan vaksinasi guna mencegah berbagai penyakit menular pada hewan peliharaan. Dengan layanan yang lengkap, klinik ini berkomitmen untuk memberikan perawatan terbaik demi kesehatan dan kesejahteraan hewan kesayangan anda.'
+        ]);
+
+        Faq::create([
+            'id' => 'F2',
+            'title' => 'Apakah bisa melakukan rawat inap untuk hewan yang sakit?',
+            'detail' => 'Klinik ini menyediakan fasilitas rawat inap bagi hewan yang membutuhkan perawatan lebih lanjut. Hewan yang sedang sakit atau dalam masa pemulihan setelah operasi dapat dirawat dengan pengawasan dokter hewan profesional, sehingga mendapatkan perawatan yang optimal sesuai dengan kebutuhannya.'
+        ]);
+
+        Faq::create([
+            'id' => 'F3',
+            'title' => 'Apakah harus membuat janji terlebih dahulu sebelum datang?',
+            'detail' => 'Sebaiknya membuat janji terlebih dahulu sebelum datang ke klinik agar mendapatkan pelayanan yang lebih cepat dan terjadwal. Namun, klinik juga menerima pasien yang datang langsung tanpa melakukan janji temu, tetapi kemungkinan harus menunggu lebih lama karena antrian bisa cukup panjang, terutama pada jam sibuk atau saat banyak pasien yang sudah membuat janji temu sebelumnya.'
+        ]);
+
+        Faq::create([
+            'id' => 'F4',
+            'title' => 'Bagaimana cara membuat janji temu?',
+            'detail' => 'Anda dapat melakukan janji temu dengan melakukan reservasi melalui website klinik. Dengan reservasi online, anda bisa memilih jadwal yang tersedia dan mengindari antrian panjang saat datang ke klinik.'
+        ]);
+
+        Faq::create([
+            'id' => 'F5',
+            'title' => 'Kapan waktu yang tepat untuk memvaksin hewan peliharaan saya?',
+            'detail' => 'Waktu yang tepat untuk memvaksin hewan peliharaan anda tergantung pada jenis hewan dan vaksinnya. Umumnya, vaksinasi pertama diberikan saat hewan berusia beberapa minggu, seperti anak anjing atau anak kucing yang mulai divaksin pada usia 6-8 minggu, kemudian dilanjutkan dengan vaksin booster sesuai jadwal yang direkomendasikan oleh dokter hewan. Untuk memastikan jadwal vaksinasi yang tepat, anda dapat berkonsultasi langsung dengan dokter hewan di klinik.'
+        ]);
+
+        Faq::create([
+            'id' => 'F6',
+            'title' => 'Apakah klinik menyimpan rekam medis hewan peliharaan pelanggan?',
+            'detail' => 'Klinik menyimpan rekam medis hewan peliharaan pelanggan dalam bentuk digital. Dengan sistem rekam medis digital, riwayat kesehatan hewan dapat tercatat dengan rapih dan aman, sehingga memudahkan dokter hewan dalam memberikan diagnosis serta perawatan yang sesuai setiap kunjungannya.'
+        ]);
+
+        Faq::create([
+            'id' => 'F7',
+            'title' => 'Bagaimana saya mendapatkan rekam medis hewan saya?',
+            'detail' => 'Anda dapat mengakses rekam medis hewan peliharaan melalui akun pelanggan di website klinik. Semua riwayat kesehatan, termasuk hasil pemeriksaan, vaksinasi, dan perawatan, akan tersimpan secara digital dan dapat diakses kapan saja untuk memudahkan pemantauan kesehatan hewan anda.'
         ]);
     }
 }

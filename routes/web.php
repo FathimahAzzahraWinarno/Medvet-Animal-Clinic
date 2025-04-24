@@ -1,10 +1,13 @@
 <?php
 
 use App\Http\Controllers\BerandaController;
+use App\Http\Controllers\FaqController;
+use App\Http\Controllers\KelolaFaqController;
 use App\Http\Controllers\KelolaPerawatanController;
 use App\Http\Controllers\KelolaPromoController;
 use App\Http\Controllers\PerawatanController;
 use App\Http\Controllers\PromoController;
+use App\Models\Faq;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [BerandaController::class, 'index']);
@@ -13,9 +16,7 @@ Route::get('tentang_kami', function () {
     return view('tentang_kami');
 });
 
-Route::get('FAQ', function () {
-    return view('FAQ');
-});
+Route::get('/FAQ', [FaqController::class, 'index']);
 
 Route::get('/perawatan', [PerawatanController::class, 'index']);
 
@@ -80,9 +81,8 @@ Route::get('pelanggan', function () {
 
 Route::get('kelola-perawatan', [KelolaPerawatanController::class, 'kelolaPerawatan']);
 
-Route::get('kelola-FAQ', function () {
-    return view('admin.kelolaFAQ');
-});
+Route::get('kelola-FAQ', [KelolaFaqController::class, 'kelolaFaq']);
+
 
 Route::get('kelola-promo', [KelolaPromoController::class, 'kelolaPromo']);
 
