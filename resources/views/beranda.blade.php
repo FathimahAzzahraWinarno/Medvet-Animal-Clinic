@@ -24,7 +24,7 @@
         </section>
 
         <div class="bg-[#234bd2] text-white p-6 text-center font-['Inter']">
-          <h1 class="text-2xl font-bold py-4 mt-10">Tentang Kami</h1>
+          <h1 class="text-2xl font-bold py-4">Tentang Kami</h1>
           <p>Praktik Dokter Hewan MedVet Animal Klinik berdiri tahun 2022, berlokasi di Tj. Sari, Medan, Indonesia. MedVet Animal Klinik bergerak di 
               <span class="block"> bidang Pelayanan Kesehatan Hewan, meliputi pemeriksaan, vaksinasi, dan lainnya.</span>
           </p>

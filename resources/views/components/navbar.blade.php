@@ -23,13 +23,20 @@
     
         <!-- Right Section -->
         <div class="ml-auto flex items-center space-x-4 font-bold font-['Inter']">
-          <a href="/masuk-page" class="text-sm font-medium text-gray-800 hover:text-blue-600">Masuk</a>
+          <!-- before login -->
+          {{-- <a href="/masuk-page" class="text-sm font-medium text-gray-800 hover:text-blue-600">Masuk</a> --}}
            {{-- <form action="/logout" method="POST">
               <button type="submit">logout</button>
             </form> --}}
-          <a href="/daftar-page" class="text-sm font-medium bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700">
+          {{-- <a href="/daftar-page" class="text-sm font-medium bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700">
             Daftar
-        </a>
+        </a> --}}
+
+        <!-- after login -->
+        <button type="button" class="flex text-sm bg-gray-800 rounded-full md:me-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600" id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown" data-dropdown-placement="bottom">
+          <span class="sr-only">Open user menu</span>
+          <img src="{{ asset('images/karyawan.jpeg') }}" alt="user" class="w-12 h-12 rounded-full" />
+        </button>
         </div>
       </div>
     </div>
