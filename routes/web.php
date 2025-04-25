@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BerandaController;
 use App\Http\Controllers\FaqController;
 use App\Http\Controllers\KelolaFaqController;
@@ -34,13 +35,15 @@ Route::get('reservasi', function () {
     return view('reservasi');
 });
 
-Route::get('masuk-page', function () {
-    return view('masukPage');
-});
+Route::view('/masuk-page', 'masukPage')->name('login');
+
+Route::post('/masuk-page', [AuthController::class, 'login'])->name('login');
 
 Route::get('daftar-page', function () {
     return view('daftarPage');
 });
+
+Route::post('/daftar-page', [AuthController::class, 'daftar'])->name('daftar-page');
 
 Route::get('rekam-medis', function () {
     return view('RekamMedis');
