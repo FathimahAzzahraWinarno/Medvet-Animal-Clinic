@@ -6,16 +6,18 @@
             <p class="text-gray-600 mb-12">Apapun yang kamu ingin tahu tentang Medvet Animal Clinic, dan tidak menemukan jawaban?</p>
             <div class="border-t border-gray-200">
                     @foreach ($faqs as $faq)
-                    <x-popup-edit-faq></x-popup-edit-faq>
-                    <details class="py-4 border-t border-gray-200 mb-3">
-                        <summary class="cursor-pointer text-gray-800 font-semibold flex items-center justify-between">
-                            <span>{{ $faq->title }}</span>
-                            <img src="{{ asset('images/plus-circle.svg') }}" alt="Plus" class="w-5 h-5" />
-                        </summary>
-                        <div class="mt-2 text-gray-600 text-justify">
-                            {{ $faq->detail }}
-                        </div>
-                    </details>
+                    <div class="border-t border-gray-200">
+                        <x-popup-edit-faq :faq="$faq" />
+                        <details class="py-4 mb-3">
+                            <summary class="cursor-pointer text-gray-800 font-semibold flex items-center justify-between">
+                                <span>{{ $faq->title }}</span>
+                                <img src="{{ asset('images/plus-circle.svg') }}" alt="Plus" class="w-5 h-5" />
+                            </summary>
+                            <div class="mt-2 text-gray-600 text-justify">
+                                {{ $faq->detail }}
+                            </div>
+                        </details>
+                    </div>
                     @endforeach
             </div>
             </div>
