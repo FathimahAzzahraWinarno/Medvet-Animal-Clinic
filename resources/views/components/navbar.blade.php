@@ -24,6 +24,7 @@
         <!-- Right Section -->
         <div class="ml-auto flex items-center space-x-4 font-bold font-['Inter']">
           <!-- before login -->
+          @guest
           <a href="/masuk-page" class="text-sm font-medium text-gray-800 hover:text-blue-600">Masuk</a>
            {{-- <form action="/logout" method="POST">
               <button type="submit">logout</button>
@@ -31,12 +32,16 @@
           <a href="/daftar-page" class="text-sm font-medium bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700">
             Daftar
         </a>
+        @endguest
 
         <!-- after login -->
-        {{-- <button type="button" class="flex text-sm bg-gray-800 rounded-full md:me-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600" id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown" data-dropdown-placement="bottom">
+        @auth
+        <button type="button" class="flex text-sm bg-gray-800 rounded-full md:me-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600" id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown" data-dropdown-placement="bottom">
           <span class="sr-only">Open user menu</span>
-          <img src="{{ asset('images/karyawan.jpeg') }}" alt="user" class="w-12 h-12 rounded-full" />
-        </button> --}}
+          <img src="{{ asset('images/karyawan.jpeg') }}" alt="user" class="w-11 h-11 rounded-full" />
+        </button>
+          
+        @endauth
         </div>
       </div>
     </div>

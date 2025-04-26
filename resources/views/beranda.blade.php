@@ -10,7 +10,20 @@
             <img src="{{ asset('images/arrow-right-blue.svg') }}" alt="Arrow" class="w-4 h-4" />
           </a>
         </div>   
-  
+
+        @if(session('success-login'))
+            <div id="success-login" class="flex items-center p-4 mb-4 text-sm text-blue-800 border border-blue-300 rounded-lg bg-blue-200 dark:border-blue-400 w-fit ms-8" role="alert">
+                <svg class="shrink-0 inline w-4 h-4 me-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"/>
+                </svg>
+                <span class="sr-only">Info</span>
+                <div>
+                    <span class="font-medium">{{ session('success-login') }}</span>
+                </div>
+            </div>
+         @endif
+    
+
           <div class="max-w-5xl mx-auto text-center px-4">
             <!-- Heading -->
             <h1 class="text-4xl font-bold text-gray-900 mb-4 font-['Inter']">
@@ -64,3 +77,14 @@
       </div>      
       
 </x-layout>
+
+<script>
+  // Hilangkan alert setelah 3 detik
+  setTimeout(() => {
+      const alert = document.getElementById('success-login');
+      if (alert) {
+          alert.classList.add('opacity-0');
+          setTimeout(() => alert.remove(), 500); // Tunggu transisi 0.5s
+      }
+  }, 3000);
+</script>

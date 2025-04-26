@@ -38,7 +38,7 @@ class AuthController extends Controller
 
             return redirect('/masuk-page')->with('success', 'Berhasil daftar! Silakan login.');
         } catch (\Exception $e) {
-            return redirect('/daftar-page')->with('error', 'Terjadi kesalahan. Pastikan data yang anda masukan sudah sesuai.')->withInput();
+            return redirect('/daftar-page')->with('error', 'Gagal mendaftar. Coba lagi!')->withInput();
         }
     }
 
@@ -53,9 +53,9 @@ class AuthController extends Controller
 
         if ($user && Hash::check($request->password, $user->password)) {
             Auth::login($user); // ✅ Ini bener
-            return redirect('/')->with('success', 'Berhasil login!');
+            return redirect('/')->with('success-login', 'Selamat datang, ' . $user->name . '!');
         }
 
-        return redirect()->back()->with('error', 'Email atau password salah.');
+        return redirect()->back()->with('error-login', 'Email atau password salah.');
     }
 }
