@@ -40,7 +40,6 @@
           <span class="sr-only">Open user menu</span>
           <img src="{{ asset('images/karyawan.jpeg') }}" alt="user" class="w-11 h-11 rounded-full" />
         </button>
-          
         @endauth
         </div>
       </div>

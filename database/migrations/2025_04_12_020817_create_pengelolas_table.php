@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::create('pengelolas', function (Blueprint $table) {
             $table->string('id')->primary();
-            $table->string('email');
+            $table->string('email')->unique();
             $table->string('password');
-            $table->enum('role', ['admin, dokter']);
+            $table->enum('role', ['admin', 'dokter']);
             $table->timestamps();
         });
     }

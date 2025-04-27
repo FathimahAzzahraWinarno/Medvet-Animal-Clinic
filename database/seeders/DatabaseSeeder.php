@@ -3,11 +3,13 @@
 namespace Database\Seeders;
 
 use App\Models\Faq;
+use App\Models\Pengelola;
 use App\Models\Perawatan;
 use App\Models\Promo;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Hash;
 
 class DatabaseSeeder extends Seeder
 {
@@ -17,6 +19,10 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         // User::factory(10)->create();
+
+        $this->call([
+            PengelolaSeeder::class
+        ]);
 
         Perawatan::create([
             'id' => 'P1',
