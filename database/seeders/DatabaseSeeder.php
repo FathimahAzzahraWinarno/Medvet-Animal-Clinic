@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Dokter;
 use App\Models\Faq;
 use App\Models\Pengelola;
 use App\Models\Perawatan;
@@ -149,6 +150,34 @@ class DatabaseSeeder extends Seeder
             'id' => 'F7',
             'title' => 'Bagaimana saya mendapatkan rekam medis hewan saya?',
             'detail' => 'Anda dapat mengakses rekam medis hewan peliharaan melalui akun pelanggan di website klinik. Semua riwayat kesehatan, termasuk hasil pemeriksaan, vaksinasi, dan perawatan, akan tersimpan secara digital dan dapat diakses kapan saja untuk memudahkan pemantauan kesehatan hewan anda.'
+        ]);
+
+        Dokter::create([
+            'id' => 'DK1',
+            'nama' => 'Muhammad Aroza',
+            'gambar' => 'images/karyawan.jpeg',
+            'deskripsi' => 'Dokter hewan spesialis dengan  pengalaman yang sudah cukup lama. Sangat peduli terhadap kenyamanan pasien dan berkomitmen memberikan perawatan terbaik.'
+        ]);
+
+        Dokter::create([
+            'id' => 'DK2',
+            'nama' => 'Muhammad Aroza',
+            'gambar' => 'images/karyawan.jpeg',
+            'deskripsi' => 'Dokter hewan spesialis dengan pengalaman yang sudah cukup lama. Sangat peduli terhdadap kenyamanan pasien dan berkomitmen memberikan perawatan terbaik.'
+        ]);
+
+        Dokter::create([
+            'id' => 'DK3',
+            'nama' => 'Muhammad Aroza',
+            'gambar' => 'images/karyawan.jpeg',
+            'deskripsi' => 'Dokter hewan spesialis dengan pengalaman yang sudah cukup lama. Sangat peduli terhadap kenyamanan pasien dan berkomitmen memberikan perawatan terbaik.'
+        ]);
+
+        Dokter::create([
+            'id' => 'DK4',
+            'nama' => 'Muhammad Aroza',
+            'gambar' => 'images/karyawan.jpeg',
+            'deskripsi' => 'Dokter hewan spesialis dengan pengalaman yang sudah cukup lama. Sangat peduli terhadap kenyamanan pasien dan berkomitmen memberika perawatan terbaik.'
         ]);
     }
 }

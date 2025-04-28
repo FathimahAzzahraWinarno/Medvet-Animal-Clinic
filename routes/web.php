@@ -8,14 +8,13 @@ use App\Http\Controllers\KelolaPerawatanController;
 use App\Http\Controllers\KelolaPromoController;
 use App\Http\Controllers\PerawatanController;
 use App\Http\Controllers\PromoController;
+use App\Http\Controllers\TentangKamiController;
 use App\Models\Faq;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [BerandaController::class, 'index']);
 
-Route::get('tentang_kami', function () {
-    return view('tentang_kami');
-});
+Route::get('/tentang_kami', [TentangKamiController::class, 'index']);
 
 Route::get('/FAQ', [FaqController::class, 'index']);
 

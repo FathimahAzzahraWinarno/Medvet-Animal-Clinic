@@ -80,126 +80,33 @@
         </p>
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-12 gap-6">
             <!-- Card 1 -->
-            <div class="relative overflow-hidden rounded-lg shadow-lg group col-span-4 font-['Inter']">
-                <img class="w-full h-[460px] object-cover" src="{{ asset('images/karyawan.jpeg') }}" alt="Profile Image">
-                <div class="absolute inset-x-0 bottom-0 bg-[#234bd2] text-white border border-white p-4 hover-expand overflow-hidden m-5 rounded-[10px]">
-                    <div class="flex justify-between items-center font-['Inter']">
-                        <h5 class="text-lg font-bold mb-3">Alisa Hester</h5>
-                        <a href="#" class="text-white"><img src="{{ asset('images/arrow-up-right.svg') }}" alt="Money" class="w-5 h-5" /></a>
-                    </div>
-                    <p class="text-sm">PM, Hourglass</p>
-                    <p class="text-xs mt-1 text-expand">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.  consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    </p>
-                    
-                    <div class="flex space-x-3 mt-3">
-                      <a href="#" class="hover:text-gray-300"><img src="{{ asset('images/xIcon.svg') }}" alt="Money" class="w-5 h-5" /></a>
-                      <a href="#" class="hover:text-gray-300"><img src="{{ asset('images/linkedin.svg') }}" alt="Money" class="w-5 h-5" /></a>
-                      <a href="#" class="hover:text-gray-300"><img src="{{ asset('images/ball.svg') }}" alt="Money" class="w-5 h-5" /></a>
-                  </div>
+            @foreach ($dokters as $dokter)
+        <div class="relative overflow-hidden rounded-lg shadow-lg group col-span-4 font-['Inter']">
+            <img class="w-full h-[460px] object-cover" src="{{ asset($dokter->gambar) }}" alt="Profile Image">
+            <div class="absolute inset-x-0 bottom-0 bg-[#234bd2] text-white border border-white p-4 hover-expand overflow-hidden m-5 rounded-[10px]">
+                <div class="flex justify-between items-center font-['Inter']">
+                    <h5 class="text-lg font-bold mb-3">{{ $dokter->nama }}</h5>
+                    <a href="#" class="text-white">
+                        <img src="{{ asset('images/arrow-up-right.svg') }}" alt="Arrow" class="w-5 h-5" />
+                    </a>
                 </div>
-            </div>
-            <!-- Card 2 -->
-            <div class="relative overflow-hidden rounded-lg shadow-lg group col-span-4 font-['Inter']">
-                <img class="w-full h-[460px] object-cover" src="{{ asset('images/karyawan.jpeg') }}" alt="Profile Image">
-                <div class="absolute inset-x-0 bottom-0 bg-[#234bd2] text-white border border-white p-4 hover-expand overflow-hidden m-5 rounded-[10px]">
-                    <div class="flex justify-between items-center">
-                        <h5 class="text-lg font-bold mb-3">Alisa Hester</h5>
-                        <a href="#" class="text-white"><img src="{{ asset('images/arrow-up-right.svg') }}" alt="Money" class="w-5 h-5" /></a>
-                    </div>
-                    <p class="text-sm">PM, Hourglass</p>
-                    <p class="text-xs mt-1 text-expand">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.  consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    </p>
-                    
-                    <div class="flex space-x-3 mt-3">
-                      <a href="#" class="hover:text-gray-300"><img src="{{ asset('images/xIcon.svg') }}" alt="Money" class="w-5 h-5" /></a>
-                      <a href="#" class="hover:text-gray-300"><img src="{{ asset('images/linkedin.svg') }}" alt="Money" class="w-5 h-5" /></a>
-                      <a href="#" class="hover:text-gray-300"><img src="{{ asset('images/ball.svg') }}" alt="Money" class="w-5 h-5" /></a>
-                  </div>
-                </div>
-            </div>
-            <!-- Card 3 -->
-            <div class="relative overflow-hidden rounded-lg shadow-lg group col-span-4 font-['Inter']">
-                <img class="w-full h-[460px] object-cover" src="{{ asset('images/karyawan.jpeg') }}" alt="Profile Image">
-                <div class="absolute inset-x-0 bottom-0 bg-[#234bd2] text-white border border-white p-4 hover-expand overflow-hidden m-5 rounded-[10px]">
-                    <div class="flex justify-between items-center">
-                        <h5 class="text-lg font-bold mb-3">Alisa Hester</h5>
-                        <a href="#" class="text-white"><img src="{{ asset('images/arrow-up-right.svg') }}" alt="Money" class="w-5 h-5" /></a>
-                    </div>
-                    <p class="text-sm font-bold">PM, Hourglass</p>
-                    <p class="text-xs mt-1 text-expand">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.  consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    </p>
-                    
-                    <div class="flex space-x-3 mt-3">
-                      <a href="#" class="hover:text-gray-300"><img src="{{ asset('images/xIcon.svg') }}" alt="Money" class="w-5 h-5" /></a>
-                      <a href="#" class="hover:text-gray-300"><img src="{{ asset('images/linkedin.svg') }}" alt="Money" class="w-5 h-5" /></a>
-                      <a href="#" class="hover:text-gray-300"><img src="{{ asset('images/ball.svg') }}" alt="Money" class="w-5 h-5" /></a>
-                  </div>
-                </div>
-            </div>
-            <!-- Card 4 -->
-            <div class="relative overflow-hidden rounded-lg shadow-lg group col-span-4 font-['Inter']">
-                <img class="w-full h-[460px] object-cover" src="{{ asset('images/karyawan.jpeg') }}" alt="Profile Image">
-                <div class="absolute inset-x-0 bottom-0 bg-[#234bd2] text-white border border-white p-4 hover-expand overflow-hidden m-5 rounded-[10px]">
-                    <div class="flex justify-between items-center">
-                        <h5 class="text-lg font-bold mb-3">Alisa Hester</h5>
-                        <a href="#" class="text-white"><img src="{{ asset('images/arrow-up-right.svg') }}" alt="Money" class="w-5 h-5" /></a>
-                    </div>
-                    <p class="text-sm font-bold">PM, Hourglass</p>
-                    <p class="text-xs mt-1 text-expand">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.  consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    </p>
-                    
-                    <div class="flex space-x-3 mt-3">
-                      <a href="#" class="hover:text-gray-300"><img src="{{ asset('images/xIcon.svg') }}" alt="Money" class="w-5 h-5" /></a>
-                      <a href="#" class="hover:text-gray-300"><img src="{{ asset('images/linkedin.svg') }}" alt="Money" class="w-5 h-5" /></a>
-                      <a href="#" class="hover:text-gray-300"><img src="{{ asset('images/ball.svg') }}" alt="Money" class="w-5 h-5" /></a>
-                  </div>
-                </div>
-            </div>
-            <!-- Card 5 -->
-            <div class="relative overflow-hidden rounded-lg shadow-lg group col-span-4 font-['Inter']">
-                <img class="w-full h-[460px] object-cover" src="{{ asset('images/karyawan.jpeg') }}" alt="Profile Image">
-                <div class="absolute inset-x-0 bottom-0 bg-[#234bd2] text-white border border-white p-4 hover-expand overflow-hidden m-5 rounded-[10px]">
-                    <div class="flex justify-between items-center">
-                        <h5 class="text-lg font-bold mb-3">Alisa Hester</h5>
-                        <a href="#" class="text-white"><img src="{{ asset('images/arrow-up-right.svg') }}" alt="Money" class="w-5 h-5" /></a>
-                    </div>
-                    <p class="text-sm font-bold">PM, Hourglass</p>
-                    <p class="text-xs mt-1 text-expand">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.  consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    </p>
-                    
-                    <div class="flex space-x-3 mt-3">
-                      <a href="#" class="hover:text-gray-300"><img src="{{ asset('images/xIcon.svg') }}" alt="Money" class="w-5 h-5" /></a>
-                      <a href="#" class="hover:text-gray-300"><img src="{{ asset('images/linkedin.svg') }}" alt="Money" class="w-5 h-5" /></a>
-                      <a href="#" class="hover:text-gray-300"><img src="{{ asset('images/ball.svg') }}" alt="Money" class="w-5 h-5" /></a>
-                  </div>
-                </div>
-            </div>
-            <!-- Card 6 -->
-            <div class="relative overflow-hidden rounded-lg shadow-lg group col-span-4 font-['Inter']">
-                <img class="w-full h-[460px] object-cover" src="{{ asset('images/karyawan.jpeg') }}" alt="Profile Image">
-                <div class="absolute inset-x-0 bottom-0 bg-[#234bd2] text-white border border-white p-4 hover-expand overflow-hidden m-5 rounded-[10px]">
-                    <div class="flex justify-between items-center">
-                        <h5 class="text-lg font-bold mb-3">Alisa Hester</h5>
-                        <a href="#" class="text-white"><img src="{{ asset('images/arrow-up-right.svg') }}" alt="Money" class="w-5 h-5" /></a>
-                    </div>
-                    <p class="text-sm font-bold">PM, Hourglass</p>
-                    <p class="text-xs mt-1 text-expand">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.  consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    </p>
-                    
-                    <div class="flex space-x-3 mt-3">
-                      <a href="#" class="hover:text-gray-300"><img src="{{ asset('images/xIcon.svg') }}" alt="Money" class="w-5 h-5" /></a>
-                      <a href="#" class="hover:text-gray-300"><img src="{{ asset('images/linkedin.svg') }}" alt="Money" class="w-5 h-5" /></a>
-                      <a href="#" class="hover:text-gray-300"><img src="{{ asset('images/ball.svg') }}" alt="Money" class="w-5 h-5" /></a>
-                  </div>
+                <p class="text-sm font-bold">Dokter Hewan</p>
+                <p class="text-xs mt-1 text-expand">{{ $dokter->deskripsi }}</p>
+                
+                <div class="flex space-x-3 mt-3">
+                    <a href="#" class="hover:text-gray-300">
+                        <img src="{{ asset('images/xIcon.svg') }}" alt="X Icon" class="w-5 h-5" />
+                    </a>
+                    <a href="#" class="hover:text-gray-300">
+                        <img src="{{ asset('images/linkedin.svg') }}" alt="LinkedIn Icon" class="w-5 h-5" />
+                    </a>
+                    <a href="#" class="hover:text-gray-300">
+                        <img src="{{ asset('images/ball.svg') }}" alt="Ball Icon" class="w-5 h-5" />
+                    </a>
                 </div>
             </div>
         </div>
+    @endforeach
       </div>
 
 
