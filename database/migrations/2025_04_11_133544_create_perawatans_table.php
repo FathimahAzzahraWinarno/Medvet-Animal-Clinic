@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('perawatans', function (Blueprint $table) {
             $table->string('id')->primary();
             $table->string('nama');
+            $table->string('slug');
             $table->string('deskripsi');
             $table->integer('harga');
             $table->integer('diskon');

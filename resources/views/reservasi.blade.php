@@ -13,6 +13,14 @@
         </section>
 
         <div class="max-w-4xl mx-auto bg-white p-6 rounded-lg border border-blue-200 shadow-[0px_0px_10px_rgba(59,130,246,0.3)] font-['Inter'] mb-20 relative">
+            <!-- promo -->
+            @if($promo)
+            <div class="md:col-span-2 mb-3">
+                <label class="block text-gray-700 font-semibold">Promo</label>
+                <input type="text" disabled placeholder="Masukkan promo" value="{{ $promo }}"
+                    class="w-full mt-1 px-4 py-2 border border-gray-400 rounded-lg focus:outline-blue-200">
+            </div>
+            @endif
             <!-- Data Peliharaan -->
             <h2 class="text-xl font-semibold text-gray-900 mb-4">Data Peliharaan</h2>
             
@@ -22,10 +30,10 @@
               <div>
                 <label for="hewan" class="block mb-2 text-sm font-medium text-gray-800">Pilih hewanmu</label>
                 <select id="hewan" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-105 px-4 py-2">
+                    <option>Hewan Baru</option>
                    <option>Miu</option>
                    <option>Bili</option>
                    <option>Bucil</option>
-                   <option>Hewan Baru</option>
                </select>
               </div>
                 <!-- Tombol Tambah Hewan di kanan -->
@@ -104,13 +112,13 @@
                     <label class="block text-gray-700">Perawatan</label>
                     <select id="treatmentSelect" class="w-full mt-1 px-4 py-2 border border-gray-400 rounded-lg focus:outline-blue-200 appearance-none">
                         <option>Pilih perawatan</option>
-                        <option>Vaksinasi</option>
-                        <option>Operasi minor & mayor</option>
-                        <option>Cek Darah</option>
-                        <option>Cek Mikroskopis</option>
-                        <option>Rawat Inap</option>
-                        <option>USG</option>
-                        <option>Pengobatan</option>
+                        <option {{ $perawatan == 'vaksinasi' ? 'selected':'' }} >Vaksinasi</option>
+                        <option {{ $perawatan == 'operasi-minor-mayor' ? 'selected':'' }}>Operasi minor & mayor</option>
+                        <option {{ $perawatan == 'cek-darah' ? 'selected':'' }}>Cek Darah</option>
+                        <option {{ $perawatan == 'cek-mikroskopis' ? 'selected':'' }}>Cek Mikroskopis</option>
+                        <option {{ $perawatan == 'rawat-inap' ? 'selected':'' }}>Rawat Inap</option>
+                        <option {{ $perawatan == 'usg' ? 'selected':'' }}>USG</option>
+                        <option {{ $perawatan == 'pengobatan' ? 'selected':'' }}>Pengobatan</option>
                     </select>
                 </div>
         

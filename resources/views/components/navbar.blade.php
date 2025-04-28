@@ -11,11 +11,11 @@
     
           <!-- Navigation Links -->
           <div class="flex space-x-8 font-bold font-['Inter']">
-            <a href="/" class="text-sm font-medium text-gray-800 hover:text-blue-600">Beranda</a>
             <a href="perawatan" class="text-sm font-medium text-gray-800 hover:text-blue-600">Perawatan</a>
             <a href="promo" class="text-sm font-medium text-gray-800 hover:text-blue-600">Promo</a>
             <a href="reservasi" class="text-sm font-medium text-gray-800 hover:text-blue-600">Reservasi</a>
             <a href="produk" class="text-sm font-medium text-gray-800 hover:text-blue-600">Produk</a>
+            <a href="tentang_kami" class="text-sm font-medium text-gray-800 hover:text-blue-600">Tentang Kami</a>
             <a href="contact" class="text-sm font-medium text-gray-800 hover:text-blue-600">Contact Us</a>
             <a href="FAQ" class="text-sm font-medium text-gray-800 hover:text-blue-600">FAQ</a>
           </div>

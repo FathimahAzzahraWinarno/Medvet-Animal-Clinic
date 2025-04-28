@@ -10,6 +10,7 @@ use App\Http\Controllers\PerawatanController;
 use App\Http\Controllers\PromoController;
 use App\Http\Controllers\TentangKamiController;
 use App\Models\Faq;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [BerandaController::class, 'index']);
@@ -30,8 +31,13 @@ Route::get('contact', function () {
     return view('contact');
 });
 
-Route::get('reservasi', function () {
-    return view('reservasi');
+Route::get('reservasi', function (Request $request) {
+    $promo = $request->query('promo');
+    $perawatan = $request->query('perawatan');
+    return view('reservasi', [
+        'promo' => $promo,
+        'perawatan' => $perawatan
+    ]);
 });
 
 Route::view('/masuk-page', 'masukPage')->name('login');
@@ -84,6 +90,8 @@ Route::get('pelanggan', function () {
 Route::get('kelola-perawatan', [KelolaPerawatanController::class, 'kelolaPerawatan']);
 
 Route::get('kelola-FAQ', [KelolaFaqController::class, 'kelolaFaq']);
+
+Route::post('/admin/kelola-FAQ', [KelolaFaqController::class, 'createFaq'])->name('faq.create');
 
 
 Route::get('kelola-promo', [KelolaPromoController::class, 'kelolaPromo']);

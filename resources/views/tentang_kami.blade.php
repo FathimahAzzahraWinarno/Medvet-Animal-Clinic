@@ -92,18 +92,6 @@
                 </div>
                 <p class="text-sm font-bold">Dokter Hewan</p>
                 <p class="text-xs mt-1 text-expand">{{ $dokter->deskripsi }}</p>
-                
-                <div class="flex space-x-3 mt-3">
-                    <a href="#" class="hover:text-gray-300">
-                        <img src="{{ asset('images/xIcon.svg') }}" alt="X Icon" class="w-5 h-5" />
-                    </a>
-                    <a href="#" class="hover:text-gray-300">
-                        <img src="{{ asset('images/linkedin.svg') }}" alt="LinkedIn Icon" class="w-5 h-5" />
-                    </a>
-                    <a href="#" class="hover:text-gray-300">
-                        <img src="{{ asset('images/ball.svg') }}" alt="Ball Icon" class="w-5 h-5" />
-                    </a>
-                </div>
             </div>
         </div>
     @endforeach

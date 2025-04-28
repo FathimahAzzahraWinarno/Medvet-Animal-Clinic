@@ -17,4 +17,19 @@ class KelolaFaqController extends Controller
             'active' => 'faq'
         ]);
     }
+
+
+    public function createFaq(Request $request)
+    {
+        $validated = $request->validate([
+            'title' => 'required|string|max:255',
+            'detail' => 'required|string',
+        ]);
+
+        $validated['id'] = Faq::generateId();
+
+        Faq::create($validated);
+
+        return redirect()->back()->with('success', 'FAQ berhasil ditambahkan.');
+    }
 }

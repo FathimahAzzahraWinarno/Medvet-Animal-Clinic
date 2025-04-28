@@ -19,13 +19,13 @@
                 <img src="{{ asset($perawatan->gambar) }}" alt="{{ $perawatan->nama }}" class="w-28 h-28 mb-4">
 
                 <!-- Tombol Hover -->
-                <button
+                <a href="{{ "/reservasi?perawatan=$perawatan->slug"}}"
                     @mouseenter="open = true"
                     @mouseleave="open = false"
                     class="bg-[#234bd2] text-white px-4 py-2 rounded-lg text-sm"
                 >
                     {{ strtoupper($perawatan->nama) }}
-                </button>
+                </a>
 
                 <!-- Popover Hover -->
                 <div

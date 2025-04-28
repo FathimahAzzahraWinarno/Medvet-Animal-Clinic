@@ -28,10 +28,13 @@
                             <img src="{{ asset('images/promo.svg') }}" alt="promo" class="w-5 h-5">
                             {{ $promo->diskon }}% OFF
                         </li>
-                        <li class="flex items-center font-semibold gap-2">
+                        <li class="flex items-center font-semibold gap-2 mb-6">
                             <img src="{{ asset('images/price.svg') }}" alt="price" class="w-5 h-5">
                             Start From Rp{{ number_format($promo->harga, 0, ',', '.') }}
                         </li>
+                        <a href={{ "/reservasi?promo=$promo->id"}} class="text-sm font-medium bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700">
+                            Gunakan
+                        </a>
                     </ul>
                 </div>
             @endforeach
