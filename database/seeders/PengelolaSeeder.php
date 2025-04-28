@@ -17,15 +17,15 @@ class PengelolaSeeder extends Seeder
     {
 
         Pengelola::create([
-            'id' => Pengelola::generateId(),
+            'id' => 'A1',
             'email' => 'adminMedvet@example.com',
             'password' => Hash::make('password123'),
             'role' => 'admin',
         ]);
 
         Pengelola::create([
-            'id' => Pengelola::generateId(),
-            'email' => 'doktermMdvet@example.com',
+            'id' => 'D1',
+            'email' => 'dokterMedvet@example.com',
             'password' => Hash::make('password'),
             'role' => 'dokter', // harus huruf kecil
         ]);

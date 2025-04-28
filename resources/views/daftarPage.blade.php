@@ -18,20 +18,31 @@
             </div>
         @endif
 
+        
+        
         <form method="POST" action="{{ route('daftar-page') }}">
             @csrf
+            @error('email')
+                <p class="text-red-600 text-sm">{{ $message }}</p>
+            @enderror
             <div class="relative mb-5">
-                <input type="email" name="email" id="Email" class="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border border-gray-300 appearance-none dark:text-white focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
+                <input type="text" name="email" id="Email" class="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border border-gray-300 appearance-none dark:text-white focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
                 <label for="Email" class="absolute text-sm text-gray-700 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] px-2 peer-focus:text-blue-800 peer-placeholder-shown:scale-100 peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4">Masukan Email<span class="text-red-500">*</span></label>
             </div>
-
+            
+            @error('name')
+                <p class="text-red-600 text-sm">{{ $message }}</p>
+            @enderror
             <div class="relative mb-5">
                 <input type="text" name="name" id="nama" class="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border border-gray-300 appearance-none dark:text-white focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
                 <label for="nama" class="absolute text-sm text-gray-700 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] px-2 peer-focus:text-blue-800 peer-placeholder-shown:scale-100 peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4">Masukan Nama<span class="text-red-500">*</span></label>
             </div>
-
+            
+            @error('password')
+                <p class="text-red-600 text-sm">{{ $message }}</p>
+            @enderror
             <div class="relative mb-1">
-                <input type="password" name="password" id="password" class="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border border-gray-300 appearance-none dark:text-white focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
+                <input type="password" name="password" id="password" class="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border border-gray-300 appearance-none dark:text-white focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" "/>
                 <label for="password" class="absolute text-sm text-gray-700 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] px-2 peer-focus:text-blue-800 peer-placeholder-shown:scale-100 peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4">Masukan Password<span class="text-red-500">*</span></label>
             </div>
             <p class="text-xs text-gray-700 mt-1 mb-2">Minimal 8 karakter</p>
