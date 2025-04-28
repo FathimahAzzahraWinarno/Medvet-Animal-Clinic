@@ -32,4 +32,12 @@ class KelolaFaqController extends Controller
 
         return redirect()->back()->with('success', 'FAQ berhasil ditambahkan.');
     }
+
+    public function deleteFaq($id)
+    {
+        $faq = Faq::findOrFail($id);
+        $faq->delete();
+
+        return redirect()->back()->with('success', 'FAQ berhasil dihapus.');
+    }
 }

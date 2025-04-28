@@ -91,6 +91,8 @@ Route::get('kelola-perawatan', [KelolaPerawatanController::class, 'kelolaPerawat
 
 Route::get('kelola-FAQ', [KelolaFaqController::class, 'kelolaFaq']);
 
+Route::delete('/admin/kelola-FAQ/{id}', [KelolaFaqController::class, 'deleteFaq'])->name('deleteFaq');
+
 Route::post('/admin/kelola-FAQ', [KelolaFaqController::class, 'createFaq'])->name('faq.create');
 
 
