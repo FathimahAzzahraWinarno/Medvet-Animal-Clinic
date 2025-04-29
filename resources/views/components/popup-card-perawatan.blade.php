@@ -48,6 +48,24 @@
                         maxlength="300">{{ $perawatan->deskripsi }}</textarea>
                     <p class="mt-1 text-sm text-gray-500">275 characters left</p>
                 </div>
+
+                <div>
+                    <label for="harga" class="block mb-2 text-sm font-semibold text-gray-800">Harga</label>
+                    <input type="text" id="nama" name="nama" value="{{ $perawatan->harga }}"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required>
+                </div>
+
+                <div>
+                    <label for="diskon" class="block mb-2 text-sm font-semibold text-gray-800">Diskon</label>
+                    <input type="text" id="nama" name="nama" value="{{ $perawatan->diskon }}"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+
+                        <div class="flex items-center mb-4">
+                            <input id="default-checkbox" type="checkbox" value="" class="w-4 h-4 mt-3.5 text-blue-600 bg-gray-100 border-gray-300 rounded-sm focus:ring-blue-500 dark:focus:ring-blue-600 dark:border-blue-600">
+                            <label for="default-checkbox" class="ms-2 mt-3 text-sm font-medium text-blue-700">Diskon Aktif</label>
+                        </div>
+                        
+                </div>
             </form>
 
             <!-- Modal footer -->

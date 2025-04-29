@@ -25,4 +25,9 @@ class KelolaPerawatanController extends Controller
 
         return redirect()->back()->with('success', 'Perawatan berhasil dihapus.');
     }
+
+    public function updatePerawatan(Request $request, $id)
+    {
+        $request->validate([]);
+    }
 }

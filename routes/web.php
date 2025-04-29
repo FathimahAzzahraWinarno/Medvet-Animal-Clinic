@@ -23,6 +23,8 @@ Route::get('/perawatan', [PerawatanController::class, 'index']);
 
 Route::get('/promo', [PromoController::class, 'index']);
 
+Route::delete('/admin/kelola-promo/{id}', [PromoController::class, 'deletePromo'])->name('deletePromo');
+
 Route::get('produk', function () {
     return view('produk');
 });

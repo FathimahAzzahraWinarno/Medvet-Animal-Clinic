@@ -17,4 +17,12 @@ class PromoController extends Controller
             'active' => 'Promo'
         ]);
     }
+
+    public function deletePromo($id)
+    {
+        $promo = Promo::findOrFail($id);
+        $promo->delete();
+
+        return redirect()->back()->with('success', 'Promo berhasil dihapus.');
+    }
 }
