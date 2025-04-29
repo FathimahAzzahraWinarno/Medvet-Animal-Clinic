@@ -9,7 +9,7 @@ class KelolaFaqController extends Controller
 {
     public function kelolaFaq()
     {
-        $faqs = Faq::all();
+        $faqs = Faq::orderBy('created_at', 'desc')->get();
 
         return view('admin.kelolaFaq', [
             'faqs' => $faqs,

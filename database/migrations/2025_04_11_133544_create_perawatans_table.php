@@ -18,8 +18,8 @@ return new class extends Migration
             $table->string('deskripsi');
             $table->integer('harga');
             $table->integer('diskon');
-            $table->boolean('is_diskon');
-            $table->string('gambar');
+            $table->boolean('is_diskon')->default(0);
+            $table->string('gambar')->default('default_image.jpg');
             // $table->foreignId('dokter_id');
             // $table->foreign("dokter_id")->references("id")->on("dokter");
             $table->timestamps();

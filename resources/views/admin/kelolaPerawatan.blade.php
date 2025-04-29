@@ -19,7 +19,13 @@
                @foreach ($perawatans as $perawatan)
                 <div x-data="{ open: false }" class="relative bg-white p-6 shadow-md flex flex-col items-center text-center rounded-[16px] border border-blue-200">
                 <x-popup-card-perawatan :perawatan="$perawatan"/>
-                <img src="{{ asset($perawatan->gambar) }}" alt="{{ $perawatan->nama }}" class="w-28 h-28 mb-4">
+                 @if ($perawatan->gambar)
+                 <img src="{{ asset($perawatan->gambar) }}" alt="{{ $perawatan->nama }}" class="w-28 h-28 mb-4">
+             @else
+                 <div class="w-28 h-28 mb-4 flex items-center justify-center bg-gray-200 text-gray-500 rounded">
+                     Tidak ada gambar
+                 </div>
+                 @endif
 
                 <!-- Tombol Hover -->
                 <button

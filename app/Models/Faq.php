@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 
 class Faq extends Model
 {
@@ -14,8 +15,18 @@ class Faq extends Model
 
     public static function generateId()
     {
-        $lastFaq = self::latest('id')->first();
-        $nextId = $lastFaq ? (intval($lastFaq->id) + 1) : 1;
-        return 'F-' . $nextId;
+        $last = DB::table('faqs')
+            ->where('id', 'like', 'F%')
+            ->orderByRaw("CAST(SUBSTRING(id, 2) AS UNSIGNED) DESC")
+            ->first();
+
+        if (!$last) {
+            return 'F1';
+        }
+
+        $lastIdNumber = (int) str_replace('F', '', $last->id);
+        $nextId = 'F' . ($lastIdNumber + 1);
+
+        return $nextId;
     }
 }

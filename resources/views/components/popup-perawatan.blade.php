@@ -22,18 +22,25 @@
                   </button>
               </div>
               <!-- Modal body -->
-              <form class="p-4 md:p-5 space-y-6">
+              <form method="POST" action="{{ route('createPerawatan') }}" class="p-4 md:p-5 space-y-6" enctype="multipart/form-data">
+                @csrf
                 <!-- Input File Gambar -->
                 <div>
-                    <label for="foto" class="block mb-2 text-sm font-medium font-semibold text-gray-800 ">Foto Perawatan</label>
-                    <input type="file" id="foto" name="foto"
+                    <label for="foto" class="block mb-2 text-sm font-semibold text-gray-800 ">Foto Perawatan</label>
+                    <input type="file" id="foto" name="gambar"
                         class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50">
                 </div>
 
                 <!-- Input Nama Perawatan -->
                 <div>
-                    <label for="nama" class="block mb-2 text-sm font-medium font-semibold text-gray-800">Nama Perawatan</label>
+                    <label for="nama" class="block mb-2 text-sm font-semibold text-gray-800">Nama Perawatan</label>
                     <input type="text" id="nama" name="nama" placeholder="nama perawatan"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:text-gray" required>
+                </div>
+
+                <div>
+                    <label for="slug" class="block mb-2 text-sm font-semibold text-gray-800">slug</label>
+                    <input type="text" id="slug" name="slug" placeholder="slug"
                         class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:text-gray" required>
                 </div>
 
@@ -57,14 +64,15 @@
                         class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
 
                         <div class="flex items-center mb-4">
-                            <input id="default-checkbox" type="checkbox" value="" class="w-4 h-4 mt-3.5 text-blue-600 bg-gray-100 border-gray-300 rounded-sm focus:ring-blue-500 dark:focus:ring-blue-600 dark:border-blue-600">
+                            <input id="default-checkbox" name="is_diskon" type="checkbox" value="1" class="w-4 h-4 mt-3.5 text-blue-600 bg-gray-100 border-gray-300 rounded-sm focus:ring-blue-500 dark:focus:ring-blue-600 dark:border-blue-600">
                             <label for="default-checkbox" class="ms-2 mt-3 text-sm font-medium text-blue-700">Diskon Aktif</label>
                         </div>
+                        
                         
                 </div>
                 <!-- Modal footer -->
                 <div class="flex items-center p-4 md:p-5 border-t border-gray-200 rounded-b dark:border-gray-600">
-                    <button data-modal-hide="static-modal" type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium font-semibold rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Simpan</button>
+                    <button data-modal-hide="static-modal" type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium font-semibold rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Simpan</button>
                     <button data-modal-hide="static-modal" type="button" class="py-2.5 px-5 ms-3 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border font-semibold border-gray-300 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-300 dark:text-gray-700 dark:border-gray-300 dark:hover:text-white dark:hover:bg-gray-400">Batal</button>
                 </div>
             </form>

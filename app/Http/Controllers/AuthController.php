@@ -12,12 +12,6 @@ use Illuminate\Support\Facades\Redirect;
 
 class AuthController extends Controller
 {
-    public function generateUserId()
-    {
-        $lastUser = User::latest('id')->first();
-        $nextId = $lastUser ? $lastUser->id + 1 : 1;
-        return 'usr-' . $nextId;
-    }
 
     public function daftar(Request $request)
     {
@@ -34,7 +28,7 @@ class AuthController extends Controller
         ]);
 
         $newUser = User::create([
-            'id' => $this->generateUserId(),
+            'id' => User::generateUserId(),
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),

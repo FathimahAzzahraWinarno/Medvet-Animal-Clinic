@@ -91,6 +91,8 @@ Route::get('pelanggan', function () {
 
 Route::get('kelola-perawatan', [KelolaPerawatanController::class, 'kelolaPerawatan']);
 
+Route::post('/admin/kelola-perawatan', [KelolaPerawatanController::class, 'createPerawatan'])->name('createPerawatan');
+
 Route::delete('/admin/kelola-perawatan/{id}', [KelolaPerawatanController::class, 'deletePerawatan'])->name('deletePerawatan');
 
 Route::get('kelola-FAQ', [KelolaFaqController::class, 'kelolaFaq']);
