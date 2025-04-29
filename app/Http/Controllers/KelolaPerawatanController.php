@@ -17,4 +17,12 @@ class KelolaPerawatanController extends Controller
             'active' => 'perawatan'
         ]);
     }
+
+    public function deletePerawatan($id)
+    {
+        $perawatan = Perawatan::findOrfail($id);
+        $perawatan->delete();
+
+        return redirect()->back()->with('success', 'Perawatan berhasil dihapus.');
+    }
 }
