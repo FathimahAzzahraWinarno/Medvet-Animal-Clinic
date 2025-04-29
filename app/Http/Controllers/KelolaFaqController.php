@@ -40,4 +40,19 @@ class KelolaFaqController extends Controller
 
         return redirect()->back()->with('success', 'FAQ berhasil dihapus.');
     }
+
+    public function updateFaq(Request $request, $id)
+    {
+        $request->validate([
+            'title' => 'required|string|max:255',
+            'detail' => 'required|string|max:1000',
+        ]);
+
+        $faq = Faq::findOrFail($id);
+        $faq->title = $request->title;
+        $faq->detail = $request->detail;
+        $faq->save();
+
+        return redirect()->back()->with('success', 'FAQ berhasil diperbarui');
+    }
 }

@@ -95,6 +95,8 @@ Route::delete('/admin/kelola-FAQ/{id}', [KelolaFaqController::class, 'deleteFaq'
 
 Route::post('/admin/kelola-FAQ', [KelolaFaqController::class, 'createFaq'])->name('faq.create');
 
+Route::put('/admin/kelola-FAQ/{id}', [KelolaFaqController::class, 'updateFaq'])->name('updateFaq');
+
 
 Route::get('kelola-promo', [KelolaPromoController::class, 'kelolaPromo']);
 
