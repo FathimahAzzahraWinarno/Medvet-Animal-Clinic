@@ -29,7 +29,34 @@ class KelolaPerawatanController extends Controller
 
     public function updatePerawatan(Request $request, $id)
     {
-        $request->validate([]);
+        $request->validate([
+            'nama' => 'required|string|max:255',
+            'deskripsi' => 'required|string', // sudah diperbaiki dari typo 'stirng'
+            'slug' => 'required|string',
+            'harga' => 'required|int',
+            'is_diskon' => '',
+            'diskon' => 'required|int',
+            'gambar' => 'nullable|image|mimes:jpg,jpeg,svg,png'
+        ]);
+
+        $perawatan = Perawatan::findOrFail($id);
+
+        $perawatan->nama = $request->nama;
+        $perawatan->deskripsi = $request->deskripsi;
+        $perawatan->slug = Str::slug($request->slug, '-'); // konsisten dengan create
+        $perawatan->harga = $request->harga;
+        $perawatan->is_diskon = $request->has('is_diskon') ? 1 : 0;
+        $perawatan->diskon = $request->diskon;
+
+        // Tangani upload gambar jika ada file baru
+        if ($request->hasFile('gambar')) {
+            $path = $request->file('gambar')->store('perawatan', 'public');
+            $perawatan->gambar = "storage/$path";
+        }
+
+        $perawatan->save();
+
+        return redirect()->back()->with('success', 'Perawatan berhasil diperbarui');
     }
 
     public function createPerawatan(Request $request)
