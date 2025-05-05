@@ -66,7 +66,9 @@
                     </svg>
                 </button>
             </div>
-            <form class="p-4 md:p-5">
+            <form method="POST" action="{{ route('updateProduk', $produk->id) }}" enctype="multipart/form-data" class="p-4 md:p-5">
+                @csrf
+                @method('PUT')
                 <div class="grid gap-4 mb-4 grid-cols-1">
                     <div>
                         <label for="nama-{{ $produk->id }}" class="block mb-2 text-sm font-medium text-gray-800">

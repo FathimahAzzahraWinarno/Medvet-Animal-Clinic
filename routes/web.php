@@ -39,6 +39,8 @@ Route::delete('/admin/kelola-produk/{id}', [ProdukController::class, 'deleteProd
 
 Route::post('/admin/kelola-produk', [ProdukController::class, 'createProduk'])->name('createProduk');
 
+Route::put('/admin/kelola-produk/{id}', [ProdukController::class, 'updateProduk'])->name('updateProduk');
+
 Route::get('contact', function () {
     return view('contact');
 });
