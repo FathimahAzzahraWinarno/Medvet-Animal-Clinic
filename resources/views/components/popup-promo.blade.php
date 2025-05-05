@@ -26,26 +26,28 @@
                   </button>
               </div>
               <!-- Modal body -->
-              <form class="p-4 md:p-5">
-                  <div class="grid gap-4 mb-4 grid-cols-2">
-                      <div class="col-span-2">
-                          <label for="name" class="block mb-2 text-sm font-medium text-gray-800">Nama Promo</label>
-                          <input type="text" name="name" id="name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:text-gray" required placeholder="Type product name">
-                      </div>
-                      <div class="col-span-2 sm:col-span-1">
-                          <label for="price" class="block mb-2 text-sm font-medium text-gray-800">Harga</label>
-                          <input type="number" name="price" id="price" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:text-gray" required placeholder="$2999">
-                      </div>
-                      <div class="col-span-2 sm:col-span-1">
-                          <label for="category" class="block mb-2 text-sm font-medium text-gray-800">Diskon</label>
-                          <input id="category" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:text-gray" required placeholder="35%"></input>
-                      </div>
-                  </div>
-                  <div class="flex items-center p-2 md:p-3 border-t border-gray-200 rounded-b dark:border-gray-600">
-                    <button data-modal-hide="crud-modal" type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium font-semibold rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Simpan</button>
+              <form action="{{ route('createPromo') }}" method="POST" class="p-4 md:p-5">
+                @csrf  
+                <div class="grid gap-4 mb-4 grid-cols-2">
+                    <div class="col-span-2">
+                        <label for="nama" class="block mb-2 text-sm font-medium text-gray-800">Nama Promo</label>
+                        <input type="text" name="nama" id="nama" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:text-gray" required placeholder="Type product name">
+                    </div>
+                    <div class="col-span-2 sm:col-span-1">
+                        <label for="harga" class="block mb-2 text-sm font-medium text-gray-800">Harga</label>
+                        <input type="number" name="harga" id="harga" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:text-gray" required placeholder="$2999">
+                    </div>
+                    <div class="col-span-2 sm:col-span-1">
+                        <label for="diskon" class="block mb-2 text-sm font-medium text-gray-800">Diskon</label>
+                        <input type="text" name="diskon" id="diskon" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:text-gray" required placeholder="35%">
+                    </div>
+                </div>
+                <div class="flex items-center p-2 md:p-3 border-t border-gray-200 rounded-b dark:border-gray-600">
+                    <button data-modal-hide="crud-modal" type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium font-semibold rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Simpan</button>
                     <button data-modal-hide="crud-modal" type="button" class="py-2.5 px-5 ms-3 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border font-semibold border-gray-300 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-300 dark:text-gray-700 dark:border-gray-300 dark:hover:text-white dark:hover:bg-gray-400">Batal</button>
                 </div>
-              </form>
+            </form>
+            
           </div>
       </div>
   </div> 

@@ -25,6 +25,11 @@ Route::get('/promo', [PromoController::class, 'index']);
 
 Route::delete('/admin/kelola-promo/{id}', [PromoController::class, 'deletePromo'])->name('deletePromo');
 
+Route::put('/admin/kelola-promo/{id}', [PromoController::class, 'createPromo'])->name('createPromo');
+
+Route::post('/admin/kelola-promo', [PromoController::class, 'createPromo'])->name('createPromo');
+
+
 Route::get('produk', function () {
     return view('produk');
 });

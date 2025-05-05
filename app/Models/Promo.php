@@ -7,6 +7,9 @@ use Illuminate\Support\Facades\DB;
 
 class Promo extends Model
 {
+
+    protected $fillable = ['id', 'nama', 'harga', 'diskon'];
+
     protected $primaryKey = 'id';
     public $incrementing = false;
     protected $keyType = 'string';
@@ -14,8 +17,8 @@ class Promo extends Model
     public static function generatePromoId()
     {
         $last = DB::table('promos')
-            ->where('id', 'like', 'F%')
-            ->orderByRaw("CAST(SUBSTRING(id, 2) AS UNSIGNED) DESC")
+            ->where('id', 'like', 'PR%')
+            ->orderByRaw("CAST(SUBSTRING(id, 3) AS UNSIGNED) DESC")
             ->first();
 
         if (!$last) {
@@ -23,7 +26,7 @@ class Promo extends Model
         }
 
         $lastIdNumber = (int) str_replace('PR', '', $last->id);
-        $nextId = 'PR' . ($lastIdNumber + 3);
+        $nextId = 'PR' . ($lastIdNumber + 1);
 
         return $nextId;
     }

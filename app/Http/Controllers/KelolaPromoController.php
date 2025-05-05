@@ -17,12 +17,4 @@ class KelolaPromoController extends Controller
             'active' => 'Promo'
         ]);
     }
-
-    public function deletePromo($id)
-    {
-        $promo = Promo::findOrfail($id);
-        $promo->delete();
-
-        return redirect()->back()->with('success', 'Promo berhasil dihapus.');
-    }
 }

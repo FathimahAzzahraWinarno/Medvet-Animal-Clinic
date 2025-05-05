@@ -25,4 +25,22 @@ class PromoController extends Controller
 
         return redirect()->back()->with('success', 'Promo berhasil dihapus.');
     }
+
+
+    public function createPromo(Request $request)
+    {
+        $validated = $request->validate([
+            'nama' => 'required|string|max:255',
+            'harga' => 'required|int',
+            'diskon' => 'required|int',
+        ]);
+
+        $validated['id'] = Promo::generatePromoId();
+
+        Promo::create($validated);
+
+        return redirect()->back()->with('success', 'Promo berhasil ditambahkan.');
+    }
+
+    public function updatePromo(Request $request, $id) {}
 }
