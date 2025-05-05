@@ -7,6 +7,7 @@ use App\Http\Controllers\KelolaFaqController;
 use App\Http\Controllers\KelolaPerawatanController;
 use App\Http\Controllers\KelolaPromoController;
 use App\Http\Controllers\PerawatanController;
+use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\PromoController;
 use App\Http\Controllers\TentangKamiController;
 use App\Models\Faq;
@@ -29,13 +30,14 @@ Route::put('/admin/kelola-promo/{id}', [PromoController::class, 'updatePromo'])-
 
 Route::post('/admin/kelola-promo', [PromoController::class, 'createPromo'])->name('createPromo');
 
-
-Route::get('produk', function () {
-    return view('produk');
-});
+Route::get('produk', [ProdukController::class, 'index']);
 
 Route::get('contact', function () {
     return view('contact');
+});
+
+Route::get('kelola-produk', function () {
+    return view('admin.kelolaProduk');
 });
 
 Route::get('reservasi', function (Request $request) {

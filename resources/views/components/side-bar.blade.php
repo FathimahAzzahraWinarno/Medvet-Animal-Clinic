@@ -36,6 +36,10 @@
             <img src="{{ asset('images/faq.svg') }}" class="w-6 h-6 rounded-full" />
              <span class="ml-3">Kelola FAQ</span>
           </a>
+          <a href="kelola-produk" class="flex items-center text-gray-700 hover:text-blue-600">
+            <img src="{{ asset('images/food.svg') }}" class="w-6 h-6 rounded-full" />
+             <span class="ml-3">Kelola Produk</span>
+          </a>
           <a href="pelanggan" class="flex items-center text-gray-700 hover:text-blue-600">
             <img src="{{ asset('images/pelanggan.svg') }}" class="w-6 h-6 rounded-full" />
              <span class="ml-3">Pelanggan</span>

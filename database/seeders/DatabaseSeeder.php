@@ -6,6 +6,7 @@ use App\Models\Dokter;
 use App\Models\Faq;
 use App\Models\Pengelola;
 use App\Models\Perawatan;
+use App\Models\Produk;
 use App\Models\Promo;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
@@ -185,6 +186,27 @@ class DatabaseSeeder extends Seeder
             'nama' => 'Muhammad Aroza',
             'gambar' => 'images/karyawan.jpeg',
             'deskripsi' => 'Dokter hewan spesialis dengan pengalaman yang sudah cukup lama. Sangat peduli terhadap kenyamanan pasien dan berkomitmen memberika perawatan terbaik.'
+        ]);
+
+        Produk::create([
+            'id' => 'PD1',
+            'nama' => 'Whiskas',
+            'gambar' => 'images/produk1.svg',
+            'detail' => 'Whiskas Dry Food dibuat dengan bahan-bahan berkualitas tinggi dan teknologi modern untuk memastikan nutrisi yang tepat bagi kucing.'
+        ]);
+
+        Produk::create([
+            'id' => 'PD2',
+            'nama' => 'Royal Canin',
+            'gambar' => 'images/produk2.svg',
+            'detail' => 'Royal Canin diformulasikan untuk mendukung hewan peliharaan selama masa pemulihan dari penyakit atau cedera, dengan nutrisi tinggi dan energi mudah dicerna.'
+        ]);
+
+        Produk::create([
+            'id' => 'PD3',
+            'nama' => 'Meo',
+            'gambar' => 'images/produk3.svg',
+            'detail' => 'Meo mengandung nutrisi yang dibutuhkan oleh kucing, termasuk protein, lemak, vitamin dan mineral. Makanan meo dirancang dengan bentuk kibble yang mudah dicerna oleh kucing.'
         ]);
     }
 }
