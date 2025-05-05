@@ -63,17 +63,17 @@
                 </button>
             </div>
             <!-- Modal body -->
-            <form  action="{{ route('createPromo', $promo->id) }}" method="POST"  class="p-4 md:p-5">
+            <form  action="{{ route('updatePromo', $promo->id) }}" method="POST"  class="p-4 md:p-5">
                 @csrf
                 @method('PUT')
                 <div class="grid gap-4 mb-4 grid-cols-2">
                     <div class="col-span-2">
                         <label for="name-{{ $promo->id }}" class="block mb-2 text-sm font-medium text-gray-800">Nama Promo</label>
-                        <input type="text" name="name" id="name-{{ $promo->id }}" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required placeholder="Type product name" value="{{ $promo->nama }}">
+                        <input type="text" name="nama" id="name-{{ $promo->id }}" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required placeholder="Type product name" value="{{ $promo->nama }}">
                     </div>
                     <div class="col-span-2 sm:col-span-1">
                         <label for="price-{{ $promo->id }}" class="block mb-2 text-sm font-medium text-gray-800">Harga</label>
-                        <input type="number" name="price" id="price-{{ $promo->id }}" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required placeholder="Rp" value="{{ $promo->harga }}">
+                        <input type="number" name="harga" id="price-{{ $promo->id }}" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required placeholder="Rp" value="{{ $promo->harga }}">
                     </div>
                     <div class="col-span-2 sm:col-span-1">
                         <label for="diskon-{{ $promo->id }}" class="block mb-2 text-sm font-medium text-gray-800">Diskon</label>

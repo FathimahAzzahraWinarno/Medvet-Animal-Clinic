@@ -42,5 +42,20 @@ class PromoController extends Controller
         return redirect()->back()->with('success', 'Promo berhasil ditambahkan.');
     }
 
-    public function updatePromo(Request $request, $id) {}
+    public function updatePromo(Request $request, $id)
+    {
+        $request->validate([
+            'nama' => 'required|string|max:255',
+            'harga' => 'required|int',
+            'diskon' => 'required|int',
+        ]);
+
+        $promo = Promo::findOrFail($id);
+        $promo->nama = $request->nama;
+        $promo->harga = $request->harga;
+        $promo->diskon = $request->diskon;
+        $promo->save();
+
+        return redirect()->back()->with('success', 'Promo berhasil diperbarui');
+    }
 }
