@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('produks', function (Blueprint $table) {
             $table->string('id')->primary();
             $table->string('nama');
-            $table->string('gambar');
+            $table->string('gambar')->default('default_image.jpg');
             $table->string('detail');
             $table->timestamps();
         });

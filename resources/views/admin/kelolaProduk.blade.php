@@ -28,3 +28,14 @@
         @endforeach
     </div>
 </x-layout-admin>
+
+<script>
+    // Hilangkan alert setelah 3 detik
+    setTimeout(() => {
+        const alert = document.getElementById('alertDeleteProduk');
+        if (alert) {
+            alert.classList.add('opacity-0');
+            setTimeout(() => alert.remove(), 500); // Tunggu transisi selesai sebelum remove
+        }
+    }, 3000); // 3000ms = 3 detik
+</script>

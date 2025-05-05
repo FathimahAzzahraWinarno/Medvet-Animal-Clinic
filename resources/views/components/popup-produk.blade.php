@@ -21,7 +21,8 @@
               </button>
           </div>
           <!-- Modal body -->
-          <form class="p-4 md:p-5 space-y-6" enctype="multipart/form-data">
+          <form method="POST" action="{{ route('createProduk') }}" enctype="multipart/form-data" class="p-4 md:p-5 space-y-6">
+            @csrf
             <div>
                 <label for="foto" class="block mb-2 text-sm font-semibold text-gray-800 ">Foto Produk</label>
                 <input type="file" id="foto" name="gambar"
@@ -30,13 +31,13 @@
 
             <div>
                 <label for="nama" class="block mb-2 text-sm font-semibold text-gray-800">Nama Produk</label>
-                <input type="text" id="nama" name="nama" placeholder="nama perawatan"
+                <input type="text" id="nama" name="nama" placeholder="nama produk"
                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:text-gray" required>
             </div>
 
             <div>
-                <label for="deskripsi" class="block mb-2 text-sm font-medium font-semibold text-gray-800">Deskripsi</label>
-                <textarea id="deskripsi" name="deskripsi" rows="4" placeholder="deskripsi"
+                <label for="detail" class="block mb-2 text-sm font-medium font-semibold text-gray-800">detail</label>
+                <textarea id="detail" name="detail" rows="4" placeholder="detail"
                     class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:text-gray"
                     maxlength="300"></textarea>
             </div>

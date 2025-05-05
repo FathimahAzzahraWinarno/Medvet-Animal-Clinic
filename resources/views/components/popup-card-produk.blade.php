@@ -86,7 +86,7 @@
                     </div>
                     <div>
                         <label for="detail-{{ $produk->id }}" class="block mb-2 text-sm font-medium text-gray-800">
-                            Deskripsi
+                            detail
                         </label>
                         <textarea name="detail" id="detail-{{ $produk->id }}"
                             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5 h-28"

@@ -33,7 +33,11 @@ Route::post('/admin/kelola-promo', [PromoController::class, 'createPromo'])->nam
 
 Route::get('produk', [ProdukController::class, 'index']);
 
+Route::get('/admin/kelola-produk', [ProdukController::class, 'index']);
+
 Route::delete('/admin/kelola-produk/{id}', [ProdukController::class, 'deleteProduk'])->name('deleteProduk');
+
+Route::post('/admin/kelola-produk', [ProdukController::class, 'createProduk'])->name('createProduk');
 
 Route::get('contact', function () {
     return view('contact');
@@ -97,8 +101,6 @@ Route::get('pelanggan', function () {
 
 
 Route::get('kelola-perawatan', [KelolaPerawatanController::class, 'kelolaPerawatan']);
-
-Route::get('kelola-produk', [ProdukController::class, 'index']);
 
 Route::post('/admin/kelola-perawatan', [KelolaPerawatanController::class, 'createPerawatan'])->name('createPerawatan');
 
