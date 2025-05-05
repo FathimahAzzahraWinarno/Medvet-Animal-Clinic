@@ -63,9 +63,7 @@
                 </button>
             </div>
             <!-- Modal body -->
-            <form  action="{{ route('updatePromo', $promo->id) }}" method="POST"  class="p-4 md:p-5">
-                @csrf
-                @method('PUT')
+            <form   class="p-4 md:p-5">
                 <div class="grid gap-4 mb-4 grid-cols-2">
                     <div class="col-span-2">
                         <label for="name-{{ $promo->id }}" class="block mb-2 text-sm font-medium text-gray-800">Nama Promo</label>

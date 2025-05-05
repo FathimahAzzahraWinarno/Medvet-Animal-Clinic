@@ -11,6 +11,7 @@ use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\PromoController;
 use App\Http\Controllers\TentangKamiController;
 use App\Models\Faq;
+use App\Models\Produk;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -32,13 +33,12 @@ Route::post('/admin/kelola-promo', [PromoController::class, 'createPromo'])->nam
 
 Route::get('produk', [ProdukController::class, 'index']);
 
+Route::delete('/admin/kelola-produk/{id}', [ProdukController::class, 'deleteProduk'])->name('deleteProduk');
+
 Route::get('contact', function () {
     return view('contact');
 });
 
-Route::get('kelola-produk', function () {
-    return view('admin.kelolaProduk');
-});
 
 Route::get('reservasi', function (Request $request) {
     $promo = $request->query('promo');
@@ -97,6 +97,8 @@ Route::get('pelanggan', function () {
 
 
 Route::get('kelola-perawatan', [KelolaPerawatanController::class, 'kelolaPerawatan']);
+
+Route::get('kelola-produk', [ProdukController::class, 'index']);
 
 Route::post('/admin/kelola-perawatan', [KelolaPerawatanController::class, 'createPerawatan'])->name('createPerawatan');
 
