@@ -108,54 +108,52 @@
             </div>
             <!-- Modal body -->
             <form class="p-4 md:p-5 space-y-6">
-              <!-- Input Nama Perawatan -->
               <div>
                   <label for="tanggal" class="block mb-2 text-sm font-medium font-semibold text-gray-800">Tanggal</label>
                   <input type="date" id="tanggal" name="tanggal"
                       class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:text-gray" required>
               </div>
 
-              <!-- Input Deskripsi -->
               <div>
                   <label for="detail" class="block mb-2 text-sm font-medium font-semibold text-gray-800">Detail Rekam Medis</label>
-                  <textarea id="detail" name="detail" rows="3"
+                  <textarea id="detail" name="detail" rows="3" placeholder="Masukan detail"
                       class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:text-gray"
-                      maxlength="300">Terkena virus karna terlalu sering bermain ditempat kotor</textarea>
+                      maxlength="300"></textarea>
               </div>
-              <!-- Input dokter -->
+
               <div>
                 <label for="dokter" class="block mb-2 text-sm font-medium font-semibold text-gray-800">Dokter</label>
-                <textarea id="dokter" name="dokter" rows="3"
+                <textarea id="dokter" name="dokter" rows="3" placeholder="Nama dokter"
                     class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:text-gray"
-                    maxlength="300">Terkena virus karna terlalu sering bermain ditempat kotor</textarea>
+                    maxlength="300"></textarea>
             </div>
-            <!-- Input tes -->
+
             <div>
                 <label for="tes" class="block mb-2 text-sm font-medium font-semibold text-gray-800">Tes</label>
-                <textarea id="tes" name="tes" rows="3"
+                <textarea id="tes" name="tes" rows="3" placeholder="Masukan tes"
                     class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:text-gray"
-                    maxlength="300">Terkena virus karna terlalu sering bermain ditempat kotor</textarea>
+                    maxlength="300"></textarea>
             </div>
-            <!-- Input hasil tes -->
+
             <div>
                 <label for="hasilTes" class="block mb-2 text-sm font-medium font-semibold text-gray-800">Hasil Tes</label>
-                <textarea id="hasilTes" name="hasilTes" rows="3"
+                <textarea id="hasilTes" name="hasilTes" rows="3" placeholder="Masukan hasil tes"
                     class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:text-gray"
-                    maxlength="300">Terkena virus karna terlalu sering bermain ditempat kotor</textarea>
+                    maxlength="300"></textarea>
             </div>
-            <!-- Input tindakan -->
+
             <div>
                 <label for="tindakan" class="block mb-2 text-sm font-medium font-semibold text-gray-800">Tindakan</label>
-                <textarea id="tindakan" name="tindakan" rows="3"
+                <textarea id="tindakan" name="tindakan" rows="3" placeholder="Masukan Tindakan"
                     class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:text-gray"
-                    maxlength="300">Terkena virus karna terlalu sering bermain ditempat kotor</textarea>
+                    maxlength="300"></textarea>
             </div>
-            <!-- Input pesan -->
+
             <div>
                 <label for="pesan" class="block mb-2 text-sm font-medium font-semibold text-gray-800">Pesan</label>
-                <textarea id="pesan" name="pesan" rows="3"
+                <textarea id="pesan" name="pesan" rows="3" placeholder="Masukan pesan"
                     class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:text-gray"
-                    maxlength="300">Terkena virus karna terlalu sering bermain ditempat kotor</textarea>
+                    maxlength="300"></textarea>
             </div>
           </form>
             <!-- Modal footer -->
