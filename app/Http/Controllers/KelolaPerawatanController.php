@@ -43,12 +43,11 @@ class KelolaPerawatanController extends Controller
 
         $perawatan->nama = $request->nama;
         $perawatan->deskripsi = $request->deskripsi;
-        $perawatan->slug = Str::slug($request->slug, '-'); // konsisten dengan create
+        $perawatan->slug = Str::slug($request->slug, '-');
         $perawatan->harga = $request->harga;
         $perawatan->is_diskon = $request->has('is_diskon') ? 1 : 0;
         $perawatan->diskon = $request->diskon;
 
-        // Tangani upload gambar jika ada file baru
         if ($request->hasFile('gambar')) {
             $path = $request->file('gambar')->store('perawatan', 'public');
             $perawatan->gambar = "storage/$path";
@@ -83,8 +82,6 @@ class KelolaPerawatanController extends Controller
         $validated['is_diskon'] = $request->has('is_diskon') ? 1 : 0;
 
         Perawatan::create($validated);
-
-
 
         return redirect()->back()->with('success', 'Perawatan berhasil ditambahkan.');
     }

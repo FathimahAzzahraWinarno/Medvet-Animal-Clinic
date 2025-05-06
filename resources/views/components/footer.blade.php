@@ -5,6 +5,7 @@
         <h1 class="text-2xl font-bold py-2 mb-2">Bantu Kami Lebih Baik, Beri Pendapatmu!</h1>
         <p>Kami selalu siap menerima masukan untuk meningkatkan layanan klinik  .</p>
     </div>
+   
     <div class="flex justify-between max-w-7xl mx-auto px-6">
         <!-- Contact Info Section -->
         <div class="max-w-screen-lg ml-5">
@@ -27,7 +28,6 @@
             <div class="flex flex-col items-center mt-48">
                 <img src="{{ asset('images/logo2.png') }}" alt="logo" class="w-[120px] py-4">
                 <div class="flex space-x-4">
-                    <a href="/" class="rounded-md px-3 py-2 text-sm font-medium">Beranda</a>
                     <a href="#" class="rounded-md px-3 py-2 text-sm font-medium">Perawatan</a>
                     <a href="#" class="rounded-md px-3 py-2 text-sm font-medium">Promo</a>
                     <a href="#" class="rounded-md px-3 py-2 text-sm font-medium">Reservasi</a>
@@ -41,18 +41,19 @@
 
         <!-- Form Section -->
         <div class="bg-white text-black rounded-[16px] py-12 px-12 shadow-lg w-[30rem]">
-            <form>
+            <form method="POST" action="{{ route('feedback') }}">
+                @csrf
                 <div class="mb-4">
                     <label for="nama" class="block text-sm mb-1">Nama Lengkap</label>
-                    <input id="nama" type="text" placeholder="Masukkan nama anda" class="border border-blue-200 shadow-[0px_0px_10px_rgba(59,130,246,0.3)] rounded-[8px] p-2 w-full shadow-md focus:outline-none focus:ring-2 focus:ring-blue-400">
+                    <input name="nama" id="nama" type="text" placeholder="Masukkan nama anda" class="border border-blue-200 shadow-[0px_0px_10px_rgba(59,130,246,0.3)] rounded-[8px] p-2 w-full shadow-md focus:outline-none focus:ring-2 focus:ring-blue-400">
                 </div>
                 <div class="mb-4">
                     <label for="email" class="block text-sm mb-1">Email</label>
-                    <input id="email" type="email" placeholder="you@company.com" class="border border-blue-200 shadow-[0px_0px_10px_rgba(59,130,246,0.3)] rounded-[8px] p-2 w-full shadow-md focus:outline-none focus:ring-2 focus:ring-blue-400">
+                    <input name="email" id="email" type="email" placeholder="you@company.com" class="border border-blue-200 shadow-[0px_0px_10px_rgba(59,130,246,0.3)] rounded-[8px] p-2 w-full shadow-md focus:outline-none focus:ring-2 focus:ring-blue-400">
                 </div>
                 <div class="mb-4">
                     <label for="pesan" class="block text-sm mb-1">Pesan</label>
-                    <textarea id="pesan" placeholder="" class="border border-blue-200 shadow-[0px_0px_10px_rgba(59,130,246,0.3)] rounded-[8px] p-2 w-full h-[100px] shadow-md focus:outline-none focus:ring-2 focus:ring-blue-400"></textarea>
+                    <textarea name="pesan" id="pesan" placeholder="" class="border border-blue-200 shadow-[0px_0px_10px_rgba(59,130,246,0.3)] rounded-[8px] p-2 w-full h-[100px] shadow-md focus:outline-none focus:ring-2 focus:ring-blue-400"></textarea>
                 </div>
                 <div class="flex items-center mb-4">
                     <input type="checkbox" class="mr-2">
@@ -77,3 +78,4 @@
     </div>
 </div>
 </div>
+

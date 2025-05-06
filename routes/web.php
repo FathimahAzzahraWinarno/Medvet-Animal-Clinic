@@ -3,6 +3,7 @@
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BerandaController;
 use App\Http\Controllers\FaqController;
+use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\KelolaFaqController;
 use App\Http\Controllers\KelolaPerawatanController;
 use App\Http\Controllers\KelolaPromoController;
@@ -33,13 +34,15 @@ Route::post('/admin/kelola-promo', [PromoController::class, 'createPromo'])->nam
 
 Route::get('produk', [ProdukController::class, 'index']);
 
-Route::get('/admin/kelola-produk', [ProdukController::class, 'index']);
+Route::get('/admin/kelola-produk', [ProdukController::class, 'kelolaProduk']);
 
 Route::delete('/admin/kelola-produk/{id}', [ProdukController::class, 'deleteProduk'])->name('deleteProduk');
 
 Route::post('/admin/kelola-produk', [ProdukController::class, 'createProduk'])->name('createProduk');
 
 Route::put('/admin/kelola-produk/{id}', [ProdukController::class, 'updateProduk'])->name('updateProduk');
+
+Route::post('feedback', [FeedbackController::class, 'createFeedback'])->name('feedback');
 
 Route::get('contact', function () {
     return view('contact');
@@ -62,6 +65,7 @@ Route::post('/masuk-page', [AuthController::class, 'login'])->name('login');
 Route::get('daftar-page', function () {
     return view('daftarPage');
 });
+
 
 Route::post('/daftar-page', [AuthController::class, 'daftar'])->name('daftar-page');
 
@@ -93,9 +97,7 @@ Route::get('reservasi-riwayat', function () {
     return view('admin.reservasiRiwayat');
 });
 
-Route::get('feedback-pelanggan', function () {
-    return view('admin.feedback');
-});
+Route::get('feedback-pelanggan', [FeedbackController::class, 'index'])->name('feedback-pelanggan');
 
 Route::get('pelanggan', function () {
     return view('admin.pelanggan');

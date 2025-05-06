@@ -12,10 +12,11 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('feedback', function (Blueprint $table) {
-            $table->string('id')->primary();
-            $table->string('id_user');
-            $table->string('title');
-            $table->string('detail');
+            $table->id();
+            $table->string('id_user')->nullable();
+            $table->string('nama');
+            $table->string('email');
+            $table->text('pesan');
             $table->timestamps();
 
             $table->foreign('id_user')->references('id')->on('users')->onDelete('cascade');

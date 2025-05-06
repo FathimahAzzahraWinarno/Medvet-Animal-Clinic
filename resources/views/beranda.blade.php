@@ -22,6 +22,17 @@
                 </div>
             </div>
          @endif
+
+         @if(session('success'))
+         <div id="alertFeedback" class="mb-4 flex items-center p-4 text-green-800 rounded-lg bg-green-50 dark:bg-gray-800 dark:text-green-400 shadow-md z-10 w-100 ml-10 transition-opacity duration-500" role="alertFeedback">
+             <svg class="shrink-0 w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                 <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"/>
+             </svg>
+             <div class="ms-3 text-sm font-medium">
+                 {{ session('success') }}
+             </div>
+         </div>
+     @endif
     
 
           <div class="max-w-5xl mx-auto text-center px-4">
@@ -87,4 +98,15 @@
           setTimeout(() => alert.remove(), 500); // Tunggu transisi 0.5s
       }
   }, 3000);
+</script>
+
+<script>
+  // Hilangkan alert setelah 3 detik
+  setTimeout(() => {
+      const alert = document.getElementById('alertFeedback');
+      if (alert) {
+          alert.classList.add('opacity-0');
+          setTimeout(() => alert.remove(), 500); // Tunggu transisi selesai sebelum remove
+      }
+  }, 3000); // 3000ms = 3 detik
 </script>

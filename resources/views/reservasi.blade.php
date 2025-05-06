@@ -49,28 +49,28 @@
                 <!-- Nama Peliharaan -->
                 <div class="md:col-span-2">
                     <label class="block text-gray-700">Nama Peliharaan</label>
-                    <input type="text" placeholder="Masukkan nama peliharaan"
+                    <input type="text" placeholder="Masukkan nama peliharaan" name="hewan[0][nama]"
                         class="w-full mt-1 px-4 py-2 border border-gray-400 rounded-lg focus:outline-blue-200">
                 </div>
         
                 <!-- Jenis Kelamin -->
                 <div>
                     <label class="block text-gray-700">Jenis Kelamin</label>
-                    <input type="text" placeholder="Masukkan Jenis Kelamin"
+                    <input type="text" placeholder="Masukkan Jenis Kelamin" name="kelamin[0][kelamin]"
                         class="w-full mt-1 px-4 py-2 border border-gray-400 rounded-lg focus:outline-blue-200">
                 </div>
         
                 <!-- Spesies -->
                 <div>
                     <label class="block text-gray-700">Spesies</label>
-                    <input type="text" placeholder="Masukkan Spesies"
+                    <input type="text" placeholder="Masukkan Spesies" name="spesies[0][spesies]"
                         class="w-full mt-1 px-4 py-2 border border-gray-400 rounded-lg focus:outline-blue-200">
                 </div>
         
                 <!-- Ras -->
                 <div>
                     <label class="block text-gray-700">Ras</label>
-                    <input type="text" placeholder="Masukkan Ras"
+                    <input type="text" placeholder="Masukkan Ras" name="ras[0][ras]"
                         class="w-full mt-1 px-4 py-2 border border-gray-400 rounded-lg focus:outline-blue-200">
                 </div>
             </div>
