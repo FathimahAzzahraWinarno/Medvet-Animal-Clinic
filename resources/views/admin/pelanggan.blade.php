@@ -6,17 +6,18 @@
                 <thead class="text-xs text-gray-500 uppercase bg-gray-50 border-b border-gray-200">
                     <tr>
                         <th class="px-4 py-3">No</th>
+                        <th class="px-4 py-3">Tanggal Akun Terdaftar</th>
                         <th class="px-4 py-3">Nama Pemilik</th>
                         <th class="px-4 py-3">Nama Hewan</th>
                         <th class="px-4 py-3">Email</th>
                         <th class="px-4 py-3">Total Reservasi</th>
-                        <th class="px-4 py-3">Reservasi Selesai</th>
                         <th class="px-4 py-3">Rekam Medis</th>
                     </tr>
                 </thead>
                 <tbody class="bg-white font-semibold">
                     <tr class="border-b border-gray-300">
                         <td class="px-4 py-3">1</td>
+                        <td class="px-4 py-3">07/05/2025</td>
                         <td class="px-4 py-3">
                             <div>Liras Ayun</div>
                             <div class="text-xs text-gray-400">LK01</div>
@@ -26,9 +27,6 @@
                         </td>
                         <td class="px-4 py-3">
                             <span class="bg-orange-100 text-orange-700 text-xs px-2 py-1 rounded-full">fathwinarno@gmail.com</span>
-                        </td>
-                        <td class="px-4 py-3">
-                            <span class="bg-blue-100 text-blue-700 px-2 py-1 rounded-full text-xs">2</span>
                         </td>
                         <td class="px-4 py-3">
                             <span class="bg-green-100 text-green-600 text-xs px-2 py-1 rounded-full">4</span>
