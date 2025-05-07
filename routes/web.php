@@ -34,7 +34,7 @@ Route::post('/admin/kelola-promo', [PromoController::class, 'createPromo'])->nam
 
 Route::get('produk', [ProdukController::class, 'index']);
 
-Route::get('/admin/kelola-produk', [ProdukController::class, 'kelolaProduk']);
+Route::get('/admin/kelola-produk', [ProdukController::class, 'kelolaProduk'])->name('kelolaProduk');
 
 Route::delete('/admin/kelola-produk/{id}', [ProdukController::class, 'deleteProduk'])->name('deleteProduk');
 
