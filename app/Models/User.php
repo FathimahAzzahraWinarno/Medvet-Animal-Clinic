@@ -43,6 +43,7 @@ class User extends Authenticatable
         'password',
         'alamat',
         'telepon',
+        'tanggal_akun',
     ];
 
     /**

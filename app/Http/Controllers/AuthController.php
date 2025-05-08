@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Pengelola;
 use App\Models\User;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -34,6 +35,7 @@ class AuthController extends Controller
             'password' => Hash::make($request->password),
             'alamat' => '',
             'telepon' => '',
+            'tanggal_akun' => Carbon::now()->toDateString(),
         ]);
 
         if (!$newUser) {
