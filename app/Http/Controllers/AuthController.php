@@ -72,4 +72,21 @@ class AuthController extends Controller
 
         return redirect($route)->with('success-login', 'Selamat datang, ' . $user->name . '!');
     }
+
+
+    public function showProfile()
+    {
+        $user = Auth::user();
+        return view('profile', compact('user'));
+    }
+
+    public function logout(Request $request)
+    {
+        Auth::logout(); // Logout user
+
+        $request->session()->invalidate(); // Invalidate session
+        $request->session()->regenerateToken(); // Regenerate CSRF token
+
+        return redirect('/login'); // Arahkan ke halaman login atau home
+    }
 }

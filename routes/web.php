@@ -74,9 +74,13 @@ Route::get('rekam-medis', function () {
     return view('RekamMedis');
 });
 
-Route::get('profile', function () {
-    return view('profile');
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('profile', [AuthController::class, 'showProfile'])->name('user.profile');
 });
+
+Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+
 
 Route::get('riwayat-reservasi', function () {
     return view('riwayatReservasi');

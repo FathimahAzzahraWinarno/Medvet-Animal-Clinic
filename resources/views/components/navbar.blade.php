@@ -34,13 +34,35 @@
         </a>
         @endguest
 
-        <!-- after login -->
-        @auth
-        <button type="button" class="flex text-sm bg-gray-800 rounded-full md:me-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600" id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown" data-dropdown-placement="bottom">
+              <!-- after login -->
+    @auth
+      <div class="relative">
+        <!-- Button -->
+        <button type="button" class="flex text-sm bg-gray-800 rounded-full focus:ring-4 focus:ring-gray-300" id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown">
           <span class="sr-only">Open user menu</span>
           <img src="{{ asset('images/karyawan.jpeg') }}" alt="user" class="w-11 h-11 rounded-full" />
         </button>
-        @endauth
+
+        <!-- Dropdown -->
+        <div id="user-dropdown" class="z-50 hidden absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-200">
+          <div class="px-4 py-3 text-sm text-gray-900 border-b border-gray-100">
+            <div class="font-medium">{{ Auth::user()->name }}</div>
+            <div class="text-sm text-gray-500">{{ Auth::user()->email }}</div>
+          </div>
+          <ul class="py-2 text-sm text-gray-700">
+            <li>
+              <a href="{{ route('profile') }}" class="block px-4 py-2 hover:bg-gray-100">Profile</a>
+            </li>
+            <li>
+              <form method="POST" action="{{ route('logout') }}">
+                @csrf
+                <button type="submit" class="w-full text-left px-4 py-2 hover:bg-gray-100">Logout</button>
+              </form>
+            </li>
+          </ul>
+        </div>
+      </div>
+    @endauth
         </div>
       </div>
     </div>
