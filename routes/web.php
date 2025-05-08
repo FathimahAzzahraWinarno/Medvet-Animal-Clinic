@@ -7,6 +7,7 @@ use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\KelolaFaqController;
 use App\Http\Controllers\KelolaPerawatanController;
 use App\Http\Controllers\KelolaPromoController;
+use App\Http\Controllers\PelangganController;
 use App\Http\Controllers\PerawatanController;
 use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\PromoController;
@@ -99,9 +100,7 @@ Route::get('reservasi-riwayat', function () {
 
 Route::get('feedback-pelanggan', [FeedbackController::class, 'index'])->name('feedback-pelanggan');
 
-Route::get('pelanggan', function () {
-    return view('admin.pelanggan');
-});
+Route::get('pelanggan', [PelangganController::class, 'dataPelanggan'])->name('admin.pelanggan');
 
 
 Route::get('kelola-perawatan', [KelolaPerawatanController::class, 'kelolaPerawatan']);
