@@ -1,4 +1,5 @@
 @vite('resources/css/app.css')
+<script src="https://unpkg.com/flowbite@1.6.5/dist/flowbite.min.js"></script>
 <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
 <title>Riwayat Reservasi</title>
 
