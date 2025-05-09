@@ -1,4 +1,6 @@
 @vite('resources/css/app.css')
+<script src="https://unpkg.com/flowbite@1.6.5/dist/flowbite.min.js"></script>
+
 <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
 <title>profile</title>
 
@@ -61,12 +63,6 @@
           <textarea type="text" id="alamat" name="alamat" placeholder="Jl. Mawar" rows="3"
                  class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-300 focus:ring-opacity-50"></textarea>
         </div>
-      </div>
-
-      <!-- Buttons -->
-      <div class="mt-6 flex justify-end gap-3">
-        <button class="px-4 py-2 font-semibold border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-100">Cancel</button>
-        <button class="px-4 py-2 font-semibold bg-[#234bd2] text-white rounded-lg hover:bg-blue-600">Save changes</button>
       </div>
     </div>
   </div> 

@@ -30,14 +30,13 @@
         </nav>
       </div>
   
-      <form method="POST" action="{{ route('logout') }}">
-        @csrf
-        <button type="submit" class="flex items-center justify-center font-semibold gap-2 text-red-600 border border-red-600 px-4 py-2 rounded-lg hover:bg-red-50">
-          Keluar
-          <img src="{{asset('images/keluar.svg')}}" class="w-5 h-5">
-       </button>
-      </form>
-      
-    
-    </aside>
+      <!-- Tombol trigger modal -->
+<button data-modal-target="logout-modal" data-modal-toggle="logout-modal" 
+class="flex items-center justify-center font-semibold gap-2 text-red-600 border border-red-600 px-4 py-2 rounded-lg hover:bg-red-50">
+Keluar
+<img src="{{ asset('images/keluar.svg') }}" class="w-5 h-5" alt="Logout Icon">
+</button>
+
+<x-popup-logout></x-popup-logout>
+  </aside>
   
