@@ -81,6 +81,8 @@ Route::middleware(['auth'])->group(function () {
 
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
+Route::put('/profile/update/{id}', [AuthController::class, 'updateProfile'])->name('update.profile');
+
 
 Route::get('riwayat-reservasi', function () {
     return view('riwayatReservasi');

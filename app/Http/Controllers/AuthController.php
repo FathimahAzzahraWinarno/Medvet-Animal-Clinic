@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Redis;
 
 class AuthController extends Controller
 {
@@ -88,5 +89,26 @@ class AuthController extends Controller
         $request->session()->regenerateToken();
 
         return redirect('/masuk-page');
+    }
+
+    public function updateProfile(Request $request)
+    {
+        $request->validate([
+            'nama' => 'required|string|max:255',
+            'email' => 'required|string|email',
+            'telepon' => 'required',
+            'alamat' => 'required|string',
+        ]);
+
+        /** @var \App\Models\User $user */
+        $user = Auth::user(); // Ambil user yang sedang login
+
+        $user->name = $request->nama;
+        $user->email = $request->email;
+        $user->telepon = $request->telepon;
+        $user->alamat = $request->alamat;
+        $user->save();
+
+        return redirect()->back()->with('success', 'Profil berhasil diperbarui');
     }
 }
