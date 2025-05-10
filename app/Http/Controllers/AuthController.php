@@ -57,15 +57,15 @@ class AuthController extends Controller
             $user = Pengelola::where('email', $request->email)->first();
         }
 
-        if (!$user && !Hash::check($request->password, $user->password)) {
+        if (!$user || !Hash::check($request->password, $user->password)) {
             return redirect()->back()->with('error-login', 'Email atau password salah.');
         }
 
-        Auth::login($user); // ✅ Ini bener
+        Auth::login($user); // ✅ Login
 
-        if ($user->role == 'dokter') {
+        if ($user->role === 'dokter') {
             $route = '/dashboard-dokter';
-        } elseif ($user->role == 'admin') {
+        } elseif ($user->role === 'admin') {
             $route = '/dashboard';
         } else {
             $route = '/';
@@ -73,6 +73,12 @@ class AuthController extends Controller
 
         return redirect($route)->with('success-login', 'Selamat datang, ' . $user->name . '!');
     }
+
+    public function index()
+    {
+        return view('dokter.dashboardDokter');
+    }
+
 
 
     public function showProfile()

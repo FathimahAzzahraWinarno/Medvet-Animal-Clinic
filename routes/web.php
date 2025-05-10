@@ -128,9 +128,8 @@ Route::put('/admin/kelola-FAQ/{id}', [KelolaFaqController::class, 'updateFaq'])-
 
 Route::get('kelola-promo', [KelolaPromoController::class, 'kelolaPromo']);
 
-Route::get('dashboard-dokter', function () {
-    return view('dokter.dashboardDokter');
-});
+Route::get('dashboard-dokter', [AuthController::class, 'index'])->middleware('auth');
+
 
 Route::get('jadwal-reservasi-dokter', function () {
     return view('dokter.jadwalReservasiDokter');
