@@ -3,20 +3,15 @@
         <div>
           <a href="dashboard-dokter">
           <img src="{{ asset('images/logo.svg') }}" alt="Logo Medvetco" class="h-10 mb-12" /></a>
-         <div class="flex items-center gap-3 mb-12">
-          <img src="{{ asset('images/karyawan.jpeg') }}" class="w-13 h-13 rounded-full" />
-          
-          <div>
-              @if (Auth::check() && Auth::user()->role === 'dokter')
-                  <p class="font-semibold">Dr. Medvet</p> {{-- nama manual --}}
-                  <p class="text-sm text-gray-500">{{ Auth::user()->email }}</p>
-              @else
-                  <p class="font-semibold">Guest</p>
-                  <p class="text-sm text-gray-500">Belum login atau bukan dokter</p>
-              @endif
+          <div class="flex items-center gap-3 mb-12">
+            <img src="{{ asset('images/karyawan.jpeg') }}" class="w-13 h-13 rounded-full" />
+            <div>
+              <p class="font-semibold">Olivia Rhye</p>
+              <p class="text-sm text-gray-500">dokterMedvet</p>
+                <p class="text-sm text-gray-500">@example.com</p>
+            </div>
           </div>
-       </div>
-          
+    
           <nav class="space-y-6 font-semibold">
             <a href="dashboard-dokter" class="flex items-center text-gray-700 hover:text-blue-600">
               <img src="{{ asset('images/dashboard.svg') }}" class="w-6 h-6 rounded-full" />
