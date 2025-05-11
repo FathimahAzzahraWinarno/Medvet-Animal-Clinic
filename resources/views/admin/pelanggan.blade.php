@@ -12,7 +12,6 @@
                         <th class="px-4 py-3">Nama Hewan</th>
                         <th class="px-4 py-3">Email</th>
                         <th class="px-4 py-3">Total Reservasi</th>
-                        <th class="px-4 py-3">Rekam Medis</th>
                     </tr>
                 </thead>
                 <tbody class="bg-white font-semibold">
@@ -28,9 +27,8 @@
                             <td class="px-4 py-3">
                                 <span class="bg-orange-100 text-orange-700 text-xs px-2 py-1 rounded-full">{{ $user->email }}</span>
                             </td>
-                            <td class="px-4 py-3">-</td> {{-- Total Reservasi nanti --}}
-                            <td class="px-4 py-3">
-                                <button class="bg-gray-100 text-blue-600 text-xs px-3 py-1 rounded hover:underline">Lihat</button>
+                           <td class="px-4 py-3">
+                                {{ $user->reservasis->count() > 0 ? $user->reservasis->count() : '0' }}
                             </td>
                         </tr>
                     @empty
