@@ -41,26 +41,38 @@
 
         <!-- Form Section -->
         <div class="bg-white text-black rounded-[16px] py-12 px-12 shadow-lg w-[30rem]">
-            <form method="POST" action="{{ route('feedback') }}">
-                @csrf
-                <div class="mb-4">
-                    <label for="nama" class="block text-sm mb-1">Nama Lengkap</label>
-                    <input name="nama" id="nama" type="text" value="{{ Auth::user()->name }}" class="border border-blue-200 shadow-[0px_0px_10px_rgba(59,130,246,0.3)] rounded-[8px] p-2 w-full shadow-md focus:outline-none focus:ring-2 focus:ring-blue-400">
-                </div>
-                <div class="mb-4">
-                    <label for="email" class="block text-sm mb-1">Email</label>
-                    <input name="email" id="email" type="email" value="{{ Auth::user()->email }}" class="border border-blue-200 shadow-[0px_0px_10px_rgba(59,130,246,0.3)] rounded-[8px] p-2 w-full shadow-md focus:outline-none focus:ring-2 focus:ring-blue-400">
-                </div>
-                <div class="mb-4">
-                    <label for="pesan" class="block text-sm mb-1">Pesan</label>
-                    <textarea name="pesan" id="pesan" placeholder="" class="border border-blue-200 shadow-[0px_0px_10px_rgba(59,130,246,0.3)] rounded-[8px] p-2 w-full h-[100px] shadow-md focus:outline-none focus:ring-2 focus:ring-blue-400"></textarea>
-                </div>
-                <div class="flex items-center mb-4">
-                    <input type="checkbox" class="mr-2">
-                    <span>You agree to our friendly <a href="#" class="text-blue-600 underline">privacy policy</a></span>
-                </div>
-                <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-[8px] w-full">Kirim pesan</button>
-            </form>
+                <form method="POST" action="{{ route('feedback') }}">
+                    @csrf
+
+                    <div class="mb-4">
+                        <label for="nama" class="block text-sm mb-1">Nama Lengkap</label>
+                        <input name="nama" id="nama" type="text"
+                            value="{{ Auth::check() ? Auth::user()->name : '' }}"
+                            class="border border-blue-200 shadow-[0px_0px_10px_rgba(59,130,246,0.3)] rounded-[8px] p-2 w-full shadow-md focus:outline-none focus:ring-2 focus:ring-blue-400">
+                    </div>
+
+                    <div class="mb-4">
+                        <label for="email" class="block text-sm mb-1">Email</label>
+                        <input name="email" id="email" type="email"
+                            value="{{ Auth::check() ? Auth::user()->email : '' }}"
+                            class="border border-blue-200 shadow-[0px_0px_10px_rgba(59,130,246,0.3)] rounded-[8px] p-2 w-full shadow-md focus:outline-none focus:ring-2 focus:ring-blue-400">
+                    </div>
+
+                    <div class="mb-4">
+                        <label for="pesan" class="block text-sm mb-1">Pesan</label>
+                        <textarea name="pesan" id="pesan"
+                            class="border border-blue-200 shadow-[0px_0px_10px_rgba(59,130,246,0.3)] rounded-[8px] p-2 w-full h-[100px] shadow-md focus:outline-none focus:ring-2 focus:ring-blue-400"></textarea>
+                    </div>
+
+                    <div class="flex items-center mb-4">
+                        <input type="checkbox" class="mr-2">
+                        <span>You agree to our friendly <a href="#" class="text-blue-600 underline">privacy policy</a></span>
+                    </div>
+
+                    <button type="submit"
+                        class="bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-[8px] w-full">Kirim pesan</button>
+                </form>
+
         </div>
     </div>
 

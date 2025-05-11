@@ -2,7 +2,6 @@
 <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
 <title>Masuk</title>
 <div class="flex items-center justify-center min-h-screen bg-cover bg-center bg-gray-900/70 bg-blend-darken font-['Inter']" style="background-image: url('/images/bgAnimal.jpg')">
-    
     <div class="relative w-full max-w-md px-4">
         {{-- Alert sukses --}}
         @if(session('success'))
