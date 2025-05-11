@@ -7,7 +7,8 @@
         <img src="{{ asset('images/karyawan.jpeg') }}" class="w-13 h-13 rounded-full" />
         <div>
           <p class="font-semibold">Olivia Rhye</p>
-          <p class="text-sm text-gray-500">olivia@untitledui.com</p>
+          <p class="text-sm text-gray-500">adminMedvet
+            <p class="text-sm text-gray-500">@example.com</p>
         </div>
       </div>
 
