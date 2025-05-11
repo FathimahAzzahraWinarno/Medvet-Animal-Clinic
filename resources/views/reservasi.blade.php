@@ -77,32 +77,33 @@
         
             <!-- Data Pemilik -->
             <h2 class="text-xl font-semibold text-gray-900 mt-6 mb-4">Data Pemilik</h2>
-        
+
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
                     <label class="block text-gray-700">Nama Pemilik</label>
-                    <input type="text" placeholder="Masukkan nama pemilik"
-                        class="w-full mt-1 px-4 py-2 border border-gray-400 rounded-lg focus:outline-blue-200">
+                    <input type="text" value="{{ Auth::user()->name }}" readonly
+                        class="w-full mt-1 px-4 py-2 border border-gray-400 rounded-lg text-gray-700">
                 </div>
-        
+
                 <div>
                     <label class="block text-gray-700">Nomor Telepon</label>
-                    <input type="text" placeholder="Masukkan nomor telepon"
-                        class="w-full mt-1 px-4 py-2 border border-gray-400 rounded-lg focus:outline-blue-200">
+                    <input type="text" value="{{ Auth::user()->telepon }}" readonly
+                        class="w-full mt-1 px-4 py-2 border border-gray-400 rounded-lg text-gray-700">
                 </div>
-        
+
                 <div>
                     <label class="block text-gray-700">Email</label>
-                    <input type="email" placeholder="Masukkan email"
-                        class="w-full mt-1 px-4 py-2 border border-gray-400 rounded-lg focus:outline-blue-200">
+                    <input type="email" value="{{ Auth::user()->email }}" readonly
+                        class="w-full mt-1 px-4 py-2 border border-gray-400 rounded-lg text-gray-700">
                 </div>
-        
+
                 <div>
                     <label class="block text-gray-700">Alamat</label>
-                    <input type="text" placeholder="Masukkan Alamat"
-                        class="w-full mt-1 px-4 py-2 border border-gray-400 rounded-lg focus:outline-blue-200">
+                    <input type="text" value="{{ Auth::user()->alamat }}" readonly
+                        class="w-full mt-1 px-4 py-2 border border-gray-400 rounded-lg text-gray-700">
                 </div>
             </div>
+
         
             <!-- Kedatangan -->
             <h2 class="text-xl font-semibold text-gray-900 mt-6 mb-4">Kedatangan</h2>
@@ -155,9 +156,9 @@
                 </div>
         
                 <div class="md:col-span-2">
-                    <label class="block text-gray-700">Pesan</label>
-                    <input type="text" placeholder="Masukkan Pesan"
-                        class="w-full mt-1 px-4 py-2 border border-gray-400 rounded-lg focus:outline-blue-200">
+                    <input class="block text-gray-700">Pesan</input>
+                    <textarea type="text" placeholder="Masukkan Pesan"
+                        class="w-full row-2 mt-1 px-4 py-2 border border-gray-400 rounded-lg focus:outline-blue-200"></textarea>
                 </div>
             </div>
         
