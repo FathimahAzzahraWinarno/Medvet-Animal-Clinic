@@ -78,6 +78,7 @@
             <!-- Data Pemilik -->
             <h2 class="text-xl font-semibold text-gray-900 mt-6 mb-4">Data Pemilik</h2>
 
+            @if(Auth::check())
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
                     <label class="block text-gray-700">Nama Pemilik</label>
@@ -103,6 +104,13 @@
                         class="w-full mt-1 px-4 py-2 border border-gray-400 rounded-lg text-gray-700">
                 </div>
             </div>
+            @else
+            <script>
+                alert('Silakan login terlebih dahulu untuk melakukan reservasi.');
+                window.location.href = "{{ route('login') }}?redirect_reservasi=true";
+            </script>
+            @endif
+
 
         
             <!-- Kedatangan -->
