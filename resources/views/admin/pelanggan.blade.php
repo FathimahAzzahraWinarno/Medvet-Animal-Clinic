@@ -28,8 +28,8 @@
                                 <span class="bg-orange-100 text-orange-700 text-xs px-2 py-1 rounded-full">{{ $user->email }}</span>
                             </td>
                            <td class="px-4 py-3">
-                                {{ $user->reservasis->count() > 0 ? $user->reservasis->count() : '0' }}
-                            </td>
+                            {{ $user->reservasis->count() > 0 ? $user->reservasis->count() : '0' }}
+                        </td>
                         </tr>
                     @empty
                         <tr>

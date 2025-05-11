@@ -13,7 +13,7 @@
       <!-- Konten -->
           <div class="p-4 md:p-5 text-center">
             <img src="{{ asset('images/keluar.svg') }}" class="mx-auto mb-4 w-12 h-12" alt="Logout Icon">
-            <h3 class="mb-5 text-lg font-normal text-gray-500 dark:text-gray-400">Apakah Anda yakin ingin logout?</h3>
+            <h3 class="mb-5 text-lg font-normal text-gray-500 dark:text-gray-400">Apakah Anda yakin ingin keluar?</h3>
             
             <!-- Tombol aksi -->
             <form method="POST" action="{{ route('logout') }}" class="inline">

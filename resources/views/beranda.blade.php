@@ -98,10 +98,8 @@
           setTimeout(() => alert.remove(), 500); // Tunggu transisi 0.5s
       }
   }, 3000);
-</script>
 
-<script>
-  // Hilangkan alert setelah 3 detik
+   // Hilangkan alert setelah 3 detik
   setTimeout(() => {
       const alert = document.getElementById('alertFeedback');
       if (alert) {
