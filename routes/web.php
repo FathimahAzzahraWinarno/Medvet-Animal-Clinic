@@ -8,6 +8,7 @@ use App\Http\Controllers\KelolaFaqController;
 use App\Http\Controllers\KelolaPerawatanController;
 use App\Http\Controllers\KelolaPromoController;
 use App\Http\Controllers\PelangganController;
+use App\Http\Controllers\PengelolaController;
 use App\Http\Controllers\PerawatanController;
 use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\PromoController;
@@ -32,6 +33,8 @@ Route::delete('/admin/kelola-promo/{id}', [PromoController::class, 'deletePromo'
 Route::put('/admin/kelola-promo/{id}', [PromoController::class, 'updatePromo'])->name('updatePromo');
 
 Route::post('/admin/kelola-promo', [PromoController::class, 'createPromo'])->name('createPromo');
+
+Route::get('/admin/dashboard', [PengelolaController::class, 'index']);
 
 Route::get('produk', [ProdukController::class, 'index']);
 

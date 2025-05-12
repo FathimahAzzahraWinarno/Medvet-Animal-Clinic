@@ -30,7 +30,7 @@
         <div class="grid grid-cols-1 md:grid-cols-3 gap-10 mb-15">
             <div class="bg-gray-50 p-4 rounded-lg shadow">
                 <p class="text-l font-bold text-gray-500">Total Pelanggan</p>
-                <p class="text-3xl font-bold text-gray-800 mt-5 mb-5">289</p>
+                <p class="text-3xl font-bold text-gray-800 mt-5 mb-5">{{ $totalPelanggan ?? '0' }}</p>
             </div>
             <div class="bg-gray-50 p-4 rounded-lg shadow">
                 <p class="text-l font-bold text-gray-500">Reservasi Hari ini</p>
