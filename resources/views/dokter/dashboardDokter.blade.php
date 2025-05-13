@@ -39,7 +39,7 @@
                         <th class="px-4 py-3">Spesies</th>
                         <th class="px-4 py-3">Tanggal</th>
                         <th class="px-4 py-3">Jam</th>
-                        <th class="px-4 py-3">Update</th>
+                        <th class="px-4 py-3">Perawatan</th>
                         <th class="px-4 py-3">Rekam Medis</th>
                     </tr>
                 </thead>
@@ -61,7 +61,7 @@
                             <span class="bg-blue-100 text-blue-700 px-2 py-1 rounded-full text-xs">10AM</span>
                         </td>
                         <td class="px-4 py-3">
-                            <span class="bg-green-100 text-green-600 text-xs px-2 py-1 rounded-full">✔</span>
+                            <span class="bg-green-100 text-green-600 text-xs px-2 py-1 rounded-full">USG</span>
                         </td>
                         <td class="px-4 py-3">
                             <button class="bg-gray-100 text-blue-600 text-xs px-3 py-1 rounded hover:underline">Lihat</button>
@@ -84,7 +84,7 @@
                             <span class="bg-green-100 text-green-700 px-2 py-1 rounded-full text-xs">1PM</span>
                         </td>
                         <td class="px-4 py-3">
-                            <span class="bg-green-100 text-green-600 text-xs px-2 py-1 rounded-full">✔</span>
+                            <span class="bg-green-100 text-green-600 text-xs px-2 py-1 rounded-full">Vaksin</span>
                         </td>
                         <td class="px-4 py-3">
                             <button class="bg-gray-100 text-blue-600 text-xs px-3 py-1 rounded hover:underline">Lihat</button>
@@ -107,7 +107,7 @@
                             <span class="bg-gray-200 text-gray-800 px-2 py-1 rounded-full text-xs">5PM</span>
                         </td>
                         <td class="px-4 py-3">
-                            <span class="bg-green-100 text-green-600 text-xs px-2 py-1 rounded-full">✔</span>
+                            <span class="bg-green-100 text-green-600 text-xs px-2 py-1 rounded-full">Vaksin</span>
                         </td>
                         <td class="px-4 py-3">
                             <button class="bg-gray-100 text-blue-600 text-xs px-3 py-1 rounded hover:underline">Lihat</button>

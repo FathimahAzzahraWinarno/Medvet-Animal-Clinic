@@ -115,13 +115,6 @@
               </div>
 
               <div>
-                  <label for="detail" class="block mb-2 text-sm font-medium font-semibold text-gray-800">Detail Rekam Medis</label>
-                  <textarea id="detail" name="detail" rows="3" placeholder="Masukan detail"
-                      class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:text-gray"
-                      maxlength="300"></textarea>
-              </div>
-
-              <div>
                 <label for="dokter" class="block mb-2 text-sm font-medium font-semibold text-gray-800">Dokter</label>
                 <textarea id="dokter" name="dokter" rows="3" placeholder="Nama dokter"
                     class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:text-gray"
@@ -129,11 +122,19 @@
             </div>
 
             <div>
-                <label for="tes" class="block mb-2 text-sm font-medium font-semibold text-gray-800">Tes</label>
-                <textarea id="tes" name="tes" rows="3" placeholder="Masukan tes"
+                <label for="tes" class="block mb-2 text-sm font-medium font-semibold text-gray-800">Perawatan</label>
+                <textarea id="tes" name="tes" rows="3" placeholder="Masukan Perawatan"
                     class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:text-gray"
                     maxlength="300"></textarea>
             </div>
+
+              <div>
+                  <label for="detail" class="block mb-2 text-sm font-medium font-semibold text-gray-800">Detail Rekam Medis</label>
+                  <textarea id="detail" name="detail" rows="3" placeholder="Masukan detail"
+                      class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:text-gray"
+                      maxlength="300"></textarea>
+              </div>
+
 
             <div>
                 <label for="hasilTes" class="block mb-2 text-sm font-medium font-semibold text-gray-800">Hasil Tes</label>
@@ -172,10 +173,10 @@
             <thead>
               <tr class="bg-blue-800 text-white">
                 <th class="px-4 py-3">Tanggal</th>
-                <th class="px-4 py-3">Detail Rekam Medis</th>
                 <th class="px-4 py-3">Dokter</th>
+                <th class="px-4 py-3">Perawatan</th>
+                <th class="px-4 py-3">Detail Rekam Medis</th>
                 <th class="px-4 py-3">Diagnosa</th>
-                <th class="px-4 py-3">Tes</th>
                 <th class="px-4 py-3">Hasil Tes</th>
                 <th class="px-4 py-3">Tindakan</th>
                 <th class="px-4 py-3">Pesan</th>
@@ -185,8 +186,8 @@
               <!-- Data rows bisa kamu isi di sini -->
               <tr>
                 <td class="px-4 py-4 border-t">19/01/2025</td>
-                <td class="px-4 py-4 border-t">Terkena virus karna terlalu sering bermain ditempat kotor</td>
                 <td class="px-4 py-4 border-t">Aroza</td>
+                <td class="px-4 py-4 border-t">Vaksin</td>
                 <td class="px-4 py-4 border-t">Terkena virus karna terlalu sering bermain ditempat kotor</td>
                 <td class="px-4 py-4 border-t">Terkena virus karna terlalu sering bermain ditempat kotor</td>
                 <td class="px-4 py-4 border-t">Terkena virus karna terlalu sering bermain ditempat kotor</td>
