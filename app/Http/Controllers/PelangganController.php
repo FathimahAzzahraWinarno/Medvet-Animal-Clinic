@@ -40,4 +40,28 @@ class PelangganController extends Controller
 
         return view('jadwalReservasi', compact('reservasis'));
     }
+
+    public function riwayatReservasi()
+    {
+        $today = Carbon::today();
+
+        // Ambil semua reservasi yang tanggalnya sebelum hari ini
+        $reservasis = Reservasi::with(['user', 'hewan'])
+            ->whereDate('tanggal', '<', $today)
+            ->get();
+
+        return view('riwayatReservasi', compact('reservasis'));
+    }
+
+    public function reservasiRiwayat()
+    {
+        $today = Carbon::today();
+
+        // Ambil semua reservasi yang tanggalnya sebelum hari ini
+        $reservasis = Reservasi::with(['user', 'hewan'])
+            ->whereDate('tanggal', '<', $today)
+            ->get();
+
+        return view('admin.reservasiRiwayat', compact('reservasis'));
+    }
 }

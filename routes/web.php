@@ -85,9 +85,8 @@ Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 Route::put('/profile/update/{id}', [AuthController::class, 'updateProfile'])->name('update.profile');
 
 
-Route::get('riwayat-reservasi', function () {
-    return view('riwayatReservasi');
-});
+Route::get('riwayat-reservasi', [PelangganController::class, 'riwayatReservasi'])->name('riwayatReservasi');
+
 
 Route::get('jadwal-reservasi', [PelangganController::class, 'reservasiUser'])->name('jadwalReservasi');
 
@@ -98,9 +97,7 @@ Route::get('dashboard', function () {
 Route::get('reservasi-dokter', [PelangganController::class, 'reservasiDokter'])->name('reservasi.dokter');
 
 
-Route::get('reservasi-riwayat', function () {
-    return view('admin.reservasiRiwayat');
-});
+Route::get('reservasi-riwayat', [PelangganController::class, 'reservasiRiwayat'])->name('reservasiRiwayat');
 
 Route::get('feedback-pelanggan', [FeedbackController::class, 'index'])->name('feedback-pelanggan');
 

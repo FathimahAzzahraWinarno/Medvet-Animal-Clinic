@@ -45,7 +45,7 @@
                         </tr>
                     @empty
                         <tr>
-                            <td colspan="8" class="text-center py-6 text-gray-500">Tidak ada reservasi hari ini</td>
+                            <td colspan="8" class="text-center py-6 text-gray-500">Belum ada reservasi hari ini</td>
                         </tr>
                     @endforelse
                 </tbody>
