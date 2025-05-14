@@ -126,9 +126,7 @@ Route::get('dashboard-dokter', function () {
     return view('dokter.dashboardDokter');
 });
 
-Route::get('jadwal-reservasi-dokter', function () {
-    return view('dokter.jadwalReservasiDokter');
-});
+Route::get('jadwal-reservasi-dokter', [PelangganController::class, 'jadwalReservasiDokter'])->name('jadwalReservasiDokter');
 
 Route::get('input-rekam-medis', function () {
     return view('dokter.inputRekamMedis');

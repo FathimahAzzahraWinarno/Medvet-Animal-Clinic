@@ -64,4 +64,17 @@ class PelangganController extends Controller
 
         return view('admin.reservasiRiwayat', compact('reservasis'));
     }
+
+    public function jadwalReservasiDokter()
+    {
+        // Ambil tanggal hari ini
+        $today = Carbon::today();
+
+        // Ambil semua reservasi yang tanggalnya adalah hari ini
+        $reservasis = Reservasi::with(['user']) // jika perlu juga dengan dokter atau hewan
+            ->whereDate('tanggal', $today)
+            ->get();
+
+        return view('dokter.jadwalReservasiDokter', compact('reservasis'));
+    }
 }

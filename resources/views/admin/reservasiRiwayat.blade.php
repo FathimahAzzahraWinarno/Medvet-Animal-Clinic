@@ -31,7 +31,7 @@
             </div>
 
             <!-- Tabel Reservasi -->
-            <div class="overflow-x-auto shadow-md border border-gray-200 rounded-lg">
+            <div class="bg-white shadow-2xl rounded-2xl overflow-hidden">
                 <table class="min-w-full text-sm text-gray-700">
                     <thead class="text-xs text-white uppercase bg-blue-800">
                         <tr>
