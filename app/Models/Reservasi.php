@@ -8,7 +8,7 @@ class Reservasi extends Model
 {
     public function hewan()
     {
-        return $this->belongsTo(Hewan::class, 'id_hewan');
+        return $this->belongsTo(Hewan::class, 'id_hewan', 'id');
     }
 
     public function user()

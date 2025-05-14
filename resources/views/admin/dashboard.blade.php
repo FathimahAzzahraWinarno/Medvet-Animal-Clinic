@@ -76,8 +76,8 @@
                         <th class="px-4 py-3">No</th>
                         <th class="px-4 py-3">Nama Pemilik</th>
                         <th class="px-4 py-3">Nama Hewan</th>
-                        <th class="px-4 py-3">Perawatan</th>
                         <th class="px-4 py-3">Spesies</th>
+                        <th class="px-4 py-3">Perawatan</th>
                         <th class="px-4 py-3">Tanggal</th>
                         <th class="px-4 py-3">Jam</th>
                         <th class="px-4 py-3">Rekam Medis</th>
@@ -94,10 +94,10 @@
                             <span class="bg-orange-100 text-orange-700 text-xs px-2 py-1 rounded-full">Miu</span>
                         </td>
                         <td class="px-4 py-3">
-                            <span class="bg-green-100 text-green-600 text-xs px-2 py-1 rounded-full">Vaksin</span>
+                            <span class="bg-orange-100 text-orange-700 text-xs px-2 py-1 rounded-full">Kucing</span>
                         </td>
                         <td class="px-4 py-3">
-                            <span class="bg-orange-100 text-orange-700 text-xs px-2 py-1 rounded-full">Kucing</span>
+                            <span class="bg-green-100 text-green-600 text-xs px-2 py-1 rounded-full">Vaksin</span>
                         </td>
                         <td class="px-4 py-3 text-sm text-red-500 font-medium">9-08-2025</td>
                         <td class="px-4 py-3">
@@ -117,10 +117,10 @@
                             <span class="bg-orange-100 text-orange-700 text-xs px-2 py-1 rounded-full">Miu</span>
                         </td>
                         <td class="px-4 py-3">
-                            <span class="bg-green-100 text-green-600 text-xs px-2 py-1 rounded-full">USG</span>
+                            <span class="bg-pink-100 text-pink-700 text-xs px-2 py-1 rounded-full">Anjing</span>
                         </td>
                         <td class="px-4 py-3">
-                            <span class="bg-pink-100 text-pink-700 text-xs px-2 py-1 rounded-full">Anjing</span>
+                            <span class="bg-green-100 text-green-600 text-xs px-2 py-1 rounded-full">USG</span>
                         </td>
                         <td class="px-4 py-3 text-sm text-red-500 font-medium">9-08-2025</td>
                         <td class="px-4 py-3">
@@ -140,10 +140,10 @@
                             <span class="bg-orange-100 text-orange-700 text-xs px-2 py-1 rounded-full">Miu</span>
                         </td>
                         <td class="px-4 py-3">
-                            <span class="bg-green-100 text-green-600 text-xs px-2 py-1 rounded-full">Vaksin</span>
+                            <span class="bg-orange-100 text-orange-700 text-xs px-2 py-1 rounded-full">Kucing</span>
                         </td>
                         <td class="px-4 py-3">
-                            <span class="bg-orange-100 text-orange-700 text-xs px-2 py-1 rounded-full">Kucing</span>
+                            <span class="bg-green-100 text-green-600 text-xs px-2 py-1 rounded-full">Vaksin</span>
                         </td>
                         <td class="px-4 py-3 text-sm text-red-500 font-medium">10-08-2025</td>
                         <td class="px-4 py-3">

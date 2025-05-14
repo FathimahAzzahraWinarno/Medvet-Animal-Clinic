@@ -71,6 +71,6 @@ class User extends Authenticatable
 
     public function reservasis()
     {
-        return $this->hasMany(Reservasi::class, 'id_user');
+        return $this->hasMany(Reservasi::class, 'id_user', 'id');
     }
 }

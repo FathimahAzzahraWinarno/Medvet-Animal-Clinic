@@ -97,9 +97,8 @@ Route::get('dashboard', function () {
     return view('admin.dashboard');
 });
 
-Route::get('reservasi-dokter', function () {
-    return view('admin.reservasiDokter');
-});
+Route::get('/reservasi-dokter', [PelangganController::class, 'reservasiDokter'])->name('admin.reservasiDokter');
+
 
 Route::get('reservasi-riwayat', function () {
     return view('admin.reservasiRiwayat');
@@ -108,7 +107,6 @@ Route::get('reservasi-riwayat', function () {
 Route::get('feedback-pelanggan', [FeedbackController::class, 'index'])->name('feedback-pelanggan');
 
 Route::get('pelanggan', [PelangganController::class, 'dataPelanggan'])->name('admin.pelanggan');
-
 
 Route::get('kelola-perawatan', [KelolaPerawatanController::class, 'kelolaPerawatan']);
 
