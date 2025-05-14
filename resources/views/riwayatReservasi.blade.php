@@ -3,9 +3,9 @@
 <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
 <title>Riwayat Reservasi</title>
 
-<x-sidebar-user>
+<x-sidebar-user></x-sidebar-user>
 
-  <div class="flex-1" style="background-image: url('/images/bgAdmin.svg'); background-size: cover; background-repeat: no-repeat; background-position: center;">
+ <div class="flex-1" style="background-image: url('/images/bgAdmin.svg'); background-size: cover; background-repeat: no-repeat; background-position: center;">
     <h1 class="text-4xl font-semibold text-center mt-20 text-gray-900 mb-6 font-['Inter']">Riwayat Reservasi</h1>
 <div class="relative m-30 rounded-lg border border-blue-50 shadow-[0px_0px_10px_rgba(59,130,246,0.3)]">
   <!-- Tabel -->
