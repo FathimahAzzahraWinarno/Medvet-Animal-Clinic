@@ -89,15 +89,13 @@ Route::get('riwayat-reservasi', function () {
     return view('riwayatReservasi');
 });
 
-Route::get('jadwal-reservasi', function () {
-    return view('jadwalReservasi');
-});
+Route::get('jadwal-reservasi', [PelangganController::class, 'reservasiUser'])->name('jadwalReservasi');
 
 Route::get('dashboard', function () {
     return view('admin.dashboard');
 });
 
-Route::get('/reservasi-dokter', [PelangganController::class, 'reservasiDokter'])->name('admin.reservasiDokter');
+Route::get('reservasi-dokter', [PelangganController::class, 'reservasiDokter'])->name('reservasi.dokter');
 
 
 Route::get('reservasi-riwayat', function () {

@@ -5,7 +5,7 @@
         <div class="overflow-x-auto m-20 rounded-2xl shadow-2xl">
             <table class="w-full text-sm text-center text-gray-600">
                 <thead class="text-xs text-gray-500 uppercase bg-gray-50 border-b border-gray-200">
-                    <tr>
+                    <tr class="bg-blue-800 text-white">
                         <th class="px-4 py-3">No</th>
                         <th class="px-4 py-3">Nama Pemilik</th>
                         <th class="px-4 py-3">Nama Hewan</th>

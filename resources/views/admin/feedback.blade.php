@@ -4,7 +4,7 @@
         <div class="overflow-x-auto m-20 rounded-xl shadow-2xl">
             <table class="w-full text-sm text-left text-gray-600">
                 <thead class="text-xs text-gray-500 text-center uppercase bg-gray-50 border-b border-gray-200">
-                    <tr>
+                    <tr class="bg-blue-800 text-white">
                         <th class="px-4 py-3">No</th>
                         <th class="px-4 py-3">Nama</th>
                         <th class="px-4 py-3">Email</th>
