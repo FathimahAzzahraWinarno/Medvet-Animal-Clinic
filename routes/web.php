@@ -34,8 +34,6 @@ Route::put('/admin/kelola-promo/{id}', [PromoController::class, 'updatePromo'])-
 
 Route::post('/admin/kelola-promo', [PromoController::class, 'createPromo'])->name('createPromo');
 
-Route::get('/admin/dashboard', [PengelolaController::class, 'index']);
-
 Route::get('produk', [ProdukController::class, 'index']);
 
 Route::get('kelola-produk', [ProdukController::class, 'kelolaProduk'])->name('kelolaProduk');

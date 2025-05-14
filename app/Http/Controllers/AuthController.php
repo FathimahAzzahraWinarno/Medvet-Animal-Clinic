@@ -71,7 +71,7 @@ class AuthController extends Controller
             $route = '/';
         }
 
-        return redirect($route)->with('success-login', 'Selamat datang, ' . $user->role . '!');
+        return redirect($route)->with('success-login', 'Selamat datang, ' . $user->role . ' ' . $user->name . '!');
     }
 
     public function index()
