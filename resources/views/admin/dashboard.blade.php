@@ -33,11 +33,13 @@
                 <p class="text-3xl font-bold text-gray-800 mt-5 mb-5">{{ \App\Models\User::count() }}</p>
             </div>
 
-
             <div class="bg-gray-50 p-4 rounded-lg shadow">
-                <p class="text-l font-bold text-gray-500">Reservasi Hari ini</p>
-                <p class="text-3xl font-bold text-gray-800 mt-5 mb-5">15</p>
+                <p class="text-l font-bold text-gray-500">Reservasi Hari Ini</p>
+                <p class="text-3xl font-bold text-gray-800 mt-5 mb-5">
+                    {{ \App\Models\Reservasi::whereDate('created_at', today())->count() ?: '0' }}
+                </p>
             </div>
+
             <div class="bg-gray-50 p-4 rounded-lg shadow">
                 <p class="text-l font-bold text-gray-500">Data Dokter</p>
                 <p class="text-3xl font-bold text-gray-800 mt-5 mb-5">4</p>
