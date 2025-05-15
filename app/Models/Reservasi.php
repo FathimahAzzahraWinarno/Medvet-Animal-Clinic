@@ -4,17 +4,36 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use App\Models\User;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Reservasi extends Model
 {
-    public function hewan()
+    use HasFactory;
+
+    protected $table = 'reservasis';
+    protected $fillable = [
+        'id_hewan',
+        'id_user',
+        'id_perawatan',
+        'id_dokter',
+        'hewan',
+        'kelamin',
+        'spesies',
+        'perawatan',
+        'tanggal',
+        'waktu',
+        'dokter',
+        'pesan',
+    ];
+
+    public function hewans()
     {
-        return $this->belongsTo(Hewan::class, 'id_hewan', 'id');
+        return $this->hasMany(Hewan::class, 'reservasi_id');
     }
 
     public function user()
     {
-        return $this->belongsTo(User::class, 'id_user');
+        return $this->belongsTo(User::class);
     }
 
     public function perawatan()

@@ -13,14 +13,15 @@ return new class extends Migration
     {
         Schema::create('rekam_medis', function (Blueprint $table) {
             $table->string('id')->primary();
-            $table->string('id_pengelola');
+            $table->string('id_pengelola')->nullable();
             $table->date('tanggal');
-            $table->string('detail');
+            $table->string('dokter');  // Perhatikan kapitalisasi, di sini kecil semua
+            $table->string('perawatan');
+            $table->text('detail');  // Bisa pakai text jika detail lebih panjang
             $table->string('diagnosa');
-            $table->string('tes');
             $table->string('hasil_tes');
             $table->string('tindakan');
-            $table->string('pesan');
+            $table->text('pesan');  // Pesan lebih baik pakai text jika panjang
             $table->timestamps();
 
             $table->foreign('id_pengelola')->references('id')->on('pengelolas')->onDelete('cascade');

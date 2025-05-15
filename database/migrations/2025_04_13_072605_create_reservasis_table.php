@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('id_dokter');
             $table->string('waktu');
             $table->date('tanggal');
+            $table->text('pesan')->nullable();
             $table->timestamps();
 
             $table->foreign('id_hewan')->references('id')->on('hewans')->onDelete('cascade');

@@ -12,6 +12,8 @@ use App\Http\Controllers\PengelolaController;
 use App\Http\Controllers\PerawatanController;
 use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\PromoController;
+use App\Http\Controllers\RekamMedisController;
+use App\Http\Controllers\ReservasiController;
 use App\Http\Controllers\TentangKamiController;
 use App\Models\Faq;
 use App\Models\Produk;
@@ -59,6 +61,10 @@ Route::get('reservasi', function (Request $request) {
         'perawatan' => $perawatan
     ]);
 });
+
+Route::post('/reservasi', [ReservasiController::class, 'store'])->name('reservasi.store');
+
+Route::post('/reservasi', [ReservasiController::class, 'store'])->name('reservasi.store');
 
 Route::view('/masuk-page', 'masukPage')->name('login');
 
@@ -128,6 +134,6 @@ Route::get('dashboard-dokter', function () {
 
 Route::get('jadwal-reservasi-dokter', [PelangganController::class, 'jadwalReservasiDokter'])->name('jadwalReservasiDokter');
 
-Route::get('input-rekam-medis', function () {
-    return view('dokter.inputRekamMedis');
-});
+Route::get('input-rekam-medis', [RekamMedisController::class, 'index']);
+
+Route::post('/dokter/input-rekam-medis', [RekamMedisController::class, 'createRekamMedis'])->name('createRekamMedis');

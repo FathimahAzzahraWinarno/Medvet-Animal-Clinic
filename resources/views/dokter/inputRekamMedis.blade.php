@@ -106,62 +106,90 @@
                     <span class="sr-only">Close modal</span>
                 </button>
             </div>
+
             <!-- Modal body -->
-            <form class="p-4 md:p-5 space-y-6">
+            <form method="POST" action="{{ route('createRekamMedis') }}" class="p-4 md:p-5 space-y-6">
+              @csrf
+
+              {{-- Tampilkan error validasi --}}
+              @if($errors->any())
+                  <div class="text-red-600 mb-4">
+                      <ul>
+                          @foreach($errors->all() as $error)
+                              <li>{{ $error }}</li>
+                          @endforeach
+                      </ul>
+                  </div>
+              @endif
+
               <div>
-                  <label for="tanggal" class="block mb-2 text-sm font-medium font-semibold text-gray-800">Tanggal</label>
-                  <input type="date" id="tanggal" name="tanggal"
-                      class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:text-gray" required>
+                <label for="tanggal" class="block mb-2 text-sm font-semibold text-gray-800">Tanggal</label>
+                <input type="date" id="tanggal" name="tanggal"
+                  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                  required>
               </div>
 
               <div>
-                <label for="dokter" class="block mb-2 text-sm font-medium font-semibold text-gray-800">Dokter</label>
+                <label for="dokter" class="block mb-2 text-sm font-semibold text-gray-800">Dokter</label>
                 <textarea id="dokter" name="dokter" rows="3" placeholder="Nama dokter"
-                    class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:text-gray"
-                    maxlength="300"></textarea>
-            </div>
-
-            <div>
-                <label for="tes" class="block mb-2 text-sm font-medium font-semibold text-gray-800">Perawatan</label>
-                <textarea id="tes" name="tes" rows="3" placeholder="Masukan Perawatan"
-                    class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:text-gray"
-                    maxlength="300"></textarea>
-            </div>
-
-              <div>
-                  <label for="detail" class="block mb-2 text-sm font-medium font-semibold text-gray-800">Detail Rekam Medis</label>
-                  <textarea id="detail" name="detail" rows="3" placeholder="Masukan detail"
-                      class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:text-gray"
-                      maxlength="300"></textarea>
+                  class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500"
+                  maxlength="300" required></textarea>
               </div>
 
+              <div>
+                <label for="perawatan" class="block mb-2 text-sm font-semibold text-gray-800">Perawatan</label>
+                <textarea id="perawatan" name="perawatan" rows="3" placeholder="Masukan Perawatan"
+                  class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500"
+                  maxlength="300" required></textarea>
+              </div>
 
-            <div>
-                <label for="hasilTes" class="block mb-2 text-sm font-medium font-semibold text-gray-800">Hasil Tes</label>
-                <textarea id="hasilTes" name="hasilTes" rows="3" placeholder="Masukan hasil tes"
-                    class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:text-gray"
-                    maxlength="300"></textarea>
-            </div>
+              <div>
+                <label for="detail" class="block mb-2 text-sm font-semibold text-gray-800">Detail Rekam Medis</label>
+                <textarea id="detail" name="detail" rows="3" placeholder="Masukan detail"
+                  class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500"
+                  maxlength="300" required></textarea>
+              </div>
 
-            <div>
-                <label for="tindakan" class="block mb-2 text-sm font-medium font-semibold text-gray-800">Tindakan</label>
+              <div>
+                <label for="diagnosa" class="block mb-2 text-sm font-semibold text-gray-800">Diagnosa</label>
+                <textarea id="diagnosa" name="diagnosa" rows="3" placeholder="Masukan diagnosa"
+                  class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500"
+                  maxlength="300" required></textarea>
+              </div>
+
+              <div>
+                <label for="hasil_tes" class="block mb-2 text-sm font-semibold text-gray-800">Hasil Tes</label>
+                <textarea id="hasil_tes" name="hasil_tes" rows="3" placeholder="Masukan hasil tes"
+                  class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500"
+                  maxlength="300" required></textarea>
+              </div>
+
+              <div>
+                <label for="tindakan" class="block mb-2 text-sm font-semibold text-gray-800">Tindakan</label>
                 <textarea id="tindakan" name="tindakan" rows="3" placeholder="Masukan Tindakan"
-                    class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:text-gray"
-                    maxlength="300"></textarea>
-            </div>
+                  class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500"
+                  maxlength="300" required></textarea>
+              </div>
 
-            <div>
-                <label for="pesan" class="block mb-2 text-sm font-medium font-semibold text-gray-800">Pesan</label>
+              <div>
+                <label for="pesan" class="block mb-2 text-sm font-semibold text-gray-800">Pesan</label>
                 <textarea id="pesan" name="pesan" rows="3" placeholder="Masukan pesan"
-                    class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:text-gray"
-                    maxlength="300"></textarea>
-            </div>
-          </form>
-            <!-- Modal footer -->
-            <div class="flex items-center p-4 md:p-5 border-t border-gray-200 rounded-b dark:border-gray-600">
-                <button data-modal-hide="dokter-modal" type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium font-semibold rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Simpan</button>
-                <button data-modal-hide="dokter-modal" type="button" class="py-2.5 px-5 ms-3 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border font-semibold border-gray-300 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-300 dark:text-gray-700 dark:border-gray-300 dark:hover:text-white dark:hover:bg-gray-400">Batal</button>
-            </div>
+                  class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500"
+                  maxlength="300" required></textarea>
+              </div>
+
+              {{-- Modal Footer --}}
+              <div class="flex items-center p-4 md:p-5 border-t border-gray-200 rounded-b">
+                <button type="submit"
+                  class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-semibold rounded-lg text-sm px-5 py-2.5 text-center">
+                  Simpan
+                </button>
+                <button type="button" data-modal-hide="dokter-modal"
+                  class="py-2.5 px-5 ms-3 text-sm font-semibold text-gray-900 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 hover:text-blue-700 focus:ring-4 focus:ring-gray-100">
+                  Batal
+                </button>
+              </div>
+            </form>
         </div>
     </div>
 </div>
@@ -169,34 +197,36 @@
 
         <!-- Tabel -->
         <div class="overflow-x-auto">
-          <table class="min-w-full border border-gray-200 text-center shadow-md rounded-b-lg overflow-hidden">
-            <thead>
-              <tr class="bg-blue-800 text-white">
-                <th class="px-4 py-3">Tanggal</th>
-                <th class="px-4 py-3">Dokter</th>
-                <th class="px-4 py-3">Perawatan</th>
-                <th class="px-4 py-3">Detail Rekam Medis</th>
-                <th class="px-4 py-3">Diagnosa</th>
-                <th class="px-4 py-3">Hasil Tes</th>
-                <th class="px-4 py-3">Tindakan</th>
-                <th class="px-4 py-3">Pesan</th>
-              </tr>
-            </thead>
-            <tbody class="bg-gray-50 text-gray-700">
-              <!-- Data rows bisa kamu isi di sini -->
-              <tr>
-                <td class="px-4 py-4 border-t">19/01/2025</td>
-                <td class="px-4 py-4 border-t">Aroza</td>
-                <td class="px-4 py-4 border-t">Vaksin</td>
-                <td class="px-4 py-4 border-t">Terkena virus karna terlalu sering bermain ditempat kotor</td>
-                <td class="px-4 py-4 border-t">Terkena virus karna terlalu sering bermain ditempat kotor</td>
-                <td class="px-4 py-4 border-t">Terkena virus karna terlalu sering bermain ditempat kotor</td>
-                <td class="px-4 py-4 border-t">Terkena virus karna terlalu sering bermain ditempat kotor</td>
-                <td class="px-4 py-4 border-t">Terkena virus karna terlalu sering bermain ditempat kotor</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+            <table class="min-w-full border border-gray-200 text-center shadow-md rounded-b-lg overflow-hidden">
+              <thead>
+                <tr class="bg-blue-800 text-white">
+                  <th class="px-4 py-3">Tanggal</th>
+                  <th class="px-4 py-3">Dokter</th>
+                  <th class="px-4 py-3">Perawatan</th>
+                  <th class="px-4 py-3">Detail Rekam Medis</th>
+                  <th class="px-4 py-3">Diagnosa</th>
+                  <th class="px-4 py-3">Hasil Tes</th>
+                  <th class="px-4 py-3">Tindakan</th>
+                  <th class="px-4 py-3">Pesan</th>
+                </tr>
+              </thead>
+              <tbody class="bg-gray-50 text-gray-700">
+                @foreach($rekamMedis as $rm)
+                <tr>
+                  <td class="px-4 py-4 border-t">{{ \Carbon\Carbon::parse($rm->tanggal)->format('d/m/Y') }}</td>
+                  <td class="px-4 py-4 border-t">{{ $rm->dokter }}</td>
+                  <td class="px-4 py-4 border-t">{{ $rm->perawatan }}</td>
+                  <td class="px-4 py-4 border-t">{{ $rm->detail }}</td>
+                  <td class="px-4 py-4 border-t">{{ $rm->diagnosa }}</td>
+                  <td class="px-4 py-4 border-t">{{ $rm->hasil_tes }}</td>
+                  <td class="px-4 py-4 border-t">{{ $rm->tindakan }}</td>
+                  <td class="px-4 py-4 border-t">{{ $rm->pesan }}</td>
+                </tr>
+                @endforeach
+              </tbody>
+            </table>
+          </div>
+
       </div>
       
 </x-layout-dokter>
