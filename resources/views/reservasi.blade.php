@@ -21,8 +21,8 @@
 
             <h2 class="text-xl font-semibold text-gray-900 mb-4">Data Peliharaan</h2>
             
-            <div class="flex justify-between items-center mb-5">
-              <div>
+            <div class="flex justify-end items-center mb-5">
+              {{-- <div>
                 <label for="hewan" class="block mb-2 text-sm font-medium text-gray-800">Pilih hewanmu</label>
                 <select id="hewan" name="hewan_pilihan" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-105 px-4 py-2">
                     <option>Hewan Baru</option>
@@ -30,7 +30,7 @@
                     <option>Bili</option>
                     <option>Bucil</option>
                 </select>
-              </div>
+              </div> --}}
               <button onclick="tambahFormHewan()" type="button" class="bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg text-sm px-4 py-2.5">
                 Tambah Hewan
               </button>
