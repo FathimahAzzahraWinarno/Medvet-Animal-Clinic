@@ -89,4 +89,16 @@ class PelangganController extends Controller
 
         return view('admin.dashboard', compact('reservasis'));
     }
+
+    public function dashboardDokter()
+    {
+        $today = Carbon::today();
+
+        $reservasis = Reservasi::with('user')
+            ->whereDate('tanggal', $today)
+            ->limit(3)
+            ->get();
+
+        return view('dokter.dashboardDokter', compact('reservasis'));
+    }
 }

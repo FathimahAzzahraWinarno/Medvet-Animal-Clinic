@@ -126,12 +126,10 @@ Route::put('/admin/kelola-FAQ/{id}', [KelolaFaqController::class, 'updateFaq'])-
 
 Route::get('kelola-promo', [KelolaPromoController::class, 'kelolaPromo']);
 
-Route::get('dashboard-dokter', function () {
-    return view('dokter.dashboardDokter');
-});
+Route::get('dashboard-dokter', [PelangganController::class, 'dashboardDokter'])->name('dokter.dashboardDokter');
 
 Route::get('jadwal-reservasi-dokter', [PelangganController::class, 'jadwalReservasiDokter'])->name('jadwalReservasiDokter');
 
-Route::get('/dokter/input-rekam-medis', [RekamMedisController::class, 'index'])->name('crateRekamMedis');
+Route::get('input-rekam-medis', [RekamMedisController::class, 'index'])->name('dokter.inputRekamMedis');
 
 Route::post('/dokter/input-rekam-medis', [RekamMedisController::class, 'createRekamMedis'])->name('createRekamMedis');
