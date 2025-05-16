@@ -134,6 +134,6 @@ Route::get('dashboard-dokter', function () {
 
 Route::get('jadwal-reservasi-dokter', [PelangganController::class, 'jadwalReservasiDokter'])->name('jadwalReservasiDokter');
 
-Route::get('input-rekam-medis', [RekamMedisController::class, 'index']);
+Route::get('/dokter/input-rekam-medis', [RekamMedisController::class, 'index'])->name('crateRekamMedis');
 
 Route::post('/dokter/input-rekam-medis', [RekamMedisController::class, 'createRekamMedis'])->name('createRekamMedis');

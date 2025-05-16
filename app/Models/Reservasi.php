@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Support\Facades\DB;
 
 class Reservasi extends Model
 {
@@ -44,5 +45,22 @@ class Reservasi extends Model
     public function dokter()
     {
         return $this->belongsTo(Dokter::class, 'id_dokter');
+    }
+
+    public static function generateReservasiId()
+    {
+        $last = DB::table('reservasis')
+            ->where('id', 'like', 'R%')
+            ->orderByRaw("CAST(SUBSTRING(id, 2) AS UNSIGNED) DESC")
+            ->first();
+
+        if (!$last) {
+            return 'R1';
+        }
+
+        $lastIdNumber = (int) str_replace('R', '', $last->id);
+        $nextId = 'R' . ($lastIdNumber + 1);
+
+        return $nextId;
     }
 }

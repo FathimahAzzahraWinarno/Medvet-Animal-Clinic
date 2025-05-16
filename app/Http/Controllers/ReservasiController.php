@@ -11,42 +11,38 @@ use Illuminate\Support\Facades\DB;
 
 class ReservasiController extends Controller
 {
-    public function store(Request $request)
-    {
-        dd($request->all());
-        // Mengambil inputan dari form
-        $data = $request->validate([
-            'id_hewan' => 'required',
-            'id_user' => 'required',
-            'id_perawatan' => 'required',
-            'id_dokter' => 'required',
-            'waktu' => 'required',
-            'tanggal' => 'required',
-            'pesan' => 'nullable',
-        ]);
-
-
-        // Menyimpan data ke dalam tabel 'reservasis' menggunakan query builder
-        DB::table('reservasis')->insert([
-            'id' => 1, // Berikan nilai manual untuk 'id'
-            'id_hewan' => $data['id_hewan'],
-            'id_user' => $data['id_user'],
-            'id_perawatan' => $data['id_perawatan'],
-            'id_dokter' => $data['id_dokter'],
-            'waktu' => $data['waktu'],
-            'tanggal' => $data['tanggal'],
-            'pesan' => $data['pesan'],
-            'created_at' => now(),
-            'updated_at' => now(),
-        ]);
-
-        // Redirect atau return untuk menampilkan hasil
-        return redirect()->route('reservasi.index')->with('success', 'Reservasi berhasil dibuat!');
-    }
-
     public function index()
     {
-        $rekamMedis = RekamMedis::all();  // Ambil semua data dari tabel rekam medis
-        return view('inputRekamMedis', compact('rekamMedis'));  // Kirim data ke view
+        $reservasi = Reservasi::all();
+
+        return view('Reservasi', [
+            'reservasi' => $reservasi,
+            'title' => 'Daftar Reservasi',
+            'active' => 'Reservasi'
+        ]);
+    }
+
+    public function createReservasi(Request $request)
+    {
+        $validated = $request->validate([
+            'nama_peliharaan' => 'required|string',
+            'jenis_kelamin' => 'required|string',
+            'spesies' => 'required|string',
+            'nama_pemilik' => 'required|string',
+            'nomor_telepon' => 'required|string',
+            'email' => 'required|string',
+            'alamat' => 'required|string',
+            'perawatan' => 'required|in:vaksinasi,operasi-minor-mayor,cek-darah,cek-mikroskopis,rawat-inap,usg,pengobatan',
+            'tanggal' => 'required|date',
+            'waktu' => 'required|string',
+            'dokter' => 'required|string',
+            'pesan' => '',
+        ]);
+
+        $validated['id'] = Reservasi::generateReservasiId();
+
+        Reservasi::create($validated);
+
+        return redirect()->back()->with('success', 'Reservasi berhasil dibuat.');
     }
 }

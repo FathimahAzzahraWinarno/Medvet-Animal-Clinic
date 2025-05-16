@@ -70,6 +70,9 @@
                     <label class="block text-gray-700">Nomor Telepon</label>
                     <input type="text" name="telepon" value="{{ Auth::user()->telepon }}" readonly
                         class="w-full mt-1 px-4 py-2 border border-gray-400 rounded-lg text-gray-700">
+                    @if(empty(Auth::user()->telepon))
+                        <p class="text-red-600 text-sm mt-1">Silakan lengkapi nomor telepon Anda di halaman <a href="{{ route('user.profile') }}" class="underline text-blue-600">Profil</a>.</p>
+                    @endif
                 </div>
 
                 <div>
@@ -82,6 +85,9 @@
                     <label class="block text-gray-700">Alamat</label>
                     <input type="text" name="alamat" value="{{ Auth::user()->alamat }}" readonly
                         class="w-full mt-1 px-4 py-2 border border-gray-400 rounded-lg text-gray-700">
+                    @if(empty(Auth::user()->alamat))
+                        <p class="text-red-600 text-sm mt-1">Silakan lengkapi alamat Anda di halaman <a href="{{ route('user.profile') }}" class="underline text-blue-600">Profil</a>.</p>
+                    @endif
                 </div>
             </div>
             @else

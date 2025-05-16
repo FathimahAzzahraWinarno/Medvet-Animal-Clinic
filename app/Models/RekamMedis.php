@@ -18,7 +18,7 @@ class RekamMedis extends Model
     public static function generateRMId()
     {
         $last = DB::table('rekam_medis')
-            ->where('id', 'like', 'P%')
+            ->where('id', 'like', 'RM%')
             ->orderByRaw("CAST(SUBSTRING(id, 3) AS UNSIGNED) DESC")
             ->first();
 
