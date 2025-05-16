@@ -113,7 +113,21 @@ class DatabaseSeeder extends Seeder
 
         Promo::create([
             'id' => 'PR2',
-            'nama' => '10 kali datang, 1 kali dimanjakan',
+            'nama' => '10 kali datang, free dry food',
+            'harga' => 100000,
+            'diskon' => 100
+        ]);
+
+        Promo::create([
+            'id' => 'PR3',
+            'nama' => '5 kali datang, potongan harga untuk dry food all item',
+            'harga' => 30000,
+            'diskon' => 10
+        ]);
+
+        Promo::create([
+            'id' => 'PR4',
+            'nama' => 'Ulang Tahun Peliharaan',
             'harga' => 100000,
             'diskon' => 10
         ]);
