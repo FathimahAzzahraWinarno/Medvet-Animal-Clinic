@@ -12,7 +12,12 @@ class Reservasi extends Model
     use HasFactory;
 
     protected $table = 'reservasis';
+    protected $primaryKey = 'id';
+    public $incrementing = false;
+    protected $keyType = 'string';
+    
     protected $fillable = [
+        'id',
         'id_hewan',
         'id_user',
         'id_perawatan',

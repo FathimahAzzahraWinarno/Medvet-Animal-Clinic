@@ -62,9 +62,9 @@ Route::get('reservasi', function (Request $request) {
     ]);
 });
 
-Route::post('/reservasi', [ReservasiController::class, 'store'])->name('reservasi.store');
+Route::post('/reservasi', [ReservasiController::class, 'createReservasi'])->name('reservasi.store');
 
-Route::post('/reservasi', [ReservasiController::class, 'store'])->name('reservasi.store');
+// Route::post('/reservasi', [ReservasiController::class, 'store'])->name('reservasi.store');
 
 Route::view('/masuk-page', 'masukPage')->name('login');
 

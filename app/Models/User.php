@@ -36,6 +36,8 @@ class User extends Authenticatable
      *
      * @var list<string>
      */
+    protected $keyType = 'string';
+    public $incrementing = false;
     protected $fillable = [
         'id',
         'name',

@@ -2,8 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Dokter;
+use App\Models\Hewan;
+use App\Models\Perawatan;
 use App\Models\RekamMedis;
 use App\Models\Reservasi;
+use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Container\Attributes\Auth;
 use Illuminate\Http\Request;
@@ -24,25 +28,53 @@ class ReservasiController extends Controller
 
     public function createReservasi(Request $request)
     {
-        $validated = $request->validate([
-            'nama_peliharaan' => 'required|string',
-            'jenis_kelamin' => 'required|string',
-            'spesies' => 'required|string',
-            'nama_pemilik' => 'required|string',
-            'nomor_telepon' => 'required|string',
-            'email' => 'required|string',
-            'alamat' => 'required|string',
-            'perawatan' => 'required|in:vaksinasi,operasi-minor-mayor,cek-darah,cek-mikroskopis,rawat-inap,usg,pengobatan',
-            'tanggal' => 'required|date',
-            'waktu' => 'required|string',
-            'dokter' => 'required|string',
-            'pesan' => '',
-        ]);
+        try{
+            $user = auth()->user();
 
-        $validated['id'] = Reservasi::generateReservasiId();
+            $validated = $request->validate([
+                'nama_peliharaan' => 'required|string',
+                'jenis_kelamin' => 'required|string',
+                'spesies' => 'required|string',
+                'nama_pemilik' => 'required|string',
+                'nomor_telepon' => 'required|string',
+                'email' => 'required|string|email',
+                'alamat' => 'required|string',
+                'perawatan' => 'required|in:vaksinasi,operasi-minor-mayor,cek-darah,cek-mikroskopis,rawat-inap,usg,pengobatan',
+                'tanggal' => 'required|date',
+                'waktu' => 'required|string',
+                'dokter' => 'required|string',
+                'pesan' => 'nullable|string',
+            ]);
 
-        Reservasi::create($validated);
+            $hewan = Hewan::create([
+                'id' => uniqid('H'),
+                'nama' => $validated['nama_peliharaan'],
+                'spesies' => $validated['spesies'],
+                'ras' => '-',
+                'jenis_kelamin' => $validated['jenis_kelamin']
+            ]);
 
-        return redirect()->back()->with('success', 'Reservasi berhasil dibuat.');
+            $perawatan = Perawatan::where('slug', $validated['perawatan'])->firstOrFail();
+
+            $dokter = Dokter::where('nama', $validated['dokter'])->firstOrFail();
+
+            $tanggalFormatted = Carbon::createFromFormat('m/d/Y', $validated['tanggal'])->format('Y-m-d');
+
+            Reservasi::create([
+                'id' => Reservasi::generateReservasiId(),
+                'id_hewan' => $hewan->id,
+                'id_user' => $user->id,
+                'id_perawatan' => $perawatan->id,
+                'id_dokter' => $dokter->id,
+                'tanggal' => $tanggalFormatted,
+                'waktu' => $validated['waktu'],
+                'pesan' => $validated['pesan'] ?? null
+            ]);
+
+            return redirect()->back()->with('success', 'Reservasi berhasil dibuat.');
+        }catch(\Exception $e){
+            dd($e->getMessage());
+        }
+
     }
 }

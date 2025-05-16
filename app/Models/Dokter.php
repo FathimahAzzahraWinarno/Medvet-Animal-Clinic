@@ -8,6 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Dokter extends Model
 {
     use HasFactory;
+    protected $keyType = 'string';
+    public $incrementing = false;
 
     protected $fillable = ['id', 'nama', 'gambar', 'deskripsi'];
 }
