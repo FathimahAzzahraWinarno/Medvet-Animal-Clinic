@@ -84,76 +84,41 @@
                     </tr>
                 </thead>
                 <tbody class="bg-white font-semibold">
-                    <tr class="border-b border-gray-300">
-                        <td class="px-4 py-3">1</td>
-                        <td class="px-4 py-3">
-                            <div>Liras Ayun</div>
-                            <div class="text-xs text-gray-400">LK01</div>
-                        </td>
-                        <td class="px-4 py-3">
-                            <span class="bg-orange-100 text-orange-700 text-xs px-2 py-1 rounded-full">Miu</span>
-                        </td>
-                        <td class="px-4 py-3">
-                            <span class="bg-orange-100 text-orange-700 text-xs px-2 py-1 rounded-full">Kucing</span>
-                        </td>
-                        <td class="px-4 py-3">
-                            <span class="bg-green-100 text-green-600 text-xs px-2 py-1 rounded-full">Vaksin</span>
-                        </td>
-                        <td class="px-4 py-3 text-sm text-red-500 font-medium">9-08-2025</td>
-                        <td class="px-4 py-3">
-                            <span class="bg-blue-100 text-blue-700 px-2 py-1 rounded-full text-xs">10AM</span>
-                        </td>
-                        <td class="px-4 py-3">
-                            <button class="bg-gray-100 text-blue-600 text-xs px-3 py-1 rounded hover:underline">Lihat</button>
-                        </td>
-                    </tr>
-                    <tr class="border-b border-gray-300">
-                        <td class="px-4 py-3">2</td>
-                        <td class="px-4 py-3">
-                            <div>Namya Isnah</div>
-                            <div class="text-xs text-gray-400">LM02</div>
-                        </td>
-                        <td class="px-4 py-3">
-                            <span class="bg-orange-100 text-orange-700 text-xs px-2 py-1 rounded-full">Miu</span>
-                        </td>
-                        <td class="px-4 py-3">
-                            <span class="bg-pink-100 text-pink-700 text-xs px-2 py-1 rounded-full">Anjing</span>
-                        </td>
-                        <td class="px-4 py-3">
-                            <span class="bg-green-100 text-green-600 text-xs px-2 py-1 rounded-full">USG</span>
-                        </td>
-                        <td class="px-4 py-3 text-sm text-red-500 font-medium">9-08-2025</td>
-                        <td class="px-4 py-3">
-                            <span class="bg-green-100 text-green-700 px-2 py-1 rounded-full text-xs">1PM</span>
-                        </td>
-                        <td class="px-4 py-3">
-                            <button class="bg-gray-100 text-blue-600 text-xs px-3 py-1 rounded hover:underline">Lihat</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="px-4 py-3">3</td>
-                        <td class="px-4 py-3">
-                            <div>Sutya Restu</div>
-                            <div class="text-xs text-gray-400">LK02</div>
-                        </td>
-                        <td class="px-4 py-3">
-                            <span class="bg-orange-100 text-orange-700 text-xs px-2 py-1 rounded-full">Miu</span>
-                        </td>
-                        <td class="px-4 py-3">
-                            <span class="bg-orange-100 text-orange-700 text-xs px-2 py-1 rounded-full">Kucing</span>
-                        </td>
-                        <td class="px-4 py-3">
-                            <span class="bg-green-100 text-green-600 text-xs px-2 py-1 rounded-full">Vaksin</span>
-                        </td>
-                        <td class="px-4 py-3 text-sm text-red-500 font-medium">10-08-2025</td>
-                        <td class="px-4 py-3">
-                            <span class="bg-gray-200 text-gray-800 px-2 py-1 rounded-full text-xs">5PM</span>
-                        </td>
-                        <td class="px-4 py-3">
-                            <button class="bg-gray-100 text-blue-600 text-xs px-3 py-1 rounded hover:underline">Lihat</button>
-                        </td>
-                    </tr>
+                    @forelse ($reservasis as $index => $reservasi)
+                        <tr class="border-b border-gray-300">
+                            <td class="px-4 py-3">{{ $index + 1 }}</td>
+                            <td class="px-4 py-3">
+                                <div>{{ $reservasi->user->name ?? '-' }}</div>
+                                <div class="text-xs text-gray-400">usr{{ str_pad($reservasi->user->id ?? 0, 2, '0', STR_PAD_LEFT) }}</div>
+                            </td>
+                            <td class="px-4 py-3">
+                                <span class="bg-orange-100 text-orange-700 text-xs px-2 py-1 rounded-full">{{ $reservasi->nama_hewan ?? '-' }}</span>
+                            </td>
+                            <td class="px-4 py-3">
+                                <span class="bg-orange-100 text-orange-700 text-xs px-2 py-1 rounded-full">{{ $reservasi->spesies ?? '-' }}</span>
+                            </td>
+                            <td class="px-4 py-3">
+                                <span class="bg-green-100 text-green-600 text-xs px-2 py-1 rounded-full">{{ $reservasi->jenis_perawatan ?? '-' }}</span>
+                            </td>
+                            <td class="px-4 py-3 text-sm text-red-500 font-medium">
+                                {{ \Carbon\Carbon::parse($reservasi->tanggal)->format('d-m-Y') }}
+                            </td>
+                            <td class="px-4 py-3">
+                                <span class="bg-blue-100 text-blue-700 px-2 py-1 rounded-full text-xs">
+                                    {{ \Carbon\Carbon::parse($reservasi->jam)->format('H:i') }}
+                                </span>
+                            </td>
+                            <td class="px-4 py-3">
+                                <a href="#" class="bg-gray-100 text-blue-600 text-xs px-3 py-1 rounded hover:underline">Lihat</a>
+                            </td>
+                        </tr>
+                    @empty
+                        <tr>
+                            <td colspan="8" class="text-center py-6 text-gray-500">Belum ada reservasi hari ini</td>
+                        </tr>
+                    @endforelse
                 </tbody>
+
             </table>
         </div>
 

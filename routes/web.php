@@ -96,9 +96,7 @@ Route::get('riwayat-reservasi', [PelangganController::class, 'riwayatReservasi']
 
 Route::get('jadwal-reservasi', [PelangganController::class, 'reservasiUser'])->name('jadwalReservasi');
 
-Route::get('dashboard', function () {
-    return view('admin.dashboard');
-});
+Route::get('dashboard', [PelangganController::class, 'dashboard'])->name('admin.dashboard');
 
 Route::get('reservasi-dokter', [PelangganController::class, 'reservasiDokter'])->name('reservasi.dokter');
 
