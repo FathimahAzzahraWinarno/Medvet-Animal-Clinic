@@ -10,7 +10,12 @@ class Hewan extends Model
     use HasFactory;
 
     protected $table = 'hewans';
+    protected $primaryKey = 'id';
+    public $incrementing = false;
+    protected $keyType = 'string';
+
     protected $fillable = [
+        'id',
         'nama',
         'spesies',
         'ras',
