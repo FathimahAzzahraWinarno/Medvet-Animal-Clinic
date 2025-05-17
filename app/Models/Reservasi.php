@@ -15,7 +15,7 @@ class Reservasi extends Model
     protected $primaryKey = 'id';
     public $incrementing = false;
     protected $keyType = 'string';
-    
+
     protected $fillable = [
         'id',
         'id_hewan',
@@ -32,24 +32,24 @@ class Reservasi extends Model
         'pesan',
     ];
 
-    public function hewans()
+    public function hewan()
     {
-        return $this->hasMany(Hewan::class, 'reservasi_id');
+        return $this->belongsTo(Hewan::class, 'id_hewan', 'id');
     }
 
     public function user()
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class, 'id_user', 'id');
     }
 
     public function perawatan()
     {
-        return $this->belongsTo(Perawatan::class, 'id_perawatan');
+        return $this->belongsTo(Perawatan::class, 'id_perawatan', 'id');
     }
 
     public function dokter()
     {
-        return $this->belongsTo(Dokter::class, 'id_dokter');
+        return $this->belongsTo(Dokter::class, 'id_dokter', 'id');
     }
 
     public static function generateReservasiId()

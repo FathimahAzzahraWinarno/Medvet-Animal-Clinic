@@ -34,7 +34,7 @@ class PelangganController extends Controller
         $today = Carbon::today();
 
         // Ambil semua reservasi yang tanggalnya adalah hari ini
-        $reservasis = Reservasi::with(['user']) // jika perlu juga dengan dokter atau hewan
+        $reservasis = Reservasi::with(['user', 'hewan', 'dokter', 'perawatan']) // jika perlu juga dengan dokter atau hewan
             ->whereDate('tanggal', $today)
             ->get();
 

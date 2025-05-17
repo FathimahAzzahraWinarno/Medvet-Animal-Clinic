@@ -22,16 +22,16 @@
                             <td class="px-4 py-3">{{ $index + 1 }}</td>
                             <td class="px-4 py-3">
                                 <div>{{ $reservasi->user->name ?? '-' }}</div>
-                                <div class="text-xs text-gray-400">usr{{ str_pad($reservasi->user->id ?? 0, 2, '0', STR_PAD_LEFT) }}</div>
+                                <div class="text-xs text-gray-400">{{ str_pad($reservasi->user->id ?? 0, 2, '0', STR_PAD_LEFT) }}</div>
                             </td>
                             <td class="px-4 py-3">
-                                <span class="bg-orange-100 text-orange-700 text-xs px-2 py-1 rounded-full">{{ $reservasi->nama_hewan ?? '-' }}</span>
+                                <span class="bg-orange-100 text-orange-700 text-xs px-2 py-1 rounded-full">{{ $reservasi->hewan->nama ?? '-' }}</span>
                             </td>
                             <td class="px-4 py-3">
-                                <span class="bg-orange-100 text-orange-700 text-xs px-2 py-1 rounded-full">{{ $reservasi->spesies ?? '-' }}</span>
+                                <span class="bg-orange-100 text-orange-700 text-xs px-2 py-1 rounded-full">{{ $reservasi->hewan->spesies ?? '-' }}</span>
                             </td>
                             <td class="px-4 py-3">
-                                <span class="bg-green-100 text-green-600 text-xs px-2 py-1 rounded-full">{{ $reservasi->jenis_perawatan ?? '-' }}</span>
+                                <span class="bg-green-100 text-green-600 text-xs px-2 py-1 rounded-full">{{ $reservasi->perawatan->nama ?? '-' }}</span>
                             </td>
                             <td class="px-4 py-3 text-sm text-red-500 font-medium">
                                 {{ \Carbon\Carbon::parse($reservasi->tanggal)->format('d-m-Y') }}

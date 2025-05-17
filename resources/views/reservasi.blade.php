@@ -21,10 +21,21 @@
                 </div>
             @endif
 
+             @if(session('success'))
+         <div id="alertReservasi" class="mb-4 flex items-center p-4 text-green-800 rounded-lg bg-green-50 dark:bg-gray-800 dark:text-green-400 shadow-md z-10 w-100 ml-10 transition-opacity duration-500" role="alertReservasi">
+             <svg class="shrink-0 w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                 <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"/>
+             </svg>
+             <div class="ms-3 text-sm font-medium">
+                 {{ session('success') }}
+             </div>
+         </div>
+     @endif
+
             <h2 class="text-xl font-semibold text-gray-900 mb-4">Data Peliharaan</h2>
 
-            <div class="flex justify-between items-center mb-5">
-                <div>
+            <div class="flex justify-end items-center mb-5">
+                {{-- <div>
                     <label for="hewan" class="block mb-2 text-sm font-medium text-gray-800">Pilih hewanmu</label>
                     <select id="hewan" name="hewan_pilihan"
                         class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-105 px-4 py-2">
@@ -33,7 +44,7 @@
                         <option>Bili</option>
                         <option>Bucil</option>
                     </select>
-                </div>
+                </div> --}}
                 <button onclick="tambahFormHewan()" type="button"
                     class="bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg text-sm px-4 py-2.5">
                     Tambah Hewan
@@ -95,7 +106,7 @@
                                     href="{{ route('user.profile') }}" class="underline text-blue-600">Profil</a>.</p>
                         @endif
                     </div>
-                </div>
+                </div>  
             @else
                 <script>
                     alert('Silakan login terlebih dahulu untuk melakukan reservasi.');
@@ -177,3 +188,14 @@
         </div>
     </form>
 </x-layout>
+
+<script>
+   // Hilangkan alert setelah 3 detik
+  setTimeout(() => {
+      const alert = document.getElementById('alertReservasi');
+      if (alert) {
+          alert.classList.add('opacity-0');
+          setTimeout(() => alert.remove(), 500); // Tunggu transisi selesai sebelum remove
+      }
+  }, 3000); // 3000ms = 3 detik
+</script>
