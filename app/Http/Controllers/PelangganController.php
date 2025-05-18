@@ -18,11 +18,14 @@ class PelangganController extends Controller
     public function reservasiDokter()
     {
         // Ambil tanggal hari ini
-        $today = Carbon::today();
+        $today = Carbon::today()->toDateString();
 
         // Ambil semua reservasi yang tanggalnya adalah hari ini
-        $reservasis = Reservasi::with(['user']) // jika perlu juga dengan dokter atau hewan
-            ->whereDate('tanggal', $today)
+        // $reservasis = Reservasi::with(['user']) // jika perlu juga dengan dokter atau hewan
+        //     ->whereDate('tanggal', $today)
+        //     ->get();
+
+        $reservasis = Reservasi::with(['user', 'hewan', 'dokter', 'perawatan']) // jika perlu juga dengan dokter atau hewan
             ->get();
 
         return view('admin.reservasiDokter', compact('reservasis'));
@@ -31,12 +34,18 @@ class PelangganController extends Controller
     public function reservasiUser()
     {
         // Ambil tanggal hari ini
-        $today = Carbon::today();
+        $today = Carbon::today()->toDateString(); // masalahnya disini 
 
         // Ambil semua reservasi yang tanggalnya adalah hari ini
+        // $reservasis = Reservasi::with(['user', 'hewan', 'dokter', 'perawatan']) // jika perlu juga dengan dokter atau hewan
+        //     ->whereDate('tanggal', '2025-05-19')
+        //     ->get();
+
         $reservasis = Reservasi::with(['user', 'hewan', 'dokter', 'perawatan']) // jika perlu juga dengan dokter atau hewan
-            ->whereDate('tanggal', $today)
             ->get();
+
+        // $reservasi_all = Reservasi::all();
+        // dd($reservasis);
 
         return view('jadwalReservasi', compact('reservasis'));
     }
@@ -68,11 +77,14 @@ class PelangganController extends Controller
     public function jadwalReservasiDokter()
     {
         // Ambil tanggal hari ini
-        $today = Carbon::today();
+        $today = Carbon::today()->toDateString();
 
         // Ambil semua reservasi yang tanggalnya adalah hari ini
         $reservasis = Reservasi::with(['user']) // jika perlu juga dengan dokter atau hewan
             ->whereDate('tanggal', $today)
+            ->get();
+
+        $reservasis = Reservasi::with(['user', 'hewan', 'dokter', 'perawatan']) // jika perlu juga dengan dokter atau hewan
             ->get();
 
         return view('dokter.jadwalReservasiDokter', compact('reservasis'));

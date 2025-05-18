@@ -46,6 +46,8 @@
             </div>
         </div>
 
+        <h1 class="text-4xl font-semibold text-center mt-20 text-gray-900 mb-6 font-['Inter']">Reservasi Hari Ini</h1>
+
         <!-- Filter & Table -->
         <div class="flex justify-between items-center mb-4">
             <div class="flex items-center space-x-2">

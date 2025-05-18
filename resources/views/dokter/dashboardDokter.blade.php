@@ -21,7 +21,7 @@
          @endif
 
         </div>
-        <h1 class="text-4xl font-semibold text-center mt-20 text-gray-900 mb-6 font-['Inter']">Reservasi Terbaru</h1>
+        <h1 class="text-4xl font-semibold text-center mt-20 text-gray-900 mb-6 font-['Inter']">Reservasi Hari Ini</h1>
         <!-- Filter & Table -->
         <div class="flex justify-between items-center mb-4">
                 <a href="jadwal-reservasi-dokter" class="flex text-sm items-center font-semibold bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-800 text-sm cursor-pointer">
@@ -31,53 +31,67 @@
 
         <div class="overflow-x-auto shadow-lg rounded-xl">
             <table class="w-full text-sm text-left text-gray-600">
-                <thead class="text-xs text-gray-500 uppercase border-b border-gray-200">
-                    <tr class="bg-blue-800 text-white">
-                        <th class="px-4 py-3">No</th>
-                        <th class="px-4 py-3">Nama Pemilik</th>
-                        <th class="px-4 py-3">Nama Hewan</th>
-                        <th class="px-4 py-3">Spesies</th>
-                        <th class="px-4 py-3">Tanggal</th>
-                        <th class="px-4 py-3">Jam</th>
-                        <th class="px-4 py-3">Perawatan</th>
-                        <th class="px-4 py-3">Rekam Medis</th>
-                    </tr>
-                </thead>
-                <tbody class="bg-white font-semibold">
-                    @forelse ($reservasis as $index => $reservasi)
-                        <tr class="border-b border-gray-300">
-                            <td class="px-4 py-3">{{ $index + 1 }}</td>
-                            <td class="px-4 py-3">
-                                <div>{{ $reservasi->user->name ?? '-' }}</div>
-                                <div class="text-xs text-gray-400">usr{{ str_pad($reservasi->user->id ?? 0, 2, '0', STR_PAD_LEFT) }}</div>
-                            </td>
-                            <td class="px-4 py-3">
-                                <span class="bg-orange-100 text-orange-700 text-xs px-2 py-1 rounded-full">{{ $reservasi->nama_hewan ?? '-' }}</span>
-                            </td>
-                            <td class="px-4 py-3">
-                                <span class="bg-orange-100 text-orange-700 text-xs px-2 py-1 rounded-full">{{ $reservasi->spesies ?? '-' }}</span>
-                            </td>
-                            <td class="px-4 py-3">
-                                <span class="bg-green-100 text-green-600 text-xs px-2 py-1 rounded-full">{{ $reservasi->jenis_perawatan ?? '-' }}</span>
-                            </td>
-                            <td class="px-4 py-3 text-sm text-red-500 font-medium">
-                                {{ \Carbon\Carbon::parse($reservasi->tanggal)->format('d-m-Y') }}
-                            </td>
-                            <td class="px-4 py-3">
-                                <span class="bg-blue-100 text-blue-700 px-2 py-1 rounded-full text-xs">
-                                    {{ \Carbon\Carbon::parse($reservasi->jam)->format('H:i') }}
-                                </span>
-                            </td>
-                            <td class="px-4 py-3">
-                                <a href="#" class="bg-gray-100 text-blue-600 text-xs px-3 py-1 rounded hover:underline">Lihat</a>
-                            </td>
+                 <thead class="text-xs text-gray-500 uppercase bg-gray-50 border-b border-gray-200">
+                        <tr class="bg-blue-800 text-white text-center">
+                            <th class="px-4 py-3">No</th>
+                            <th class="px-4 py-3">Nama Pemilik</th>
+                            <th class="px-4 py-3">Nama Hewan</th>
+                            <th class="px-4 py-3">Jenis Kelamin</th>
+                            <th class="px-4 py-3">Spesies</th>
+                            <th class="px-4 py-3">Tanggal</th>
+                            <th class="px-4 py-3">Jam</th>
+                            <th class="px-4 py-3">Perawatan</th>
+                            <th class="px-4 py-3">Rekam Medis</th>
                         </tr>
-                    @empty
-                        <tr>
-                            <td colspan="8" class="text-center py-6 text-gray-500">Belum ada reservasi hari ini</td>
-                        </tr>
-                    @endforelse
-                </tbody>
+                    </thead>
+                    <tbody class="bg-white font-semibold text-center">
+                        @forelse($reservasis as $index => $reservasi)
+                            <tr class="border-b border-gray-300">
+                                <td class="px-4 py-3">{{ $index + 1 }}</td>
+                                <td class="px-4 py-3">
+                                    <div>{{ $reservasi->user->name ?? '-' }}</div>
+                                    <div class="text-xs text-gray-400">{{ $reservasi->user->kode ?? '' }}</div>
+                                </td>
+                                <td class="px-4 py-3">
+                                    <span class="bg-orange-100 text-orange-700 text-xs px-2 py-1 rounded-full">
+                                        {{ $reservasi->hewan->nama ?? '-' }}
+                                    </span>
+                                </td>
+                                <td class="px-4 py-3">
+                                    <span class="bg-orange-100 text-orange-700 text-xs px-2 py-1 rounded-full">
+                                        {{ $reservasi->hewan->jenis_kelamin ?? '-' }}
+                                    </span>
+                                </td>
+                                <td class="px-4 py-3">
+                                    <span class="bg-orange-100 text-orange-700 text-xs px-2 py-1 rounded-full">
+                                        {{ $reservasi->hewan->spesies ?? '-' }}
+                                    </span>
+                                </td>
+                                <td class="px-4 py-3 text-sm text-red-500 font-medium">
+                                    {{ \Carbon\Carbon::parse($reservasi->tanggal)->format('d-m-Y') }}
+                                </td>
+                                <td class="px-4 py-3">
+                                    <span class="bg-blue-100 text-blue-700 px-2 py-1 rounded-full text-xs">
+                                        {{ \Carbon\Carbon::parse($reservasi->jam)->format('H:i') }}
+                                    </span>
+                                </td>
+                                <td class="px-4 py-3">
+                                    <span class="bg-green-100 text-green-600 text-xs px-2 py-1 rounded-full">
+                                        {{ $reservasi->perawatan->nama }}
+                                    </span>
+                                </td>
+                                <td class="px-4 py-3">
+                                    <a href="{{ route('dokter.inputRekamMedis', $reservasi->id) }}" class="bg-gray-100 text-blue-600 text-xs px-3 py-1 rounded hover:underline">
+                                        Lihat
+                                    </a>
+                                </td>
+                            </tr>
+                        @empty
+                            <tr>
+                                <td colspan="8" class="text-center py-4 text-gray-500">Belum ada reservasi untuk hari ini.</td>
+                            </tr>
+                        @endforelse
+                    </tbody>
 
             </table>
         </div>

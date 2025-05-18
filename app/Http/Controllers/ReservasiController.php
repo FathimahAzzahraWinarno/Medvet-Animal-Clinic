@@ -58,7 +58,16 @@ class ReservasiController extends Controller
 
             $dokter = Dokter::where('nama', $validated['dokter'])->firstOrFail();
 
-            $tanggalFormatted = Carbon::createFromFormat('m/d/Y', $validated['tanggal'])->format('Y-m-d');
+            $tanggalFormatted = Carbon::parse($validated['tanggal'])->format('Y-m-d');
+
+            // Cek apakah jam yang dipilih sudah dipakai di tanggal itu
+            $cekWaktu = Reservasi::where('tanggal', $tanggalFormatted)
+                ->where('waktu', $validated['waktu'])
+                ->exists();
+
+            if ($cekWaktu) {
+                return back()->with('error', 'Waktu tersebut sudah dipesan, silakan pilih waktu lain.');
+            }
 
             Reservasi::create([
                 'id' => Reservasi::generateReservasiId(),
@@ -73,7 +82,7 @@ class ReservasiController extends Controller
 
             return redirect()->back()->with('success', 'Reservasi berhasil dibuat.');
         } catch (\Exception $e) {
-            dd($e->getMessage());
+            return redirect()->back()->with('error', 'Terjadi kesalahan: ' . $e->getMessage());
         }
     }
 }

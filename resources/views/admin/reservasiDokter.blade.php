@@ -1,6 +1,6 @@
 <x-layout-admin title="Reservasi Hari Ini">
     <div class="flex-1 h-screen overflow-y-auto" style="background-image: url('/images/bgAdmin.svg'); background-size: cover; background-repeat: no-repeat; background-position: center;">
-        <h1 class="text-4xl font-semibold text-center mt-20 text-gray-900 mb-6 font-['Inter']">Reservasi Hari Ini</h1>
+        <h1 class="text-4xl font-semibold text-center mt-20 text-gray-900 mb-6 font-['Inter']">Reservasi</h1>
 
         <div class="overflow-x-auto m-20 rounded-2xl shadow-2xl">
             <table class="w-full text-sm text-center text-gray-600">

@@ -19,7 +19,7 @@
         </a>
         <a href="reservasi-dokter" class="flex items-center text-gray-700 hover:text-blue-600">
           <img src="{{ asset('images/reservasi.svg') }}" class="w-6 h-6 rounded-full" />
-           <span class="ml-3">Reservasi Hari Ini</span>
+           <span class="ml-3">Reservasi</span>
         </a>
         <a href="reservasi-riwayat" class="flex items-center text-gray-700 hover:text-blue-600">
           <img src="{{ asset('images/riwayat.svg') }}" class="w-6 h-6 rounded-full" />

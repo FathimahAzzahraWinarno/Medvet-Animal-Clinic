@@ -14,7 +14,7 @@
             <div class="bg-white shadow-2xl rounded-2xl overflow-hidden">
                 <table class="w-full text-sm text-left text-gray-600">
                     <thead class="text-xs text-gray-500 uppercase bg-gray-50 border-b border-gray-200">
-                        <tr class="bg-blue-800 text-white">
+                        <tr class="bg-blue-800 text-white text-center">
                             <th class="px-4 py-3">No</th>
                             <th class="px-4 py-3">Nama Pemilik</th>
                             <th class="px-4 py-3">Nama Hewan</th>
@@ -26,7 +26,7 @@
                             <th class="px-4 py-3">Rekam Medis</th>
                         </tr>
                     </thead>
-                    <tbody class="bg-white font-semibold">
+                    <tbody class="bg-white font-semibold text-center">
                         @forelse($reservasis as $index => $reservasi)
                             <tr class="border-b border-gray-300">
                                 <td class="px-4 py-3">{{ $index + 1 }}</td>
@@ -54,16 +54,16 @@
                                 </td>
                                 <td class="px-4 py-3">
                                     <span class="bg-blue-100 text-blue-700 px-2 py-1 rounded-full text-xs">
-                                        {{ $reservasi->jam }}
+                                        {{ \Carbon\Carbon::parse($reservasi->jam)->format('H:i') }}
                                     </span>
                                 </td>
                                 <td class="px-4 py-3">
                                     <span class="bg-green-100 text-green-600 text-xs px-2 py-1 rounded-full">
-                                        {{ $reservasi->perawatan }}
+                                        {{ $reservasi->perawatan->nama }}
                                     </span>
                                 </td>
                                 <td class="px-4 py-3">
-                                    <a href="{{ route('rekamMedis.show', $reservasi->id) }}" class="bg-gray-100 text-blue-600 text-xs px-3 py-1 rounded hover:underline">
+                                    <a href="{{ route('dokter.inputRekamMedis', $reservasi->id) }}" class="bg-gray-100 text-blue-600 text-xs px-3 py-1 rounded hover:underline">
                                         Lihat
                                     </a>
                                 </td>
