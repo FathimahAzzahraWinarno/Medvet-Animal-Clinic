@@ -18,6 +18,7 @@
                             <th class="px-4 py-3">No</th>
                             <th class="px-4 py-3">Nama Pemilik</th>
                             <th class="px-4 py-3">Nama Hewan</th>
+                            <th class="px-4 py-3">Jenis Kelamin</th>
                             <th class="px-4 py-3">Spesies</th>
                             <th class="px-4 py-3">Tanggal</th>
                             <th class="px-4 py-3">Jam</th>
@@ -36,6 +37,11 @@
                                 <td class="px-4 py-3">
                                     <span class="bg-orange-100 text-orange-700 text-xs px-2 py-1 rounded-full">
                                         {{ $reservasi->hewan->nama ?? '-' }}
+                                    </span>
+                                </td>
+                                <td class="px-4 py-3">
+                                    <span class="bg-orange-100 text-orange-700 text-xs px-2 py-1 rounded-full">
+                                        {{ $reservasi->hewan->jenis_kelamin ?? '-' }}
                                     </span>
                                 </td>
                                 <td class="px-4 py-3">

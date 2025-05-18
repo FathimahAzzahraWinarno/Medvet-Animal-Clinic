@@ -28,12 +28,12 @@ class ReservasiController extends Controller
 
     public function createReservasi(Request $request)
     {
-        try{
+        try {
             $user = auth()->user();
 
             $validated = $request->validate([
                 'nama_peliharaan' => 'required|string',
-                'jenis_kelamin' => 'required|string',
+                'jenis_kelamin' => 'required|in:Betina,Jantan',
                 'spesies' => 'required|string',
                 'nama_pemilik' => 'required|string',
                 'nomor_telepon' => 'required|string',
@@ -72,9 +72,8 @@ class ReservasiController extends Controller
             ]);
 
             return redirect()->back()->with('success', 'Reservasi berhasil dibuat.');
-        }catch(\Exception $e){
+        } catch (\Exception $e) {
             dd($e->getMessage());
         }
-
     }
 }

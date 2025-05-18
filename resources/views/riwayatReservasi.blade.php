@@ -16,6 +16,7 @@
             <th class="px-4 py-3">No</th>
             <th class="px-4 py-3">Nama Pemilik</th>
             <th class="px-4 py-3">Nama Hewan</th>
+            <th class="px-4 py-3">Jenis Kelamin</th>
             <th class="px-4 py-3">Spesies</th>
             <th class="px-4 py-3">Perawatan</th>
             <th class="px-4 py-3">Tanggal</th>
@@ -30,6 +31,7 @@
               <td class="px-4 py-4 border-t">{{ $index + 1 }}</td>
               <td class="px-4 py-4 border-t">{{ $reservasi->user->name ?? '-' }}</td>
               <td class="px-4 py-4 border-t">{{ $reservasi->hewan->nama ?? '-' }}</td>
+              <td class="px-4 py-4 border-t">{{ $reservasi->hewan->jenis_kelamin ?? '-' }}</td>
               <td class="px-4 py-4 border-t">{{ $reservasi->hewan->spesies ?? '-' }}</td>
               <td class="px-4 py-4 border-t">{{ $reservasi->perawatan }}</td>
               <td class="px-4 py-4 border-t">{{ \Carbon\Carbon::parse($reservasi->tanggal)->format('d/m/Y') }}</td>

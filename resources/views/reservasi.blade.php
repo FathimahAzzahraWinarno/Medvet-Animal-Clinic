@@ -59,9 +59,13 @@
                 </div>
 
                 <div>
-                    <label class="block text-gray-700">Jenis Kelamin</label>
-                    <input type="text" placeholder="Masukkan Jenis Kelamin" name="jenis_kelamin"
-                        class="w-full mt-1 px-4 py-2 border border-gray-400 rounded-lg focus:outline-blue-200">
+                    <label for="jenis_kelamin" class="block mb-2 text-sm font-medium text-gray-800">Jenis Kelamin</label>
+                    <select id="jenis_kelamin" name="jenis_kelamin"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-105 px-4 py-2">
+                        <option selected disabled>Pilih</option>
+                        <option>Betina</option>
+                        <option>Jantan</option>
+                    </select>
                 </div>
 
                 <div>
