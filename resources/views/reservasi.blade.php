@@ -156,16 +156,24 @@
                     </div>
                 </div>
 
+                @php
+                    $startHour = 8;
+                    $endHour = 17;
+                @endphp
+
                 <div>
-                    <label class="block text-gray-700">Waktu</label>
-                    <select id="timeSelect" name="waktu"
-                        class="w-full mt-1 px-4 py-2 border border-gray-400 rounded-lg focus:outline-blue-200 appearance-none">
+                    <label for="waktu" class="block text-gray-700 mb-1">Waktu</label>
+                    <select name="waktu" id="waktu"
+                        class="w-full mt-1 px-4 py-2 border border-gray-400 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 appearance-none">
                         <option value="">Pilih waktu</option>
-                        <option value="08:00 - 10:00">08:00 - 10:00</option>
-                        <option value="10:00 - 12:00">10:00 - 12:00</option>
-                        <option value="13:00 - 15:00">13:00 - 15:00</option>
+                        @for ($hour = $startHour; $hour < $endHour; $hour++)
+                            <option value="{{ sprintf('%02d:00', $hour) }}">{{ sprintf('%02d:00', $hour) }}</option>
+                            <option value="{{ sprintf('%02d:30', $hour) }}">{{ sprintf('%02d:30', $hour) }}</option>
+                        @endfor
+                        <option value="{{ sprintf('%02d:00', $endHour) }}">{{ sprintf('%02d:00', $endHour) }}</option>
                     </select>
                 </div>
+
 
                 <div>
                     <label class="block text-gray-700">Dokter</label>

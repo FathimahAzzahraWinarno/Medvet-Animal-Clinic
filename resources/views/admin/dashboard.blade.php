@@ -111,7 +111,7 @@
                             </td>
                             <td class="px-4 py-3">
                                 <span class="bg-blue-100 text-blue-700 px-2 py-1 rounded-full text-xs">
-                                    {{ \Carbon\Carbon::parse($reservasi->jam)->format('H:i') }}
+                                    {{ $reservasi->waktu }}
                                 </span>
                             </td>
                             <td class="px-4 py-3">

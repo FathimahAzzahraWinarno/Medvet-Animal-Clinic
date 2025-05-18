@@ -41,7 +41,7 @@
                                 {{ \Carbon\Carbon::parse($reservasi->tanggal)->format('d-m-Y') }}
                             </td>
                             <td class="px-4 py-3">
-                                <span class="bg-blue-100 text-blue-700 px-2 py-1 rounded-full text-xs">{{ \Carbon\Carbon::parse($reservasi->jam)->format('H:i') }}</span>
+                                <span class="bg-blue-100 text-blue-700 px-2 py-1 rounded-full text-xs">{{ $reservasi->waktu }}</span>
                             </td>
                             <td class="px-4 py-3">
                                 <a href="#" class="bg-gray-100 text-blue-600 text-xs px-3 py-1 rounded hover:underline">Lihat</a>
