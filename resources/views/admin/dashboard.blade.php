@@ -35,9 +35,12 @@
 
             <div class="bg-gray-50 p-4 rounded-lg shadow">
                 <p class="text-l font-bold text-gray-500">Reservasi Hari Ini</p>
-                <p class="text-3xl font-bold text-gray-800 mt-5 mb-5">
-                    {{ \App\Models\Reservasi::whereDate('created_at', today())->count() ?: '0' }}
-                </p>
+
+                <div class="mt-5">
+                    <p class="text-3xl font-bold text-gray-800">
+                        {{ \App\Models\Reservasi::whereDate('tanggal', today())->count() ?: '0' }}
+                    </p>
+                </div>
             </div>
 
             <div class="bg-gray-50 p-4 rounded-lg shadow">

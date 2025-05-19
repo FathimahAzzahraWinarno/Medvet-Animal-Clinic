@@ -9,7 +9,7 @@
       
         <!-- Gambar gradasi -->
         <div class="h-1 bg-gradient-to-r from-red-500 via-blue-700 to-blue-900 h-2 mb-3 rounded-b"></div>
-        <div class="ml-10">
+        {{-- <div class="ml-10">
             <label for="hewan" class="block mb-2 text-sm font-medium text-gray-800">Pilih hewan</label>
             <select id="hewan" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-105 px-4 py-2">
                <option>Miu</option>
@@ -17,7 +17,7 @@
                <option>Bucil</option>
                <option>Hewan Baru</option>
            </select>
-          </div>
+          </div> --}}
         <!-- Formulir (readonly) -->
         <div class="m-10 mt-5 p-6 mb-10 bg-white rounded-lg shadow-md">
           <form class="space-y-6">
@@ -25,7 +25,7 @@
               <label class="block text-gray-600 mb-1 font-medium">Nama Hewan Peliharaan</label>
               <input 
                 type="text" 
-                placeholder="Miu" 
+                placeholder="miu"
                 class="w-full px-4 py-2 border border-gray-300 rounded-lg bg-gray-100 text-gray-800 placeholder:text-gray-800 focus:outline-none focus:ring-1 focus:ring-gray-200 cursor-not-allowed"                  readonly 
               />
             </div>
@@ -39,14 +39,14 @@
               />
             </div>
       
-            <div>
+            {{-- <div>
               <label class="block text-gray-600 mb-1 font-medium">Ras</label>
               <input 
                 type="text" 
                 placeholder="Bulldog" 
                 class="w-full px-4 py-2 border border-gray-300 rounded-lg bg-gray-100 text-gray-800 placeholder:text-gray-800 focus:outline-none focus:ring-1 focus:ring-gray-200 cursor-not-allowed"                  readonly 
               />
-            </div>
+            </div> --}}
       
             <div>
               <label class="block text-gray-600 mb-1 font-medium">Jenis Kelamin</label>
@@ -71,9 +71,9 @@
           <div class="h-1 bg-gradient-to-r from-red-500 via-blue-700 to-blue-900 h-2 mb-3 rounded-b"></div>
       
           
-          <div class="flex justify-between items-center p-5">
+          <div class="flex justify-end items-center p-5">
             <!-- Tombol Dropdown Pilih Hewan -->
-          <div>
+          {{-- <div>
             <label for="hewan" class="block mb-2 text-sm font-medium text-gray-800">Pilih hewan</label>
             <select id="hewan" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-105 px-4 py-2">
                <option>Miu</option>
@@ -81,7 +81,7 @@
                <option>Bucil</option>
                <option>Hewan Baru</option>
            </select>
-          </div>
+          </div> --}}
             <!-- Tombol Tambah Hewan di kanan -->
             <button data-modal-target="dokter-modal" data-modal-toggle="dokter-modal" class="bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg 
                 text-sm px-4 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700">

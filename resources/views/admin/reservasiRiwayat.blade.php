@@ -64,7 +64,7 @@
                                 <span class="bg-orange-100 text-orange-700 text-xs px-2 py-1 rounded-full">{{ $reservasi->hewan->spesies ?? '-' }}</span>
                             </td>
                             <td class="px-4 py-3">
-                                <span class="bg-green-100 text-green-600 text-xs px-2 py-1 rounded-full">{{ $reservasi->perawatan }}</span>
+                                <span class="bg-green-100 text-green-600 text-xs px-2 py-1 rounded-full">{{ $reservasi->perawatan->nama }}</span>
                             </td>
                             <td class="px-4 py-3 text-sm text-red-500 font-medium">{{ \Carbon\Carbon::parse($reservasi->tanggal)->format('d-m-Y') }}</td>
                             <td class="px-4 py-3">
