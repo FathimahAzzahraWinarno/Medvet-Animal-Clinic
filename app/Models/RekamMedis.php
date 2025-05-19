@@ -35,6 +35,7 @@ class RekamMedis extends Model
     protected $fillable = [
         'id',
         'id_pengelola',
+        'reservasi_id',
         'tanggal',
         'dokter',
         'perawatan',
@@ -48,5 +49,10 @@ class RekamMedis extends Model
     public function rekamMedis()
     {
         return $this->belongsTo(Pengelola::class, 'id_pengelola');
+    }
+
+    public function reservasi()
+    {
+        return $this->belongsTo(Reservasi::class, 'reservasi_id');
     }
 }

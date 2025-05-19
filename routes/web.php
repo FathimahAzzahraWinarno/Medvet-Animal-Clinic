@@ -77,9 +77,7 @@ Route::get('daftar-page', function () {
 
 Route::post('/daftar-page', [AuthController::class, 'daftar'])->name('daftar-page');
 
-Route::get('rekam-medis', function () {
-    return view('RekamMedis');
-});
+Route::get('/rekam-medis', [RekamMedisController::class, 'indexUser'])->name('rekamMedis');
 
 
 Route::middleware(['auth'])->group(function () {

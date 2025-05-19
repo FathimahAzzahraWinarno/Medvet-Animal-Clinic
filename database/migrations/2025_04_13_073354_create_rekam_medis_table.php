@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('rekam_medis', function (Blueprint $table) {
             $table->string('id')->primary();
             $table->string('id_pengelola')->nullable();
+            $table->string('reservasi_id')->nullable();
             $table->date('tanggal');
             $table->string('dokter');  // Perhatikan kapitalisasi, di sini kecil semua
             $table->string('perawatan');
@@ -24,6 +25,7 @@ return new class extends Migration
             $table->text('pesan');  // Pesan lebih baik pakai text jika panjang
             $table->timestamps();
 
+            $table->foreign('reservasi_id')->references('id')->on('reservasis')->onDelete('cascade');
             $table->foreign('id_pengelola')->references('id')->on('pengelolas')->onDelete('cascade');
         });
     }

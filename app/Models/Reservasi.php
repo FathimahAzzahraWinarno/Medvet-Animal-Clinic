@@ -68,4 +68,9 @@ class Reservasi extends Model
 
         return $nextId;
     }
+
+    public function rekamMedis()
+    {
+        return $this->hasMany(RekamMedis::class, 'reservasi_id');
+    }
 }
