@@ -51,11 +51,6 @@ class RekamMedis extends Model
         return $this->belongsTo(Pengelola::class, 'id_pengelola');
     }
 
-    public function pengelola()
-    {
-        return $this->belongsTo(Pengelola::class, 'id_pengelola');
-    }
-
     public function reservasi()
     {
         return $this->belongsTo(Reservasi::class, 'reservasi_id');
