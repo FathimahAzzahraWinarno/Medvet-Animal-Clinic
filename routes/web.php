@@ -15,6 +15,8 @@ use App\Http\Controllers\PromoController;
 use App\Http\Controllers\RekamMedisController;
 use App\Http\Controllers\ReservasiController;
 use App\Http\Controllers\TentangKamiController;
+use App\Http\Middleware\AdminMiddleware;
+use App\Http\Middleware\DokterMiddleware;
 use App\Models\Faq;
 use App\Models\Produk;
 use Illuminate\Http\Request;
@@ -164,7 +166,7 @@ Route::middleware(['auth'])->group(function () {
 });
 
 // === ROUTE ADMIN / PENGELOLA (HARUS LOGIN + ROLE ADMIN) ===
-Route::middleware(['auth:pengelola'])->group(function () {
+Route::middleware(['auth:pengelola', AdminMiddleware::class])->group(function () {
 
     Route::get('dashboard', [PelangganController::class, 'dashboard'])->name('admin.dashboard');
     Route::get('reservasi-dokter', [PelangganController::class, 'reservasiDokter'])->name('reservasi.dokter');
@@ -201,7 +203,7 @@ Route::middleware(['auth:pengelola'])->group(function () {
     Route::get('feedback-pelanggan', [FeedbackController::class, 'index'])->name('feedback-pelanggan');
 });
 
-Route::middleware(['auth:pengelola'])->group(function () {
+Route::middleware(['auth:pengelola', DokterMiddleware::class])->group(function () {
     Route::get('dashboard-dokter', [PelangganController::class, 'dashboardDokter'])->name('dokter.dashboardDokter');
     Route::get('jadwal-reservasi-dokter', [PelangganController::class, 'jadwalReservasiDokter'])->name('jadwalReservasiDokter');
     Route::get('input-rekam-medis', [RekamMedisController::class, 'index'])->name('dokter.inputRekamMedis');
