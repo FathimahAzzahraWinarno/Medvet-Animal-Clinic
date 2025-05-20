@@ -34,11 +34,11 @@
             </div>
 
             <div class="bg-gray-50 p-4 rounded-lg shadow">
-                <p class="text-l font-bold text-gray-500">Reservasi Hari Ini</p>
+                <p class="text-l font-bold text-gray-500">Reservasi</p>
 
                 <div class="mt-5">
                     <p class="text-3xl font-bold text-gray-800">
-                        {{ \App\Models\Reservasi::whereDate('tanggal', today())->count() ?: '0' }}
+                        {{ \App\Models\Reservasi::whereDate('tanggal','>=', today())->count() ?: '0' }}
                     </p>
                 </div>
             </div>
@@ -50,29 +50,6 @@
         </div>
 
         <h1 class="text-4xl font-semibold text-center mt-20 text-gray-900 mb-6 font-['Inter']">Reservasi Hari Ini</h1>
-
-        <!-- Filter & Table -->
-        <div class="flex justify-between items-center mb-4">
-            <div class="flex items-center space-x-2">
-                <button type="button" 
-                        class="text-gray-800 
-                        hover:text-white border border-gray-800 
-                        hover:bg-gray-500 focus:ring-1 
-                        focus:outline-none focus:ring-gray-300 
-                        font-medium rounded-lg text-l px-4 py-2 
-                        text-center me-2 mb-1 dark:border-gray-400 
-                        dark:text-gray-800 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-800">semua</button>
-                <button type="button" 
-                        class="text-gray-800 
-                        hover:text-white border border-gray-800 
-                        hover:bg-gray-500 focus:ring-1 focus:outline-none 
-                        focus:ring-gray-300 font-medium rounded-lg 
-                        text-l px-4 py-2 text-center me-2 mb-1 
-                        dark:border-gray-400 dark:text-gray-800 
-                        dark:hover:text-white dark:hover:bg-gray-600 
-                        dark:focus:ring-gray-800">Filter</button>
-            </div>
-        </div>
 
         <div class="overflow-x-auto shadow-lg rounded-xl">
             <table class="w-full text-sm text-left text-gray-600">
@@ -86,10 +63,9 @@
                         <th class="px-4 py-3">Perawatan</th>
                         <th class="px-4 py-3">Tanggal</th>
                         <th class="px-4 py-3">Jam</th>
-                        <th class="px-4 py-3">Rekam Medis</th>
                     </tr>
                 </thead>
-                <tbody class="bg-white font-semibold">
+                <tbody class="bg-white font-semibold text-center">
                     @forelse ($reservasis as $index => $reservasi)
                         <tr class="border-b border-gray-300">
                             <td class="px-4 py-3">{{ $index + 1 }}</td>
@@ -116,9 +92,6 @@
                                 <span class="bg-blue-100 text-blue-700 px-2 py-1 rounded-full text-xs">
                                     {{ $reservasi->waktu }}
                                 </span>
-                            </td>
-                            <td class="px-4 py-3">
-                                <a href="#" class="bg-gray-100 text-blue-600 text-xs px-3 py-1 rounded hover:underline">Lihat</a>
                             </td>
                         </tr>
                     @empty

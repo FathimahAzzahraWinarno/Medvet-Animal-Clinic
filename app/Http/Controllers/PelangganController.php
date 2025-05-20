@@ -20,12 +20,8 @@ class PelangganController extends Controller
         // Ambil tanggal hari ini
         $today = Carbon::today()->toDateString();
 
-        // Ambil semua reservasi yang tanggalnya adalah hari ini
-        // $reservasis = Reservasi::with(['user']) // jika perlu juga dengan dokter atau hewan
-        //     ->whereDate('tanggal', $today)
-        //     ->get();
-
-        $reservasis = Reservasi::with(['user', 'hewan', 'dokter', 'perawatan']) // jika perlu juga dengan dokter atau hewan
+        $reservasis = Reservasi::with(['user', 'hewan', 'dokter', 'perawatan'])
+            ->whereDate('tanggal', '>=', $today)
             ->get();
 
         return view('admin.reservasiDokter', compact('reservasis'));
@@ -34,18 +30,11 @@ class PelangganController extends Controller
     public function reservasiUser()
     {
         // Ambil tanggal hari ini
-        $today = Carbon::today()->toDateString(); // masalahnya disini 
+        $today = Carbon::today()->toDateString();
 
-        // Ambil semua reservasi yang tanggalnya adalah hari ini
-        // $reservasis = Reservasi::with(['user', 'hewan', 'dokter', 'perawatan']) // jika perlu juga dengan dokter atau hewan
-        //     ->whereDate('tanggal', '2025-05-19')
-        //     ->get();
-
-        $reservasis = Reservasi::with(['user', 'hewan', 'dokter', 'perawatan']) // jika perlu juga dengan dokter atau hewan
+        $reservasis = Reservasi::with(['user', 'hewan', 'dokter', 'perawatan'])
+            ->whereDate('tanggal', '>=', $today)
             ->get();
-
-        // $reservasi_all = Reservasi::all();
-        // dd($reservasis);
 
         return view('jadwalReservasi', compact('reservasis'));
     }
@@ -112,5 +101,13 @@ class PelangganController extends Controller
             ->get();
 
         return view('dokter.dashboardDokter', compact('reservasis'));
+    }
+
+    public function filterReservasi(Request $request)
+    {
+        $sort = $request->query('sort', 'desc'); // default terbaru
+        $users = User::orderBy('created_at', $sort)->get();
+
+        return view('reservasiRiwayat', compact('users'));
     }
 }

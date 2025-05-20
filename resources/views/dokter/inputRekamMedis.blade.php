@@ -120,6 +120,14 @@
                             </div>
 
                             <div>
+                                <label for="dokter"
+                                    class="block mb-2 text-sm font-semibold text-gray-800">Hewan</label>
+                                <textarea id="hewan" name="hewan" rows="3" placeholder="Nama hewan"
+                                    class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500"
+                                    maxlength="300" required></textarea>
+                            </div>
+
+                            <div>
                                 <label for="perawatan"
                                     class="block mb-2 text-sm font-semibold text-gray-800">Perawatan</label>
                                 <textarea id="perawatan" name="perawatan" rows="3" placeholder="Masukan Perawatan"

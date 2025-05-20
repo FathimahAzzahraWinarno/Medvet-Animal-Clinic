@@ -20,11 +20,21 @@
                         </svg>
                     </button>
 
-                    <div id="dropdown" class="z-10 hidden bg-white font-semibold divide-y divide-blue-200 rounded-lg shadow-sm w-44 border border-blue-300 mt-2 absolute right-0">
+                    <div id="dropdown"
+                        class="z-10 hidden bg-white font-semibold divide-y divide-blue-200 rounded-lg shadow-sm w-44 border border-blue-300 mt-2 absolute right-0">
                         <ul class="py-2 text-sm text-gray-700" aria-labelledby="dropdownDefaultButton">
-                            <li><a href="#" class="block px-4 py-2 hover:bg-blue-100">Terbaru</a></li>
-                            <li><a href="#" class="block px-4 py-2 hover:bg-blue-100">Terlama</a></li>
-                            <li><a href="#" class="block px-4 py-2 hover:bg-blue-100">Hewan Baru</a></li>
+                            <li class="border-b">
+                                <a href="{{ request()->fullUrlWithQuery(['sort' => 'desc']) }}"
+                                    class="block px-4 py-2 hover:bg-blue-100 {{ request('sort') == 'desc' ? 'bg-blue-100 font-bold' : '' }}">
+                                    Terbaru
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{ request()->fullUrlWithQuery(['sort' => 'asc']) }}"
+                                    class="block px-4 py-2 hover:bg-blue-100 {{ request('sort') == 'asc' ? 'bg-blue-100 font-bold' : '' }}">
+                                    Terlama
+                                </a>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -43,10 +53,9 @@
                             <th class="px-4 py-3">Perawatan</th>
                             <th class="px-4 py-3">Tanggal</th>
                             <th class="px-4 py-3">Jam</th>
-                            <th class="px-4 py-3">Rekam Medis</th>
                         </tr>
                     </thead>
-                    <tbody class="bg-white font-semibold">
+                    <tbody class="bg-white font-semibold text-center">
                         @forelse($reservasis as $index => $reservasi)
                         <tr class="border-b border-gray-200">
                             <td class="px-4 py-3">{{ $index + 1 }}</td>
@@ -70,9 +79,6 @@
                             <td class="px-4 py-3">
                                 <span class="bg-blue-100 text-blue-700 px-2 py-1 rounded-full text-xs">{{ $reservasi->waktu }}</span>
                             </td>
-                            <td class="px-4 py-3">
-                                <a href="#" class="text-blue-600 text-xs px-3 py-1 rounded hover:underline">Lihat</a>
-                            </td>
                         </tr>
                         @empty
                         <tr>
@@ -85,3 +91,20 @@
         </div>
     </div>
 </x-layout-admin>
+
+<script>
+    function toggleDropdown() {
+        const dropdown = document.getElementById('dropdown');
+        dropdown.classList.toggle('hidden');
+    }
+
+    // Optional: hide dropdown when click outside
+    window.addEventListener('click', function (e) {
+        const button = document.getElementById('dropdownDefaultButton');
+        const dropdown = document.getElementById('dropdown');
+        if (!button.contains(e.target) && !dropdown.contains(e.target)) {
+            dropdown.classList.add('hidden');
+        }
+    });
+</script>
+

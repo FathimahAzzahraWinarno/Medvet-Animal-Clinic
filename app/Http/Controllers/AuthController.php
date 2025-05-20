@@ -52,27 +52,39 @@ class AuthController extends Controller
             'password' => 'required|string',
         ]);
 
-        $user = User::where('email', $request->email)->first();
-        if (!$user) {
-            $user = Pengelola::where('email', $request->email)->first();
+        $credentials = $request->only('email', 'password');
+
+        // Cek apakah email ini milik pengelola (admin/dokter)
+        $pengelola = \App\Models\Pengelola::where('email', $credentials['email'])->first();
+
+        if ($pengelola) {
+            // Coba login sebagai pengelola
+            if (Auth::guard('pengelola')->attempt($credentials)) {
+                $user = Auth::guard('pengelola')->user();
+
+                if ($user->role === 'admin') {
+                    return redirect()->intended('dashboard')->with('success-login', 'Selamat datang Admin!');
+                } elseif ($user->role === 'dokter') {
+                    return redirect()->intended('dashboard-dokter')->with('success-login', 'Selamat datang Dokter!');
+                }
+
+                // Jika role tidak dikenali
+                Auth::guard('pengelola')->logout();
+                return redirect()->back()->with('error-login', 'Role tidak dikenali.');
+            }
+
+            return redirect()->back()->with('error-login', 'Email atau password salah untuk pengelola.');
         }
 
-        if (!$user || !Hash::check($request->password, $user->password)) {
-            return redirect()->back()->with('error-login', 'Email atau password salah.');
+        // Kalau bukan pengelola, login sebagai user biasa
+        if (Auth::guard('web')->attempt($credentials)) {
+            return redirect()->intended('/')->with('success-login', 'Selamat datang!');
         }
 
-        Auth::login($user); // ✅ Login
-
-        if ($user->role === 'dokter') {
-            $route = '/dashboard-dokter';
-        } elseif ($user->role === 'admin') {
-            $route = '/dashboard';
-        } else {
-            $route = '/';
-        }
-
-        return redirect($route)->with('success-login', 'Selamat datang, ' . $user->role . ' ' . $user->name . '!');
+        // Semua gagal
+        return redirect()->back()->with('error-login', 'Email atau password salah.');
     }
+
 
     public function index()
     {

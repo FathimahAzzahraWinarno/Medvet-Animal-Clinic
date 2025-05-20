@@ -16,8 +16,9 @@ class RekamMedisController extends Controller
         $user = auth()->user(); // ini masih ngambil users bukan pengelola
         $user_id = $user->id;
         $reservasis = Reservasi::where('id_user', $user_id)
-        ->whereDoesntHave('rekamMedis')
-        ->get();
+            ->whereDoesntHave('rekamMedis')
+            ->with('hewan')
+            ->get();
 
         return view('dokter.inputRekamMedis', [
             'rekamMedis' => $rekam_medis,
@@ -75,7 +76,7 @@ class RekamMedisController extends Controller
         $rekamMedis = RekamMedis::whereHas('reservasi', function ($query) use ($user_id) {
             $query->where('id_user', $user_id);
         })->with(['reservasi.hewan', 'reservasi.dokter'])
-        ->get();
+            ->get();
 
         return view('rekamMedis', [
             'reservasis' => $reservasis,

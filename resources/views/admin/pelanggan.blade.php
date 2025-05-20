@@ -21,9 +21,9 @@
                             <td class="px-4 py-3">{{ \Carbon\Carbon::parse($user->created_at)->format('d/m/Y') }}</td>
                             <td class="px-4 py-3">
                                 <div>{{ $user->name }}</div>
-                                <div class="text-xs text-gray-400">usr{{ str_pad($user->id, 2, '1', STR_PAD_RIGHT) }}</div>
+                                <div class="text-xs text-gray-400">{{ str_pad($user->id, 2, '1', STR_PAD_RIGHT) }}</div>
                             </td>
-                            <td class="px-4 py-3">-</td> {{-- Nama Hewan nanti --}}
+                            <td class="px-4 py-3">-</td>
                             <td class="px-4 py-3">
                                 <span class="bg-orange-100 text-orange-700 text-xs px-2 py-1 rounded-full">{{ $user->email }}</span>
                             </td>

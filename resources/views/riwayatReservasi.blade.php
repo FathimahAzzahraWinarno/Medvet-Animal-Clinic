@@ -33,7 +33,7 @@
               <td class="px-4 py-4 border-t">{{ $reservasi->hewan->nama ?? '-' }}</td>
               <td class="px-4 py-4 border-t">{{ $reservasi->hewan->jenis_kelamin ?? '-' }}</td>
               <td class="px-4 py-4 border-t">{{ $reservasi->hewan->spesies ?? '-' }}</td>
-              <td class="px-4 py-4 border-t">{{ $reservasi->perawatan }}</td>
+              <td class="px-4 py-4 border-t">{{ $reservasi->perawatan->nama }}</td>
               <td class="px-4 py-4 border-t">{{ \Carbon\Carbon::parse($reservasi->tanggal)->format('d/m/Y') }}</td>
               <td class="px-4 py-4 border-t">{{ $reservasi->waktu }}</td>
               <td class="px-4 py-4 border-t">{{ $reservasi->pesan ?? '-' }}</td>

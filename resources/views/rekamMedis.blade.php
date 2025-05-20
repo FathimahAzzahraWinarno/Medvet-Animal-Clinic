@@ -39,7 +39,7 @@
         <div class="h-1 bg-gradient-to-r from-red-500 via-blue-700 to-blue-900 h-2 mb-3 rounded-b"></div>
         <div class="ml-10">
             <label for="hewan" class="block mb-2 text-sm font-medium text-gray-800">Pilih hewan</label>
-            <select id="hewan" ...>
+            <select id="hewan" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-105 px-4 py-2">
                 @foreach ($reservasis as $reservasi)
                     <option value="{{ $reservasi->id }}" data-nama="{{ $reservasi->hewan->nama ?? '-' }}"
                         data-spesies="{{ $reservasi->hewan->spesies ?? '-' }}"

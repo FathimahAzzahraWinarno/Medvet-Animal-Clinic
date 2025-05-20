@@ -14,10 +14,9 @@
                         <th class="px-4 py-3">Perawatan</th>
                         <th class="px-4 py-3">Tanggal</th>
                         <th class="px-4 py-3">Jam</th>
-                        <th class="px-4 py-3">Rekam Medis</th>
                     </tr>
                 </thead>
-                <tbody class="bg-white font-semibold">
+                <tbody class="bg-white font-semibold text-center">
                     @forelse ($reservasis as $index => $reservasi)
                         <tr class="border-b border-gray-300">
                             <td class="px-4 py-3">{{ $index + 1 }}</td>
@@ -42,9 +41,6 @@
                             </td>
                             <td class="px-4 py-3">
                                 <span class="bg-blue-100 text-blue-700 px-2 py-1 rounded-full text-xs">{{ $reservasi->waktu }}</span>
-                            </td>
-                            <td class="px-4 py-3">
-                                <a href="#" class="bg-gray-100 text-blue-600 text-xs px-3 py-1 rounded hover:underline">Lihat</a>
                             </td>
                         </tr>
                     @empty
