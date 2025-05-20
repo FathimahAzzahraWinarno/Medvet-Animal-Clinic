@@ -54,6 +54,49 @@
         </div>
 
         <div class="relative m-30 rounded-lg border border-blue-50 shadow-[0px_0px_10px_rgba(59,130,246,0.3)]">
+        <div class="bg-blue-700 rounded-t-lg shadow-md">
+            <div class="p-6">
+                <h1 class="text-white text-2xl font-bold">Informasi Hewan Peliharaan</h1>
+            </div>
+        </div>
+
+        <!-- Gambar gradasi -->
+        <div class="h-1 bg-gradient-to-r from-red-500 via-blue-700 to-blue-900 h-2 mb-3 rounded-b"></div>
+        <!-- Formulir (readonly) -->
+        <div class="m-10 mt-5 p-6 mb-10 bg-white rounded-lg shadow-md">
+            <form class="space-y-6">
+                <div>
+                    <label class="block text-gray-600 mb-1 font-medium">Nama Hewan Peliharaan</label>
+                    <input type="text" id="namaHewan"
+                        class="w-full px-4 py-2 border border-gray-300 rounded-lg bg-gray-100 text-gray-800 placeholder:text-gray-800 focus:outline-none focus:ring-1 focus:ring-gray-200 cursor-not-allowed"
+                        readonly />
+                </div>
+
+                <div>
+                    <label class="block text-gray-600 mb-1 font-medium">Spesies</label>
+                    <input type="text" id="spesiesHewan"
+                        class="w-full px-4 py-2 border border-gray-300 rounded-lg bg-gray-100 text-gray-800 placeholder:text-gray-800 focus:outline-none focus:ring-1 focus:ring-gray-200 cursor-not-allowed"
+                        readonly />
+                </div>
+
+                <div>
+                    <label class="block text-gray-600 mb-1 font-medium">Ras</label>
+                    <input type="text" id="rasHewan"
+                        class="w-full px-4 py-2 border border-gray-300 rounded-lg bg-gray-100 text-gray-800 placeholder:text-gray-800 focus:outline-none focus:ring-1 focus:ring-gray-200 cursor-not-allowed"
+                        readonly />
+                </div>
+
+                <div>
+                    <label class="block text-gray-600 mb-1 font-medium">Jenis Kelamin</label>
+                    <input type="text" id="kelaminHewan"
+                        class="w-full px-4 py-2 border border-gray-300 rounded-lg bg-gray-100 text-gray-800 placeholder:text-gray-800 focus:outline-none focus:ring-1 focus:ring-gray-200 cursor-not-allowed"
+                        readonly />
+                </div>
+            </form>
+        </div>
+    </div>
+
+        <div class="relative m-30 rounded-lg border border-blue-50 shadow-[0px_0px_10px_rgba(59,130,246,0.3)]">
             <div class="bg-blue-700 rounded-t-lg shadow-md">
                 <div class="p-6">
                     <h1 class="text-white text-2xl font-bold">Informasi Rekam Medis</h1>
