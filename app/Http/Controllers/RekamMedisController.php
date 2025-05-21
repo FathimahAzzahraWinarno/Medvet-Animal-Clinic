@@ -32,6 +32,29 @@ class RekamMedisController extends Controller
         ]);
     }
 
+    public function indexUser()
+    {
+        $user = auth()->user();
+        $user_id = $user->id;
+
+        $reservasis = Reservasi::where('id_user', $user_id)
+            ->with('hewan')
+            ->get();
+
+
+        $rekamMedis = RekamMedis::whereHas('reservasi', function ($query) use ($user_id) {
+            $query->where('id_user', $user_id);
+        })->with(['reservasi.hewan', 'reservasi.dokter'])
+            ->get();
+
+        return view('rekamMedis', [
+            'reservasis' => $reservasis,
+            'rekamMedis' => $rekamMedis,
+            'title' => 'Daftar Rekam Medis',
+            'active' => 'Rekam Medis'
+        ]);
+    }
+
     public function createRekamMedis(Request $request)
     {
 
