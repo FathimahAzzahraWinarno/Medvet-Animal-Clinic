@@ -4,55 +4,6 @@
         <h1 class="text-4xl font-semibold text-center mt-20 text-gray-900 mb-6 font-['Inter']">Daftar Reservasi Anda
         </h1>
 
-        <div class="overflow-x-auto mt-20 me-20 ms-20">
-            <div class="bg-white shadow-2xl rounded-2xl overflow-hidden">
-                <table class="w-full text-sm text-left text-gray-600">
-                    <thead class="text-xs text-gray-500 uppercase bg-gray-50 border-b border-gray-200">
-                        <tr class="bg-blue-800 text-white text-center">
-                            <th class="px-4 py-3">No</th>
-                            <th class="px-4 py-3">Nama Pemilik</th>
-                            <th class="px-4 py-3">Nama Hewan</th>
-                            <th class="px-4 py-3">Tanggal</th>
-                            <th class="px-4 py-3">Rekam Medis</th>
-                        </tr>
-                    </thead>
-                    <tbody class="bg-white font-semibold text-center">
-                        @forelse($reservasis as $index => $reservasi)
-                            <tr class="border-b border-gray-300">
-                                <td class="px-4 py-3">{{ $index + 1 }}</td>
-                                <td class="px-4 py-3">
-                                    <div>{{ $reservasi->user->name ?? '-' }}</div>
-                                    <div class="text-xs text-gray-400">{{ $reservasi->user->kode ?? '' }}</div>
-                                </td>
-                                <td class="px-4 py-3">
-                                    <span class="bg-orange-100 text-orange-700 text-xs px-2 py-1 rounded-full">
-                                        {{ $reservasi->hewan->nama ?? '-' }}
-                                    </span>
-                                </td>
-                                <td class="px-4 py-3 text-sm text-red-500 font-medium">
-                                    {{ \Carbon\Carbon::parse($reservasi->tanggal)->format('d-m-Y') }}
-                                </td>
-                                <td class="px-4 py-3">
-                                    <button type="button" data-modal-target="dokter-modal"
-                                        data-modal-toggle="dokter-modal"
-                                        onclick="selectReservasi('{{ $reservasi->id }}')"
-                                        class="bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg 
-                text-sm px-4 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700">
-                                        Tambah Rekam Medis
-                                    </button>
-                                </td>
-                            </tr>
-                        @empty
-                            <tr>
-                                <td colspan="8" class="text-center py-4 text-gray-500">Belum ada reservasi untuk
-                                    hari ini.</td>
-                            </tr>
-                        @endforelse
-                    </tbody>
-                </table>
-            </div>
-        </div>
-
         <div class="relative m-30 rounded-lg border border-blue-50 shadow-[0px_0px_10px_rgba(59,130,246,0.3)]">
         <div class="bg-blue-700 rounded-t-lg shadow-md">
             <div class="p-6">
@@ -62,38 +13,109 @@
 
         <!-- Gambar gradasi -->
         <div class="h-1 bg-gradient-to-r from-red-500 via-blue-700 to-blue-900 h-2 mb-3 rounded-b"></div>
-        <!-- Formulir (readonly) -->
-        <div class="m-10 mt-5 p-6 mb-10 bg-white rounded-lg shadow-md">
-            <form class="space-y-6">
-                <div>
-                    <label class="block text-gray-600 mb-1 font-medium">Nama Hewan Peliharaan</label>
-                    <input type="text" id="namaHewan"
-                        class="w-full px-4 py-2 border border-gray-300 rounded-lg bg-gray-100 text-gray-800 placeholder:text-gray-800 focus:outline-none focus:ring-1 focus:ring-gray-200 cursor-not-allowed"
-                        readonly />
+        <div class="m-10 mt-5 p-3 mb-10">
+
+            @if(session('success'))
+                <div class="bg-green-100 text-green-800 p-3 rounded mb-4">
+                    {{ session('success') }}
+                </div>
+            @endif
+
+            @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
+
+            @foreach ($reservasis as $reservasi)
+            <form action="{{ route('dokter.inputRekamMedis.create', ['id' => $reservasi->id]) }}" method="POST" class="space-y-6">
+                @csrf
+
+                <!-- Bagian 1: readonly -->
+                <div class="p-6 mb-6 bg-white rounded-lg shadow-sm">
+                        <div class="mb-4">
+                            <label class="block text-gray-600 mb-1 font-medium">Nama Hewan Peliharaan</label>
+                            <input type="text" value="{{ $reservasi->hewan->nama ?? '-' }}"
+                                class="w-full px-4 py-2 border border-gray-300 rounded-lg bg-gray-100 text-gray-800 placeholder:text-gray-800 focus:outline-none focus:ring-1 focus:ring-gray-200 cursor-not-allowed"
+                                readonly />
+                        </div>
+
+                        <div class="mb-4">
+                            <label class="block text-gray-600 mb-1 font-medium">Spesies</label>
+                            <input type="text" value="{{ $reservasi->hewan->spesies ?? '-' }}"
+                                class="w-full px-4 py-2 border border-gray-300 rounded-lg bg-gray-100 text-gray-800 placeholder:text-gray-800 focus:outline-none focus:ring-1 focus:ring-gray-200 cursor-not-allowed"
+                                readonly />
+                        </div>
+
+                        <div class="mb-4">
+                            <label class="block text-gray-600 mb-1 font-medium">Jenis Kelamin</label>
+                            <input type="text" value="{{ $reservasi->hewan->jenis_kelamin ?? '-' }}"
+                                class="w-full px-4 py-2 border border-gray-300 rounded-lg bg-gray-100 text-gray-800 placeholder:text-gray-800 focus:outline-none focus:ring-1 focus:ring-gray-200 cursor-not-allowed"
+                                readonly />
+                        </div>
+
+                        {{-- Hidden Fields --}}
+                        <input type="hidden" name="tanggal" value="{{ \Carbon\Carbon::now()->format('Y-m-d') }}">
+                        <input type="hidden" name="perawatan" value="{{ $reservasi->perawatan->nama ?? '-' }}">
+                        <input type="hidden" name="pesan" value="{{ $reservasi->pesan }}">
+                        <input type="hidden" name="reservasi_id" value="{{ $reservasi->id }}">
+                   
                 </div>
 
-                <div>
-                    <label class="block text-gray-600 mb-1 font-medium">Spesies</label>
-                    <input type="text" id="spesiesHewan"
-                        class="w-full px-4 py-2 border border-gray-300 rounded-lg bg-gray-100 text-gray-800 placeholder:text-gray-800 focus:outline-none focus:ring-1 focus:ring-gray-200 cursor-not-allowed"
-                        readonly />
+                <!-- Tombol Tambah Rekam Medis -->
+                <button id="btnTambah" 
+                    class="px-6 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition duration-200">
+                    Tambah Rekam Medis
+                </button>
+
+                <!-- Form inputan, awalnya disembunyikan -->
+                <div id="formRekamMedis" class="p-6 bg-white rounded-lg shadow-sm mt-4" style="display: none;">
+                    <div class="mb-4">
+                        <label for="detailRekamMedis" class="block text-gray-600 mb-1 font-medium">Detail Rekam Medis</label>
+                        <textarea id="detailRekamMedis" name="detail" required
+                            class="w-full px-4 py-3 border border-gray-300 rounded-lg text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-blue-500"
+                            placeholder="Masukkan data detail rekam medis"></textarea>
+                    </div>
+
+                    <div class="mb-4">
+                        <label for="diagnosa" class="block text-gray-600 mb-1 font-medium">Diagnosa</label>
+                        <input type="text" id="diagnosa" name="diagnosa" required
+                            class="w-full px-4 py-2 border border-gray-300 rounded-lg text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-blue-500"
+                            placeholder="Masukkan data diagnosa" />
+                    </div>
+
+                    <div class="mb-4">
+                        <label for="hasilTes" class="block text-gray-600 mb-1 font-medium">Hasil Tes</label>
+                        <textarea id="hasilTes" name="hasil_tes" required
+                            class="w-full px-4 py-3 border border-gray-300 rounded-lg text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-blue-500"
+                            placeholder="Masukkan data hasil tes"></textarea>
+                    </div>
+
+                    <div class="mb-4">
+                        <label for="tindakan" class="block text-gray-600 mb-1 font-medium">Tindakan</label>
+                        <textarea id="tindakan" name="tindakan" required
+                            class="w-full px-4 py-3 border border-gray-300 rounded-lg text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-blue-500"
+                            placeholder="Masukkan data tindakan"></textarea>
+                    </div>
                 </div>
 
-                <div>
-                    <label class="block text-gray-600 mb-1 font-medium">Ras</label>
-                    <input type="text" id="rasHewan"
-                        class="w-full px-4 py-2 border border-gray-300 rounded-lg bg-gray-100 text-gray-800 placeholder:text-gray-800 focus:outline-none focus:ring-1 focus:ring-gray-200 cursor-not-allowed"
-                        readonly />
+                <!-- Tombol Simpan -->
+                <div id="btnSimpanWrapper" class="flex justify-end mt-2" style="display: none;">
+                    <button type="submit"
+                        class="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition duration-200">
+                        Simpan Data
+                    </button>
                 </div>
 
-                <div>
-                    <label class="block text-gray-600 mb-1 font-medium">Jenis Kelamin</label>
-                    <input type="text" id="kelaminHewan"
-                        class="w-full px-4 py-2 border border-gray-300 rounded-lg bg-gray-100 text-gray-800 placeholder:text-gray-800 focus:outline-none focus:ring-1 focus:ring-gray-200 cursor-not-allowed"
-                        readonly />
-                </div>
             </form>
+            @endforeach
+
         </div>
+
     </div>
 
         <div class="relative m-30 rounded-lg border border-blue-50 shadow-[0px_0px_10px_rgba(59,130,246,0.3)]">
@@ -104,136 +126,6 @@
             </div>
             <!-- Gambar gradasi -->
             <div class="h-1 bg-gradient-to-r from-red-500 via-blue-700 to-blue-900 h-2 mb-3 rounded-b"></div>
-
-
-            <!--popup-->
-            <div id="dokter-modal" data-modal-backdrop="dokter" tabindex="-1" aria-hidden="true"
-                class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
-                <div class="relative p-4 w-full max-w-2xl max-h-full">
-                    <!-- Modal content -->
-                    <div class="relative bg-white rounded-lg shadow-sm dark:bg-gray-300">
-                        <!-- Modal header -->
-                        <div
-                            class="flex items-center font-extrabold justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600 border-gray-200">
-                            <h3 class="text-2xl font-semibold text-gray-800">
-                                Tambah Rekam Medis
-                            </h3>
-                            <button type="button"
-                                class="text-blue-800 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-blue-500 dark:hover:text-white"
-                                data-modal-hide="dokter-modal">
-                                <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                    fill="none" viewBox="0 0 14 14">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                        stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
-                                </svg>
-                                <span class="sr-only">Close modal</span>
-                            </button>
-                        </div>
-
-                        <!-- Modal body -->
-                        <form method="POST" action="{{ route('createRekamMedis') }}" class="p-4 md:p-5 space-y-6">
-                            @csrf
-                            {{-- Tampilkan error validasi --}}
-                            @if ($errors->any())
-                                <div class="text-red-600 mb-4">
-                                    <ul>
-                                        @foreach ($errors->all() as $error)
-                                            <li>{{ $error }}</li>
-                                        @endforeach
-                                    </ul>
-                                </div>
-                            @endif
-
-                            <input type="hidden" name="reservasi_id" id="reservasi_id">
-
-                            <div>
-                                <label for="tanggal"
-                                    class="block mb-2 text-sm font-semibold text-gray-800">Tanggal</label>
-                                <input type="date" id="tanggal" name="tanggal"
-                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-                                    required>
-                            </div>
-
-                            <div>
-                                <label for="dokter"
-                                    class="block mb-2 text-sm font-semibold text-gray-800">Dokter</label>
-                                <textarea id="dokter" name="dokter" rows="3" placeholder="Nama dokter"
-                                    class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500"
-                                    maxlength="300" required></textarea>
-                            </div>
-
-                            <div>
-                                <label for="dokter"
-                                    class="block mb-2 text-sm font-semibold text-gray-800">Hewan</label>
-                                <textarea id="hewan" name="hewan" rows="3" placeholder="Nama hewan"
-                                    class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500"
-                                    maxlength="300" required></textarea>
-                            </div>
-
-                            <div>
-                                <label for="perawatan"
-                                    class="block mb-2 text-sm font-semibold text-gray-800">Perawatan</label>
-                                <textarea id="perawatan" name="perawatan" rows="3" placeholder="Masukan Perawatan"
-                                    class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500"
-                                    maxlength="300" required></textarea>
-                            </div>
-
-                            <div>
-                                <label for="detail" class="block mb-2 text-sm font-semibold text-gray-800">Detail
-                                    Rekam Medis</label>
-                                <textarea id="detail" name="detail" rows="3" placeholder="Masukan detail"
-                                    class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500"
-                                    maxlength="300" required></textarea>
-                            </div>
-
-                            <div>
-                                <label for="diagnosa"
-                                    class="block mb-2 text-sm font-semibold text-gray-800">Diagnosa</label>
-                                <textarea id="diagnosa" name="diagnosa" rows="3" placeholder="Masukan diagnosa"
-                                    class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500"
-                                    maxlength="300" required></textarea>
-                            </div>
-
-                            <div>
-                                <label for="hasil_tes" class="block mb-2 text-sm font-semibold text-gray-800">Hasil
-                                    Tes</label>
-                                <textarea id="hasil_tes" name="hasil_tes" rows="3" placeholder="Masukan hasil tes"
-                                    class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500"
-                                    maxlength="300" required></textarea>
-                            </div>
-
-                            <div>
-                                <label for="tindakan"
-                                    class="block mb-2 text-sm font-semibold text-gray-800">Tindakan</label>
-                                <textarea id="tindakan" name="tindakan" rows="3" placeholder="Masukan Tindakan"
-                                    class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500"
-                                    maxlength="300" required></textarea>
-                            </div>
-
-                            <div>
-                                <label for="pesan"
-                                    class="block mb-2 text-sm font-semibold text-gray-800">Pesan</label>
-                                <textarea id="pesan" name="pesan" rows="3" placeholder="Masukan pesan"
-                                    class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500"
-                                    maxlength="300" required></textarea>
-                            </div>
-
-                            {{-- Modal Footer --}}
-                            <div class="flex items-center p-4 md:p-5 border-t border-gray-200 rounded-b">
-                                <button type="submit"
-                                    class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-semibold rounded-lg text-sm px-5 py-2.5 text-center">
-                                    Simpan
-                                </button>
-                                <button data-modal-hide="dokter-modal"
-                                    class="py-2.5 px-5 ms-3 text-sm font-semibold text-gray-900 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 hover:text-blue-700 focus:ring-4 focus:ring-gray-100">
-                                    Batal
-                                </button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-
 
             <!-- Tabel -->
             <div class="overflow-x-auto">
@@ -309,4 +201,14 @@
             setTimeout(() => alert.remove(), 500); // Tunggu transisi selesai sebelum remove
         }
     }, 3000); // 3000ms = 3 detik
+
+    const btnTambah = document.getElementById('btnTambah');
+    const formRekamMedis = document.getElementById('formRekamMedis');
+    const btnSimpanWrapper = document.getElementById('btnSimpanWrapper');
+
+    btnTambah.addEventListener('click', () => {
+        formRekamMedis.style.display = 'block';
+        btnSimpanWrapper.style.display = 'flex';
+        btnTambah.style.display = 'none'; // supaya tombol hanya muncul 1 kali
+    });
 </script>

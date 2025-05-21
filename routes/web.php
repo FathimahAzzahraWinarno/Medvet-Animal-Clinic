@@ -206,6 +206,7 @@ Route::middleware(['auth:pengelola', AdminMiddleware::class])->group(function ()
 Route::middleware(['auth:pengelola', DokterMiddleware::class])->group(function () {
     Route::get('dashboard-dokter', [PelangganController::class, 'dashboardDokter'])->name('dokter.dashboardDokter');
     Route::get('jadwal-reservasi-dokter', [PelangganController::class, 'jadwalReservasiDokter'])->name('jadwalReservasiDokter');
-    Route::get('input-rekam-medis', [RekamMedisController::class, 'index'])->name('dokter.inputRekamMedis');
+    Route::get('input-rekam-medis/{id}', [RekamMedisController::class, 'index'])->name('dokter.inputRekamMedis');
+    Route::post('input-rekam-medis/{id}', [RekamMedisController::class, 'createRekamMedis'])->name('dokter.inputRekamMedis.create');
     Route::post('/dokter/input-rekam-medis', [RekamMedisController::class, 'createRekamMedis'])->name('createRekamMedis');
 });

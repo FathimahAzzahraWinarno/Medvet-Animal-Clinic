@@ -63,7 +63,7 @@
                                     </span>
                                 </td>
                                 <td class="px-4 py-3">
-                                    <a href="{{ route('dokter.inputRekamMedis', $reservasi->id) }}" class="bg-gray-100 text-blue-600 text-xs px-3 py-1 rounded hover:underline">
+                                    <a href="{{ url('/input-rekam-medis/' . $reservasi->id) }}" class="bg-gray-100 text-blue-600 text-xs px-3 py-1 rounded hover:underline">
                                         Lihat
                                     </a>
                                 </td>

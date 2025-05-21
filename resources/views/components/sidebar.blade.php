@@ -13,15 +13,15 @@
           </div>
     
           <nav class="space-y-6 font-semibold">
-            <a href="dashboard-dokter" class="flex items-center text-gray-700 hover:text-blue-600">
+            <a href="/dashboard-dokter" class="flex items-center text-gray-700 hover:text-blue-600">
               <img src="{{ asset('images/dashboard.svg') }}" class="w-6 h-6 rounded-full" />
                <span class="ml-3">Dashboard</span>
             </a>
-            <a href="jadwal-reservasi-dokter" class="flex items-center text-gray-700 hover:text-blue-600">
+            <a href="/jadwal-reservasi-dokter" class="flex items-center text-gray-700 hover:text-blue-600">
               <img src="{{ asset('images/reservasi.svg') }}" class="w-6 h-6 rounded-full" />
                <span class="ml-3">Jadwal Reservasi</span>
             </a>
-            <a href="input-rekam-medis" class="flex items-center text-gray-700 hover:text-blue-600">
+            <a href="/input-rekam-medis" class="flex items-center text-gray-700 hover:text-blue-600">
               <img src="{{ asset('images/writing.svg') }}" class="w-6 h-6 rounded-full" />
                <span class="ml-3">Rekam Medis</span>
             </a>

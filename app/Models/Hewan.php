@@ -18,13 +18,13 @@ class Hewan extends Model
         'id',
         'nama',
         'spesies',
-        'ras',
         'jenis_kelamin',
-        'reservasi_id',
+        'ras',
     ];
 
-    public function reservasi()
+        public function reservasis()
     {
-        return $this->belongsTo(Reservasi::class, 'reservasi_id');
+        return $this->hasMany(Reservasi::class, 'id_hewan', 'id');
     }
+
 }

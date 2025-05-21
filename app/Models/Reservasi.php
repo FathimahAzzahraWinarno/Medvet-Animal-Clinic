@@ -71,6 +71,6 @@ class Reservasi extends Model
 
     public function rekamMedis()
     {
-        return $this->hasMany(RekamMedis::class, 'reservasi_id');
+        return $this->hasMany(RekamMedis::class, 'reservasi_id', 'id');
     }
 }
