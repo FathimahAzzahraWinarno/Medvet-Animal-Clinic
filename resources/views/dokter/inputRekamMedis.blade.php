@@ -121,7 +121,7 @@
         <div class="relative m-30 rounded-lg border border-blue-50 shadow-[0px_0px_10px_rgba(59,130,246,0.3)]">
             <div class="bg-blue-700 rounded-t-lg shadow-md">
                 <div class="p-6">
-                    <h1 class="text-white text-2xl font-bold">Informasi Rekam Medis</h1>
+                    <h1 class="text-white text-2xl font-bold">Riwayat Rekam Medis</h1>
                 </div>
             </div>
             <!-- Gambar gradasi -->
