@@ -21,6 +21,19 @@
          @endif
 
         </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10 mb-15">
+        <div class="bg-gray-50 p-4 rounded-lg shadow-xl">
+                <p class="text-l font-bold text-gray-500">Reservasi</p>
+
+                <div class="mt-5">
+                    <p class="text-3xl font-bold text-gray-800">
+                        {{ \App\Models\Reservasi::whereDate('tanggal','>=', today())->count() ?: '0' }}
+                    </p>
+                </div>
+            </div>
+        </div>
+
         <h1 class="text-4xl font-semibold text-center mt-20 text-gray-900 mb-6 font-['Inter']">Reservasi Hari Ini</h1>
         <!-- Filter & Table -->
         <div class="flex justify-between items-center mb-4">

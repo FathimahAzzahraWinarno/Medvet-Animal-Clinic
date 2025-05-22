@@ -3,13 +3,13 @@
         <h1 class="text-4xl font-semibold text-center mt-20 text-gray-900 mb-6 font-['Inter']">Jadwal Reservasi</h1>
         
         <div class="overflow-x-auto m-20">
-            <div class="flex justify-end mb-4">
+            {{-- <div class="flex justify-end mb-4">
                 <select id="filterTanggal" name="filterTanggal" class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg px-4 py-2 shadow-sm focus:ring focus:ring-blue-200">
                     <option value="today">Hari Ini</option>
                     <option value="besok">Besok</option>
                     <option value="kemarin">Kemarin</option>
                 </select>
-            </div>
+            </div> --}}
 
             <div class="bg-white shadow-2xl rounded-2xl overflow-hidden">
                 <table class="w-full text-sm text-left text-gray-600">

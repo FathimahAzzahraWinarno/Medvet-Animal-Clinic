@@ -94,7 +94,7 @@ class PelangganController extends Controller
             ->get();
 
         return view('dokter.jadwalReservasiDokter', compact('reservasis'));
-    } 
+    }
 
     public function dashboard()
     {
@@ -126,5 +126,17 @@ class PelangganController extends Controller
         $users = User::orderBy('created_at', $sort)->get();
 
         return view('reservasiRiwayat', compact('users'));
+    }
+
+    public function reservasiRiwayatDokter()
+    {
+        $today = Carbon::today();
+
+        // Ambil semua reservasi yang tanggalnya sebelum hari ini
+        $reservasis = Reservasi::with(['user', 'hewan'])
+            ->whereDate('tanggal', '<', $today)
+            ->get();
+
+        return view('dokter.riwayatReservasiDokter', compact('reservasis'));
     }
 }

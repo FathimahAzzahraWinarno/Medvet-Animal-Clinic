@@ -2,13 +2,14 @@
 <aside class="w-64 bg-white border-r border-gray-300 p-5 flex flex-col justify-between">
     <div>
       <a href="dashboard">
-      <img src="{{ asset('images/logo.svg') }}" alt="Logo Medvetco" class="h-10 mb-12" /></a>
-      <div class="flex items-center gap-3 mb-12">
-        <img src="{{ asset('images/karyawan.jpeg') }}" class="w-13 h-13 rounded-full" />
-        <div>
-          <p class="font-semibold">Olivia Rhye</p>
-          <p class="text-sm text-gray-500">adminMedvet
-            <p class="text-sm text-gray-500">@example.com</p>
+        <img src="{{ asset('images/logo.svg') }}" alt="Logo Medvetco" class="h-10 mb-12" />
+      </a>
+
+      <div class="flex items-center gap-3 mb-12 min-w-0">
+        <img src="{{ asset('images/karyawan.jpeg') }}" class="w-12 aspect-square rounded-full object-cover" />
+        <div class="min-w-0">
+          <p class="font-semibold break-words whitespace-normal">{{ Auth::user()->role }}</p>
+          <p class="text-sm text-gray-500 max-w-[14rem] break-words whitespace-normal">{{ Auth::user()->email }}</p>
         </div>
       </div>
 

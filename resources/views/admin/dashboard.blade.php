@@ -28,12 +28,12 @@
 
         <!-- Info Cards -->
         <div class="grid grid-cols-1 md:grid-cols-3 gap-10 mb-15">
-            <div class="bg-gray-50 p-4 rounded-lg shadow">
+            <div class="bg-gray-50 p-4 rounded-lg shadow-xl">
                 <p class="text-l font-bold text-gray-500">Total Pelanggan</p>
                 <p class="text-3xl font-bold text-gray-800 mt-5 mb-5">{{ \App\Models\User::count() }}</p>
             </div>
 
-            <div class="bg-gray-50 p-4 rounded-lg shadow">
+            <div class="bg-gray-50 p-4 rounded-lg shadow-xl">
                 <p class="text-l font-bold text-gray-500">Reservasi</p>
 
                 <div class="mt-5">
@@ -43,7 +43,7 @@
                 </div>
             </div>
 
-            <div class="bg-gray-50 p-4 rounded-lg shadow">
+            <div class="bg-gray-50 p-4 rounded-lg shadow-xl">
                 <p class="text-l font-bold text-gray-500">Data Dokter</p>
                 <p class="text-3xl font-bold text-gray-800 mt-5 mb-5">4</p>
             </div>
@@ -54,7 +54,7 @@
         <div class="overflow-x-auto shadow-lg rounded-xl">
             <table class="w-full text-sm text-left text-gray-600">
                 <thead class="text-xs text-gray-500 uppercase border-b border-gray-200">
-                    <tr class="bg-blue-800 text-white">
+                    <tr class="bg-blue-800 text-white text-center">
                         <th class="px-4 py-3">No</th>
                         <th class="px-4 py-3">Nama Pemilik</th>
                         <th class="px-4 py-3">Nama Hewan</th>
