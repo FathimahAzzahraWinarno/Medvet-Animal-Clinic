@@ -24,7 +24,7 @@
     });
 </script>
 
-
+<div class="flex min-h-screen">
 <x-sidebar-user></x-sidebar-user>
 <div class="flex-1 h-screen overflow-y-auto"
     style="background-image: url('/images/bgAdmin.svg'); background-size: cover; background-repeat: no-repeat; background-position: center;">
@@ -153,3 +153,4 @@
             </table>
         </div>
     </div>
+</div>

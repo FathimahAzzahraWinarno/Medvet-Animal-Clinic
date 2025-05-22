@@ -4,6 +4,7 @@
 <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
 <title>profile</title>
 
+<div class="flex min-h-screen font-['Inter']">
 <x-sidebar-user></x-sidebar-user>
 
  <!-- Main content -->
@@ -83,6 +84,7 @@
       </div>
     </div>
   </div> 
+</div>
 </div>
 <script>
   // Hilangkan alert setelah 3 detik

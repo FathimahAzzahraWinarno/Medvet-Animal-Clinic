@@ -3,6 +3,7 @@
 <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
 <title>Riwayat Reservasi</title>
 
+<div class="flex min-h-screen">
 <x-sidebar-user></x-sidebar-user>
 
 <div class="flex-1" style="background-image: url('/images/bgAdmin.svg'); background-size: cover; background-repeat: no-repeat; background-position: center;">
