@@ -13,11 +13,9 @@ class RekamMedisController extends Controller
 {
     public function index($id)
     {
-        // Ambil reservasi dan hewan terkait
         $reservasi = Reservasi::with('hewan')->findOrFail($id);
         $hewan = $reservasi->hewan;
 
-        // Ambil semua rekam medis berdasarkan nama, spesies, dan jenis kelamin hewan
         $rekam_medis = RekamMedis::whereHas('reservasi.hewan', function ($query) use ($hewan) {
             $query->where('nama', $hewan->nama)
                 ->where('spesies', $hewan->spesies)
@@ -32,24 +30,36 @@ class RekamMedisController extends Controller
         ]);
     }
 
-    public function indexUser()
+    public function indexUser(Request $request)
     {
-        $user = auth()->user();
-        $user_id = $user->id;
+        $user_id = auth()->id();
 
         $reservasis = Reservasi::where('id_user', $user_id)
             ->with('hewan')
             ->get();
 
-
-        $rekamMedis = RekamMedis::whereHas('reservasi', function ($query) use ($user_id) {
-            $query->where('id_user', $user_id);
-        })->with(['reservasi.hewan', 'reservasi.dokter'])
+        $rekamMedis = RekamMedis::where('id_user', $user_id)
+            ->with(['reservasi.hewan', 'reservasi.dokter'])
             ->get();
+
+        $rekamMedisQuery = RekamMedis::where('id_user', $user_id);
+
+        $namaHewanUnik = RekamMedis::where('id_user', $user_id)
+            ->select('nama_hewan')
+            ->distinct()
+            ->pluck('nama_hewan');
+
+        if ($request->filled('nama_hewan') && $request->nama_hewan !== 'semua') {
+            $rekamMedisQuery->where('nama_hewan', $request->nama_hewan);
+        }
+
+        $selectedHewan = $request->nama_hewan;
 
         return view('rekamMedis', [
             'reservasis' => $reservasis,
-            'rekamMedis' => $rekamMedis,
+            'rekamMedis' => $rekamMedisQuery->get(),
+            'namaHewanUnik' => $namaHewanUnik,
+            'selectedHewan' => $selectedHewan,
             'title' => 'Daftar Rekam Medis',
             'active' => 'Rekam Medis'
         ]);
@@ -60,6 +70,7 @@ class RekamMedisController extends Controller
 
         $validated = $request->validate([
             'tanggal' => 'required|date',
+            'nama_hewan' => 'required|string',
             'perawatan' => 'required|string',
             'detail' => 'required|string',
             'diagnosa' => 'required|string',
@@ -67,6 +78,8 @@ class RekamMedisController extends Controller
             'tindakan' => 'required|string',
             'reservasi_id' => 'required|string',
             'pesan' => 'nullable|string',
+            'catatan' => 'nullable|string',
+            'id_user' => 'required|string',
         ]);
 
         $reservasi = Reservasi::with('dokter')->findOrFail($validated['reservasi_id']);
@@ -78,8 +91,10 @@ class RekamMedisController extends Controller
 
         RekamMedis::create([
             'id' => $validated['id'],
+            'id_user' => $validated['id_user'],
             'id_pengelola' => null,
             'reservasi_id' => $validated['reservasi_id'],
+            'nama_hewan' => $validated['nama_hewan'],
             'tanggal' => $validated['tanggal'],
             'dokter' => $namaDokter,
             'perawatan' => $validated['perawatan'],
@@ -88,6 +103,7 @@ class RekamMedisController extends Controller
             'hasil_tes' => $validated['hasil_tes'],
             'tindakan' => $validated['tindakan'],
             'pesan' => $validated['pesan'],
+            'catatan' => $validated['catatan'],
         ]);
 
         return redirect()->back()->with('success', 'Rekam Medis berhasil ditambahkan.');

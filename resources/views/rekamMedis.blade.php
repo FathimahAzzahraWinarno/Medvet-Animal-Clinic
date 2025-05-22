@@ -94,21 +94,25 @@
         <!-- Gambar gradasi -->
         <div class="h-1 bg-gradient-to-r from-red-500 via-blue-700 to-blue-900 h-2 mb-3 rounded-b"></div>
 
+        <form method="GET" action="{{ route('rekamMedis') }}">
+            <div class="flex justify-between items-center p-5">
+                <div>
+                    <label for="hewan" class="block mb-2 text-sm font-medium text-gray-800">Pilih hewan</label>
+                    <select name="nama_hewan" id="hewan"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-105 px-4 py-2"
+                        onchange="this.form.submit()">
+                        
+                        <option value="semua" {{ ($selectedHewan == 'semua' || $selectedHewan == null) ? 'selected' : '' }}>Semua Hewan</option>
 
-        <div class="flex justify-between items-center p-5">
-            <!-- Tombol Dropdown Pilih Hewan -->
-            <div>
-                <label for="hewan" class="block mb-2 text-sm font-medium text-gray-800">Pilih hewan</label>
-                <select id="hewan"
-                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-105 px-4 py-2">
-                    @foreach ($reservasis as $reservasi)
-                        <option value="{{ $reservasi->id }}">
-                            {{ $reservasi->hewan->nama ?? 'Nama Hewan Tidak Ada' }}
-                        </option>
-                    @endforeach
-                </select>
+                        @foreach ($namaHewanUnik as $namaHewan)
+                            <option value="{{ $namaHewan }}" {{ $selectedHewan == $namaHewan ? 'selected' : '' }}>
+                                {{ $namaHewan }}
+                            </option>
+                        @endforeach
+                    </select>
+                </div>
             </div>
-        </div>
+        </form>
 
         <!-- Tabel -->
         <div class="overflow-x-auto">
@@ -125,26 +129,26 @@
                         <th class="px-4 py-3">Pesan</th>
                     </tr>
                 </thead>
-                <tbody class="bg-gray-50 text-gray-700">
-                    @forelse ($rekamMedis as $rekam)
-                        <tr>
-                            <td class="px-4 py-4 border-t">
-                                {{ \Carbon\Carbon::parse($rekam->created_at)->format('d/m/Y') }}</td>
-                            <td class="px-4 py-4 border-t">{{ $rekam->detail }}</td>
-                            <td class="px-4 py-4 border-t">{{ $rekam->dokter ?? 'Tidak diketahui' }}
-                            </td>
-                            <td class="px-4 py-4 border-t">{{ $rekam->diagnosa }}</td>
-                            <td class="px-4 py-4 border-t">{{ $rekam->perawatan }}</td>
-                            <td class="px-4 py-4 border-t">{{ $rekam->hasil_tes }}</td>
-                            <td class="px-4 py-4 border-t">{{ $rekam->tindakan }}</td>
-                            <td class="px-4 py-4 border-t">{{ $rekam->pesan }}</td>
-                        </tr>
-                    @empty
-                        <tr>
-                            <td colspan="8" class="px-4 py-4 border-t text-gray-500">Belum ada data rekam medis.</td>
-                        </tr>
-                    @endforelse
-                </tbody>
+                @forelse ($rekamMedis as $rekam)
+                    <tr>
+                        <td class="px-4 py-4 border-t">
+                            {{ \Carbon\Carbon::parse($rekam->created_at)->format('d/m/Y') }}
+                        </td>
+                        <td class="px-4 py-4 border-t">{{ $rekam->detail }}</td>
+                        <td class="px-4 py-4 border-t">{{ $rekam->dokter ?? 'Tidak diketahui' }}</td>
+                        <td class="px-4 py-4 border-t">{{ $rekam->diagnosa }}</td>
+                        <td class="px-4 py-4 border-t">{{ $rekam->perawatan }}</td>
+                        <td class="px-4 py-4 border-t">{{ $rekam->hasil_tes }}</td>
+                        <td class="px-4 py-4 border-t">{{ $rekam->tindakan }}</td>
+                        <td class="px-4 py-4 border-t">{{ $rekam->pesan }}</td>
+                    </tr>
+                @empty
+                    <tr>
+                        <td colspan="8" class="px-4 py-4 border-t text-gray-500">Belum ada data rekam medis.</td>
+                    </tr>
+                @endforelse
+
+
 
             </table>
         </div>

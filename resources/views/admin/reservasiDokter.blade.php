@@ -14,6 +14,7 @@
                         <th class="px-4 py-3">Perawatan</th>
                         <th class="px-4 py-3">Tanggal</th>
                         <th class="px-4 py-3">Jam</th>
+                        <th class="px-4 py-3">Pengingat</th>
                     </tr>
                 </thead>
                 <tbody class="bg-white font-semibold text-center">
@@ -41,6 +42,15 @@
                             </td>
                             <td class="px-4 py-3">
                                 <span class="bg-blue-100 text-blue-700 px-2 py-1 rounded-full text-xs">{{ $reservasi->waktu }}</span>
+                            </td>
+                            <td class="px-4 py-3">
+                                <form action="{{ route('reservasi.dokter.kirimEmail', $reservasi->id) }}" method="POST" onsubmit="return confirm('Kirim email ke {{ $reservasi->user->email }}?')">
+                                    @csrf
+                                    <button type="submit"
+                                        class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-full text-sm transition duration-200">
+                                        Kirim Email
+                                    </button>
+                                </form>
                             </td>
                         </tr>
                     @empty

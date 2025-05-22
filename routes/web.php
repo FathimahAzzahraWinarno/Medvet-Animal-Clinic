@@ -170,6 +170,7 @@ Route::middleware(['auth:pengelola', AdminMiddleware::class])->group(function ()
 
     Route::get('dashboard', [PelangganController::class, 'dashboard'])->name('admin.dashboard');
     Route::get('reservasi-dokter', [PelangganController::class, 'reservasiDokter'])->name('reservasi.dokter');
+    Route::post('reservasi-dokter/kirim-email/{id}', [PelangganController::class, 'kirimEmail'])->name('reservasi.dokter.kirimEmail');
     Route::get('reservasi-riwayat', [PelangganController::class, 'reservasiRiwayat'])->name('reservasiRiwayat');
 
     // Produk

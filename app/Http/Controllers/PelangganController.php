@@ -6,6 +6,8 @@ use App\Models\Reservasi;
 use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\ReservasiNotification;
 
 class PelangganController extends Controller
 {
@@ -17,7 +19,6 @@ class PelangganController extends Controller
 
     public function reservasiDokter()
     {
-        // Ambil tanggal hari ini
         $today = Carbon::today()->toDateString();
 
         $reservasis = Reservasi::with(['user', 'hewan', 'dokter', 'perawatan'])
@@ -27,9 +28,25 @@ class PelangganController extends Controller
         return view('admin.reservasiDokter', compact('reservasis'));
     }
 
+    public function kirimEmail($id)
+    {
+        $reservasi = Reservasi::with(['user', 'hewan', 'perawatan'])->findOrFail($id);
+
+        if (!$reservasi->user || !$reservasi->user->email) {
+            return back()->with('error', 'Email pengguna tidak ditemukan.');
+        }
+
+        try {
+            Mail::to($reservasi->user->email)->send(new ReservasiNotification($reservasi));
+
+            return back()->with('success', 'Email berhasil dikirim ke ' . $reservasi->user->email);
+        } catch (\Exception $e) {
+            return back()->with('error', 'Gagal mengirim email: ' . $e->getMessage());
+        }
+    }
+
     public function reservasiUser()
     {
-        // Ambil tanggal hari ini
         $today = Carbon::today()->toDateString();
 
         $reservasis = Reservasi::with(['user', 'hewan', 'dokter', 'perawatan'])
@@ -77,7 +94,7 @@ class PelangganController extends Controller
             ->get();
 
         return view('dokter.jadwalReservasiDokter', compact('reservasis'));
-    }
+    } 
 
     public function dashboard()
     {

@@ -5,118 +5,110 @@
         </h1>
 
         <div class="relative m-30 rounded-lg border border-blue-50 shadow-[0px_0px_10px_rgba(59,130,246,0.3)]">
-        <div class="bg-blue-700 rounded-t-lg shadow-md">
-            <div class="p-6">
-                <h1 class="text-white text-2xl font-bold">Informasi Hewan Peliharaan</h1>
+            <div class="bg-blue-700 rounded-t-lg shadow-md">
+                <div class="p-6">
+                    <h1 class="text-white text-2xl font-bold">Informasi Hewan Peliharaan</h1>
+                </div>
             </div>
-        </div>
 
-        <!-- Gambar gradasi -->
-        <div class="h-1 bg-gradient-to-r from-red-500 via-blue-700 to-blue-900 h-2 mb-3 rounded-b"></div>
-        <div class="m-10 mt-5 p-3 mb-10">
+            <!-- Gambar gradasi -->
+            <div class="h-1 bg-gradient-to-r from-red-500 via-blue-700 to-blue-900 h-2 mb-3 rounded-b"></div>
+            <div class="m-10 mt-5 p-3 mb-10">
 
-            @if(session('success'))
-                <div class="bg-green-100 text-green-800 p-3 rounded mb-4">
-                    {{ session('success') }}
-                </div>
-            @endif
-
-            @if ($errors->any())
-                <div class="alert alert-danger">
-                    <ul>
-                        @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                        @endforeach
-                    </ul>
-                </div>
-            @endif
-
-            @foreach ($reservasis as $reservasi)
-            <form action="{{ route('dokter.inputRekamMedis.create', ['id' => $reservasi->id]) }}" method="POST" class="space-y-6">
-                @csrf
-
-                <!-- Bagian 1: readonly -->
-                <div class="p-6 mb-6 bg-white rounded-lg shadow-sm">
-                        <div class="mb-4">
-                            <label class="block text-gray-600 mb-1 font-medium">Nama Hewan Peliharaan</label>
-                            <input type="text" value="{{ $reservasi->hewan->nama ?? '-' }}"
-                                class="w-full px-4 py-2 border border-gray-300 rounded-lg bg-gray-100 text-gray-800 placeholder:text-gray-800 focus:outline-none focus:ring-1 focus:ring-gray-200 cursor-not-allowed"
-                                readonly />
-                        </div>
-
-                        <div class="mb-4">
-                            <label class="block text-gray-600 mb-1 font-medium">Spesies</label>
-                            <input type="text" value="{{ $reservasi->hewan->spesies ?? '-' }}"
-                                class="w-full px-4 py-2 border border-gray-300 rounded-lg bg-gray-100 text-gray-800 placeholder:text-gray-800 focus:outline-none focus:ring-1 focus:ring-gray-200 cursor-not-allowed"
-                                readonly />
-                        </div>
-
-                        <div class="mb-4">
-                            <label class="block text-gray-600 mb-1 font-medium">Jenis Kelamin</label>
-                            <input type="text" value="{{ $reservasi->hewan->jenis_kelamin ?? '-' }}"
-                                class="w-full px-4 py-2 border border-gray-300 rounded-lg bg-gray-100 text-gray-800 placeholder:text-gray-800 focus:outline-none focus:ring-1 focus:ring-gray-200 cursor-not-allowed"
-                                readonly />
-                        </div>
-
-                        {{-- Hidden Fields --}}
-                        <input type="hidden" name="tanggal" value="{{ \Carbon\Carbon::now()->format('Y-m-d') }}">
-                        <input type="hidden" name="perawatan" value="{{ $reservasi->perawatan->nama ?? '-' }}">
-                        <input type="hidden" name="pesan" value="{{ $reservasi->pesan }}">
-                        <input type="hidden" name="reservasi_id" value="{{ $reservasi->id }}">
-                   
-                </div>
-
-                <!-- Tombol Tambah Rekam Medis -->
-                <button id="btnTambah" 
-                    class="px-6 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition duration-200">
-                    Tambah Rekam Medis
-                </button>
-
-                <!-- Form inputan, awalnya disembunyikan -->
-                <div id="formRekamMedis" class="p-6 bg-white rounded-lg shadow-sm mt-4" style="display: none;">
-                    <div class="mb-4">
-                        <label for="detailRekamMedis" class="block text-gray-600 mb-1 font-medium">Detail Rekam Medis</label>
-                        <textarea id="detailRekamMedis" name="detail" required
-                            class="w-full px-4 py-3 border border-gray-300 rounded-lg text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-blue-500"
-                            placeholder="Masukkan data detail rekam medis"></textarea>
+                @if(session('success'))
+                    <div class="bg-green-100 text-green-800 p-3 rounded mb-4">
+                        {{ session('success') }}
                     </div>
+                @endif
 
-                    <div class="mb-4">
-                        <label for="diagnosa" class="block text-gray-600 mb-1 font-medium">Diagnosa</label>
-                        <input type="text" id="diagnosa" name="diagnosa" required
-                            class="w-full px-4 py-2 border border-gray-300 rounded-lg text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-blue-500"
-                            placeholder="Masukkan data diagnosa" />
+                @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
                     </div>
+                @endif
 
-                    <div class="mb-4">
-                        <label for="hasilTes" class="block text-gray-600 mb-1 font-medium">Hasil Tes</label>
-                        <textarea id="hasilTes" name="hasil_tes" required
-                            class="w-full px-4 py-3 border border-gray-300 rounded-lg text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-blue-500"
-                            placeholder="Masukkan data hasil tes"></textarea>
+                @foreach ($reservasis as $reservasi)
+                <form action="{{ route('dokter.inputRekamMedis.create', ['id' => $reservasi->id]) }}" method="POST" class="space-y-6">
+                    @csrf
+                    <!-- Bagian 1: readonly -->
+                    <div class="p-6 mb-6 bg-white rounded-lg shadow-sm">
+                            <div class="mb-4">
+                                <label class="block text-gray-600 mb-1 font-medium">Nama Hewan Peliharaan</label>
+                                <input type="text" name="nama_hewan" value="{{ $reservasi->hewan->nama ?? '-' }}"
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg bg-gray-100 text-gray-800 placeholder:text-gray-800 focus:outline-none focus:ring-1 focus:ring-gray-200 cursor-not-allowed"
+                                    readonly />
+                            </div>
+                            <div class="mb-4">
+                                <label class="block text-gray-600 mb-1 font-medium">Spesies</label>
+                                <input type="text" value="{{ $reservasi->hewan->spesies ?? '-' }}"
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg bg-gray-100 text-gray-800 placeholder:text-gray-800 focus:outline-none focus:ring-1 focus:ring-gray-200 cursor-not-allowed"
+                                    readonly />
+                            </div>
+                            <div class="mb-4">
+                                <label class="block text-gray-600 mb-1 font-medium">Jenis Kelamin</label>
+                                <input type="text" value="{{ $reservasi->hewan->jenis_kelamin ?? '-' }}"
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg bg-gray-100 text-gray-800 placeholder:text-gray-800 focus:outline-none focus:ring-1 focus:ring-gray-200 cursor-not-allowed"
+                                    readonly />
+                            </div>
+                            {{-- Hidden Fields --}}
+                            <input type="hidden" name="tanggal" value="{{ \Carbon\Carbon::now()->format('Y-m-d') }}">
+                            <input type="hidden" name="perawatan" value="{{ $reservasi->perawatan->nama ?? '-' }}">
+                            <input type="hidden" name="pesan" value="{{ $reservasi->pesan }}">
+                            <input type="hidden" name="reservasi_id" value="{{ $reservasi->id }}">
+                            <input type="hidden" name="id_user" value="{{ $reservasi->id_user }}">
                     </div>
-
-                    <div class="mb-4">
-                        <label for="tindakan" class="block text-gray-600 mb-1 font-medium">Tindakan</label>
-                        <textarea id="tindakan" name="tindakan" required
-                            class="w-full px-4 py-3 border border-gray-300 rounded-lg text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-blue-500"
-                            placeholder="Masukkan data tindakan"></textarea>
-                    </div>
-                </div>
-
-                <!-- Tombol Simpan -->
-                <div id="btnSimpanWrapper" class="flex justify-end mt-2" style="display: none;">
-                    <button type="submit"
-                        class="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition duration-200">
-                        Simpan Data
+                    <button id="btnTambah" 
+                        class="px-6 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition duration-200">
+                        Tambah Rekam Medis
                     </button>
-                </div>
-
-            </form>
-            @endforeach
+                    <div id="formRekamMedis" class="p-6 bg-white rounded-lg shadow-sm mt-4" style="display: none;">
+                        <div class="mb-4">
+                            <label for="detailRekamMedis" class="block text-gray-600 mb-1 font-medium">Detail Rekam Medis</label>
+                            <textarea id="detailRekamMedis" name="detail" required
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-blue-500"
+                                placeholder="Masukkan data detail rekam medis"></textarea>
+                        </div>
+                        <div class="mb-4">
+                            <label for="diagnosa" class="block text-gray-600 mb-1 font-medium">Diagnosa</label>
+                            <input type="text" id="diagnosa" name="diagnosa" required
+                                class="w-full px-4 py-2 border border-gray-300 rounded-lg text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-blue-500"
+                                placeholder="Masukkan data diagnosa" />
+                        </div>
+                        <div class="mb-4">
+                            <label for="hasilTes" class="block text-gray-600 mb-1 font-medium">Hasil Tes</label>
+                            <textarea id="hasilTes" name="hasil_tes" required
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-blue-500"
+                                placeholder="Masukkan data hasil tes"></textarea>
+                        </div>
+                        <div class="mb-4">
+                            <label for="tindakan" class="block text-gray-600 mb-1 font-medium">Tindakan</label>
+                            <textarea id="tindakan" name="tindakan" required
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-blue-500"
+                                placeholder="Masukkan data tindakan"></textarea>
+                        </div>
+                        <div class="mb-4">
+                            <label for="catatan" class="block text-gray-600 mb-1 font-medium">Catatan</label>
+                            <textarea id="catatan" name="catatan"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-blue-500"
+                                placeholder="Masukkan data catatan"></textarea>
+                        </div>
+                    </div>
+                    <!-- Tombol Simpan -->
+                    <div id="btnSimpanWrapper" class="flex justify-end mt-2" style="display: none;">
+                        <button type="submit"
+                            class="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition duration-200">
+                            Simpan Data
+                        </button>
+                    </div>
+                </form>
+                @endforeach
+            </div>
 
         </div>
-
-    </div>
 
         <div class="relative m-30 rounded-lg border border-blue-50 shadow-[0px_0px_10px_rgba(59,130,246,0.3)]">
             <div class="bg-blue-700 rounded-t-lg shadow-md">
@@ -155,6 +147,7 @@
                             <th class="px-4 py-3">Hasil Tes</th>
                             <th class="px-4 py-3">Tindakan</th>
                             <th class="px-4 py-3">Pesan</th>
+                            <th class="px-4 py-3">Catatan</th>
                         </tr>
                     </thead>
                     <tbody class="bg-gray-50 text-gray-700">
@@ -169,6 +162,7 @@
                                 <td class="px-4 py-4 border-t">{{ $rm->hasil_tes }}</td>
                                 <td class="px-4 py-4 border-t">{{ $rm->tindakan }}</td>
                                 <td class="px-4 py-4 border-t">{{ $rm->pesan }}</td>
+                                <td class="px-4 py-4 border-t">{{ $rm->catatan }}</td>
                             </tr>
                         @endforeach
                     </tbody>

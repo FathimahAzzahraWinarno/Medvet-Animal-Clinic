@@ -34,8 +34,10 @@ class RekamMedis extends Model
 
     protected $fillable = [
         'id',
+        'id_user',
         'id_pengelola',
         'reservasi_id',
+        'nama_hewan',
         'tanggal',
         'dokter',
         'perawatan',
@@ -44,6 +46,7 @@ class RekamMedis extends Model
         'hasil_tes',
         'tindakan',
         'pesan',
+        'catatan',
     ];
 
     public function rekamMedis()
