@@ -126,7 +126,7 @@
                         <th class="px-4 py-3">Perawatan</th>
                         <th class="px-4 py-3">Hasil Tes</th>
                         <th class="px-4 py-3">Tindakan</th>
-                        <th class="px-4 py-3">Pesan</th>
+                        <th class="px-4 py-3">Catatan</th>
                     </tr>
                 </thead>
                 @forelse ($rekamMedis as $rekam)
@@ -140,7 +140,7 @@
                         <td class="px-4 py-4 border-t">{{ $rekam->perawatan }}</td>
                         <td class="px-4 py-4 border-t">{{ $rekam->hasil_tes }}</td>
                         <td class="px-4 py-4 border-t">{{ $rekam->tindakan }}</td>
-                        <td class="px-4 py-4 border-t">{{ $rekam->pesan }}</td>
+                        <td class="px-4 py-4 border-t">{{ $rekam->catatan }}</td>
                     </tr>
                 @empty
                     <tr>

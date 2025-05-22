@@ -13,7 +13,7 @@
   <div class="bg-gradient-to-r from-blue-100 to-purple-200 p-28 relative">
     <!-- Foto kiri bawah -->
     <div class="absolute left-0 ml-10 -bottom-12">
-      <img src="{{ asset('images/karyawan.jpeg') }}" class="w-40 h-40 rounded-full border-4 border-white shadow" />
+      <img src="{{ asset('images/avatar.jpg') }}" class="w-40 h-40 rounded-full border-4 border-white shadow" />
     </div>
   </div>
 
@@ -24,10 +24,6 @@
       <div>
         <h2 class="text-2xl font-bold">{{ Auth::user()->name }}</h2>
         <p class="text-gray-500 mb-2">{{ Auth::user()->email }}</p>
-      </div>
-      <div class="mt-4 md:mt-0 flex gap-3">
-        <button class="px-4 py-2 font-semibold border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-100">Hapus foto</button>
-        <button class="px-4 py-2 font-semibold bg-[#234bd2] text-white rounded-lg hover:bg-blue-600">Ganti foto</button>
       </div>
     </div>
     @if(session('success'))

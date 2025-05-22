@@ -6,7 +6,7 @@
       </a>
 
       <div class="flex items-center gap-3 mb-12 min-w-0">
-        <img src="{{ asset('images/karyawan.jpeg') }}" class="w-12 aspect-square rounded-full object-cover" />
+        <img src="{{ asset('images/avatar.jpg') }}" class="w-12 aspect-square rounded-full object-cover" />
         <div class="min-w-0">
           <p class="font-semibold break-words whitespace-normal">{{ Auth::user()->role }}</p>
           <p class="text-sm text-gray-500 max-w-[14rem] break-words whitespace-normal">{{ Auth::user()->email }}</p>

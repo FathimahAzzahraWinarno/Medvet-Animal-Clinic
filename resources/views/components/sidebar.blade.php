@@ -7,7 +7,7 @@
 
       <!-- User Info -->
       <div class="flex items-center gap-3 mb-12 min-w-0">
-        <img src="{{ asset('images/karyawan.jpeg') }}" class="w-12 aspect-square rounded-full object-cover" />
+        <img src="{{ asset('images/avatar.jpg') }}" class="w-12 aspect-square rounded-full object-cover" />
         <div class="min-w-0">
           <p class="font-semibold break-words whitespace-normal">{{ Auth::user()->role }}</p>
           <p class="text-sm text-gray-500 max-w-[14rem] break-words whitespace-normal">{{ Auth::user()->email }}</p>
@@ -27,10 +27,6 @@
         <a href="/riwayat-reservasi-dokter" class="flex items-center text-gray-700 hover:text-blue-600">
           <img src="{{ asset('images/riwayat.svg') }}" class="w-6 h-6 rounded-full" />
           <span class="ml-3">Riwayat Reservasi</span>
-        </a>
-        <a href="/input-rekam-medis" class="flex items-center text-gray-700 hover:text-blue-600">
-          <img src="{{ asset('images/writing.svg') }}" class="w-6 h-6 rounded-full" />
-          <span class="ml-3">Rekam Medis</span>
         </a>
       </nav>
     </div>

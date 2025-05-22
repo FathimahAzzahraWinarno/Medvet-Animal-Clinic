@@ -8,7 +8,7 @@
 
       <!-- User Info -->
       <a href="profile" class="flex items-center gap-3 mb-12">
-        <img src="{{ asset('images/karyawan.jpeg') }}" class="w-12 aspect-square rounded-full object-cover" />
+        <img src="{{ asset('images/avatar.jpg') }}" class="w-12 aspect-square rounded-full object-cover" />
         <div class="min-w-0">
           <p class="font-semibold break-words whitespace-normal">{{ Auth::user()->name }}</p>
           <p class="text-sm text-gray-500 break-words whitespace-normal">{{ Auth::user()->email }}</p>

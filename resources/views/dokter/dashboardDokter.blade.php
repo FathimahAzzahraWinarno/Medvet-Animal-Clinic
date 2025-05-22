@@ -1,7 +1,7 @@
 <x-layout-dokter title="dashboard">
     <!-- Bagian Konten Dashboard (Bagian Kanan) -->
     <div class="flex-1 h-screen overflow-y-auto">
-    <div class="bg-white p-10 shadow-md h-full">
+    <div class="bg-gradient-to-br from-white via-blue-90 to-purple-100 p-10 shadow-md h-full">
         <div class="flex justify-between items-start mb-12">
             <div>
                 <h1 class="text-4xl font-bold text-gray-800">Welcome back, Olivia</h1>

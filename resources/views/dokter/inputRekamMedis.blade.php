@@ -146,7 +146,6 @@
                             <th class="px-4 py-3">Diagnosa</th>
                             <th class="px-4 py-3">Hasil Tes</th>
                             <th class="px-4 py-3">Tindakan</th>
-                            <th class="px-4 py-3">Pesan</th>
                             <th class="px-4 py-3">Catatan</th>
                         </tr>
                     </thead>
@@ -161,7 +160,6 @@
                                 <td class="px-4 py-4 border-t">{{ $rm->diagnosa }}</td>
                                 <td class="px-4 py-4 border-t">{{ $rm->hasil_tes }}</td>
                                 <td class="px-4 py-4 border-t">{{ $rm->tindakan }}</td>
-                                <td class="px-4 py-4 border-t">{{ $rm->pesan }}</td>
                                 <td class="px-4 py-4 border-t">{{ $rm->catatan }}</td>
                             </tr>
                         @endforeach
