@@ -131,6 +131,10 @@ Route::get('contact', function () {
     return view('contact');
 });
 
+Route::get('blog', function () {
+    return view('blog');
+});
+
 Route::get('reservasi', function (Request $request) {
     $promo = $request->query('promo');
     $perawatan = $request->query('perawatan');

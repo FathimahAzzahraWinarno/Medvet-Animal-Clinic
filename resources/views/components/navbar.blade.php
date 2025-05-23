@@ -18,6 +18,7 @@
             <a href="tentang_kami" class="text-sm font-medium text-gray-800 hover:text-blue-600">Tentang Kami</a>
             <a href="contact" class="text-sm font-medium text-gray-800 hover:text-blue-600">Contact Us</a>
             <a href="FAQ" class="text-sm font-medium text-gray-800 hover:text-blue-600">FAQ</a>
+            {{-- <a href="blog" class="text-sm font-medium text-gray-800 hover:text-blue-600">Blog</a> --}}
           </div>
         </div>
     
