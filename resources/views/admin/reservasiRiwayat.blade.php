@@ -51,6 +51,7 @@
                             <th class="px-4 py-3">Jenis Kelamin</th> 
                             <th class="px-4 py-3">Spesies</th>
                             <th class="px-4 py-3">Perawatan</th>
+                            <th class="px-4 py-3">Promo</th>
                             <th class="px-4 py-3">Tanggal</th>
                             <th class="px-4 py-3">Jam</th>
                         </tr>
@@ -74,6 +75,9 @@
                             </td>
                             <td class="px-4 py-3">
                                 <span class="bg-green-100 text-green-600 text-xs px-2 py-1 rounded-full">{{ $reservasi->perawatan->nama }}</span>
+                            </td>
+                            <td class="px-4 py-3">
+                                <span class="bg-green-100 text-green-600 text-xs px-2 py-1 rounded-full">{{ $reservasi->promo ? $reservasi->promo->id : '-' }}</pre></span>
                             </td>
                             <td class="px-4 py-3 text-sm text-red-500 font-medium">{{ \Carbon\Carbon::parse($reservasi->tanggal)->format('d-m-Y') }}</td>
                             <td class="px-4 py-3">

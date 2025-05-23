@@ -15,9 +15,10 @@
             @if ($promo)
                 <div class="md:col-span-2 mb-3">
                     <label class="block text-gray-700 font-semibold">Promo</label>
-                    <input type="text" disabled name="promo" placeholder="Masukkan promo"
+                    <input type="text" disabled name="promo"
                         value="{{ $promo }}"
                         class="w-full mt-1 px-4 py-2 border border-gray-400 rounded-lg focus:outline-blue-200">
+                         <input type="hidden" name="id_promo" value="{{ $promo }}">
                 </div>
             @endif
 
@@ -125,7 +126,7 @@
                     <label class="block text-gray-700">Perawatan</label>
                     <select id="treatmentSelect" name="perawatan"
                         class="w-full mt-1 px-4 py-2 border border-gray-400 rounded-lg focus:outline-blue-200 appearance-none">
-                        <option value="">Pilih perawatan</option>
+                        <option selected disabled>Pilih perawatan</option>
                         <option value="vaksinasi" {{ $perawatan == 'vaksinasi' ? 'selected' : '' }}>Vaksinasi</option>
                         <option value="operasi-minor-mayor"
                             {{ $perawatan == 'operasi-minor-mayor' ? 'selected' : '' }}>Operasi minor & mayor</option>
@@ -175,7 +176,7 @@
                     <label for="waktu" class="block text-gray-700 mb-1">Waktu</label>
                     <select name="waktu" id="waktu"
                         class="w-full mt-1 px-4 py-2 border border-gray-400 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 appearance-none">
-                        <option value="">Pilih waktu</option>
+                        <option selected disabled>Pilih waktu</option>
                         @for ($hour = $startHour; $hour < $endHour; $hour++)
                             <option value="{{ sprintf('%02d:00', $hour) }}">{{ sprintf('%02d:00', $hour) }}</option>
                             <option value="{{ sprintf('%02d:30', $hour) }}">{{ sprintf('%02d:30', $hour) }}</option>
@@ -189,8 +190,11 @@
                     <label class="block text-gray-700">Dokter</label>
                     <select id="doctorSelect" name="dokter"
                         class="w-full mt-1 px-4 py-2 border border-gray-400 rounded-lg focus:outline-blue-200 appearance-none">
-                        <option value="">Pilih dokter</option>
+                        <option selected disabled>Pilih dokter</option>
                         <option value="Muhammad Aroza">Muhammad Aroza</option>
+                        <option value="Aisyah Wanda">Aisyah Wanda</option>
+                        <option value="Ahmad Gustamin">Ahmad Gustamin</option>
+                        <option value="Nur Cahya">Nur Cahya</option>
                     </select>
                 </div>
 

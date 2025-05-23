@@ -41,7 +41,7 @@
         <!-- Button -->
         <button type="button" class="flex text-sm bg-gray-800 rounded-full focus:ring-2 focus:ring-blue-300 cursor-pointer" id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown">
           <span class="sr-only">Open user menu</span>
-          <img src="{{ asset('images/karyawan.jpeg') }}" alt="user" class="w-11 h-11 rounded-full" />
+          <img src="{{ asset('images/avatar.jpg') }}" alt="user" class="w-11 h-11 rounded-full" />
         </button>
 
         <!-- Dropdown -->

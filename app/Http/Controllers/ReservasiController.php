@@ -32,6 +32,7 @@ class ReservasiController extends Controller
             $user = auth()->user();
 
             $validated = $request->validate([
+                'id_promo' => 'nullable|string|exists:promos,id',
                 'nama_peliharaan' => 'required|string',
                 'jenis_kelamin' => 'required|in:Betina,Jantan',
                 'spesies' => 'required|string',
@@ -75,6 +76,7 @@ class ReservasiController extends Controller
                 'id_user' => $user->id,
                 'id_perawatan' => $perawatan->id,
                 'id_dokter' => $dokter->id,
+                'id_promo' => $validated['id_promo'] ?? null,
                 'tanggal' => $tanggalFormatted,
                 'waktu' => $validated['waktu'],
                 'pesan' => $validated['pesan'] ?? null

@@ -12,6 +12,7 @@
                         <th class="px-4 py-3">Jenis Kelamin</th>
                         <th class="px-4 py-3">Spesies</th>
                         <th class="px-4 py-3">Perawatan</th>
+                        <th class="px-4 py-3">Promo</th>
                         <th class="px-4 py-3">Tanggal</th>
                         <th class="px-4 py-3">Jam</th>
                         <th class="px-4 py-3">Pengingat</th>
@@ -37,6 +38,9 @@
                             <td class="px-4 py-3">
                                 <span class="bg-green-100 text-green-600 text-xs px-2 py-1 rounded-full">{{ $reservasi->perawatan->nama ?? '-' }}</span>
                             </td>
+                            <td class="px-4 py-3">
+                                <span class="bg-green-100 text-green-600 text-xs px-2 py-1 rounded-full">{{ $reservasi->promo ? $reservasi->promo->id : '-' }}</pre></span>
+                            </td>
                             <td class="px-4 py-3 text-sm text-red-500 font-medium">
                                 {{ \Carbon\Carbon::parse($reservasi->tanggal)->format('d-m-Y') }}
                             </td>
@@ -47,7 +51,7 @@
                                 <form action="{{ route('reservasi.dokter.kirimEmail', $reservasi->id) }}" method="POST" onsubmit="return confirm('Kirim email ke {{ $reservasi->user->email }}?')">
                                     @csrf
                                     <button type="submit"
-                                        class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-full text-sm transition duration-200">
+                                        class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-xl text-sm transition duration-200">
                                         Kirim Email
                                     </button>
                                 </form>

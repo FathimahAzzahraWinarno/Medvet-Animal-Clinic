@@ -100,7 +100,7 @@ class PelangganController extends Controller
     {
         $today = Carbon::today();
 
-        $reservasis = Reservasi::with('user')
+        $reservasis = Reservasi::with('user', 'promo')
             ->whereDate('tanggal', $today)
             ->limit(3)
             ->get();

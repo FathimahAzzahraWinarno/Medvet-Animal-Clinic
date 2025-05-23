@@ -12,7 +12,7 @@
   <div class="relative m-30 rounded-lg border border-blue-50 shadow-[0px_0px_10px_rgba(59,130,246,0.3)]">
     <!-- Tabel -->
     <div class="overflow-x-auto">
-      <table class="min-w-full border border-gray-200 text-center shadow-md rounded-b-lg overflow-hidden">
+      <table class="min-w-full border border-gray-200 text-center shadow-md rounded-lg overflow-hidden">
         <thead>
           <tr class="bg-blue-800 text-white">
             <th class="px-4 py-3">No</th>
@@ -21,6 +21,7 @@
             <th class="px-4 py-3">Jenis Kelamin</th>
             <th class="px-4 py-3">Spesies</th>
             <th class="px-4 py-3">Perawatan</th>
+            <th class="px-4 py-3">Promo</th>
             <th class="px-4 py-3">Tanggal</th>
             <th class="px-4 py-3">Jam</th>
             <th class="px-4 py-3">Pesan</th>
@@ -36,6 +37,9 @@
               <td class="px-4 py-4 border-t">{{ $reservasi->hewan->jenis_kelamin ?? '-'}}</td>
               <td class="px-4 py-4 border-t">{{ $reservasi->hewan->spesies ?? '-'}}</td>
               <td class="px-4 py-4 border-t">{{ $reservasi->perawatan->nama }}</td>
+              <td class="px-4 py-4 border-t">
+                <span class="bg-green-100 text-green-600 text-xs px-2 py-1 rounded-full">{{ $reservasi->promo ? $reservasi->promo->id : '-' }}</pre></span>
+              </td>
               <td class="px-4 py-4 border-t">{{ \Carbon\Carbon::parse($reservasi->tanggal)->format('d/m/Y') }}</td>
               <td class="px-4 py-4 border-t">{{ $reservasi->waktu }}</td>
               <td class="px-4 py-4 border-t">{{ $reservasi->pesan ?? '-' }}</td>

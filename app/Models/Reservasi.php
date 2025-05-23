@@ -22,6 +22,7 @@ class Reservasi extends Model
         'id_user',
         'id_perawatan',
         'id_dokter',
+        'id_promo',
         'hewan',
         'kelamin',
         'spesies',
@@ -72,5 +73,10 @@ class Reservasi extends Model
     public function rekamMedis()
     {
         return $this->hasMany(RekamMedis::class, 'reservasi_id', 'id');
+    }
+
+    public function promo()
+    {
+        return $this->belongsTo(Promo::class, 'id_promo', 'id');
     }
 }

@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('id_user');
             $table->string('id_perawatan');
             $table->string('id_dokter');
+            $table->string('id_promo')->nullable();
             $table->string('waktu');
             $table->date('tanggal');
             $table->text('pesan')->nullable();
