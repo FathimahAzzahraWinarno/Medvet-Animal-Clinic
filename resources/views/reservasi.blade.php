@@ -191,10 +191,9 @@
                     <select id="doctorSelect" name="dokter"
                         class="w-full mt-1 px-4 py-2 border border-gray-400 rounded-lg focus:outline-blue-200 appearance-none">
                         <option selected disabled>Pilih dokter</option>
-                        <option value="Muhammad Aroza">Muhammad Aroza</option>
-                        <option value="Aisyah Wanda">Aisyah Wanda</option>
-                        <option value="Ahmad Gustamin">Ahmad Gustamin</option>
-                        <option value="Nur Cahya">Nur Cahya</option>
+                        <option value="Muhammad Aroza">Drh. Muhammad Aroza</option>
+                        <option value="Aisyah Wanda">Drh. Novitha Putri</option>
+                        <option value="Ahmad Gustamin">Drh. Utari Desya Malik Lubis</option>
                     </select>
                 </div>
 
