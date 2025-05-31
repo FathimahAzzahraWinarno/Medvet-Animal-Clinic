@@ -8,14 +8,12 @@
         const selectHewan = document.getElementById("hewan");
         const namaHewan = document.getElementById("namaHewan");
         const spesiesHewan = document.getElementById("spesiesHewan");
-        const rasHewan = document.getElementById("rasHewan");
         const kelaminHewan = document.getElementById("kelaminHewan");
 
         function updateForm() {
             const selectedOption = selectHewan.options[selectHewan.selectedIndex];
             namaHewan.value = selectedOption.getAttribute('data-nama');
             spesiesHewan.value = selectedOption.getAttribute('data-spesies');
-            rasHewan.value = selectedOption.getAttribute('data-ras');
             kelaminHewan.value = selectedOption.getAttribute('data-kelamin');
         }
 
@@ -43,7 +41,6 @@
                 @foreach ($reservasis as $reservasi)
                     <option value="{{ $reservasi->id }}" data-nama="{{ $reservasi->hewan->nama ?? '-' }}"
                         data-spesies="{{ $reservasi->hewan->spesies ?? '-' }}"
-                        data-ras="{{ $reservasi->hewan->ras ?? '-' }}"
                         data-kelamin="{{ $reservasi->hewan->jenis_kelamin ?? '-' }}">
                         {{ $reservasi->hewan->nama ?? 'Nama Hewan Tidak Ada' }}
                     </option>
@@ -63,13 +60,6 @@
                 <div>
                     <label class="block text-gray-600 mb-1 font-medium">Spesies</label>
                     <input type="text" id="spesiesHewan"
-                        class="w-full px-4 py-2 border border-gray-300 rounded-lg bg-gray-100 text-gray-800 placeholder:text-gray-800 focus:outline-none focus:ring-1 focus:ring-gray-200 cursor-not-allowed"
-                        readonly />
-                </div>
-
-                <div>
-                    <label class="block text-gray-600 mb-1 font-medium">Ras</label>
-                    <input type="text" id="rasHewan"
                         class="w-full px-4 py-2 border border-gray-300 rounded-lg bg-gray-100 text-gray-800 placeholder:text-gray-800 focus:outline-none focus:ring-1 focus:ring-gray-200 cursor-not-allowed"
                         readonly />
                 </div>
