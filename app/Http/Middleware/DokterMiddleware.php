@@ -16,6 +16,6 @@ class DokterMiddleware
             return $next($request);
         }
 
-        return redirect('/masuk-page')->with('error-login', 'Akses hanya untuk dokter.');
+        return redirect('/masuk-page')->with('error-login', 'Akses hanya untuk pengelola.');
     }
 }

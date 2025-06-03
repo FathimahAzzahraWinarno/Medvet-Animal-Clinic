@@ -16,6 +16,6 @@ class AdminMiddleware
             return $next($request);
         }
 
-        return redirect('/masuk-page')->with('error-login', 'Akses hanya untuk admin.');
+        return redirect('/masuk-page')->with('error-login', 'Akses hanya untuk pengelola.');
     }
 }

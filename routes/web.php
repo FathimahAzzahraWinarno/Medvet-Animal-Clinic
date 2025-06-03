@@ -206,9 +206,6 @@ Route::middleware(['auth:pengelola', AdminMiddleware::class])->group(function ()
 
     // Feedback admin view
     Route::get('feedback-pelanggan', [FeedbackController::class, 'index'])->name('feedback-pelanggan');
-
-    //logout
-    Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 });
 
 Route::middleware(['auth:pengelola', DokterMiddleware::class])->group(function () {
