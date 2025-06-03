@@ -108,13 +108,6 @@
 
             </table>
         </div>
-
-        <div class="text-center mt-10">
-            <a href="reservasi-dokter" class="text-[#234bd2] font-semibold flex items-center justify-center gap-1">
-                Lihat lebih banyak
-                <img src="{{ asset('images/arrow-up-right-blue.svg') }}" alt="Arrow" class="w-6 h-6">
-            </a>
-        </div>
     </div>
 </div>
 
