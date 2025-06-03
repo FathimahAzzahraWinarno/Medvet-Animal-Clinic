@@ -42,7 +42,7 @@
           <div class="flex flex-col items-center p-4 w-full md:w-1/3 bg-white shadow-md rounded-[16px] border border-blue-300 shadow-[0px_0px_10px_rgba(59,130,246,0.3)]">
               <img src="images/email.svg" alt="Email Icon" class="w-10 h-10 mb-3">
               <h3 class="text-lg font-semibold">Email</h3>
-              <p class="text-sm text-gray-600 text-center">clinic@gmail.com</p>
+              <p class="text-sm text-gray-600 text-center">MedvetAnimalClinic@gmail.com</p>
           </div>
       </div>
   </div>

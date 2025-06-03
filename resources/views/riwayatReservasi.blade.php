@@ -23,7 +23,6 @@
             <th class="px-4 py-3">Tanggal</th>
             <th class="px-4 py-3">Jam</th>
             <th class="px-4 py-3">Pesan</th>
-            <th class="px-4 py-3">Status</th>
           </tr>
         </thead>
         <tbody class="bg-gray-50 text-gray-700">
@@ -38,7 +37,6 @@
               <td class="px-4 py-4 border-t">{{ \Carbon\Carbon::parse($reservasi->tanggal)->format('d/m/Y') }}</td>
               <td class="px-4 py-4 border-t">{{ $reservasi->waktu }}</td>
               <td class="px-4 py-4 border-t">{{ $reservasi->pesan ?? '-' }}</td>
-              <td class="px-4 py-4 border-t">{{ $reservasi->status ?? '-' }}</td>
             </tr>
           @empty
             <tr>
