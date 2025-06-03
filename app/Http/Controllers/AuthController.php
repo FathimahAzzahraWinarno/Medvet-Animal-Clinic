@@ -101,12 +101,16 @@ class AuthController extends Controller
 
     public function logout(Request $request)
     {
-        Auth::logout();
+        if (Auth::guard('pengelola')->check()) {
+            Auth::guard('pengelola')->logout();
+        } elseif (Auth::guard('web')->check()) {
+            Auth::guard('web')->logout();
+        }
 
         $request->session()->invalidate();
         $request->session()->regenerateToken();
 
-        return redirect('/masuk-page');
+        return redirect('/masuk-page')->with('success', 'Berhasil logout');
     }
 
     public function updateProfile(Request $request)

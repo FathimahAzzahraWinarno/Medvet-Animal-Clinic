@@ -154,7 +154,6 @@ Route::get('/daftar-page', function () {
     return view('daftarPage');
 });
 Route::post('/daftar-page', [AuthController::class, 'daftar'])->name('daftar-page');
-Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
 // === ROUTE USER (HARUS LOGIN) ===
 Route::middleware(['auth'])->group(function () {
@@ -215,5 +214,6 @@ Route::middleware(['auth:pengelola', DokterMiddleware::class])->group(function (
     Route::post('input-rekam-medis/{id}', [RekamMedisController::class, 'createRekamMedis'])->name('dokter.inputRekamMedis.create');
     Route::post('/dokter/input-rekam-medis', [RekamMedisController::class, 'createRekamMedis'])->name('createRekamMedis');
     Route::get('riwayat-reservasi-dokter', [PelangganController::class, 'reservasiRiwayatDokter'])->name('reservasiRiwayatDokter');
-    Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 });
+
+Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
