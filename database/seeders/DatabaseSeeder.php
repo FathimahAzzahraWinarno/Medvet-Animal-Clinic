@@ -176,24 +176,25 @@ class DatabaseSeeder extends Seeder
 
         Dokter::create([
             'id' => 'DK1',
-            'nama' => 'Drh. Muhammad Aroza',
+            'nama' => 'Muhammad Aroza',
             'gambar' => 'images/dokter.jpg',
             'deskripsi' => 'Dokter hewan spesialis dengan  pengalaman yang sudah cukup lama. Sangat peduli terhadap kenyamanan pasien dan berkomitmen memberikan perawatan terbaik.'
         ]);
 
         Dokter::create([
             'id' => 'DK2',
-            'nama' => 'Drh. Diana Novitha Putri',
+            'nama' => 'Diana Novitha Putri',
             'gambar' => 'images/dokter2.jpg',
             'deskripsi' => 'Dokter hewan spesialis dengan pengalaman yang sudah cukup lama. Sangat peduli terhdadap kenyamanan pasien dan berkomitmen memberikan perawatan terbaik.'
         ]);
 
         Dokter::create([
             'id' => 'DK3',
-            'nama' => 'Drh. Utari Desya Malik Lubis',
+            'nama' => 'Utari Desya Malik Lubis',
             'gambar' => 'images/dokter3.jpg',
             'deskripsi' => 'Dokter hewan spesialis dengan pengalaman yang sudah cukup lama. Sangat peduli terhadap kenyamanan pasien dan berkomitmen memberikan perawatan terbaik.'
         ]);
+
 
         Produk::create([
             'id' => 'PD1',

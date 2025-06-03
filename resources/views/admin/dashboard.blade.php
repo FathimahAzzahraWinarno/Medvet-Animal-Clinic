@@ -4,7 +4,7 @@
     <div class="bg-gradient-to-br from-white via-blue-90 to-purple-100 p-10 shadow-md h-full">
         <div class="flex justify-between items-start mb-12">
             <div>
-                <h1 class="text-4xl font-bold text-gray-800">Welcome back, Olivia</h1>
+                <h1 class="text-4xl font-bold text-gray-800">Welcome back, {{ Auth::user()->role }}</h1>
                 <p class="text-sm font-semibold mt-2 text-gray-500">Even miracles take a little time</p>
             </div>
 
@@ -27,25 +27,25 @@
         </div>
 
         <!-- Info Cards -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-10 mb-15">
-            <div class="bg-gray-50 p-4 rounded-lg shadow-xl">
-                <p class="text-l font-bold text-gray-500">Total Pelanggan</p>
-                <p class="text-3xl font-bold text-gray-800 mt-5 mb-5">{{ \App\Models\User::count() }}</p>
+        <div class="grid grid-cols-1 md:grid-cols-3 text-center gap-10 mb-15">
+            <div class="bg-blue-800 p-4 rounded-lg shadow-xl">
+                <p class="text-l font-bold text-white">Total Pelanggan</p>
+                <p class="text-3xl font-bold text-white mt-5 mb-5">{{ \App\Models\User::count() }}</p>
             </div>
 
-            <div class="bg-gray-50 p-4 rounded-lg shadow-xl">
-                <p class="text-l font-bold text-gray-500">Reservasi</p>
+            <div class="bg-blue-800 p-4 rounded-lg shadow-xl">
+                <p class="text-l font-bold text-white">Reservasi</p>
 
                 <div class="mt-5">
-                    <p class="text-3xl font-bold text-gray-800">
+                    <p class="text-3xl font-bold text-white">
                         {{ \App\Models\Reservasi::whereDate('tanggal','>=', today())->count() ?: '0' }}
                     </p>
                 </div>
             </div>
 
-            <div class="bg-gray-50 p-4 rounded-lg shadow-xl">
-                <p class="text-l font-bold text-gray-500">Data Dokter</p>
-                <p class="text-3xl font-bold text-gray-800 mt-5 mb-5">4</p>
+            <div class="bg-blue-800 text-white p-4 rounded-lg shadow-xl">
+                <p class="text-l font-bold">Data Dokter</p>
+                <p class="text-3xl font-bold mt-5 mb-5">3</p>
             </div>
         </div>
 

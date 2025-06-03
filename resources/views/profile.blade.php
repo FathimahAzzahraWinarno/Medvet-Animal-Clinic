@@ -43,7 +43,7 @@
       <x-popup-profile></x-popup-profile> <!-- Komponen popup yang sudah kamu buat -->
   </h3>
     
-    <p class="text-sm text-gray-500 mb-6">Perbarui fotomu dan detail pribadimu</p>
+    <p class="text-sm text-gray-500 mb-6">Perbarui detail pribadimu</p>
 
     <div class="bg-white mb-5 p-6 rounded-xl border border-blue-200 shadow-[0px_0px_10px_rgba(59,130,246,0.3)]">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
