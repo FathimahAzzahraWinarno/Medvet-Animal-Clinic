@@ -12,7 +12,6 @@
                 </div>
         </section>
 
-        @if (Auth::check())
     <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4 mb-6">
         <div class="md:col-span-2">
             <div class="flex flex-wrap justify-center gap-15 p-4">
@@ -42,12 +41,5 @@
               </div>
         </div>
     </div>
-     @endif
 
-     @else
-                <script>
-                    alert('Silakan login terlebih dahulu untuk melihat promo.');
-                    window.location.href = "{{ route('login') }}?redirect_promo=true";
-                </script>
-            @endif
 </x-layout>
