@@ -124,7 +124,7 @@ Route::get('/', [BerandaController::class, 'index']);
 Route::get('/tentang_kami', [TentangKamiController::class, 'index']);
 Route::get('/FAQ', [FaqController::class, 'index']);
 Route::get('/perawatan', [PerawatanController::class, 'index']);
-Route::get('/promo', [PromoController::class, 'index']);
+Route::get('/promo', [PromoController::class, 'index'])->middleware('auth');
 Route::get('produk', [ProdukController::class, 'index']);
 
 Route::get('contact', function () {

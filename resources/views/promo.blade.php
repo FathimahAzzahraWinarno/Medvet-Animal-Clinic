@@ -1,4 +1,15 @@
 <x-layout title="Promo">
+    @guest('pelanggan')
+        <div class="min-h-screen flex items-center justify-center text-center px-4">
+            <div>
+                <h1 class="text-2xl font-semibold text-gray-800 mb-4">Kamu belum login</h1>
+                <p class="text-gray-600 mb-6">Silakan login sebagai pelanggan untuk melihat promo menarik kami.</p>
+                <a href="{{ route('login') }}" class="inline-block bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700">Login Sekarang</a>
+            </div>
+        </div>
+    @endguest
+
+    @auth('user')
     <section class="py-16 bg-no-repeat bg-center bg-cover" style="background-image: url('/images/bg.svg')">         
         <!-- Paw Print Kiri -->
         <img src="/images/paw1.svg" alt="Paw Left" class="absolute left-70 top-1/4 w-16 md:w-30 opacity-90">
@@ -41,5 +52,5 @@
               </div>
         </div>
     </div>
-
+    @endauth
 </x-layout>
