@@ -1,5 +1,5 @@
 <x-layout title="Promo">
-    @guest('pelanggan')
+    @guest('web')
         <div class="min-h-screen flex items-center justify-center text-center px-4">
             <div>
                 <h1 class="text-2xl font-semibold text-gray-800 mb-4">Kamu belum login</h1>
@@ -9,7 +9,7 @@
         </div>
     @endguest
 
-    @auth('user')
+    @auth('web')
     <section class="py-16 bg-no-repeat bg-center bg-cover" style="background-image: url('/images/bg.svg')">         
         <!-- Paw Print Kiri -->
         <img src="/images/paw1.svg" alt="Paw Left" class="absolute left-70 top-1/4 w-16 md:w-30 opacity-90">
