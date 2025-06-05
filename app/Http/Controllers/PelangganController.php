@@ -58,7 +58,7 @@ class PelangganController extends Controller
 
     public function riwayatReservasi()
     {
-        $today = Carbon::today();
+        $today = Carbon::today()->toDateString();
 
         // Ambil semua reservasi yang tanggalnya sebelum hari ini
         $reservasis = Reservasi::with(['user', 'hewan'])
@@ -70,7 +70,7 @@ class PelangganController extends Controller
 
     public function reservasiRiwayat()
     {
-        $today = Carbon::today();
+        $today = Carbon::today()->toDateString();
 
         // Ambil semua reservasi yang tanggalnya sebelum hari ini
         $reservasis = Reservasi::with(['user', 'hewan'])
@@ -98,7 +98,7 @@ class PelangganController extends Controller
 
     public function dashboard()
     {
-        $today = Carbon::today();
+        $today = Carbon::today()->toDateString();
 
         $reservasis = Reservasi::with('user', 'promo')
             ->whereDate('tanggal', $today)
@@ -110,7 +110,7 @@ class PelangganController extends Controller
 
     public function dashboardDokter()
     {
-        $today = Carbon::today();
+        $today = Carbon::today()->toDateString();
 
         $reservasis = Reservasi::with('user')
             ->whereDate('tanggal', $today)
@@ -122,7 +122,7 @@ class PelangganController extends Controller
 
     public function filterReservasi(Request $request)
     {
-        $sort = $request->query('sort', 'desc'); // default terbaru
+        $sort = $request->query('sort', 'desc');
         $users = User::orderBy('created_at', $sort)->get();
 
         return view('reservasiRiwayat', compact('users'));
@@ -130,10 +130,10 @@ class PelangganController extends Controller
 
     public function reservasiRiwayatDokter()
     {
-        $today = Carbon::today();
+        $today = Carbon::today()->toDateString();
 
         // Ambil semua reservasi yang tanggalnya sebelum hari ini
-        $reservasis = Reservasi::with(['user', 'hewan'])
+        $reservasis = Reservasi::with(['user', 'hewan', 'perawatan'])
             ->whereDate('tanggal', '<', $today)
             ->get();
 

@@ -10,7 +10,7 @@
             <img src="{{ asset('images/logo2.png') }}" alt="logo" class="w-20 h-20 mb-2 ml-2">
         </a>
         <h2 class="text-2xl font-semibold text-white text-left mt-0" id="form-title">Daftar</h2>
-        <p class="text-sm text-gray-300 text-left mb-6">Selamat datang di Medvet Animal Clinic.</p>
+        <p class="text-sm text-white text-left mb-6">Selamat datang di Medvet Animal Clinic.</p>
 
         @if (session('error'))
             <div  class="p-4 mb-4 text-sm text-red-800 bg-red-200 rounded-lg" role="alert">
@@ -26,40 +26,40 @@
                 <p class="text-red-600 text-sm">{{ $message }}</p>
             @enderror
             <div class="relative mb-5">
-                <input type="text" name="email" id="Email" class="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border border-gray-300 appearance-none dark:text-white focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
-                <label for="Email" class="absolute text-sm text-gray-700 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] px-2 peer-focus:text-blue-800 peer-placeholder-shown:scale-100 peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4">Masukan Email<span class="text-red-500">*</span></label>
+                <label for="email" class="block mb-2 text-sm font-medium text-blue-800">Email</label>
+                <input type="email" name="email" id="email" class="bg-transparent border border-gray-200 text-white text-sm rounded-lg focus:border-blue-800 block w-full p-3 " placeholder="name@gmail.com" required />
             </div>
             
             @error('name')
                 <p class="text-red-600 text-sm">{{ $message }}</p>
             @enderror
             <div class="relative mb-5">
-                <input type="text" name="name" id="nama" class="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border border-gray-300 appearance-none dark:text-white focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
-                <label for="nama" class="absolute text-sm text-gray-700 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] px-2 peer-focus:text-blue-800 peer-placeholder-shown:scale-100 peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4">Masukan Nama<span class="text-red-500">*</span></label>
+                <label for="nama" class="block mb-2 text-sm font-medium text-blue-800">Nama</label>
+                <input type="text" name="name" id="nama" class="bg-transparent border border-gray-200 text-white text-sm rounded-lg focus:border-blue-800 block w-full p-3 " placeholder="Masukan namamu" required />
             </div>
 
             <div class="relative mb-5">
+                <label for="date" class="block mb-2 text-sm font-medium text-blue-800">
+                    Tanggal akun terdaftar
+                </label>
                 <input 
                     type="date" 
                     id="date" 
-                    class="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border border-gray-300 appearance-none dark:text-white focus:outline-none focus:ring-0 focus:border-blue-600 peer" 
+                    class="bg-transparent border border-gray-200 text-white text-sm rounded-lg focus:border-blue-800 block w-full p-3" 
                     disabled
                 />
-                <label for="date" class="absolute text-sm text-gray-700 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] px-2 peer-focus:text-blue-800 peer-placeholder-shown:scale-100 peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4">
-                    Tanggal akun terdaftar<span class="text-red-500">*</span>
-                </label>
             </div>
             
             @error('password')
                 <p class="text-red-600 text-sm">{{ $message }}</p>
             @enderror
             <div class="relative mb-1">
-                <input type="password" name="password" id="password" class="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border border-gray-300 appearance-none dark:text-white focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" "/>
-                <label for="password" class="absolute text-sm text-gray-700 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] px-2 peer-focus:text-blue-800 peer-placeholder-shown:scale-100 peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4">Masukan Password<span class="text-red-500">*</span></label>
+                <label for="password" class="block mb-2 text-sm font-medium text-blue-800">Password</label>
+                    <input type="password" name="password" id="password" placeholder="Masukan password" class="bg-transparent border border-gray-200 text-white text-sm rounded-lg focus:border-blue-800 block w-full p-3 " required />
             </div>
             <p class="text-xs text-gray-700 mt-1 mb-2">Minimal 8 karakter</p>
 
-            <button type="submit" class="w-full bg-blue-700 hover:bg-blue-800 text-white font-semibold py-3 rounded-md transition">Daftar</button>
+            <button type="submit" class="w-full bg-blue-800 hover:bg-blue-900 text-white font-semibold py-3 rounded-md transition">Daftar</button>
         </form>
 
         <p class="text-center text-gray-600 text-sm mt-4">

@@ -19,7 +19,7 @@
         <div class="w-full px-8 pt-4 pb-4 bg-gray-400/80 rounded-xl shadow-lg backdrop-blur-md">
             <a href="/"><img src="{{ asset('images/logo2.png') }}" alt="logo" class="w-20 h-20 mb-2 ml-2"></a>
             <h2 class="text-2xl font-semibold text-white text-left mt-0" id="form-title">Masuk</h2>
-            <p class="text-sm text-gray-300 text-left mb-6">Selamat datang di Medvet Animal Clinic.</p>
+            <p class="text-sm text-white text-left mb-6">Selamat datang di Medvet Animal Clinic.</p>
     
             {{-- Tampilkan pesan error --}}
             @if (session('error-login'))
@@ -30,17 +30,17 @@
                 @csrf {{-- penting untuk keamanan form --}}
     
                 <div class="relative mb-5">
-                    <input type="email" name="email" id="Email" class="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border border-gray-300 appearance-none dark:text-white focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
-                    <label for="Email" class="absolute text-sm text-gray-700 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] px-2 peer-focus:text-blue-800 peer-placeholder-shown:scale-100 peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4">Masukan Email<span class="text-red-500">*</span></label>
+                     <label for="email" class="block mb-2 text-sm font-medium text-blue-800">Email</label>
+                     <input type="email" name="email" id="email" class="bg-transparent border border-gray-200 text-white text-sm rounded-lg focus:border-blue-800 block w-full p-3 " placeholder="name@gmail.com" required />
                 </div>
     
                 <div class="relative mb-1">
-                    <input type="password" name="password" id="password" class="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border border-gray-300 appearance-none dark:text-white focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
-                    <label for="password" class="absolute text-sm text-gray-700 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] px-2 peer-focus:text-blue-800 peer-placeholder-shown:scale-100 peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4">Masukan Password<span class="text-red-500">*</span></label>
+                    <label for="password" class="block mb-2 text-sm font-medium text-blue-800">Password</label>
+                    <input type="password" name="password" id="password" placeholder="Masukan password" class="bg-transparent border border-gray-200 text-white text-sm rounded-lg focus:border-blue-800 block w-full p-3 " required />
                 </div>
                 <p class="text-xs text-gray-700 mt-1 mb-2">Minimal 8 karakter</p>
     
-                <button type="submit" class="w-full bg-blue-700 hover:bg-blue-800 text-white font-semibold py-3 rounded-md transition">Masuk</button>
+                <button type="submit" class="w-full bg-blue-800 hover:bg-blue-900 text-white font-semibold py-3 rounded-md transition">Masuk</button>
             </form>
     
             <p class="text-center text-gray-600 text-sm mt-4">

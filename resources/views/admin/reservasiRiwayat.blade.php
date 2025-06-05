@@ -8,7 +8,7 @@
             <!-- Filter Dropdown -->
             <div class="flex justify-end mb-4">
                 <div class="relative">
-                    <button id="dropdownDefaultButton" data-dropdown-toggle="dropdown"
+                    {{-- <button id="dropdownDefaultButton" data-dropdown-toggle="dropdown"
                         class="text-gray-700 focus:ring-1 focus:outline-none focus:ring-blue-300 
                         font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center 
                         border border-blue-400 hover:bg-blue-200" type="button">
@@ -18,7 +18,7 @@
                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" 
                                 stroke-width="2" d="m1 1 4 4 4-4" />
                         </svg>
-                    </button>
+                    </button> --}}
 
                     <div id="dropdown"
                         class="z-10 hidden bg-white font-semibold divide-y divide-blue-200 rounded-lg shadow-sm w-44 border border-blue-300 mt-2 absolute right-0">

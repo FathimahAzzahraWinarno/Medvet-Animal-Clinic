@@ -78,7 +78,8 @@ class AuthController extends Controller
 
         // Kalau bukan pengelola, login sebagai user biasa
         if (Auth::guard('web')->attempt($credentials)) {
-            return redirect()->intended('/')->with('success-login', 'Selamat datang!');
+            $user = Auth::guard('web')->user();
+            return redirect()->intended('/')->with('success-login', 'Selamat datang, ' . $user->name . '!');
         }
 
         // Semua gagal
