@@ -87,10 +87,7 @@ class PelangganController extends Controller
 
         // Ambil semua reservasi yang tanggalnya adalah hari ini
         $reservasis = Reservasi::with(['user']) // jika perlu juga dengan dokter atau hewan
-            ->whereDate('tanggal', $today)
-            ->get();
-
-        $reservasis = Reservasi::with(['user', 'hewan', 'dokter', 'perawatan']) // jika perlu juga dengan dokter atau hewan
+            ->whereDate('tanggal', '>=', $today)
             ->get();
 
         return view('dokter.jadwalReservasiDokter', compact('reservasis'));

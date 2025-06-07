@@ -11,7 +11,7 @@
                 </div>
             </div>
         @endif
-        <div class="overflow-x-auto m-20 rounded-2xl shadow-2xl">
+        <div class="overflow-x-auto m-20 rounded-2xl border border-blue-50 shadow-[0px_0px_10px_rgba(59,130,246,0.3)]">
             <table class="w-full text-sm text-center text-gray-600">
                 <thead class="text-xs text-gray-500 uppercase bg-gray-50 border-b border-gray-200">
                     <tr class="bg-blue-800 text-white">

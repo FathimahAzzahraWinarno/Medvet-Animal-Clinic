@@ -2,7 +2,7 @@
     <div class="flex-1 h-screen overflow-y-auto" style="background-image: url('/images/bgAdmin.svg'); background-size: cover; background-repeat: no-repeat; background-position: center;">
         <h1 class="text-4xl font-semibold text-center mt-20 text-gray-900 mb-6 font-['Inter']">Jadwal Reservasi</h1>
         
-        <div class="overflow-x-auto m-20">
+        <div class="overflow-x-auto rounded-2xl m-20 border border-blue-50 shadow-[0px_0px_10px_rgba(59,130,246,0.3)]">
             {{-- <div class="flex justify-end mb-4">
                 <select id="filterTanggal" name="filterTanggal" class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg px-4 py-2 shadow-sm focus:ring focus:ring-blue-200">
                     <option value="today">Hari Ini</option>
@@ -11,7 +11,7 @@
                 </select>
             </div> --}}
 
-            <div class="bg-white shadow-2xl rounded-2xl overflow-hidden">
+            <div class="bg-white rounded-2xl overflow-hidden">
                 <table class="w-full text-sm text-left text-gray-600">
                     <thead class="text-xs text-gray-500 uppercase bg-gray-50 border-b border-gray-200">
                         <tr class="bg-blue-800 text-white text-center">

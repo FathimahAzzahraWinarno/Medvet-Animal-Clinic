@@ -41,7 +41,7 @@
             </div>
 
             <!-- Tabel Reservasi -->
-            <div class="bg-white shadow-2xl rounded-2xl overflow-hidden">
+            <div class="bg-white border border-blue-50 shadow-[0px_0px_10px_rgba(59,130,246,0.3)] rounded-2xl overflow-hidden">
                 <table class="min-w-full text-sm text-gray-700">
                     <thead class="text-xs text-white uppercase bg-blue-800">
                         <tr>
@@ -53,6 +53,7 @@
                             <th class="px-4 py-3">Perawatan</th>
                             <th class="px-4 py-3">Tanggal</th>
                             <th class="px-4 py-3">Jam</th>
+                            <th class="px-4 py-3">Rekam Medis</th>
                         </tr>
                     </thead>
                     <tbody class="bg-white font-semibold text-center">
@@ -78,6 +79,11 @@
                             <td class="px-4 py-3 text-sm text-red-500 font-medium">{{ \Carbon\Carbon::parse($reservasi->tanggal)->format('d-m-Y') }}</td>
                             <td class="px-4 py-3">
                                 <span class="bg-blue-100 text-blue-700 px-2 py-1 rounded-full text-xs">{{ $reservasi->waktu }}</span>
+                            </td>
+                            <td class="px-4 py-3">
+                                    <a href="{{ url('/input-rekam-medis/' . $reservasi->id) }}" class="bg-gray-100 text-blue-600 text-xs px-3 py-1 rounded hover:underline">
+                                        Lihat
+                                    </a>
                             </td>
                         </tr>
                         @empty

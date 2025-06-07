@@ -42,7 +42,7 @@
                 </a>
         </div>
 
-        <div class="overflow-x-auto shadow-lg rounded-xl">
+        <div class="overflow-x-auto border border-blue-50 shadow-[0px_0px_10px_rgba(59,130,246,0.3)] rounded-xl">
             <table class="w-full text-sm text-left text-gray-600">
                  <thead class="text-xs text-gray-500 uppercase bg-gray-50 border-b border-gray-200">
                         <tr class="bg-blue-800 text-white text-center">
