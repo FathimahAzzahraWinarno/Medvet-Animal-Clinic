@@ -22,9 +22,8 @@ class Hewan extends Model
         'ras',
     ];
 
-        public function reservasis()
+    public function reservasis()
     {
         return $this->hasMany(Reservasi::class, 'id_hewan', 'id');
     }
-
 }

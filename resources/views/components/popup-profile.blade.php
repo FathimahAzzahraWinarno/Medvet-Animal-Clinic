@@ -49,7 +49,7 @@
                 
                     <div class="flex items-center p-4 border-t border-gray-200 rounded-b">
                         <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 font-medium rounded-lg text-sm px-5 py-2.5">Simpan</button>
-                        <button type="button" class="py-2.5 px-5 ms-3 text-sm font-medium text-gray-900 bg-white border border-gray-300 hover:bg-gray-100 hover:text-blue-700">Batal</button>
+                        <button data-modal-hide="modal-edit" type="button" class="py-2.5 px-5 ms-3 text-sm font-medium text-gray-900 bg-white border border-gray-300 hover:bg-gray-100 hover:text-blue-700 rounded-lg">Batal</button>
                     </div>
                 </form>   
         </div>

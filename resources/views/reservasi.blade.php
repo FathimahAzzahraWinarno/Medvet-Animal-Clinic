@@ -167,24 +167,24 @@
 
 
 
-                @php
-                    $startHour = 8;
-                    $endHour = 17;
-                @endphp
+            @php
+                $startHour = 8;
+                $endHour = 17;
+            @endphp
 
-                <div>
-                    <label for="waktu" class="block text-gray-700 mb-1">Waktu</label>
-                    <select name="waktu" id="waktu"
-                        class="w-full mt-1 px-4 py-2 border border-gray-400 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 appearance-none">
-                        <option selected disabled>Pilih waktu</option>
-                        @for ($hour = $startHour; $hour < $endHour; $hour++)
-                            <option value="{{ sprintf('%02d:00', $hour) }}">{{ sprintf('%02d:00', $hour) }}</option>
-                            <option value="{{ sprintf('%02d:30', $hour) }}">{{ sprintf('%02d:30', $hour) }}</option>
-                        @endfor
-                        <option value="{{ sprintf('%02d:00', $endHour) }}">{{ sprintf('%02d:00', $endHour) }}</option>
-                    </select>
-                </div>
-
+            <!-- Waktu -->
+            <div class="mb-4">
+                <label for="waktu" class="block text-gray-700 mb-1">Waktu</label>
+                <select name="waktu" id="waktu"
+                    class="w-full mt-1 px-4 py-2 border border-gray-400 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 appearance-none">
+                    <option selected disabled>Pilih waktu</option>
+                    @for ($hour = $startHour; $hour < $endHour; $hour++)
+                        <option value="{{ sprintf('%02d:00', $hour) }}">{{ sprintf('%02d:00', $hour) }}</option>
+                        <option value="{{ sprintf('%02d:30', $hour) }}">{{ sprintf('%02d:30', $hour) }}</option>
+                    @endfor
+                    <option value="{{ sprintf('%02d:00', $endHour) }}">{{ sprintf('%02d:00', $endHour) }}</option>
+                </select>
+            </div>
 
                 <div>
                     <label class="block text-gray-700">Dokter</label>
@@ -212,6 +212,7 @@
     </form>
 </x-layout>
 
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
   setTimeout(() => {
       const alert = document.getElementById('alertReservasi');
@@ -221,8 +222,51 @@
       }
   }, 3000);
 
-   flatpickr("#datepicker", {
+     flatpickr("#datepicker", {
         dateFormat: "Y-m-d",
         minDate: "today"
+    });
+
+    $('#datepicker').on('change', function () {
+        let selectedDate = $(this).val();
+        let now = new Date();
+        let today = now.toISOString().split('T')[0];
+        let currentHour = now.getHours();
+        let currentMinute = now.getMinutes();
+
+        $.ajax({
+            url: '/reservasi/jam-tidak-tersedia',
+            type: 'GET',
+            data: { tanggal: selectedDate },
+            success: function (bookedTimes) {
+                $('#waktu option').each(function () {
+                    let val = $(this).val();
+
+                    // Skip option kosong
+                    if (!val || val === "Pilih waktu") return;
+
+                    // Reset semua option dulu
+                    $(this).prop('disabled', false).css('color', '#000').text(val);
+
+                    // Kalau jam sudah dipesan → disable
+                    if (bookedTimes.includes(val)) {
+                        $(this).prop('disabled', true)
+                            .css('color', '#9ca3af');
+                    }
+
+                    // Kalau hari ini → jam yang sudah lewat juga disable
+                    if (selectedDate === today) {
+                        let [hour, minute] = val.split(':').map(Number);
+                        if (hour < currentHour || (hour === currentHour && minute <= currentMinute)) {
+                            $(this).prop('disabled', true)
+                                .css('color', '#9ca3af');
+                        }
+                    }
+                });
+            },
+            error: function (xhr) {
+                alert("Gagal mengambil data jam.");
+            }
+        });
     });
 </script>

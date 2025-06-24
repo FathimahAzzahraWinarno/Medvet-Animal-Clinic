@@ -136,4 +136,13 @@ class PelangganController extends Controller
 
         return view('dokter.riwayatReservasiDokter', compact('reservasis'));
     }
+
+    public function hewanPelanggan()
+    {
+        $users = User::with(['reservasis.hewan']) // eager load sampai ke hewan
+            ->whereHas('reservasis')
+            ->get();
+
+        return view('admin.pelanggan', compact('users'));
+    }
 }

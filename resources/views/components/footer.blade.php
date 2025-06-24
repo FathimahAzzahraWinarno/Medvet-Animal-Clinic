@@ -28,19 +28,20 @@
             <div class="flex flex-col items-center mt-48">
                 <img src="{{ asset('images/logo2.png') }}" alt="logo" class="w-[120px] py-4">
                 <div class="flex space-x-4">
-                    <a href="#" class="rounded-md px-3 py-2 text-sm font-medium">Perawatan</a>
-                    <a href="#" class="rounded-md px-3 py-2 text-sm font-medium">Promo</a>
-                    <a href="#" class="rounded-md px-3 py-2 text-sm font-medium">Reservasi</a>
-                    <a href="#" class="rounded-md px-3 py-2 text-sm font-medium">Produk</a>
-                    <a href="#" class="rounded-md px-3 py-2 text-sm font-medium">Contact Us</a>
-                    <a href="#" class="rounded-md px-3 py-2 text-sm font-medium">FAQ</a>
+                    <a href="perawatan" class="rounded-md px-3 py-2 text-sm font-medium">Perawatan</a>
+                    <a href="promo" class="rounded-md px-3 py-2 text-sm font-medium">Promo</a>
+                    <a href="reservasi" class="rounded-md px-3 py-2 text-sm font-medium">Reservasi</a>
+                    <a href="produk" class="rounded-md px-3 py-2 text-sm font-medium">Produk</a>
+                    <a href="contact" class="rounded-md px-3 py-2 text-sm font-medium">Contact Us</a>
+                    <a href="tentang_kami" class="rounded-md px-3 py-2 text-sm font-medium">Tentang Kami</a>
+                    <a href="FAQ" class="rounded-md px-3 py-2 text-sm font-medium">FAQ</a>
                 </div>
             </div>
         </div>
         
 
         <!-- Form Section -->
-        <div class="bg-white text-black rounded-[16px] py-12 px-12 shadow-lg w-[30rem]">
+        <div class="bg-white text-black rounded-[16px] py-12 px-12 shadow-lg w-[30rem] h-112">
                 <form method="POST" action="{{ route('feedback') }}">
                     @csrf
 
@@ -64,10 +65,10 @@
                             class="border border-blue-200 shadow-[0px_0px_10px_rgba(59,130,246,0.3)] rounded-[8px] p-2 w-full h-[100px] shadow-md focus:outline-none focus:ring-2 focus:ring-blue-400"></textarea>
                     </div>
 
-                    <div class="flex items-center mb-4">
+                    {{-- <div class="flex items-center mb-4">
                         <input type="checkbox" class="mr-2">
                         <span>You agree to our friendly <a href="#" class="text-blue-600 underline">privacy policy</a></span>
-                    </div>
+                    </div> --}}
 
                     <button type="submit"
                         class="bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-[8px] w-full">Kirim pesan</button>
@@ -81,7 +82,7 @@
     <div class="flex flex-col items-center mt-20 w-full space-y-4">
         <div class="w-[85%] border-t border-white my-6"></div>
         <div class="flex justify-between w-[85%] text-sm">
-            <span>© 2025 Medvet Animal Clinic - All rights reserved.</span>
+            <span>© 2025 FAW - All rights reserved.</span>
             <div class="flex space-x-4">
                 <a href="#">Terms</a>
                 <a href="#">Privacy</a>

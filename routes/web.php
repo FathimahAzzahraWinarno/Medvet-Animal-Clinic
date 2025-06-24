@@ -144,6 +144,9 @@ Route::get('reservasi', function (Request $request) {
     ]);
 });
 
+Route::get('/reservasi/jam-tidak-tersedia', [ReservasiController::class, 'getUnavailableTimes']);
+
+
 // Feedback tanpa login
 Route::post('feedback', [FeedbackController::class, 'createFeedback'])->name('feedback');
 

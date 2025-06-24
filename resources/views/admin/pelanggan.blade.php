@@ -11,6 +11,8 @@
                         <th class="px-4 py-3">Nama Pemilik</th>
                         <th class="px-4 py-3">Nama Hewan</th>
                         <th class="px-4 py-3">Email</th>
+                        <th class="px-4 py-3">No Telp</th>
+                        <th class="px-4 py-3">Alamat</th>
                         <th class="px-4 py-3">Total Reservasi</th>
                     </tr>
                 </thead>
@@ -23,9 +25,27 @@
                                 <div>{{ $user->name }}</div>
                                 <div class="text-xs text-gray-400">{{ str_pad($user->id, 2, '1', STR_PAD_RIGHT) }}</div>
                             </td>
-                            <td class="px-4 py-3">-</td>
+                            <td class="px-4 py-3">
+                                @php
+                                    $namaHewan = $user->reservasis
+                                        ->map(function ($reservasi) {
+                                            return optional($reservasi->hewan)->nama;
+                                        })
+                                        ->filter() // buang null
+                                        ->unique()
+                                        ->implode(', ');
+                                @endphp
+
+                                {{ $namaHewan ?: '-' }}
+                            </td>
                             <td class="px-4 py-3">
                                 <span class="bg-orange-100 text-orange-700 text-xs px-2 py-1 rounded-full">{{ $user->email }}</span>
+                            </td>
+                            <td class="px-4 py-3">
+                                <span class="bg-green-100 text-green-700 text-xs px-2 py-1 rounded-full">{{ $user->telepon ? $user->telepon : '-' }}</span>
+                            </td>
+                            <td class="px-4 py-3">
+                                <span class="bg-blue-100 text-blue-700 text-xs px-2 py-1 rounded-full">{{ $user->alamat ? $user->alamat : '-' }}</span>
                             </td>
                            <td class="px-4 py-3">
                             {{ $user->reservasis->count() > 0 ? $user->reservasis->count() : '0' }}

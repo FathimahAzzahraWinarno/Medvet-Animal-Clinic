@@ -87,4 +87,14 @@ class ReservasiController extends Controller
             return redirect()->back()->with('error', 'Terjadi kesalahan: ' . $e->getMessage());
         }
     }
+
+    public function getUnavailableTimes(Request $request)
+    {
+        $tanggal = $request->input('tanggal');
+
+        // Ambil jam yang sudah dibooking pada tanggal tersebut
+        $bookedTimes = Reservasi::where('tanggal', $tanggal)->pluck('waktu'); // pastikan kolomnya 'waktu'
+
+        return response()->json($bookedTimes);
+    }
 }
